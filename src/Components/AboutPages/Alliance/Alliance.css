@@ -1,0 +1,154 @@
+.all-outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 8%;
+}
+
+.all-inner {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.all-grid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20%;
+    margin-top: 5%;
+    column-gap: 5%;
+    margin-bottom: 10%;
+}
+
+
+.all-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    margin-top: 8%;
+    /* margin-bottom: 5%; */
+    text-align: center;
+    font-family: 'Yeseva One', cursive;
+}
+
+.all-text {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    width: 80%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+.all-element {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.all-element-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #BC312E;
+    text-align: left;
+    width: 90%;
+    font-family: 'Yeseva One', cursive;
+}
+
+.all-element-text {
+    font-size: 1.5rem;
+    color: #C6C6C6;
+    width: 90%;
+    text-align: left;
+}
+
+@media only screen and (max-width: 1500px) {
+    .all-title {
+        font-size: 2.5rem;
+    }
+
+    .all-element-text {
+        font-size: 1.25rem;
+    }
+
+    .all-text {
+        font-size: 1.5rem;
+    }
+
+    .all-element-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .all-title {
+        font-size: 2rem;
+    }
+
+    .all-element-text {
+        font-size: 1rem;
+    }
+
+    .all-text {
+        font-size: 1.25rem;
+    }
+
+    .all-element-title {
+        font-size: 1.20rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .all-title {
+        font-size: 2rem;
+    }
+
+    .all-element-text {
+        font-size: 1.25rem;
+    }
+
+    Overview .all-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .all-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .all-title {
+        font-size: 1.5rem;
+    }
+
+    .all-element-text {
+        font-size: 1rem;
+        /* margin-top: 5%; */
+
+    }
+
+    .all-element-title {
+        margin-top: 2%;
+    }
+
+    .all-text {
+        font-size: 1rem;
+    }
+
+    .all-grid {
+        grid-template-columns: 1fr;
+        row-gap: 5%;
+        margin-bottom: 10%;
+    }
+
+    .all-outer {
+        padding-bottom: 15%;
+    }
+}

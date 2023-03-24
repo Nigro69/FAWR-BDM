@@ -1,0 +1,172 @@
+.s-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.s-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+}
+
+.s-title {
+    font-size: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    font-weight: 500;
+    color: #BC312E;
+    font-family: 'Yeseva One';
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+.s-text1 {
+    font-size: 2rem;
+    color: white;
+    width: 100%;
+    margin-bottom: 2%;
+    margin-top: 5%;
+    /* text-align: center; */
+}
+
+.s-text2 {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    color: #C6C6C6;
+    font-size: 1.5rem;
+    margin-top: 1%;
+
+}
+
+.s-sol-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 3%;
+}
+
+.s-sol-inner-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2%;
+}
+
+.s-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 5%;
+}
+
+.s-ul {
+    margin-left: 5%;
+    /* width: 100%; */
+    list-style: none;
+}
+
+.s-li-text2 {
+    font-size: 1rem;
+    color: white;
+    width:fit-content;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+
+.s-explore {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-left: 5%;
+
+}
+
+.s-bottom-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10%;
+}
+
+li::marker {
+    list-style: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    .s-title {
+        font-size: 2.5rem;
+    }
+
+    .s-text1 {
+        font-size: 1.25rem;
+    }
+
+    .s-text2 {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .s-title {
+        font-size: 2rem;
+    }
+
+    .s-text1 {
+        font-size: 1rem;
+    }
+
+    .s-text2 {
+        font-size: 0.9rem;
+    }
+
+    .s-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .s-text2 {
+        margin-top: 3%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .s-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .s-text2 {
+        margin-top: 3%;
+    }
+
+    .s-explore {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .s-title {
+        font-size: 1.5rem;
+    }
+
+    .s-text1 {
+        font-size: 1.05rem;
+    }
+
+    .s-text2 {
+        font-size: 0.95rem;
+    }
+}

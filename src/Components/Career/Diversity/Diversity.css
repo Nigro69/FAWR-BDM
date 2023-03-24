@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+.diversity-outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.diversity-title {
+    font-size: 4rem;
+    font-weight: 500;
+    color: white;
+    font-family: 'Yeseva One', cursive;
+    /* border-bottom: 3px solid white; */
+    margin-top: 3%;
+    text-align: center;
+}
+
+.diversity-component {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+.diversity-grid {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-top: 5%;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.diversity-grid-title {
+    color: #BC312E;
+    font-size: 2.5rem;
+    font-weight: 500;
+    font-family: 'Yeseva One', cursive;
+}
+
+.diversity-grid-text {
+    color: #C6C6C6;
+    font-size: 1.35rem;
+    font-weight: 400;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+.diversity-grid-left {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.diversity-grid-right {
+    width: 50%;
+}
+
+@media only screen and (max-width: 1500px) {
+    .diversity-title {
+        font-size: 3rem;
+    }
+
+    .diversity-grid-title {
+        font-size: 2rem;
+    }
+
+    .diversity-grid-text {
+        color: #C6C6C6;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .diversity-title {
+        font-size: 2.5rem;
+
+    }
+
+    .diversity-grid-title {
+        width: 100%;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .diversity-grid-text {
+        color: #C6C6C6;
+        font-size: 1.5rem;
+        width: 100%;
+    }
+
+    .diversity-grid {
+        width: 90%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .diversity-grid-left {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .diversity-grid-right {
+        margin-top: 2%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    .diversity-grid-title {
+        width: 100%;
+        text-align: center;
+        font-size: 2.25rem;
+    }
+
+    .diversity-grid-text {
+        color: #C6C6C6;
+        font-size: 1.25rem;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .diversity-title {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .diversity-title {
+        font-size: 1.5rem;
+    }
+
+    .diversity-grid-title {
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .diversity-grid-text {
+        color: #C6C6C6;
+        font-size: 1rem;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .diversity-title {
+        font-size: 1.25rem;
+    }
+
+    .diversity-grid-title {
+        width: 100%;
+        text-align: center;
+        font-size: 1.25rem;
+    }
+
+    .diversity-grid-text {
+        color: #C6C6C6;
+        font-size: 0.9rem;
+        width: 90%;
+    }
+}

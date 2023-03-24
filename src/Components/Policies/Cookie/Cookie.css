@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.cookie-outer {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.cookie-content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 5%;
+}
+
+.cookie-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    color:white;
+}
+
+.cookie-subtitle {
+    font-size: 1.65rem;
+    font-weight: 600;
+    margin-top: 3%;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    color: white;
+}
+
+.cookie-ul {
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+.cookie-li {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 1%;
+}
+
+
+@media only screen and (max-width: 1500px) {
+    .cookie-text {
+        font-size: 1rem;
+    }
+
+    .cookie-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .cookie-li {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .cookie-text {
+        font-size: 0.8rem;
+    }
+
+    .cookie-subtitle {
+        font-size: 1rem;
+    }
+
+    .cookie-li {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .cookie-text {
+        font-size: 0.5rem;
+    }
+
+    .cookie-subtitle {
+        font-size: 0.7rem;
+    }
+
+    .cookie-li {
+        font-size: 0.5rem;
+    }
+}

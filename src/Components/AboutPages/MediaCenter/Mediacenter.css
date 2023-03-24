@@ -1,0 +1,244 @@
+.mc-outer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mc-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: 'Yeseva One', cursive;
+    margin-top: 7%;
+    width: 80%;
+    text-align: center;
+}
+
+
+.mc-text1 {
+    color: white;
+    font-size: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+
+.mc-grid1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.mc-element1 {
+    width: 30%;
+    /* height: 25rem; */
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #29262B;
+    border-radius: 0.5rem;
+}
+
+.mc-element1-top,
+.mc-element1-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.mc-grid2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 20%;
+}
+
+.mc-element2-left {
+    width: 30%;
+}
+
+.mc-element2 {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    border-radius: 1rem;
+    border: 1px solid #C6C6C6;
+    margin-top: 5%;
+
+}
+
+
+.mc-element2-right {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mc-element2-text1-outer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mc-element2-text1 {
+    color: #C6C6C6;
+    font-size: 1.25rem;
+}
+
+.mc-text2 {
+    color: #C6C6C6;
+    font-size: 1.45rem;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 5%;
+}
+
+/* .mc-element-text2 {
+    color: white;
+    font-size: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+} */
+
+@media only screen and (max-width: 1500px) {
+    .mc-title {
+        color: white;
+        font-size: 2.5rem;
+    }
+
+    .mc-text1 {
+        color: white;
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .mc-element1 {
+        width: 50%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        padding: 2%;
+    }
+
+    .mc-grid1 {
+        flex-direction: column;
+
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .mc-title {
+        color: white;
+        font-size: 2rem;
+    }
+
+    .mc-element2 {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .mc-element1 {
+        width: 50%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    .mc-element2-left {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .mc-element2-right {
+        width: 90%;
+        margin-top: 5%;
+    }
+
+    .mc-element2-text1 {
+        color: #C6C6C6;
+        font-size: 1rem;
+    }
+
+    .mc-text2 {
+        color: #C6C6C6;
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .mc-grid1 {
+        flex-direction: column;
+    }
+
+    .mc-element1 {
+        width: 70%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .mc-title {
+        color: white;
+        font-size: 2rem;
+    }
+
+    .mc-text1 {
+        color: white;
+        font-size: 1rem;
+    }
+
+    .mc-element1 {
+        width: 70%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    .mc-element2-text1 {
+        color: #C6C6C6;
+        font-size: 0.8rem;
+    }
+
+    .mc-text2 {
+        color: #C6C6C6;
+        font-size: 1rem;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .mc-title {
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    .mc-text1 {
+        color: white;
+        font-size: 1rem;
+    }
+
+    .mc-element1 {
+        width: 90%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+}

@@ -1,0 +1,142 @@
+.navbar-outer {
+    color: white;
+    padding: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-left {
+    width: 20%;
+    display: flex;
+    justify-content: left;
+    padding-left: 5%;
+
+}
+
+.navbar-right {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-option {
+    width: 12%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.navbar-option1 {
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.navbar-option-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.navbar-hidden {
+    width: 100%;
+}
+
+.navbar-right-hidden {
+    display: flex;
+    justify-content: space-evenly;
+    width: 32%;
+}
+
+.navbar-left-hidden {
+    display: flex;
+    justify-content: space-evenly;
+    width: 32%;
+}
+
+.navbar-middle-hidden {
+    display: flex;
+    justify-content: center;
+    width: 32%;
+}
+
+@media only screen and (max-width: 1700px) {
+    .navbar-right {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .navbar-right {
+        width: 85%;
+    }
+
+    .navbar-option-text {
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .navbar-right {
+        width: 90%;
+    }
+
+    .navbar-option-text {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .navbar-right {
+        width: 90%;
+    }
+
+    .navbar-option-text {
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+}
+
+
+@media only screen and (max-width: 850px) {
+    .navbar-right {
+        /* width: 90%; */
+        display: none;
+    }
+
+    .navbar-left {
+        display: none;
+    }
+
+    .navbar-option-text {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .navbar-option-text {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+
+    .navbar-middle-hidden {
+        display: none;
+    }
+
+    .navbar-right-hidden {
+        width: 50%;
+    }
+}

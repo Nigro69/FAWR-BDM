@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+.landing-outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing-element {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing-title {
+    color: #FFFFFF;
+    font-size: 4.5rem;
+    font-weight: 500;
+    font-family: 'Yeseva One', cursive;
+    text-decoration: underline 2px solid white;
+    /* border-bottom: 2px solid white; */
+    margin-top: 5%;
+    text-align: center;
+    width: 90%;
+    /* width: 90%; */
+}
+
+@media only screen and (max-width: 1400px) {
+    .landing-title {
+        font-size: 3.25rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .landing-title {
+        font-size: 2.75rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .landing-title {
+        font-size: 2.25rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .landing-title {
+        font-size: 2rem;
+    }
+}

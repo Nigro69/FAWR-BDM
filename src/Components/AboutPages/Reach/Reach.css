@@ -1,0 +1,55 @@
+.reach-outer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.reach-left {
+    width: 40%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.reach-right {
+    width: 55%;
+}
+
+.reach-box {
+    background-color: #211F22;
+    border-radius: 1rem;
+    width: 80%;
+    color: white;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    padding: 5%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .reach-outer {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .reach-left {
+        width: 80%;
+        display: flex;
+        align-items: center;
+        margin-top: 5%;
+    }
+
+    .reach-right {
+        width:100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 5%;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .reach-button-text {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,106 @@
+.ep-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.ep-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+}
+
+.ep-title {
+    font-size: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    font-weight: 500;
+    color: #BC312E;
+    font-family: 'Yeseva One';
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+.ep-text1 {
+    font-size: 1.5rem;
+    color: white;
+    width: 100%;
+    margin-bottom: 3%;
+    /* text-align: center; */
+}
+
+.ep-text2 {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    color: #C6C6C6;
+    font-size: 1.25rem;
+    margin-top: 1%;
+
+}
+
+.ep-ul,
+.ep-ol {
+    margin-left: 2%;
+    text-align: left;
+
+}
+
+/* .ep-ol {
+    margin-right: 10%;
+} */
+.ep-li-text2 {
+    color: #C6C6C6;
+    font-size: 1.25rem;
+    text-align: left;
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .ep-title {
+        font-size: 2.5rem;
+    }
+
+    .ep-text1 {
+        font-size: 1.25rem;
+    }
+
+    .ep-li-text2,
+    .ep-text2 {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .ep-title {
+        font-size: 2rem;
+    }
+
+    .ep-text1 {
+        font-size: 1rem;
+    }
+
+    .ep-li-text2,
+    .ep-text2 {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .ep-title {
+        font-size: 1.5rem;
+    }
+
+    .ep-text1 {
+        font-size: 1.05rem;
+    }
+
+    .ep-li-text2,
+    .ep-text2 {
+        font-size: 0.95rem;
+    }
+}

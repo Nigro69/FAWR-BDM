@@ -1,0 +1,34 @@
+.partner-outer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.partner-grid {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.partner-grid-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    /* background-color: #211F22; */
+    padding: 2%;
+    border: 1px solid #7E7E7E;
+}
+
+.partner-grid-element:hover {
+    background-color: #BC312E;
+}
+
+/* @media only screen and (max-width: 700px) {
+    .partner-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 80%;
+    }
+} */

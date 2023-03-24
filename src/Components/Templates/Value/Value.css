@@ -1,0 +1,126 @@
+.value-outer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    color: #C6C6C6;
+}
+
+.value-top {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.value-title {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #7E7E7E;
+    width: 80%;
+    text-align: center;
+}
+
+.value-bottom {
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 5%;
+    row-gap: 10%;
+    column-gap: 5%;
+}
+
+.value-point-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 1300px) {
+    .value-title {
+        font-size: 1.5rem;
+    }
+
+    .value-point-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .value-title {
+        font-size: 1.25rem;
+    }
+
+    .value-point-text {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .value-title {
+        font-size: 1.5rem;
+    }
+
+    .value-point-text {
+        font-size: 1.25rem;
+    }
+
+    .value-bottom {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 5%;
+        row-gap: 10%;
+        column-gap: 5%;
+        margin-bottom: 40%;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .value-title {
+        font-size: 1.25rem;
+    }
+
+    .value-point-text {
+        font-size: 1rem;
+    }
+
+    .value-bottom {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 5%;
+        row-gap: 10%;
+        column-gap: 5%;
+        margin-bottom: 50%;
+    }
+
+    .value-outer {
+        margin-bottom: 10%;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    .value-title {
+        font-size: 1rem;
+    }
+
+    .value-point-text {
+        font-size: 0.8rem;
+    }
+
+    .value-bottom {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 5%;
+        row-gap: 10%;
+        column-gap: 5%;
+        margin-bottom: 50%;
+    }
+
+    .value-outer {
+        margin-bottom: 20%;
+    }
+
+}

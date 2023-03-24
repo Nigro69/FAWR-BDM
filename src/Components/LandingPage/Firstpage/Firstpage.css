@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+.firstpage-outer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.firstpage-middle {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.firstpage-left {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10%;
+    margin-top: 5%;
+}
+
+.firstpage-right {
+    width: 40%;
+}
+
+.firstpage-title {
+    color: white;
+    font-size: 4rem;
+    font-family: 'Yeseva One', cursive;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+}
+
+.firstpage-text {
+    font-size: 1.75rem;
+    color: #7E7E7E;
+}
+
+.first-dots {
+    width: 20%;
+}
+
+
+@media only screen and (max-width: 1400px) {
+    .firstpage-title {
+        font-size: 3rem;
+    }
+
+    .firstpage-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .firstpage-title {
+        font-size: 2.5rem;
+    }
+
+    .firstpage-text {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .firstpage-title {
+        font-size: 2.75rem;
+    }
+
+    .firstpage-text {
+        font-size: 1.5rem;
+    }
+
+    .firstpage-middle {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .firstpage-left {
+        width: 95%;
+        align-items: flex-start;
+    }
+
+    .firstpage-right {
+        width: 80%;
+    }
+
+    .first-dots {
+        width: 50%;
+    }
+}
+
+
+@media only screen and (max-width: 550px) {
+    .firstpage-title {
+        font-size: 2.25rem;
+    }
+
+    .firstpage-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .firstpage-title {
+        font-size: 2rem;
+    }
+
+    .firstpage-text {
+        font-size: 1rem;
+    }
+
+    .first-dots {
+        width: 40%;
+    }
+}

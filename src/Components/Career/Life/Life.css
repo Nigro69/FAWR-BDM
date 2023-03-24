@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+.life-outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.life-title {
+    font-size: 4rem;
+    font-weight: 500;
+    color: white;
+    font-family: 'Yeseva One', cursive;
+    /* border-bottom: 3px solid white; */
+    margin-top: 3%;
+}
+
+.life-component {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+.life-grid {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-top: 5%;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.life-grid-title {
+    color: #BC312E;
+    font-size: 2.5rem;
+    font-weight: 500;
+    font-family: 'Yeseva One', cursive;
+}
+
+.life-grid-text {
+    color: #C6C6C6;
+    font-size: 1.35rem;
+    font-weight: 400;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+.life-grid-left {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.life-grid-right {
+    width: 50%;
+}
+
+@media only screen and (max-width: 1500px) {
+    .life-title {
+        font-size: 3rem;
+    }
+
+    .life-grid-title {
+        font-size: 2rem;
+    }
+
+    .life-grid-text {
+        color: #C6C6C6;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .life-title {
+        font-size: 2.5rem;
+
+    }
+
+    .life-grid-title {
+        width: 100%;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .life-grid-text {
+        color: #C6C6C6;
+        font-size: 1.5rem;
+        width: 90%;
+    }
+
+    .life-grid {
+        width: 90%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .life-grid-left {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .life-grid-right {
+        margin-top: 2%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    .life-grid-title {
+        width: 100%;
+        text-align: center;
+        font-size: 2.25rem;
+    }
+
+    .life-grid-text {
+        color: #C6C6C6;
+        font-size: 1.25rem;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .life-title {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .life-title {
+        font-size: 1.5rem;
+    }
+
+    .life-grid-title {
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .life-grid-text {
+        color: #C6C6C6;
+        font-size: 1rem;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .life-title {
+        font-size: 1.25rem;
+    }
+
+    .life-grid-title {
+        width: 100%;
+        text-align: center;
+        font-size: 1.25rem;
+    }
+
+    .life-grid-text {
+        color: #C6C6C6;
+        font-size: 0.9rem;
+        width: 90%;
+    }
+}

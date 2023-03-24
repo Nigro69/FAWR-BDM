@@ -1,0 +1,245 @@
+.sus-outer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sus-title {
+    margin-top: 4%;
+    margin-bottom: 2%;
+    color: white;
+    font-weight: 400;
+    font-size: 4rem;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Yeseva One';
+    text-align: center;
+}
+
+.sus-section1 {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sus-section1-right,
+.sus-section1-left {
+    width: 50%;
+}
+
+.sus-content {
+    color: #C6C6C6;
+    font-size: 1.75rem;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 90%;
+}
+
+.sus-section2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #292729;
+    height: 100%;
+    margin-top: 5%;
+}
+
+.sus-section2-left {
+    width: 35%;
+    background-color: #BC312E;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 35rem;
+    padding: 2%;
+
+}
+
+.sus-section2-right {
+    width: 60%;
+    /* padding: 2%; */
+    height: 100%;
+
+}
+
+.sus-section2-left-title {
+    font-size: 2rem;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+}
+
+.sus-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.sus-grid-element {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    align-items: center;
+}
+
+.sus-element-title {
+    color: #BC312E;
+    font-size: 3rem;
+    font-weight: 500;
+    width: 100%;
+    justify-content: left;
+    display: flex;
+}
+
+
+.sus-element-right {
+    width: 45%;
+}
+
+.sus-element-left {
+    width: 50%;
+}
+
+@media only screen and (max-width: 1500px) {
+    .sus-title {
+        font-size: 3rem;
+    }
+
+    .sus-content {
+        color: #C6C6C6;
+        font-size: 1.5rem;
+    }
+
+    .sus-section2-left-title {
+        font-size: 1.5rem;
+    }
+
+    .sus-element-title {
+        color: #BC312E;
+        font-size: 2.5rem;
+    }
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .sus-title {
+        font-size: 2.5rem;
+    }
+
+    .sus-content {
+        color: #C6C6C6;
+        font-size: 1.25rem;
+    }
+
+    .sus-section2-left-title {
+        font-size: 1.25rem;
+    }
+
+    .sus-element-title {
+        color: #BC312E;
+        font-size: 2rem;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    .sus-title {
+        font-size: 2.25rem;
+    }
+
+    .sus-content {
+        color: #C6C6C6;
+        font-size: 1.25rem;
+    }
+
+    .sus-section2-left-title {
+        font-size: 1.25rem;
+    }
+
+    .sus-element-title {
+        color: #BC312E;
+        font-size: 2rem;
+    }
+
+    .sus-section2 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .sus-section2-left {
+        width: 100%;
+        background-color: #BC312E;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 7%;
+        height: 20rem;
+        padding: 3%;
+
+    }
+
+    .sus-section2-right {
+        width: 80%;
+        /* padding: 2%; */
+        height: 100%;
+
+    }
+
+    .sus-section1 {
+        width: 80%;
+        display: flex;
+        flex-direction: column-reverse;
+        /* justify-content: space-between; */
+        align-items: center;
+    }
+
+    .sus-section1-right,
+    .sus-section1-left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sus-grid-element {
+        display: flex;
+        /* justify-content: space-between; */
+        flex-direction: column;
+    }
+
+    .sus-element-right {
+        width: 90%;
+        text-align: center;
+    }
+
+    .sus-element-left {
+        width: 90%;
+        margin-top: 5%;
+    }
+
+}
+
+
+@media only screen and (max-width: 500px) {
+    .sus-title {
+        font-size: 2rem;
+    }
+
+    .sus-content {
+        color: #C6C6C6;
+        font-size: 1em;
+    }
+
+    .sus-section2-left-title {
+        font-size: 1rem;
+    }
+
+    .sus-element-title {
+        color: #BC312E;
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="images/logo1.png" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="Introduction.html">Introduction</a></li>
+                <li><a href="Algorithm.html">Algorithm</a></li>
+                <li><a href="Demo.html">Demo</a></li>
+                <li><a class="active" href="work.html">Working</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="work">
+        <label for="Occupation">Occupation:</label>
+
+        <select name="Occupation" id="Occupation">
+            <option value=""></option>
+            <option value="Doctor">Doctor</option>
+            <option value="Teacher">Teacher</option>
+            <option value="IT">IT</option>
+            <option value="Lawyer">Lawyer</option>
+            <option value="Businessmen">Businessmen</option>
+            <option value="Chef">Chef</option>
+        </select>
+        <input type="number" placeholder="age" name="Age" id="Age">
+        <p id="p"><span></span></p>
+        <p> The value of the option selected is:
+            <span class="output"></span>
+        </p>
+
+
+        <button onclick="getOption()"> Check option </button>
+
+
+    </section>
+
+    <script type="text/javascript">
+        function getOption() {
+            selectElement = document.querySelector('#Occupation');
+            output = selectElement.value;
+            document.querySelector('.output').textContent = output;
+            age = document.getElementById("Age").value;
+
+
+            if (output.localeCompare("Doctor") == 0) {
+                if (age <= 30) {
+                    document.write("Fewer Opportunities");
+                }
+                else if ((age >= 31) && (age <= 45)) {
+                    document.write("Career focused");
+                }
+                else if (age >= 46 && age <= 60) {
+                    document.write("Standard");
+                }
+                else {
+                    document.write("Well Off");
+                }
+            }
+
+
+            else if (output.localeCompare("Teacher") == 0) {
+                if (age <= 30) {
+                    document.write("Fewer Opportunities");
+                }
+                else if ((age >= 31) && (age <= 40)) {
+                    document.write("Career focused");
+                }
+                else if (age >= 41 && age <= 50) {
+                    document.write("Standard");
+                }
+                else {
+                    document.write("Well Off");
+                }
+            }
+
+
+            else if (output.localeCompare("IT") == 0) {
+                if (age <= 30) {
+                    document.write("Career focused");
+                }
+                else if ((age >= 31) && (age <= 45)) {
+                    document.write("Standard");
+                }
+                else if (age >= 46 && age <= 55) {
+                    document.write("Well Off");
+                }
+                else {
+                    document.write("Fewer Opportunitie");
+                }
+            }
+
+
+
+            else if (output.localeCompare("Lawyer") == 0) {
+                if (age <= 30) {
+                    document.write("Fewer Opportunities");
+                }
+                else if ((age >= 31) && (age <= 45)) {
+                    document.write("Career focused");
+                }
+                else if (age >= 46 && age <= 60) {
+                    document.write("Standard");
+                }
+                else {
+                    document.write("Well Off");
+                }
+            }
+
+
+            else if (output.localeCompare("Businessmen") == 0) {
+                if (age <= 30) {
+                    document.write("Fewer Opportunities");
+                }
+                else if ((age >= 31) && (age <= 40)) {
+                    document.write("Career focused");
+                }
+                else if (age >= 41 && age <= 50) {
+                    document.write("Well Off");
+                }
+                else {
+                    document.write("Standard");
+                }
+            }
+
+
+            else if (output.localeCompare("Chef") == 0) {
+                if (age <= 30) {
+                    document.write("Fewer Opportunities");
+                }
+                else if ((age >= 31) && (age <= 45)) {
+                    document.write("Career focused");
+                }
+                else if (age >= 46 && age <= 55) {
+                    document.write("Well Off");
+                }
+                else {
+                    document.write("Standard");
+                }
+            }
+
+
+            else {
+                alert("k")
+            }
+        }
+    </script>
+    <!-- <script>
+        var e = document.getElementById("Occupation");
+var value = e.value;
+console.log(value);
+var text = e.options[e.selectedIndex].text;
+console.log(text)
+</script> -->
+    <!-- <script type="text/javascript">
+  
+    function getOption() {
+        selectElement = document.querySelector('#Occupation');
+        output = selectElement.options[selectElement.selectedIndex].value;
+        document.querySelector('.output').textContent = output;
+    } -->
+</body>
+
+</html>

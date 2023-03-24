@@ -1,0 +1,107 @@
+.login-outer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.login-bgimg {
+    display: flex;
+    width: 100%;
+    background-image: url("./LoginImages/Login_img1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: right;
+    padding-right: 10%;
+}
+
+.login-box {
+    margin-top: 10%;
+    padding: 3%;
+    display: flex;
+    width: 25%;
+    align-items: flex-start;
+    background-color: #211F22;
+    height: 60%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.login-box-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.login-forget {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    font-size: 1rem;
+    color: #7392FF;
+}
+
+.login-imgs {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.login-newuser {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    /* cursor: pointer; */
+}
+.rnd-shd {
+
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+}
+@media only screen and (max-width: 1300px) {
+    .login-box-title {
+        font-size: 2rem;
+    }
+
+    .login-box {
+        width: 35%;
+        height: 70%;
+    }
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .login-box-title {
+        font-size: 1.75rem;
+    }
+
+    .login-box {
+        width: 50%;
+        height: 70%;
+    }
+
+    .login-forget {
+        font-size: 0.85rem;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .login-box-title {
+        font-size: 1.75rem;
+    }
+
+    .login-box {
+        width: 70%;
+        height: 80%;
+    }
+
+    .login-forget {
+        font-size: 0.7rem;
+    }
+}

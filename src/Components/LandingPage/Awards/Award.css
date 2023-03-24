@@ -1,0 +1,22 @@
+.award-outer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.award-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 50%;
+    row-gap: 5%;
+}
+
+.award-grid-element {
+    display: flex;
+    justify-content: center;
+    /* width: 50%; */
+}
+
+.award-img {
+    width: 50%;
+}

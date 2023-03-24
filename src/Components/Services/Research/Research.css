@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+.research-outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reserach-title {
+    font-size: 4rem;
+    font-weight: 500;
+    color: white;
+    font-family: 'Yeseva One', cursive;
+    /* border-bottom: 3px solid white; */
+    margin-top: 3%;
+}
+
+.research-component {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1500px) {
+    .reserach-title {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .reserach-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .reserach-title {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .reserach-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .reserach-title {
+        font-size: 1.25rem;
+    }
+}

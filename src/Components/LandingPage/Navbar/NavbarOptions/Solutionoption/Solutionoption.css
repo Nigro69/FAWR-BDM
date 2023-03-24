@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+.so-outer {
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+    align-items: center;
+    width: 100%;
+}
+
+.so-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.so-right {
+    width: 80%;
+}
+
+.so-right1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.so-right2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+.so-right3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    row-gap: 5%;
+}
+
+
+.so-right-text1 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    font-family: 'Yeseva One', cursive;
+    color: white;
+    width: 80%;
+}
+
+.so-right-text2 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-top: 3%;
+    /* font-family: 'Yeseva One', cursive; */
+    color: white;
+    width: 80%;
+}
+
+.so-option {
+    padding: 2%;
+    font-size: 1.25rem;
+    font-weight: 400;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    cursor: pointer;
+    border-radius: 1rem;
+    /* border-top: 2p; */
+    color: white;
+
+}
+
+.so-option:hover {
+    background-color: #BC312E;
+}
+
+.so-right-box {
+    padding: 5%;
+    /* padding-bottom: 8%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    background-color: #2A2A2A;
+    border-radius: 1rem;
+    height: 24rem;
+    /* margin-bottom: 10%; */
+}
+
+.so-right-box-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    /* width: 50%; */
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-bottom: 4%;
+    text-align: center;
+}
+
+.so-right-box-text {
+    font-size: 1rem;
+    font-weight: 400;
+    /* width: 50%; */
+    display: flex;
+    justify-content: center;
+    color: #C6C6C6;
+    text-align: center;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    cursor: pointer;
+
+}
+
+.so-right-box1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #2A2A2A;
+    /* padding: 1%; */
+    border-radius: 1rem;
+    cursor: pointer;
+
+}
+
+.so-right1-box-title {
+    width: 60%;
+    color: white;
+    font-size: 1rem;
+}
+
+
+
+@media only screen and (max-width: 1600px) {
+    .so-right-box-title {
+        font-size: 1.25rem;
+    }
+
+    .so-right-box-text {
+        font-size: 0.8rem;
+    }
+
+    .so-right-box {
+        height: 20rem;
+    }
+
+    .so-right1-box-text {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .so-right-box-title {
+        font-size: 1.25rem;
+    }
+
+    .so-right-box-text {
+        font-size: 0.8rem;
+    }
+
+    .so-right-box {
+        height: 20rem;
+    }
+
+    .so-right1-box-text {
+        font-size: 0.6rem;
+    }
+
+    .so-right3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        row-gap: 5%;
+    }
+
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .so-right-box-title {
+        font-size: 1rem;
+    }
+
+    .so-right-box-text {
+        font-size: 0.8rem;
+    }
+
+    .so-right-box {
+        height: 20rem;
+    }
+
+    .so-outer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20%;
+    }
+
+    .so-right {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 5%;
+    }
+
+    .so-right-box {
+        width: 100%;
+        height: 23rem;
+    }
+
+    .so-left {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .so-right1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 3%;
+        width: 50%;
+    }
+
+    .so-right2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 3%;
+        width: 50%;
+    }
+
+    .so-right3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        row-gap: 5%;
+    }
+}
+
+
+
+@media only screen and (max-width: 850px) {
+    .so-right-box-title {
+        font-size: 1rem;
+    }
+
+    .so-right-box-text {
+        font-size: 0.8rem;
+    }
+
+    .so-right-box {
+        height: 23rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .so-right-box {
+        height: 21rem;
+    }
+
+    /* .so-right-box1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } */
+
+    .so-right3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        row-gap: 5%;
+    }
+    .so-outer {
+        margin-bottom: 30%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .so-right-box {
+        height: 19rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .so-right-box {
+        height: 18rem;
+    }
+
+    .so-outer {
+        margin-bottom: 40%;
+    }
+    .so-right3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin-bottom: 130%;
+
+    }
+
+    .so-right1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 3%;
+        width: 70%;
+    }
+
+    .so-right2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 3%;
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .so-right3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin-bottom: 160%;
+
+    }
+
+    .so-right-box {
+        height: fit-content;
+    }
+
+    .so-right1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 3%;
+        width: 80%;
+    }
+
+    .so-right2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 3%;
+        width: 80%;
+    }
+}

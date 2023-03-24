@@ -1,0 +1,134 @@
+.au-outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.au-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    margin-top: 5%;
+    width: 80%;
+    text-align: center;
+}
+
+.au-title {
+    color: white;
+    font-size: 4rem;
+    font-weight: 500;
+    font-family: 'Yeseva One', cursive;
+    margin-top: 5%;
+    width: 80%;
+    text-align: center;
+}
+
+.au-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 3%;
+    width: 90%;
+}
+
+.au-element {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.au-element-title {
+    color: #BC312E;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Yeseva One', cursive;
+}
+
+.au-element-text {
+    color: #C6C6C6;
+    font-size: 1.5rem;
+    width: 90%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+@media only screen and (max-width: 1500px) {
+    .au-text {
+        font-size: 1.25rem;
+    }
+
+    .au-title {
+        color: white;
+        font-size: 3rem;
+    }
+
+    .au-element-title {
+        color: #BC312E;
+        font-size: 1.5rem;
+    }
+
+    .au-element-text {
+        color: #C6C6C6;
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .au-text {
+        font-size: 1.25rem;
+    }
+
+    .au-title {
+        color: white;
+        font-size: 2rem;
+        margin-top: 5%;
+    }
+
+    .au-element-title {
+        color: #BC312E;
+        font-size: 1.5rem;
+    }
+
+    .au-element-text {
+        color: #C6C6C6;
+        font-size: 1.25rem;
+    }
+
+    .au-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .au-element {
+        margin-top: 5%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .au-text {
+        font-size: 1rem;
+    }
+
+    .au-title {
+        color: white;
+        font-size: 1.5rem;
+        margin-top: 5%;
+    }
+
+    .au-element-title {
+        color: #BC312E;
+        font-size: 1.25rem;
+    }
+
+    .au-element-text {
+        color: #C6C6C6;
+        font-size: 1rem;
+    }
+
+    .au-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: 20%;
+    }
+}

@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+.companies-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.companies-names {
+    margin-top: 2%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.companies-name {
+    font-size: 1.75rem;
+    color: #7E7E7E;
+    cursor: pointer;
+}
+
+.companies-name:hover {
+    color: red;
+    /* border-bottom: 2px solid red; */
+}
+
+.companies-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.companies-left {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.companies-right {
+    width: 30%;
+    display: flex;
+    flex-direction: right;
+}
+
+.companies-left-content {
+    color: #C6C6C6;
+    font-size: 1.5rem;
+    margin-left: 10%;
+}
+
+.companies-title {
+    color: #874900;
+    font-size: 4rem;
+    font-weight: 500;
+    margin-top: 7%;
+    width: 100%;
+    margin-left: 10%;
+}
+
+.companies-bottom {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    align-items: center;
+    margin-top: 5%;
+    /* margin-left: 5%; */
+}
+
+.companies-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30%;
+}
+
+.companies-text-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #C6C6C6
+}
+
+.companies-text-content {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #C6C6C6
+}
+
+@media only screen and (max-width: 1600px) {
+    .companies-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .companies-name {
+        font-size: 1.25rem;
+    }
+
+    .companies-title {
+        color: #874900;
+        font-size: 3rem;
+    }
+
+    .companies-names {
+        width: 90%;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .companies-name {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .companies-title {
+        color: #874900;
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .companies-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* position: relative;
+        top: -10rem;
+    } */
+    }
+
+    .companies-text {
+        width: 100%;
+        margin-top: 5%;
+    }
+
+    .companies-title {
+        color: #874900;
+        font-size: 2rem;
+    }
+
+    .companies-names {
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 5%;
+    }
+
+    .companies-name {
+        font-size: 1.25rem;
+        /* width: fit-content; */
+    }
+
+    .companies-text-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #C6C6C6
+    }
+
+    .companies-text-content {
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: #C6C6C6
+    }
+
+    .companies-left-content {
+        color: #C6C6C6;
+        font-size: 1.25rem;
+    }
+
+    .companies-title {
+        color: #874900;
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+
+    .companies-names {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 5%;
+    }
+
+    .companies-name {
+        font-size: 1.25rem;
+        /* width: fit-content; */
+    }
+
+    .companies-content {
+        flex-direction: column-reverse;
+    }
+
+    .companies-right {
+        width: 100%;
+        display: flex;
+        justify-content: right;
+    }
+
+    .companies-left {
+        width: 100%;
+        padding: 3%;
+    }
+
+    .companies-left-content {
+        color: #C6C6C6;
+        font-size: 1.25rem;
+        margin-left: 0%;
+    }
+
+    .companies-title {
+        margin-left: 0%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+
+    .companies-names {
+        width: 95%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 5%;
+    }
+
+    .companies-name {
+        font-size: 1rem;
+        /* width: fit-content; */
+    }
+
+    .companies-title {
+        color: #874900;
+        font-size: 1.5rem;
+    }
+
+    .companies-left-content {
+        color: #C6C6C6;
+        font-size: 1rem;
+        margin-left: 0%;
+    }
+
+    .companies-text-title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #C6C6C6
+    }
+
+    .companies-text-content {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #C6C6C6
+    }
+
+    .companies-outer {
+        margin-bottom: 10%;
+    }
+}

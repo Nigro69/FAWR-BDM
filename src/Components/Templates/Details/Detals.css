@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+.details-outer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+}
+
+.details-left {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    /* padding-right: 5%; */
+}
+
+.details-right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    background-image: url("./DetailsImages//Details_img1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+
+
+.details-right-ul {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 10%; */
+    height: 100%;
+}
+
+
+
+.details-li-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    width: fit-content;
+    cursor: pointer;
+    margin: 5%;
+    width: 100%;
+
+}
+
+.details-title {
+    color: #BC312E;
+    font-size: 3rem;
+    font-weight: 500;
+    width: 100%;
+    margin-left: 5%;
+    margin-top: 3%;
+    font-family: 'Yeseva One', cursive;
+}
+
+.details-left-text {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 2%;
+    color: #C6C6C6;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    margin-left: 5%;
+}
+
+.details-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+@media only screen and (max-width: 1750px) {
+    .details-li-text {
+        font-size: 1.5rem;
+    }
+
+    .details-title {
+        color: #BC312E;
+        font-size: 3rem;
+    }
+
+    .details-left-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .details-li-text {
+        font-size: 1.5rem;
+    }
+
+    .details-title {
+        color: #BC312E;
+        font-size: 2.5rem;
+    }
+
+    .details-left-text {
+        font-size: 1.25rem;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .details-li-text {
+        font-size: 1.5rem;
+    }
+
+    .details-title {
+        color: #BC312E;
+        font-size: 2.5rem;
+        margin-left: 0%;
+    }
+
+    .details-left-text {
+        font-size: 1.25rem;
+        margin-left: 0%;
+    }
+
+    .details-outer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+    }
+
+    .details-left {
+        width: 80%;
+    }
+
+    .details-right {
+        width: 100%;
+        margin-top: 10%;
+    }
+
+    .details-right-ul {
+        width: 40%;
+        padding: 5%;
+        align-items: flex-start;
+        margin-top: 7%;
+        margin-bottom: 7%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .details-li-text {
+        font-size: 1.25rem;
+    }
+
+    .details-title {
+        color: #BC312E;
+        font-size: 2.25rem;
+        margin-left: 0%;
+    }
+
+    .details-left-text {
+        font-size: 1.25rem;
+        margin-left: 0%;
+    }
+
+
+}
+
+@media only screen and (max-width: 605px) {
+    .details-li-text {
+        font-size: 0.9rem;
+    }
+
+    .details-title {
+        color: #BC312E;
+        font-size: 1.5rem;
+        margin-left: 0%;
+    }
+
+    .details-left-text {
+        font-size: 1rem;
+        margin-left: 0%;
+    }
+
+    .details-right-ul {
+        width: 50%;
+        padding: 5%;
+    }
+
+    .details-dot {
+        width: 0.35rem;
+        height: 0.35rem;
+    }
+
+
+}
+
+@media only screen and (max-width: 400px) {
+    .details-li-text {
+        font-size: 0.9rem;
+    }
+
+    .details-title {
+        color: #BC312E;
+        font-size: 1.5rem;
+        margin-left: 0%;
+    }
+
+    .details-left-text {
+        font-size: 1rem;
+        margin-left: 0%;
+    }
+
+    .details-right-ul {
+        width: 60%;
+        padding: 7%;
+    }
+}

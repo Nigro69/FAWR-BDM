@@ -1,0 +1,155 @@
+.l-outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.l-inner {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.l-grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 10%;
+    column-gap: 5%;
+    margin-bottom: 10%;
+}
+
+
+.l-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    text-align: center;
+    font-family: 'Yeseva One', cursive;
+}
+
+.l-text {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    width: 80%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+.l-element {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #7E7E7E;
+}
+
+.l-element-top {
+    display: flex;
+    width: 100%;
+    /* margin-left: 2%; */
+}
+
+.l-element-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    text-align: left;
+    width: 90%;
+}
+
+.l-element-text {
+    font-size: 1.5rem;
+    color: #C6C6C6;
+    width: 90%;
+}
+
+.l-element-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+@media only screen and (max-width: 1500px) {
+    .l-title {
+        font-size: 2.5rem;
+    }
+
+    .l-element-text {
+        font-size: 1.25rem;
+    }
+
+    .l-text {
+        font-size: 1.5rem;
+    }
+
+    .l-element-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .l-title {
+        font-size: 2rem;
+    }
+
+    .l-element-text {
+        font-size: 1rem;
+    }
+
+    .l-text {
+        font-size: 1.25rem;
+    }
+
+    .l-element-title {
+        font-size: 1.20rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .l-title {
+        font-size: 2rem;
+    }
+
+    .l-element-text {
+        font-size: 1.25rem;
+    }
+
+    .l-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .l-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .l-title {
+        font-size: 1.5rem;
+    }
+
+    .l-element-text {
+        font-size: 1rem;
+        margin-top: 5%;
+
+    }
+
+    .l-text {
+        font-size: 1rem;
+    }
+
+    .l-grid {
+        grid-template-columns: 1fr;
+    }
+}

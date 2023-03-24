@@ -1,0 +1,80 @@
+.other-outer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.other-grid {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.other-grid-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 20rem;
+    margin: 2%;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 1500px) {
+    .other-grid-element {
+        height: 15rem;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .other-grid {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        align-items: center;
+        width: 90%;
+    }
+
+    .other-grid-element {
+        width: 70%;
+        height: 20rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .other-grid-element {
+        width: 90%;
+        height: 18rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .other-grid-element {
+        width: 90%;
+        height: 15rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .other-grid-element {
+        width: 90%;
+        height: 13rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .other-grid-element {
+        width: 90%;
+        height: 10rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .other-grid-element {
+        width: 90%;
+        height: 10rem;
+    }
+}

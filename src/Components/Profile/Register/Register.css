@@ -1,0 +1,169 @@
+.register-outer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.register-bgimg {
+    display: flex;
+    width: 100%;
+    background-image: url("./RegisterImages/Register_img1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: right;
+    padding-right: 10%;
+}
+
+.register-box {
+    margin-top: 10%;
+    padding: 3%;
+    display: flex;
+    width: 50%;
+    align-items: flex-start;
+    background-color: #211F22;
+    height: 60%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.register-box-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.register-forget {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    font-size: 1rem;
+    color: #7392FF;
+}
+
+.register-imgs {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+}
+
+.register-newuser {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.register-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.register-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.register-left{
+    width: 50%;
+}
+.register-right {
+    width: 50%;
+}
+
+@media only screen and (max-width: 1300px) {
+    .register-box-title {
+        font-size: 2rem;
+    }
+
+    .register-box {
+        width: 55%;
+        height: 70%;
+    }
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .register-box-title {
+        font-size: 1.75rem;
+    }
+
+    .register-box {
+        width: 70%;
+        height: 70%;
+    }
+
+    .register-forget {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* @media only screen and (max-width: 800px) {
+    .register-row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+} */
+
+@media only screen and (max-width: 800px) {
+    .register-box {
+        width: 90%;
+        height: 80%;
+    }
+
+    .register-bgimg {
+        padding-right: 0%;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .register-box-title {
+        font-size: 1.75rem;
+    }
+
+    .register-box {
+        width: 95%;
+        height: 80%;
+    }
+
+    .register-forget {
+        font-size: 0.7rem;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    /* .register-row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .register-bottom {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+
+    .register-left,
+    .register-right {
+        width: 100%;
+        margin-top: 5%;
+    } */
+
+    .register-newuser {
+        flex-direction: column;
+
+    }
+}

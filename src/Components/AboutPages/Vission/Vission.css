@@ -1,0 +1,154 @@
+.v-outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 8%;
+}
+
+.v-inner {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.v-grid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20%;
+    margin-top: 10%;
+    column-gap: 5%;
+    margin-bottom: 10%;
+}
+
+
+.v-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    margin-top: 10%;
+    /* margin-bottom: 5%; */
+    text-align: center;
+    font-family: 'Yeseva One', cursive;
+}
+
+.v-text {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    width: 80%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+
+.v-element {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.v-element-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #BC312E;
+    text-align: left;
+    width: 90%;
+    font-family: 'Yeseva One', cursive;
+}
+
+.v-element-text {
+    font-size: 1.5rem;
+    color: #C6C6C6;
+    width: 90%;
+    text-align: left;
+}
+
+@media only screen and (max-width: 1500px) {
+    .v-title {
+        font-size: 2.5rem;
+    }
+
+    .v-element-text {
+        font-size: 1.25rem;
+    }
+
+    .v-text {
+        font-size: 1.5rem;
+    }
+
+    .v-element-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .v-title {
+        font-size: 2rem;
+    }
+
+    .v-element-text {
+        font-size: 1rem;
+    }
+
+    .v-text {
+        font-size: 1.25rem;
+    }
+
+    .v-element-title {
+        font-size: 1.20rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .v-title {
+        font-size: 2rem;
+    }
+
+    .v-element-text {
+        font-size: 1.25rem;
+    }
+
+    Overview .v-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .v-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .v-title {
+        font-size: 1.5rem;
+    }
+
+    .v-element-text {
+        font-size: 1rem;
+        /* margin-top: 5%; */
+
+    }
+
+    .v-element-title {
+        margin-top: 2%;
+    }
+
+    .v-text {
+        font-size: 1rem;
+    }
+
+    .v-grid {
+        grid-template-columns: 1fr;
+        row-gap: 5%;
+        margin-bottom: 10%;
+    }
+
+    .v-outer {
+        padding-bottom: 15%;
+    }
+}

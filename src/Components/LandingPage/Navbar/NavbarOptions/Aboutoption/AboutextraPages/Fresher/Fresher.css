@@ -1,0 +1,199 @@
+.fresher-outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 8%;
+}
+
+.fresher-inner {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.fresher-grid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20%;
+    margin-top: 10%;
+    column-gap: 5%;
+    margin-bottom: 10%;
+}
+
+
+.fresher-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    margin-top: 10%;
+    /* margin-bottom: 5%; */
+    text-align: center;
+    font-family: 'Yeseva One', cursive;
+}
+
+.fresher-text {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    width: 80%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+
+.fresher-element {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.fresher-element-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #BC312E;
+    text-align: left;
+    width: 90%;
+    font-family: 'Yeseva One', cursive;
+}
+
+.fresher-element-text {
+    font-size: 1.5rem;
+    color: #C6C6C6;
+    width: 90%;
+    text-align: left;
+}
+
+/* .fresher-element-title-outer {
+    display: flex;
+    width: fit-content;
+    justify-content: left;
+    margin-left: -5%; */
+    /* width: 100%; */
+    /* align-items: flex-end; */
+    /* justify-content: left; */
+/* } */
+
+
+/* .fresher-element-firstletter {
+    font-size: 5rem;
+    font-weight: 500;
+    width: fit-content;
+    color: #BC312E;
+    font-family: 'Yeseva One', cursive;
+    opacity: 0.4;
+    height: fit-content;
+    align-items: flex-start;
+    transform: scale(2);
+}
+
+.fresher-element-title {
+    font-size: 4rem;
+    font-weight: 500;
+    /* width: 80%; */
+    /*
+    color: #BC312E;
+    font-family: 'Yeseva One', cursive;
+    margin-left: -5%;
+    margin-bottom: -8%;
+    align-items: flex-end;
+    display: flex;
+} */
+
+/* .fresher-element-firstletter {
+    transform: scale(5);
+    font-size: 2rem;
+    font-weight: 400;
+    color: #BC312E;
+    font-family: 'Yeseva One', cursive;
+
+} */
+
+@media only screen and (max-width: 1500px) {
+    .fresher-title {
+        font-size: 2.5rem;
+    }
+
+    .fresher-element-text {
+        font-size: 1.25rem;
+    }
+
+    .fresher-text {
+        font-size: 1.5rem;
+    }
+
+    .fresher-element-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .fresher-title {
+        font-size: 2rem;
+    }
+
+    .fresher-element-text {
+        font-size: 1rem;
+    }
+
+    .fresher-text {
+        font-size: 1.25rem;
+    }
+
+    .fresher-element-title {
+        font-size: 1.20rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .fresher-title {
+        font-size: 2rem;
+    }
+
+    .fresher-element-text {
+        font-size: 1.25rem;
+    }
+
+    Overview .fresher-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .fresher-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .fresher-title {
+        font-size: 1.5rem;
+    }
+
+    .fresher-element-text {
+        font-size: 1rem;
+        /* margin-top: 5%; */
+
+    }
+
+    .fresher-element-title {
+        margin-top: 2%;
+    }
+
+    .fresher-text {
+        font-size: 1rem;
+    }
+
+    .fresher-grid {
+        grid-template-columns: 1fr;
+        row-gap: 5%;
+        margin-bottom: 10%;
+    }
+
+    .fresher-outer {
+        padding-bottom: 15%;
+    }
+}

@@ -1,0 +1,154 @@
+.b-outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 8%;
+}
+
+.b-inner {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.b-grid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20%;
+    margin-top: 5%;
+    column-gap: 5%;
+    margin-bottom: 20%;
+}
+
+
+.b-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    margin-top: 8%;
+    /* margin-bottom: 5%; */
+    text-align: center;
+    font-family: 'Yeseva One', cursive;
+}
+
+.b-text {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    width: 80%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+.b-element {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.b-element-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #BC312E;
+    text-align: left;
+    width: 90%;
+    font-family: 'Yeseva One', cursive;
+}
+
+.b-element-text {
+    font-size: 1.5rem;
+    color: #C6C6C6;
+    width: 90%;
+    text-align: left;
+}
+
+@media only screen and (max-width: 1500px) {
+    .b-title {
+        font-size: 2.5rem;
+    }
+
+    .b-element-text {
+        font-size: 1.25rem;
+    }
+
+    .b-text {
+        font-size: 1.5rem;
+    }
+
+    .b-element-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .b-title {
+        font-size: 2rem;
+    }
+
+    .b-element-text {
+        font-size: 1rem;
+    }
+
+    .b-text {
+        font-size: 1.25rem;
+    }
+
+    .b-element-title {
+        font-size: 1.20rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .b-title {
+        font-size: 2rem;
+    }
+
+    .b-element-text {
+        font-size: 1.25rem;
+    }
+
+    Overview .b-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .b-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .b-title {
+        font-size: 1.5rem;
+    }
+
+    .b-element-text {
+        font-size: 1rem;
+        /* margin-top: 5%; */
+
+    }
+
+    .b-element-title {
+        margin-top: 2%;
+    }
+
+    .b-text {
+        font-size: 1rem;
+    }
+
+    .b-grid {
+        grid-template-columns: 1fr;
+        row-gap: 5%;
+        margin-bottom: 35%;
+    }
+
+    .b-outer {
+        padding-bottom: 15%;
+    }
+}

@@ -1,0 +1,154 @@
+.social-outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 8%;
+}
+
+.social-inner {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.social-grid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20%;
+    margin-top: 5%;
+    column-gap: 5%;
+    margin-bottom: 10%;
+}
+
+
+.social-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    margin-top: 8%;
+    /* margin-bottom: 5%; */
+    text-align: center;
+    font-family: 'Yeseva One', cursive;
+}
+
+.social-text {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    width: 80%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+.social-element {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.social-element-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #BC312E;
+    text-align: left;
+    width: 90%;
+    font-family: 'Yeseva One', cursive;
+}
+
+.social-element-text {
+    font-size: 1.5rem;
+    color: #C6C6C6;
+    width: 90%;
+    text-align: left;
+}
+
+@media only screen and (max-width: 1500px) {
+    .social-title {
+        font-size: 2.5rem;
+    }
+
+    .social-element-text {
+        font-size: 1.25rem;
+    }
+
+    .social-text {
+        font-size: 1.5rem;
+    }
+
+    .social-element-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .social-title {
+        font-size: 2rem;
+    }
+
+    .social-element-text {
+        font-size: 1rem;
+    }
+
+    .social-text {
+        font-size: 1.25rem;
+    }
+
+    .social-element-title {
+        font-size: 1.20rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .social-title {
+        font-size: 2rem;
+    }
+
+    .social-element-text {
+        font-size: 1.25rem;
+    }
+
+    Overview .social-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .social-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .social-title {
+        font-size: 1.5rem;
+    }
+
+    .social-element-text {
+        font-size: 1rem;
+        /* margin-top: 5%; */
+
+    }
+
+    .social-element-title {
+        margin-top: 2%;
+    }
+
+    .social-text {
+        font-size: 1rem;
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+        row-gap: 5%;
+        margin-bottom: 10%;
+    }
+
+    .social-outer {
+        padding-bottom: 15%;
+    }
+}

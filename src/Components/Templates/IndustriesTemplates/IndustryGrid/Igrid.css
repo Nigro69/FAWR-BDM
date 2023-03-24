@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+.igrid-outer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: white;
+}
+
+.igrid-structure {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+}
+
+.igrid-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.igrid-left {
+    display: flex;
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+}
+
+.igrid-img {
+    width: 100%;
+}
+
+.igrid-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+
+}
+
+.igrid-title {
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    /* width: fit-content; */
+
+}
+
+
+.igrid-title-text {
+    font-size: 3rem;
+    font-weight: 500;
+    /* width: 80%; */
+    color: #BC312E;
+    font-family: 'Yeseva One', cursive;
+    align-items: flex-end;
+    display: flex;
+}
+
+
+
+.igrid-right-content {
+    font-size: 1.5rem;
+    color: #C6C6C6;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.igrid-points {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.igrid-point-text {
+    font-size: 1.25rem;
+    margin-left: 1%;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.igrid-right-img {
+    width: 5%;
+}
+
+.igrid-arrow {
+    width: 50%;
+}
+
+@media only screen and (max-width: 1500px) {
+    .igrid-title-text {
+        font-size: 2.5rem;
+    }
+
+    .igrid-right-content {
+        font-size: 1.25rem;
+    }
+
+    .igrid-point-text {
+        font-size: 1rem;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .igrid-title-text {
+        font-size: 2rem;
+    }
+
+    .igrid-right-content {
+        font-size: 1rem;
+    }
+
+    .igrid-point-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .igrid-title-text {
+        font-size: 2.5rem;
+    }
+
+    .igrid-right-content {
+        font-size: 1.25rem;
+    }
+
+    .igrid-point-text {
+        font-size: 1rem;
+    }
+
+    .igrid-left {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 5%;
+    }
+
+    .igrid-img {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .igrid-title-text {
+        font-size: 2rem;
+    }
+
+    .igrid-right-content {
+        font-size: 1rem;
+    }
+
+    .igrid-point-text {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .igrid-title-text {
+        font-size: 1.25rem;
+    }
+
+    .igrid-right-content {
+        font-size: 0.8rem;
+    }
+
+    .igrid-point-text {
+        font-size: 0.6rem;
+    }
+}

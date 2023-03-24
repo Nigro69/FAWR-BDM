@@ -1,0 +1,216 @@
+.ourservices-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #211F22;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    /* margin-bottom: 10%; */
+}
+
+.ourservices-title {
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 4rem;
+    color: #BC312E;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ourservices-inner {
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.ourservices-inner-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 100%;
+    font-family: 'Open Sans';
+    font-style: normal;
+}
+
+.ourservices-inner-right-text1 {
+    font-weight: 400;
+    font-size: 2rem;
+    color: #7E7E7E;
+    height: 6rem;
+}
+
+
+.ourservices-inner-right-text2 {
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #C6C6C6;
+    height: 6rem;
+    display: flex;
+    align-items: flex-start;
+    /* margin-top: 7%; */
+}
+
+.ourservices-inner-right-line {
+    width: 100%;
+    height: 0.1rem;
+    background-color: #7E7E7E;
+}
+
+.ourservices-inner-right-link {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4%;
+    padding-right: 4%;
+    cursor: pointer;
+}
+
+.ourservices-inner-right-link-text {
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #FFFFFF;
+}
+
+.ourservices-inner-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ourservices-inner-left-top {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    height: 30rem;
+}
+
+.ourservices-inner-left-top-left {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ourservices-inner-left-top-right {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.ourservices-inner-left-top-img {
+    height: 20rem;
+}
+
+.ourservices-inner-left-bottom {
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    width: 100%;
+    align-items: center;
+}
+
+.ourservices-inner-left-bottom-button {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 100%;
+    height: max-content;
+    width: max-content;
+    margin-top: 3%;
+
+}
+
+.ourservices-inner-left-bottom-button:hover {
+    transform: scale(1.25);
+    transition: 5ms;
+}
+
+.ourservices-inner-left-bottom-btns {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .ourservices-inner-left {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ourservices-inner-left-top-right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .ourservices-title {
+        font-family: 'Yeseva One';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 3rem;
+        text-align: center;
+        margin-top: 10%;
+    }
+
+    .ourservices-inner-right-text1 {
+        font-weight: 400;
+        font-size: 1.5rem;
+        color: #7E7E7E;
+        height: 6rem;
+    }
+
+
+    .ourservices-inner-right-text2 {
+        font-weight: 400;
+        font-size: 1.25rem;
+        color: #C6C6C6;
+        height: 6rem;
+        display: flex;
+        align-items: flex-start;
+        /* margin-top: 7%; */
+    }
+
+    .ourservices-inner-right-link-text {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .ourservices-title {
+        font-family: 'Yeseva One';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2rem;
+
+    }
+
+    .ourservices-inner-right-text1 {
+        font-weight: 400;
+        font-size: 1.25rem;
+        color: #7E7E7E;
+        height: 6rem;
+    }
+
+
+    .ourservices-inner-right-text2 {
+        font-weight: 400;
+        font-size: 1rem;
+        color: #C6C6C6;
+        height: 6rem;
+        display: flex;
+        align-items: flex-start;
+        /* margin-top: 7%; */
+    }
+}

@@ -1,0 +1,89 @@
+.about-outer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.about-right {
+    width: 40%;
+}
+
+.about-left {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8%;
+}
+
+.about-title {
+    color: white;
+    font-size: 3rem;
+    font-family: 'Yeseva One', cursive;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+}
+
+.about-text {
+    font-size: 1.5rem;
+    color: #7E7E7E;
+}
+
+@media only screen and (max-width: 1500px) {
+    .about-title {
+        font-size: 2.5rem;
+    }
+
+    .about-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+}
+
+
+@media only screen and (max-width: 750px) {
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .about-outer {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        align-items: center;
+    }
+
+    .about-right {
+        width: 80%;
+    }
+
+    .about-left {
+        width: 100%;
+    }
+}
+
+
+
+@media only screen and (max-width: 750px) {
+    .about-title {
+        font-size: 1.5rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+}

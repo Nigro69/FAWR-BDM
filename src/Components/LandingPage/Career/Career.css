@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+.career-outer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.career-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.career-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.career-right-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #C6C6C6;
+    font-family: 'Yeseva One', cursive;
+    text-align: center;
+}
+
+.career-grid-element {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 5%;
+}
+
+.career-grid-left {
+    width: 10%;
+}
+
+.career-grid-right {
+    width: 90%;
+}
+
+.career-grid-title {
+    color: #BC312E;
+    font-size: 2rem;
+    font-weight: 500;
+    display: flex;
+}
+
+.career-grid-text,
+.career-job-text {
+    color: #7A7A7A;
+    font-size: 1.5rem;
+    font-weight: 400;
+    display: flex;
+    margin-top: 1%;
+}
+
+.career-job-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    border-radius: 1rem;
+    padding: 2%;
+    margin-top: 5%;
+    -webkit-box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.52);
+    -moz-box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.52);
+    box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.52);
+
+}
+
+.career-job-title {
+    color: #C6C6C6;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.ff-style {
+    font-family: 'Yeseva One', cursive;
+}
+
+@media only screen and (max-width: 1500px) {
+    .career-right-title {
+        font-size: 2.5rem;
+    }
+
+    .career-grid-title {
+        color: #BC312E;
+        font-size: 1.5rem;
+    }
+
+    .career-grid-text,
+    .career-job-text {
+        color: #7A7A7A;
+        font-size: 1.25rem;
+    }
+
+    .career-job-title {
+        color: #C6C6C6;
+        font-size: 1.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .career-right-title {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .career-right-title {
+        font-size: 2rem;
+    }
+
+    .career-outer {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .career-right {
+        width: 70%;
+    }
+
+    .career-left {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5%;
+    }
+
+    .career-right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .career-grid-element {
+        width: 90%;
+    }
+
+    .career-job-grid {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .career-right-title {
+        font-size: 1.75rem;
+    }
+
+    .career-grid-title {
+        color: #BC312E;
+        font-size: 1.25rem;
+    }
+
+    .career-grid-text,
+    .career-job-text {
+        color: #7A7A7A;
+        font-size: 1rem;
+    }
+    .career-job-title {
+        color: #C6C6C6;
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .career-right-title {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,176 @@
+.ov-outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ov-inner {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.ov-grid {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15%;
+}
+
+.ov-grid-left,
+.ov-grid-right {
+    width: 45%;
+}
+
+.ov-grid-left {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.ov-grid-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    font-family: 'Yeseva One', cursive;
+}
+
+.ov-grid-content {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    margin-top: 5%;
+}
+
+.ov-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    text-align: center;
+    font-family: 'Yeseva One', cursive;
+}
+
+
+.ov-grid2 {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20%;
+    margin-bottom: 15%;
+}
+
+.ov-element {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.ov-element-right {
+    display: flex;
+    width: 90%;
+    margin-left: 2%;
+}
+
+.ov-element-text {
+    font-size: 1.5rem;
+    color: #C6C6C6;
+
+}
+
+@media only screen and (max-width: 1500px) {
+    .ov-grid-title {
+        font-size: 2.5rem;
+    }
+
+    .ov-grid-content {
+        font-size: 1.25rem;
+    }
+
+    .ov-title {
+        font-size: 2.5rem;
+    }
+
+    .ov-element-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .ov-grid-title {
+        font-size: 2rem;
+    }
+
+    .ov-grid-content {
+        font-size: 1.25rem;
+    }
+
+    .ov-title {
+        font-size: 2rem;
+    }
+
+    .ov-element-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .ov-grid-title {
+        font-size: 2rem;
+    }
+
+    .ov-grid-content {
+        font-size: 1.25rem;
+        margin-bottom: 5%;
+    }
+
+    .ov-title {
+        font-size: 2rem;
+    }
+
+    .ov-element-text {
+        font-size: 1.25rem;
+    }
+
+    .ov-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ov-grid-left,
+    .ov-grid-right {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .ov-grid-title {
+        font-size: 1.5rem;
+    }
+
+    .ov-grid-content {
+        font-size: 1rem;
+    }
+
+    .ov-title {
+        font-size: 1.5rem;
+    }
+
+    .ov-element-text {
+        font-size: 1rem;
+        margin-top: 5%;
+
+    }
+
+    .ov-grid2 {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+}
