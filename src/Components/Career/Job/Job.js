@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Job.css";
 
 import J1 from "./JobImages/1.png";
@@ -50,11 +50,14 @@ import { NavLink as Link } from "react-router-dom";
 import { useMediaQuery } from "@chakra-ui/react";
 
 export default function Job({ mode }) {
-  // window.scroll({
-  //     top: 0,
-  //     left: 0,
-  //     behavior: 'smooth'
-  // });
+
+useEffect(() => {
+  window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+  });
+}, [])
 
   const [benifitTab, setbenifitTab] = useState(1);
 

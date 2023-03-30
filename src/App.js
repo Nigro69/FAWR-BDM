@@ -100,11 +100,14 @@ import FDiversity from './Components/Career/Freshers/FDiversity.jsx'
 import StudentBenifits from './Components/Career/Student/StudentBenifits.jsx'
 import LoginAdmin from './Components/Profile/LoginAdmin.jsx'
 import Register2 from './Components/Profile/Register2.jsx'
+import { ArrowUpIcon } from '@chakra-ui/icons'
 
 
 
 export default function App() {
   const [mode, setMode] = useState("dark")
+
+  const [visible, setVisible] = useState(false)
 
   const handleMode = () => {
     if (mode === "dark")
@@ -113,10 +116,22 @@ export default function App() {
       setMode("dark")
   }
 
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 300) {
+      setVisible(true)
+    }
+    else if (scrolled <= 300) {
+      setVisible(false)
+    }
+  };
+
+  window.addEventListener('scroll', toggleVisible);
+
   console.log(mode)
   return (
     <ChakraProvider>
-      <div style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>
+      <div style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }} >
         <Navbar mode={mode} handleMode={handleMode} />
         <Routes>
           <Route path="/" element={<Landing mode={mode} />} />
@@ -229,6 +244,16 @@ export default function App() {
         <Ourservices /> */}
         {/* <LightDarkMode mode={mode} handleMode={handleMode} /> */}
         {/* <Ourservices mode={mode} /> */}
+
+        {visible && <button onClick={() => {
+          window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+        }} id="myBtn" className={`h-10 w-10 flex items-center justify-center hover:scale-105 hover:animate-pulse fixed bottom-10 right-10 ${ mode === "dark" ? "bg-white text-[#211F22]" : "bg-[#211F22] text-white" } p-3 font-bold rounded-full`}>
+          <ArrowUpIcon />
+        </button>}
       </div>
     </ChakraProvider>
 

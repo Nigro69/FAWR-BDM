@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "../../Industries/Industries.css"
 
 import Banking_img1 from "./BankingImages/Banking_img1.png"
@@ -24,11 +24,13 @@ import Meeting from '../../../Templates/IndustriesTemplates/Meeting/Meeting'
 
 export default function Banking({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
     const challengeData = [
         "Traditional banking habits",

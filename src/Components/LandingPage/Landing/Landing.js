@@ -25,6 +25,7 @@ import T1 from "../Testimonials/TestimonialsImages/1.png"
 import Testimonial from '../Testimonials/Testimonial'
 import Pricing from '../Pricing/Pricing'
 
+
 // import Contact from "../../Contact/Contact"
 
 export default function Landing({ mode }) {
@@ -42,6 +43,8 @@ export default function Landing({ mode }) {
             content: "Another important aspect of DevOps is built automation. To streamline the software build process, it is often necessary to automate various tasks, such as code compilation and testing.",
         },
     ]
+    
+
     return (
         <div style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }} className="landing-outer">
             {/* <Navbar /> */}
@@ -146,6 +149,7 @@ export default function Landing({ mode }) {
             <div className='landing-element'>
                 <Blog mode={mode} />
             </div>
+
 
             {/* <Footer /> */}
 

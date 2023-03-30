@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Success.css"
 
 import Success_img1 from "./SuccessImages/Success_img1.png"
@@ -7,11 +7,13 @@ import Success_img3 from "./SuccessImages/Success_img3.png"
 
 export default function Success({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
     return (
         <div className='success-outer' style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import i1 from './Login/LoginImages/Login_img1.png'
 import c3 from './Login/LoginImages/z1.png'
 import c4 from './Login/LoginImages/z2.png'
@@ -7,11 +7,13 @@ import './Prof.css'
 
 const LoginAdmin = () => {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
       const myStyle={
         backgroundImage: `url(${i1})` ,

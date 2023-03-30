@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Contact_img1 from "./ContactImages/Contact_img1.png"
 import Contact_img2 from "./ContactImages/Contact_img2.png"
 import Contact_img3 from "./ContactImages/Contact_img3.png"
@@ -16,11 +16,13 @@ import Twitter_icon from "./ContactImages/Twitter_icon.png"
 
 
 export default function Contact({ mode }) {
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
     return (
         <div className='contact-outer' style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>
             <div className='contact-bgimg-outer' style={{ width: "100%" }} >

@@ -1,13 +1,15 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Office.css"
 import Office_img1 from "../ContactImages/Office_img1.png"
 
 export default function Office({ mode }) {
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
     return (
         <div className='office-outer'>
             <div style={{ width: "100%" }}>

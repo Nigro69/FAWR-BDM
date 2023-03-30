@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Aboutus.css"
 
 import { NavLink as Link } from 'react-router-dom'
@@ -9,11 +9,13 @@ import AU1 from "./AboutusImages/AU1.png"
 
 export default function Aboutus({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
     return (
         <div className='au-outer' style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>
