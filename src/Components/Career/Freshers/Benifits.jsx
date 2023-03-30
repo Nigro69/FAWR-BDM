@@ -28,11 +28,11 @@ const Benifits = () => {
   const [benifitTab, setbenifitTab] = useState(1);
 
   return (
-    <div className="p-4 mx-10 my-4">
+    <div className="p-4 md:mx-10 my-4">
       <div className="text-[#BC312E] mt-10 mb-5 tracking-wider ff-style text-4xl font-semibold text-center">
         Everyone is a Leader
       </div>
-      <div className="tracking-wide text-lg text-gray-600 px-10 text-center">
+      <div className="tracking-wide text-lg text-gray-600 md:px-10 text-center">
         In essence, your company values are the beliefs, philosophies, and
         principles that drive your business. They impact the employee experience
         you deliver as well as the relationship you develop with your customers,
@@ -53,8 +53,8 @@ const Benifits = () => {
         </div>
         <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96  "></hr>
       </div>
-      <div className="my-10 grid grid-cols-6 gap-5">
-        <div>
+      <div className="my-10 grid md:grid-cols-6 gap-5">
+        <div className="grid place-items-center">
           <div className="h-30 w-30">
             <img src={r1} alt="img-ac" />
           </div>
@@ -62,7 +62,7 @@ const Benifits = () => {
             Excellence
           </div>
         </div>
-        <div>
+        <div  className="grid place-items-center">
           <div className="h-30 w-30">
             <img src={r2} alt="img-ac" />
           </div>
@@ -70,7 +70,7 @@ const Benifits = () => {
             Integrity
           </div>
         </div>
-        <div>
+        <div  className="grid place-items-center">
           <div className="h-30 w-30">
             <img src={r3} alt="img-ac" />
           </div>
@@ -78,7 +78,7 @@ const Benifits = () => {
             Client Satisfaction
           </div>
         </div>
-        <div>
+        <div  className="grid place-items-center">
           <div className="h-30 w-30">
             <img src={r4} alt="img-ac" />
           </div>
@@ -86,7 +86,7 @@ const Benifits = () => {
             Partnership
           </div>
         </div>
-        <div>
+        <div  className="grid place-items-center">
           <div className="h-30 w-30">
             <img src={r5} alt="img-ac" />
           </div>
@@ -94,7 +94,7 @@ const Benifits = () => {
             Innovation
           </div>
         </div>
-        <div>
+        <div  className="grid place-items-center">
           <div className="h-30 w-30">
             <img src={r6} alt="img-ac" />
           </div>
@@ -103,15 +103,15 @@ const Benifits = () => {
           </div>
         </div>
       </div>
-      <div className="flex gap-20 w-full mt-32 mb-10">
-        <div className="w-2/4">
+      <div className="md:flex gap-20 w-full mt-32 mb-10">
+        <div className="md:w-2/4">
           <img src={x1} alt="cdsdc" />
         </div>
-        <div className="w-2/4">
+        <div className="md:w-2/4">
           <div className="text-[#BC312E] my-5 tracking-wider text-2xl font-semibold  text-center">
             Candid Stories
           </div>
-          <div className="tracking-wide text-lg text-gray-600 px-10 text-center">
+          <div className="tracking-wide text-lg text-gray-600 md:px-10 text-center">
             " I have been working as an admin assistant to the General Manager
             for just over 3 years. I started as a Receptionist and was promoted
             after 6 months. I am passionate about learning new skills and I have
@@ -128,7 +128,7 @@ const Benifits = () => {
         </div>
         <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96  "></hr>
       </div>
-      <div className="tracking-wide text-lg text-gray-600 px-10 text-center">
+      <div className="tracking-wide text-lg text-gray-600 md:px-10 text-center">
         Your compensation will be reviewed annually and may consist of salary,
         discretionary compensation, and certain local allowances, where
         applicable. Compensation is determined by a number of factors, including
@@ -140,10 +140,10 @@ const Benifits = () => {
       <div className="text-[#BC312E] my-10 tracking-wider text-2xl font-semibold  text-center">
             BENIFITS AND WILLINGNESS
           </div>
-      <div className="flex justify-between w-full px-52 my-3">
+      <div className="flex justify-between w-full md:px-52 my-3">
         <button
           onClick={() => setbenifitTab(1)}
-          className={`font-bold text-lg text-[#F7B733] p-4 ${
+          className={`font-bold text-sm md:text-lg text-[#F7B733] p-4 ${
             benifitTab === 1 && "border-b-2 border-b-[#F7B733]"
           }`}
         >
@@ -151,7 +151,7 @@ const Benifits = () => {
         </button>
         <button
           onClick={() => setbenifitTab(2)}
-          className={`font-bold text-lg text-[#F7B733] p-4 ${
+          className={`font-bold text-sm md:text-lg text-[#F7B733] p-4 ${
             benifitTab === 2 && "border-b-2 border-b-[#F7B733]"
           }`}
         >
@@ -159,7 +159,7 @@ const Benifits = () => {
         </button>
         <button
           onClick={() => setbenifitTab(4)}
-          className={`font-bold text-lg text-[#F7B733] p-4 ${
+          className={`font-bold text-sm md:text-lg text-[#F7B733] p-4 ${
             benifitTab === 4 && "border-b-2 border-b-[#F7B733]"
           }`}
         >
@@ -167,21 +167,21 @@ const Benifits = () => {
         </button>
       </div>
 
-      <div className="mt-5 px-20 grid place-items-center h-full w-full">
+      <div className="mt-5 md:px-20 grid place-items-center h-full w-full">
         <div className="rounded-xl h-full w-full border shadow-2xl m-5 p-6">
           {benifitTab === 1 && (
             <div className="space-y-3">
-              <div className="flex gap-8">
+              <div className="md:flex gap-8">
                 <img
                   src={f1}
-                  className="object-cover h-36 w-60 my-auto"
+                  className="object-cover h-36 w-full md:w-60 my-auto"
                   alt=""
                 />
                 <div>
-                  <div className="font-semibold text-3xl p-2 dark:text-gray-400">
+                  <div className="font-semibold text-center md:text-left text-xl md:text-3xl p-2 dark:text-gray-400">
                     Family Leave
                   </div>
-                  <div className="text-xl p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
+                  <div className="text-sm md:text-xl p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
                     BDM offers up to{" "}
                     <lable className="text-[#FC4A1A]">
                       16 weeks of paid time
@@ -193,17 +193,17 @@ const Benifits = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-8">
+              <div className="md:flex gap-8">
                 <img
                   src={f2}
-                  className="object-cover h-36 w-60 my-auto"
+                  className="object-cover h-36 w-full md:w-60 my-auto"
                   alt=""
                 />
                 <div>
-                  <div className="font-semibold text-3xl p-2 dark:text-gray-400">
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400 text-center md:text-left">
                     Adoption and Surrogacy
                   </div>
-                  <div className="text-xl p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
+                  <div className="md:text-xl text-sm p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
                     BDM reimburses eligible graduates up to{" "}
                     <lable className="text-[#FC4A1A]">$50,000</lable> ,
                     cumulative lifetime maximum, for eligible expenses
@@ -212,17 +212,17 @@ const Benifits = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-8">
+              <div className="md:flex gap-8">
                 <img
                   src={f3}
-                  className="object-cover h-36 w-60 my-auto"
+                  className="object-cover h-36 w-full md:w-60 my-auto"
                   alt=""
                 />
                 <div>
-                  <div className="font-semibold text-3xl p-2 dark:text-gray-400">
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400 text-center md:text-left">
                     Emergency back-up dependent care
                   </div>
-                  <div className="text-xl p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
+                  <div className="md:text-xl text-sm p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
                     BDM provides for care for infants through teenage children
                     and adult relatives of eligible Deloitte employees, up to a
                     maximum <lable className="text-[#FC4A1A]">30 days</lable> of
@@ -230,15 +230,15 @@ const Benifits = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-8">
+              <div className="md:flex gap-8">
                 <img
                   src={f4}
-                  className="object-cover h-36 w-60 my-auto"
+                  className="object-cover h-36 w-full md:w-60 my-auto"
                   alt=""
                 />
                 <div>
-                  <div className="font-semibold text-3xl p-2 dark:text-gray-400">Sabbaticals</div>
-                  <div className="text-xl p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400 text-center md:text-left">Sabbaticals</div>
+                  <div className="md:text-xl md:sm p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
                     BDM offers two sabbatical programs: an unpaid one-month
                     sabbatical that can be taken for any reason; and a three- to
                     six-month sabbatical While on a three- to sixmonth
@@ -250,17 +250,17 @@ const Benifits = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-8">
+              <div className="md:flex gap-8">
                 <img
                   src={f5}
-                  className="object-cover h-36 w-60 my-auto"
+                  className="object-cover h-36 w-full md:w-60 my-auto"
                   alt=""
                 />
                 <div>
-                  <div className="font-semibold text-3xl p-2 dark:text-gray-400">
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400 text-center md:text-left">
                     Family insurance
                   </div>
-                  <div className="text-xl p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
+                  <div className="md:text-xl text-sm p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
                     Life insurance includes core coverage for our professionals.
                     Optional life and accident coverage can be purchased for
                     professionals and/or their eligible dependents
@@ -270,18 +270,18 @@ const Benifits = () => {
             </div>
           )}
           {benifitTab === 2 && (
-            <div className="space-y-3">
-              <div className="flex gap-8">
+            <div className="space-y-3 w-full">
+              <div className="md:flex gap-8">
                 <img
                   src={f6}
                   className="object-cover h-36 w-60 my-auto"
                   alt=""
                 />
                 <div>
-                  <div className="font-semibold text-3xl p-2 dark:text-gray-400">
+                  <div className="font-semibold text-xl text-center md:text-left md:text-3xl p-2 dark:text-gray-400">
                     100 % Coverage
                   </div>
-                  <div className="text-xl p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
+                  <div className="text-sm md:text-xl p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
                     BDM provides 100% coverage for in-network preventive
                     services and certain cancer screenings, such as well-child
                     (e.g., annual exams), well-woman (e.g., mammogram, Pap
@@ -290,15 +290,15 @@ const Benifits = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-8">
-                <div className="h-36 w-96">
+              <div className="md:flex gap-8">
+                <div className="h-36 md:w-96">
                   <img src={t2} className=" mx-auto my-auto" alt="" />
                 </div>
                 <div>
-                  <div className="font-semibold text-3xl p-2 dark:text-gray-400">
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400">
                     Quality Care, Protection & Prescription
                   </div>
-                  <div className="text-xl p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
+                  <div className="md:text-xl text-sm p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
                     BDM provides access to quality care through national
                     provider networks. Also provides protection against the cost
                     of catastrophic illness or injury. Provides prescription
@@ -306,13 +306,13 @@ const Benifits = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-8">
-                <div className="h-36 w-96">
+              <div className="md:flex gap-8">
+                <div className="h-36 md:w-96">
                   <img src={t3} className=" mx-auto my-auto" alt="" />
                 </div>
                 <div>
-                  <div className="font-semibold text-3xl p-2 dark:text-gray-400">Dental</div>
-                  <div className="text-xl p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400">Dental</div>
+                  <div className="md:text-xl text-sm p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
                     The dental plan provides access to in-and out-of-network
                     providers, coverage for major dental work, and three dental
                     cleanings per year, With no deductible, paid at 100% of
@@ -320,28 +320,28 @@ const Benifits = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-8">
-                <div className="h-36 w-96">
+              <div className="md:flex gap-8">
+                <div className="h-36 md:w-96">
                   <img src={t4} className=" mx-auto my-auto" alt="" />
                 </div>
                 <div>
-                  <div className="font-semibold text-3xl p-2 dark:text-gray-400">Vision</div>
-                  <div className="text-xl p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400">Vision</div>
+                  <div className="md:text-xl text-sm p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
                     Deloitte also offers a discount vision benefit at no cost to
                     the participant, as well as a voluntary vision plan that
                     allows participants to elect additional coverage
                   </div>
                 </div>
               </div>
-              <div className="flex gap-8">
-                <div className="h-36 w-96">
+              <div className="md:flex gap-8">
+                <div className="h-36 md:w-96">
                   <img src={t5} className=" mx-auto my-auto" alt="" />
                 </div>
                 <div>
-                  <div className="font-semibold text-3xl p-2 dark:text-gray-400">
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400">
                     CMS transparency in coverage rule
                   </div>
-                  <div className="text-xl p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
+                  <div className="md:text-xl text-sm p-2 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
                     Please click the links below for pricing information from
                     our national medical plan carriers on covered items and
                     services.
@@ -356,13 +356,13 @@ const Benifits = () => {
             </div>
           )}
           {benifitTab === 3 && (
-            <div className="px-32 py-10">
-              <div className="flex w-full">
+            <div className="md:px-32 py-10">
+              <div className="md:flex w-full">
                 <div>
-                  <div className="font-semibold text-4xl tracking-wider pb-4 dark:text-gray-400">
+                  <div className="font-semibold text-xl md:text-4xl tracking-wider pb-4 dark:text-gray-400">
                     Retirement
                   </div>
-                  <div className="text-xl pt-8 pr-20 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
+                  <div className="md:text-xl text-sm pt-8 md:pr-20 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
                     BDM s Wealth Accumulation Program includes a 401(k) savings
                     plan and a cash balance plan. Together, these plans provide
                     a solid foundation for eligible professionals long-term
@@ -400,13 +400,13 @@ const Benifits = () => {
             </div>
           )}
           {benifitTab === 4 && (
-            <div className="px-32 py-10">
-              <div className="flex w-full">
+            <div className="md:px-32 py-4 md:py-10">
+              <div className="md:flex w-full">
                 <div>
-                  <div className="font-semibold text-4xl tracking-wider pb-4 dark:text-gray-400">
+                  <div className="font-semibold text-xl md:text-4xl tracking-wider pb-4 dark:text-gray-400">
                     Disability
                   </div>
-                  <div className="text-xl pt-8 pr-20 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
+                  <div className="md:text-xl pb-4 text-sm md:pt-8 md:pr-20 text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
                     BDM provides Short-Term Disability and core Long-Term
                     Disability (STD and LTD) coverage at no cost to the
                     participant. Additional LTD coverage is available for
@@ -418,8 +418,8 @@ const Benifits = () => {
                 </div>
               </div>
               <div>
-                <div className="font-semibold tracking-wider text-2xl py-5 dark:text-gray-400">We believe in you</div>
-                <div className="text-lg text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
+                <div className="font-semibold tracking-wider text-xl md:text-2xl py-5 dark:text-gray-400">We believe in you</div>
+                <div className="md:text-lg text-sm text-gray-200" style={{ color: mode === "dark" ? "white" : "black" }}>
                   This is a dummy text, to be replaced with how BDM encourages
                   and empowers disabled power and focuses on their ability
                   rather disabilty. Mention some events and programs too that

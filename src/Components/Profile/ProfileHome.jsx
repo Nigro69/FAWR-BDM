@@ -24,7 +24,7 @@ const ProfileHome = ({ mode }) => {
           <Sidebar tg={setsidebartoggle} tgprop={sidebartoggle} mode={mode} func={getId}/>
         </div>
         <div className={`min-h-full  w-full ${sidebartoggle ? "ml-10" : "ml-52"} `}>
-          <div className="sticky bg-white  top-0 w-full ">
+          <div className="sticky bg-white z-30  top-0 w-full ">
             <Navbar mode={mode} />
           </div>
           <div>

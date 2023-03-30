@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { GoCheck } from "react-icons/go";
 import { useStateContext } from "../../contexts/ContextProvider";
-import { MdDelete } from "react-icons/md";
+import { MdDelete, MdFilePresent } from "react-icons/md";
+import { IoIosArrowDown, IoIosArrowUp, IoMdCloseCircle } from "react-icons/io";
 
 function EditCandidateProfile() {
   const [step, setstep] = useState(1);
   const [exp, setexp] = useState([1]);
   const [x, setx] = useState(1);
+  const [channel, setchannel] = useState(0);
+  const [file, setFile] = useState();
+  const [docx, setdocx] = useState();
 
   const addexp = (val) => {
     setx(val);
@@ -14,14 +18,10 @@ function EditCandidateProfile() {
   };
 
   const deleteexp = (index) => {
-    setexp([
-      ...exp.filter((ex) => exp.indexOf(ex) !== index),
-    ]);
+    setexp([...exp.filter((ex) => exp.indexOf(ex) !== index)]);
   };
 
-  const {
-    candidateModel,
-  } = useStateContext();
+  const { candidateModel } = useStateContext();
 
   return (
     <div className="p-4 mx-10 my-4">
@@ -528,7 +528,7 @@ function EditCandidateProfile() {
             </div>
             <div>
               <div className="font-semibold text-lg tracking-wider my-10 text-gray-500">
-                Details of 12th Qualification
+                Details of HSC Qualification
               </div>
               <div className="grid grid-cols-2 my-10 gap-5">
                 <div className="flex w-full gap-3 place-items-center">
@@ -607,7 +607,7 @@ function EditCandidateProfile() {
                 </div>
               </div>
               <div className="flex gap-5 w-2/4 place-items-center my-10">
-                <div className="text-gray-400 w-1/4">Marksheet:</div>
+                <div className="text-gray-400 w-1/4">Qualifying Certificate:</div>
                 <div className=" w-3/4">
                   <input
                     className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
@@ -619,7 +619,7 @@ function EditCandidateProfile() {
             </div>
             <div>
               <div className="font-semibold text-lg tracking-wider my-10 text-gray-500">
-                Details of 10th Qualification
+                Details of SSC Qualification
               </div>
               <div className="grid grid-cols-2 my-10 gap-5">
                 <div className="flex w-full gap-3 place-items-center">
@@ -698,7 +698,7 @@ function EditCandidateProfile() {
                 </div>
               </div>
               <div className="flex gap-5 w-2/4 place-items-center my-10">
-                <div className="text-gray-400 w-1/4">Marksheet:</div>
+                <div className="text-gray-400 w-1/4">Qualifying Certificate:</div>
                 <div className=" w-3/4">
                   <input
                     className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
@@ -723,86 +723,96 @@ function EditCandidateProfile() {
         {step === 3 && (
           <div>
             <div className=" flex justify-between place-items-center my-10 ">
-              <div className="font-semibold text-lg tracking-wider text-gray-500">Experience</div> 
-              <div><button onClick={()=>addexp(x +1)} className=" rounded-xl text-sm text-white bg-[#BC312E] border border-[#BC312E] px-4 py-1 ">
+              <div className="font-semibold text-lg tracking-wider text-gray-500">
+                Experience
+              </div>
+              <div>
+                <button
+                  onClick={() => addexp(x + 1)}
+                  className=" rounded-xl text-sm text-white bg-[#BC312E] border border-[#BC312E] px-4 py-1 "
+                >
                   Add
-                </button></div>
+                </button>
+              </div>
             </div>
             <div className="space-y-4">
-
-            
-            {exp.map((data,index)=>(
-            <div className="p-6 border-2 rounded-lg border-dashed border-gray-400">
-              <div className="text-gray-400 justify-between p-2 flex place-items-center">
-                <div>NO. {data}</div>
-                <div><MdDelete className="cursor-pointer" onClick={() => deleteexp(index)}/></div>
-              </div>
-            <div className="flex gap-5 w-2/4 place-items-center my-10">
-              <div className="text-gray-400 w-1/4">Company Name:</div>
-              <div className=" w-3/4">
-                <input
-                  className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
-                  type="text"
-                  placeholder="Enter Name"
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-2 my-10 gap-5">
-              <div className="flex w-full gap-3 place-items-center">
-                <div className="text-gray-400 w-1/4">Title:</div>
-                <div className=" w-3/4">
-                  <input
-                    className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
-                    type="text"
-                    placeholder="Senior Developer"
-                  />
+              {exp.map((data, index) => (
+                <div className="p-6 border-2 rounded-lg border-dashed border-gray-400">
+                  <div className="text-gray-400 justify-between p-2 flex place-items-center">
+                    <div>NO. {data}</div>
+                    <div>
+                      <MdDelete
+                        className="cursor-pointer"
+                        onClick={() => deleteexp(index)}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex gap-5 w-2/4 place-items-center my-10">
+                    <div className="text-gray-400 w-1/4">Company Name:</div>
+                    <div className=" w-3/4">
+                      <input
+                        className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
+                        type="text"
+                        placeholder="Enter Name"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 my-10 gap-5">
+                    <div className="flex w-full gap-3 place-items-center">
+                      <div className="text-gray-400 w-1/4">Title:</div>
+                      <div className=" w-3/4">
+                        <input
+                          className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
+                          type="text"
+                          placeholder="Senior Developer"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex w-full gap-3 place-items-center">
+                      <div className="text-gray-400 w-1/4">Job Type:</div>
+                      <div className=" w-3/4">
+                        <input
+                          className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
+                          type="number"
+                          placeholder="Internship"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 my-10 gap-5">
+                    <div className="flex w-full gap-3 place-items-center">
+                      <div className="text-gray-400 w-1/4">Start Date:</div>
+                      <div className=" w-3/4">
+                        <input
+                          className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
+                          type="date"
+                          placeholder=""
+                        />
+                      </div>
+                    </div>
+                    <div className="flex w-full gap-3 place-items-center">
+                      <div className="text-gray-400 w-1/4">End Date:</div>
+                      <div className=" w-3/4">
+                        <input
+                          className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
+                          type="date"
+                          placeholder=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex gap-5 w-2/4 place-items-center my-10">
+                    <div className="text-gray-400 w-1/4">Description:</div>
+                    <div className=" w-3/4">
+                      <textarea
+                        className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
+                        type="text"
+                        placeholder="Start writing..."
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="flex w-full gap-3 place-items-center">
-                <div className="text-gray-400 w-1/4">Job Type:</div>
-                <div className=" w-3/4">
-                  <input
-                    className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
-                    type="number"
-                    placeholder="Internship"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 my-10 gap-5">
-              <div className="flex w-full gap-3 place-items-center">
-                <div className="text-gray-400 w-1/4">Start Date:</div>
-                <div className=" w-3/4">
-                  <input
-                    className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
-                    type="date"
-                    placeholder=""
-                  />
-                </div>
-              </div>
-              <div className="flex w-full gap-3 place-items-center">
-                <div className="text-gray-400 w-1/4">End Date:</div>
-                <div className=" w-3/4">
-                  <input
-                    className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
-                    type="date"
-                    placeholder=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-5 w-2/4 place-items-center my-10">
-              <div className="text-gray-400 w-1/4">Description:</div>
-              <div className=" w-3/4">
-                <textarea
-                  className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
-                  type="text"
-                  placeholder="Start writing..."
-                />
-              </div>
-            </div>
-            </div>
-            ))}
+              ))}
             </div>
             <div className="font-semibold text-lg tracking-wider my-10 text-gray-500">
               Skills
@@ -832,37 +842,676 @@ function EditCandidateProfile() {
         )}
         {step === 4 && (
           <div>
-            <div className="font-semibold text-lg tracking-wider my-10 text-gray-500">
+            <div className="font-semibold text-lg tracking-wider my-10 text-gray-400">
               Documents
             </div>
-            <div className="flex gap-5 w-2/4 place-items-center my-10">
-              <div className="text-gray-400 w-1/4">Passport Photo:</div>
-              <div className=" w-3/4">
-                <input
-                  className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
-                  type="file"
-                  placeholder="photo.pdf"
-                />
+            <div className="space-y-8">
+              <div className="dark:bg-[#211F22] rnd-shd m-2 rounded-md">
+                <div className="text-gray-200 font-semibold p-6 border-b border-b-[#BC312E]">
+                  Instructions
+                </div>
+                <div className="text-gray-200 px-4 pt-6 flex gap-2">
+                  <div className="text-gray-400 font-bold"> Note:</div> Please read the below guidelines and upload all the relevant and correct documents against each document name
+                </div>
+                <div className="text-gray-400 font-bold px-4 pt-5">
+                  Guidelines:
+                </div>
+                <div className="space-y-2 p-4">
+                  <div className="flex gap-4 place-items-center">
+                    <div><IoMdCloseCircle className="text-gray-200"/></div>
+                    <div className="text-gray-200 text-sm">To replace a document, please delete the original document and upload the new document.</div>
+                  </div>
+                  <div className="flex gap-4 place-items-center">
+                    <div><IoMdCloseCircle className="text-gray-200"/></div>
+                    <div className="text-gray-200 text-sm">Experience Letter can only be uploaded after the Application Form is submitted online.</div>
+                  </div>
+                  <div className="flex gap-4 place-items-center">
+                    <div><IoMdCloseCircle className="text-gray-200"/></div>
+                    <div className="text-gray-200 text-sm">If any document is verified by BDM then it cannot be replaced ( Not applicable for Pre Joining Documentation ).</div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="flex gap-5 w-2/4 place-items-center my-10">
-              <div className="text-gray-400 w-1/4">Signature:</div>
-              <div className=" w-3/4">
-                <input
-                  className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
-                  type="file"
-                  placeholder="Signature.pdf"
-                />
+              <div className=" dark:bg-[#211F22] rnd-shd p-4 m-2 rounded-md relative">
+                <div className="justify-between place-items-center flex p-4">
+                  <div onClick={() => setchannel(channel === 1 ? 0 : 1)} className="grid place-items-center cursor-pointer text-gray-200 font-semibold p-2 border-b border-b-[#BC312E]">
+                    Photograph
+                  </div>
+                  <div
+                    onClick={() => setchannel(channel === 1 ? 0 : 1)}
+                    className="grid place-items-center text-gray-200 font-semibold cursor-pointer"
+                  >
+                    {channel === 1 ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                  </div>
+                </div>
+                <div
+                  className={`${
+                    channel === 1
+                      ? "opacity-100 translate-y-0 ease-in-out delay-300"
+                      : "opacity-0 -translate-y-6 absolute w-full"
+                  } p-4  transition-all`}
+                >
+                  <div className="text-gray-200 ">Photograph</div>
+                  <div className="p-2 flex place-items-center gap-10">
+                    <div>
+                      {!file && (
+                        <div className="max-w-xs my-4">
+                          <label className="grid justify-center w-full h-10 px-4 transition bg-[#211F22] border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-500 focus:outline-none">
+                            <span className="flex items-center text-gray-400 space-x-2">
+                              <span className="font-medium text-gray-400">
+                                + Browse File
+                              </span>
+                            </span>
+                            <input
+                              type="file"
+                              onChange={(e) => {
+                                setFile(URL.createObjectURL(e.target.files[0]));
+                              }}
+                              name="file_upload"
+                              className="hidden"
+                              alt="cover"
+                            />
+                          </label>
+                        </div>
+                      )}
+                      {file && (
+                        <div className="flex gap-4 place-items-center p-2">
+                          <img
+                            className="h-28 w-28 object-cover"
+                            src={file}
+                            alt=""
+                          />
+                          <button
+                            className="px-2 py-2 rounded-full bg-[#BC312E] "
+                            onClick={() => setFile()}
+                          >
+                            <MdDelete />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-400 italic max-w-sm">
+                      Upload scanned images of the following documents. Allowed
+                      Format:.jpg File size must be less than 200KB Maximum
+                      files upload limit: up to 1
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="flex w-full justify-end">
-              <div className="flex gap-5 place-items-center">
-                <button className="bg-[#171717] rounded-xl text-sm text-[#BC312E] px-4 py-1 border border-[#BC312E]">
-                  Cancle
-                </button>
-                <button className=" rounded-xl text-sm text-white bg-[#BC312E] border border-[#BC312E] px-4 py-1 ">
-                  Save
-                </button>
+              <div className=" dark:bg-[#211F22] rnd-shd p-4 m-2 rounded-md relative">
+                <div className="justify-between place-items-center flex p-4">
+                  <div onClick={() => setchannel(channel === 2 ? 0 : 2)} className="grid place-items-center cursor-pointer text-gray-200 font-semibold p-2 border-b border-b-[#BC312E]">
+                    Identification
+                  </div>
+                  <div
+                    onClick={() => setchannel(channel === 2 ? 0 : 2)}
+                    className="grid place-items-center text-gray-200 font-semibold cursor-pointer"
+                  >
+                    {channel === 2 ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                  </div>
+                </div>
+                <div
+                  className={`${
+                    channel === 2
+                      ? "opacity-100 translate-y-0 ease-in-out delay-300"
+                      : "opacity-0 -translate-y-6 absolute w-full"
+                  } p-4  transition-all`}
+                >
+                  <div className="text-gray-200 ">PAN Card</div>
+                  <div className="p-2 flex place-items-center gap-10">
+                    <div>
+                      {!docx && (
+                        <div className="max-w-xs my-4">
+                          <label className="grid justify-center w-full h-10 px-4 transition bg-[#211F22] border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-500 focus:outline-none">
+                            <span className="flex items-center text-gray-400 space-x-2">
+                              <span className="font-medium text-gray-400">
+                                + Browse File
+                              </span>
+                            </span>
+                            <input
+                              type="file"
+                              onChange={(e) => {
+                                setdocx(e.target.files[0]);
+                              }}
+                              name="file_upload"
+                              className="hidden"
+                              alt="cover"
+                            />
+                          </label>
+                        </div>
+                      )}
+                      {docx && (
+                        <div className="flex gap-4 place-items-center p-2">
+                          <div className="flex rounded-md border-l-4 p-3 border-t border-t-gray-400 border-b border-b-gray-400 border-r border-r-gray-400 border-l-green-600 bg-[#211F22] place-items-center gap-5">
+                            <div className="text-gray-400"><MdFilePresent/></div>
+                            <div className="text-gray-400 font-semibold text-sm font-sans">{docx.name}</div> 
+                          </div>
+                          <button
+                            className="px-2 py-2 rounded-full bg-[#BC312E] "
+                            onClick={() => setdocx()}
+                          >
+                            <MdDelete />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-400 italic max-w-sm">
+                      Upload scanned images of the following documents. Allowed
+                      Format:.jpg,.jpeg,.doc,.docx,.pdf,.png,.gif File size must
+                      be less than 2MB Maximum files upload limit: up to 1
+                    </div>
+                  </div>
+                  <hr class="h-px mx-auto my-8 bg-gray-400 border-0 rounded w-full  "></hr>
+                  <div className="text-gray-200 ">ID Proof</div>
+                  <div className="p-2 flex place-items-center gap-10">
+                    <div>
+                      {!file && (
+                        <div className="max-w-xs my-4">
+                          <label className="grid justify-center w-full h-10 px-4 transition bg-[#211F22] border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-500 focus:outline-none">
+                            <span className="flex items-center text-gray-400 space-x-2">
+                              <span className="font-medium text-gray-400">
+                                + Browse File
+                              </span>
+                            </span>
+                            <input
+                              type="file"
+                              onChange={(e) => {
+                                setFile(URL.createObjectURL(e.target.files[0]));
+                              }}
+                              name="file_upload"
+                              className="hidden"
+                              alt="cover"
+                            />
+                          </label>
+                        </div>
+                      )}
+                      {file && (
+                        <div className="flex gap-4 place-items-center p-2">
+                          <img
+                            className="h-28 w-28 object-cover"
+                            src={file}
+                            alt=""
+                          />
+                          <button
+                            className="px-2 py-2 rounded-full bg-[#BC312E] "
+                            onClick={() => setFile()}
+                          >
+                            <MdDelete />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-400 italic max-w-sm">
+                      Upload scanned images of the following documents. Allowed
+                      Format:.jpg,.jpeg,.doc,.docx,.pdf,.png,.gif File size must
+                      be less than 2MB Maximum files upload limit: up to 5
+                    </div>
+                  </div>
+                  <hr class="h-px mx-auto my-8 bg-gray-400 border-0 rounded w-full  "></hr>
+                  <div className="text-gray-200 ">Aadhar Card</div>
+                  <div className="p-2 flex place-items-center gap-10">
+                    <div>
+                      {!file && (
+                        <div className="max-w-xs my-4">
+                          <label className="grid justify-center w-full h-10 px-4 transition bg-[#211F22] border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-500 focus:outline-none">
+                            <span className="flex items-center text-gray-400 space-x-2">
+                              <span className="font-medium text-gray-400">
+                                + Browse file
+                              </span>
+                            </span>
+                            <input
+                              type="file"
+                              onChange={(e) => {
+                                setFile(URL.createObjectURL(e.target.files[0]));
+                              }}
+                              name="file_upload"
+                              className="hidden"
+                              alt="cover"
+                            />
+                          </label>
+                        </div>
+                      )}
+                      {file && (
+                        <div className="flex gap-4 place-items-center p-2">
+                          <img
+                            className="h-28 w-28 object-cover"
+                            src={file}
+                            alt=""
+                          />
+                          <button
+                            className="px-2 py-2 rounded-full bg-[#BC312E] "
+                            onClick={() => setFile()}
+                          >
+                            <MdDelete />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-400 italic max-w-sm">
+                      Upload scanned images of the following documents. Allowed
+                      Format:.jpg,.jpeg,.doc,.docx,.pdf,.png,.gif File size must
+                      be less than 2MB Maximum files upload limit: up to 1
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className=" dark:bg-[#211F22] rnd-shd p-4 m-2 rounded-md relative">
+                <div className="justify-between place-items-center flex p-4">
+                  <div onClick={() => setchannel(channel === 3 ? 0 : 3)} className="grid cursor-pointer place-items-center text-gray-200 font-semibold p-2 border-b border-b-[#BC312E]">
+                    Education
+                  </div>
+                  <div
+                    onClick={() => setchannel(channel === 3 ? 0 : 3)}
+                    className="grid place-items-center text-gray-200 font-semibold cursor-pointer"
+                  >
+                    {channel === 3 ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                  </div>
+                </div>
+                <div
+                  className={`${
+                    channel === 3
+                      ? "opacity-100 translate-y-0 ease-in-out delay-300"
+                      : "opacity-0 -translate-y-6 absolute w-full"
+                  } p-4  transition-all`}
+                >
+                  <div className="text-gray-200 ">SSC Marksheet</div>
+                  <div className="p-2 flex place-items-center gap-10">
+                    <div>
+                      {!file && (
+                        <div className="max-w-xs my-4">
+                          <label className="grid justify-center w-full h-10 px-4 transition bg-[#211F22] border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-500 focus:outline-none">
+                            <span className="flex items-center text-gray-400 space-x-2">
+                              <span className="font-medium text-gray-400">
+                                + Browse File
+                              </span>
+                            </span>
+                            <input
+                              type="file"
+                              onChange={(e) => {
+                                setFile(URL.createObjectURL(e.target.files[0]));
+                              }}
+                              name="file_upload"
+                              className="hidden"
+                              alt="cover"
+                            />
+                          </label>
+                        </div>
+                      )}
+                      {file && (
+                        <div className="flex gap-4 place-items-center p-2">
+                          <img
+                            className="h-28 w-28 object-cover"
+                            src={file}
+                            alt=""
+                          />
+                          <button
+                            className="px-2 py-2 rounded-full bg-[#BC312E] "
+                            onClick={() => setFile()}
+                          >
+                            <MdDelete />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-400 italic max-w-sm">
+                      Upload scanned images of the following documents. Allowed
+                      Format:.jpg,.jpeg,.doc,.docx,.pdf,.png,.gif File size must
+                      be less than 2MB Maximum files upload limit: up to 2
+                    </div>
+                  </div>
+                  <hr class="h-px mx-auto my-8 bg-gray-400 border-0 rounded w-full  "></hr>
+                  <div className="text-gray-200 ">HSC Marksheet</div>
+                  <div className="p-2 flex place-items-center gap-10">
+                    <div>
+                      {!file && (
+                        <div className="max-w-xs my-4">
+                          <label className="grid justify-center w-full h-10 px-4 transition bg-[#211F22] border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-500 focus:outline-none">
+                            <span className="flex items-center text-gray-400 space-x-2">
+                              <span className="font-medium text-gray-400">
+                                + Browse File
+                              </span>
+                            </span>
+                            <input
+                              type="file"
+                              onChange={(e) => {
+                                setFile(URL.createObjectURL(e.target.files[0]));
+                              }}
+                              name="file_upload"
+                              className="hidden"
+                              alt="cover"
+                            />
+                          </label>
+                        </div>
+                      )}
+                      {file && (
+                        <div className="flex gap-4 place-items-center p-2">
+                          <img
+                            className="h-28 w-28 object-cover"
+                            src={file}
+                            alt=""
+                          />
+                          <button
+                            className="px-2 py-2 rounded-full bg-[#BC312E] "
+                            onClick={() => setFile()}
+                          >
+                            <MdDelete />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-400 italic max-w-sm">
+                      Upload scanned images of the following documents. Allowed
+                      Format:.jpg,.jpeg,.doc,.docx,.pdf,.png,.gif File size must
+                      be less than 2MB Maximum files upload limit: up to 1
+                    </div>
+                  </div>
+                  <hr class="h-px mx-auto my-8 bg-gray-400 border-0 rounded w-full  "></hr>
+                  <div className="text-gray-200 ">Diploma Marksheets</div>
+                  <div className="p-2 flex place-items-center gap-10">
+                    <div>
+                      {!file && (
+                        <div className="max-w-xs my-4">
+                          <label className="grid justify-center w-full h-10 px-4 transition bg-[#211F22] border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-500 focus:outline-none">
+                            <span className="flex items-center text-gray-400 space-x-2">
+                              <span className="font-medium text-gray-400">
+                                + Browse File
+                              </span>
+                            </span>
+                            <input
+                              type="file"
+                              onChange={(e) => {
+                                setFile(URL.createObjectURL(e.target.files[0]));
+                              }}
+                              name="file_upload"
+                              className="hidden"
+                              alt="cover"
+                            />
+                          </label>
+                        </div>
+                      )}
+                      {file && (
+                        <div className="flex gap-4 place-items-center p-2">
+                          <img
+                            className="h-28 w-28 object-cover"
+                            src={file}
+                            alt=""
+                          />
+                          <button
+                            className="px-2 py-2 rounded-full bg-[#BC312E] "
+                            onClick={() => setFile()}
+                          >
+                            <MdDelete />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-400 italic max-w-sm">
+                      Upload scanned images of the following documents. Allowed
+                      Format:.jpg,.jpeg,.doc,.docx,.pdf,.png,.gif File size must
+                      be less than 2MB Maximum files upload limit: up to 7
+                    </div>
+                  </div>
+                  <hr class="h-px mx-auto my-8 bg-gray-400 border-0 rounded w-full  "></hr>
+                  <div className="text-gray-200 ">Graduation Marksheets</div>
+                  <div className="p-2 flex place-items-center gap-10">
+                    <div>
+                      {!file && (
+                        <div className="max-w-xs my-4">
+                          <label className="grid justify-center w-full h-10 px-4 transition bg-[#211F22] border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-500 focus:outline-none">
+                            <span className="flex items-center text-gray-400 space-x-2">
+                              <span className="font-medium text-gray-400">
+                                + Browse File
+                              </span>
+                            </span>
+                            <input
+                              type="file"
+                              onChange={(e) => {
+                                setFile(URL.createObjectURL(e.target.files[0]));
+                              }}
+                              name="file_upload"
+                              className="hidden"
+                              alt="cover"
+                            />
+                          </label>
+                        </div>
+                      )}
+                      {file && (
+                        <div className="flex gap-4 place-items-center p-2">
+                          <img
+                            className="h-28 w-28 object-cover"
+                            src={file}
+                            alt=""
+                          />
+                          <button
+                            className="px-2 py-2 rounded-full bg-[#BC312E] "
+                            onClick={() => setFile()}
+                          >
+                            <MdDelete />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-400 italic max-w-sm">
+                      Upload scanned images of the following documents. Allowed
+                      Format:.jpg,.jpeg,.doc,.docx,.pdf,.png,.gif File size must
+                      be less than 2MB Maximum files upload limit: up to 9
+                    </div>
+                  </div>
+                  <hr class="h-px mx-auto my-8 bg-gray-400 border-0 rounded w-full  "></hr>
+                  <div className="text-gray-200 ">PG Marksheets</div>
+                  <div className="p-2 flex place-items-center gap-10">
+                    <div>
+                      {!file && (
+                        <div className="max-w-xs my-4">
+                          <label className="grid justify-center w-full h-10 px-4 transition bg-[#211F22] border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-500 focus:outline-none">
+                            <span className="flex items-center text-gray-400 space-x-2">
+                              <span className="font-medium text-gray-400">
+                                + Browse File
+                              </span>
+                            </span>
+                            <input
+                              type="file"
+                              onChange={(e) => {
+                                setFile(URL.createObjectURL(e.target.files[0]));
+                              }}
+                              name="file_upload"
+                              className="hidden"
+                              alt="cover"
+                            />
+                          </label>
+                        </div>
+                      )}
+                      {file && (
+                        <div className="flex gap-4 place-items-center p-2">
+                          <img
+                            className="h-28 w-28 object-cover"
+                            src={file}
+                            alt=""
+                          />
+                          <button
+                            className="px-2 py-2 rounded-full bg-[#BC312E] "
+                            onClick={() => setFile()}
+                          >
+                            <MdDelete />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-400 italic max-w-sm">
+                      Upload scanned images of the following documents. Allowed
+                      Format:.jpg,.jpeg,.doc,.docx,.pdf,.png,.gif File size must
+                      be less than 2MB Maximum files upload limit: up to 8
+                    </div>
+                  </div>
+                  <hr class="h-px mx-auto my-8 bg-gray-400 border-0 rounded w-full  "></hr>
+                  <div className="text-gray-200 ">Doctorate Mark Sheet</div>
+                  <div className="p-2 flex place-items-center gap-10">
+                    <div>
+                      {!file && (
+                        <div className="max-w-xs my-4">
+                          <label className="grid justify-center w-full h-10 px-4 transition bg-[#211F22] border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-500 focus:outline-none">
+                            <span className="flex items-center text-gray-400 space-x-2">
+                              <span className="font-medium text-gray-400">
+                                + Browse File
+                              </span>
+                            </span>
+                            <input
+                              type="file"
+                              onChange={(e) => {
+                                setFile(URL.createObjectURL(e.target.files[0]));
+                              }}
+                              name="file_upload"
+                              className="hidden"
+                              alt="cover"
+                            />
+                          </label>
+                        </div>
+                      )}
+                      {file && (
+                        <div className="flex gap-4 place-items-center p-2">
+                          <img
+                            className="h-28 w-28 object-cover"
+                            src={file}
+                            alt=""
+                          />
+                          <button
+                            className="px-2 py-2 rounded-full bg-[#BC312E] "
+                            onClick={() => setFile()}
+                          >
+                            <MdDelete />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-400 italic max-w-sm">
+                      Upload scanned images of the following documents. Allowed
+                      Format:.jpg,.jpeg,.doc,.docx,.pdf,.png,.gif File size must
+                      be less than 2MB Maximum files upload limit: up to 4
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className=" dark:bg-[#211F22] rnd-shd p-4 m-2 rounded-md relative">
+                <div className="justify-between place-items-center flex p-4">
+                  <div onClick={() => setchannel(channel === 4 ? 0 : 4)} className="grid cursor-pointer place-items-center text-gray-200 font-semibold p-2 border-b border-b-[#BC312E]">
+                    Work Experience
+                  </div>
+                  <div
+                    onClick={() => setchannel(channel === 4 ? 0 : 4)}
+                    className="grid place-items-center text-gray-200 font-semibold cursor-pointer"
+                  >
+                    {channel === 4 ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                  </div>
+                </div>
+                <div
+                  className={`${
+                    channel === 4
+                      ? "opacity-100 translate-y-0 ease-in-out delay-300"
+                      : "opacity-0 -translate-y-6 absolute w-full"
+                  } p-4  transition-all`}
+                >
+                  <div className="text-gray-200 ">
+                    Current Company Salary Slip
+                  </div>
+                  <div className="p-2 flex place-items-center gap-10">
+                    <div>
+                      {!file && (
+                        <div className="max-w-xs my-4">
+                          <label className="grid justify-center w-full h-10 px-4 transition bg-[#211F22] border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-500 focus:outline-none">
+                            <span className="flex items-center text-gray-400 space-x-2">
+                              <span className="font-medium text-gray-400">
+                                + Browse File
+                              </span>
+                            </span>
+                            <input
+                              type="file"
+                              onChange={(e) => {
+                                setFile(URL.createObjectURL(e.target.files[0]));
+                              }}
+                              name="file_upload"
+                              className="hidden"
+                              alt="cover"
+                            />
+                          </label>
+                        </div>
+                      )}
+                      {file && (
+                        <div className="flex gap-4 place-items-center p-2">
+                          <img
+                            className="h-28 w-28 object-cover"
+                            src={file}
+                            alt=""
+                          />
+                          <button
+                            className="px-2 py-2 rounded-full bg-[#BC312E] "
+                            onClick={() => setFile()}
+                          >
+                            <MdDelete />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-400 italic max-w-sm">
+                      Upload scanned images of the following documents. Allowed
+                      Format:.jpg,.jpeg,.doc,.docx,.pdf,.png,.gif File size must
+                      be less than 2MB Maximum files upload limit: up to 3
+                    </div>
+                  </div>
+                  <hr class="h-px mx-auto my-8 bg-gray-400 border-0 rounded w-full  "></hr>
+                  <div className="text-gray-200 ">
+                    Latest Compensation Letter
+                  </div>
+                  <div className="p-2 flex place-items-center gap-10">
+                    <div>
+                      {!file && (
+                        <div className="max-w-xs my-4">
+                          <label className="grid justify-center w-full h-10 px-4 transition bg-[#211F22] border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-500 focus:outline-none">
+                            <span className="flex items-center text-gray-400 space-x-2">
+                              <span className="font-medium text-gray-400">
+                                + Browse File
+                              </span>
+                            </span>
+                            <input
+                              type="file"
+                              onChange={(e) => {
+                                setFile(URL.createObjectURL(e.target.files[0]));
+                              }}
+                              name="file_upload"
+                              className="hidden"
+                              alt="cover"
+                            />
+                          </label>
+                        </div>
+                      )}
+                      {file && (
+                        <div className="flex gap-4 place-items-center p-2">
+                          <img
+                            className="h-28 w-28 object-cover"
+                            src={file}
+                            alt=""
+                          />
+                          <button
+                            className="px-2 py-2 rounded-full bg-[#BC312E] "
+                            onClick={() => setFile()}
+                          >
+                            <MdDelete />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-400 italic max-w-sm">
+                      Upload scanned images of the following documents. Allowed
+                      Format:.jpg,.jpeg,.doc,.docx,.pdf,.png,.gif File size must
+                      be less than 2MB Maximum files upload limit: up to 4
+                    </div>
+                  </div>
+                  <hr class="h-px mx-auto my-8 bg-gray-400 border-0 rounded w-full  "></hr>
+                  <div className="text-gray-200 ">
+                    Experience Letters or Relieving Letters
+                  </div>
+                  <div className="text-gray-400 text-sm p-4">
+                    Fill in the application form prior to uploading Experience/Relieving letter
+                  </div>
+                </div>
               </div>
             </div>
           </div>

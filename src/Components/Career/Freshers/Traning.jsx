@@ -53,18 +53,18 @@ const Traning = () => {
   const toggleClass = " transform translate-x-6";
 
   return (
-    <div className="p-4 mx-10 my-4">
-      <div className="flex gap-20 w-full">
-        <div className="w-2/4 my-auto">
+    <div className="p-4 md:mx-10 my-4">
+      <div className="md:flex gap-20 w-full">
+      <div className="md:w-2/4 w-full">
+          <img src={f1} alt="" />
+        </div>
+        <div className="md:w-2/4 my-auto">
           <div className="font-sans ff-style text-4xl tracking-wider my-5 text-[#BC312E]">
             Traning for students
           </div>
           <div className="font-sans ff-style text-4xl tracking-wider text-gray-400">
             Interships in business, engineering, technology, and more.
           </div>
-        </div>
-        <div className="w-2/4">
-          <img src={f1} alt="" />
         </div>
       </div>
       <div className="flex place-items-center mt-36 mb-20">
@@ -99,16 +99,16 @@ const Traning = () => {
         </div>
         <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96  "></hr>
       </div>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid md:grid-cols-3 gap-5">
         <div className="p-4 flex justify-between w-full border rounded-md place-items-center border-gray-500">
           <div className="font-sans text-gray-500 text-lg">Select Location</div>{" "}
-          <BsChevronDown />
+          <BsChevronDown className="text-gray-500"/>
         </div>
         <div className="p-4 flex justify-between w-full border rounded-md place-items-center border-gray-500">
           <div className="font-sans text-gray-500 text-lg">
             Select Department
           </div>{" "}
-          <BsChevronDown />
+          <BsChevronDown className="text-gray-500"/>
         </div>
         <div className="flex gap-10 px-10 place-items-center">
           <div className="flex gap-5 place-items-center">
@@ -138,11 +138,11 @@ const Traning = () => {
           <div className="tracking-wider text-red-500">Clear</div>
         </div>
       </div>
-      <div className="px-10 my-20 grid grid-cols-3 gap-20">
+      <div className="md:px-10  my-20 grid md:grid-cols-3 place-content-center gap-20">
         {datas.map((data) => (
           <div
             key={data.id}
-            className="rounded-md p-10 h-80 w-80 bg-gray-200 shadow-lg grid place-items-center"
+            className="rounded-md p-10 h-80 w-80 bg-gray-200  shadow-lg grid place-items-center"
           >
             <div>
               <img src={data.ig} alt="ic-image" />

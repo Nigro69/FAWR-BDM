@@ -17,7 +17,7 @@ const Home = ({func}) => {
 
   const getMyResult = async () => {
     try {
-      const res = await axios.get("http://54.237.66.114/jobs/");
+      const res = await axios.get("https://bigbros.link/api/v1/jobs/");
       console.log(res.data);
       setjobsData(res.data);
       setisPending(false);

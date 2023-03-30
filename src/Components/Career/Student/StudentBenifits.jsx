@@ -80,13 +80,13 @@ const StudentBenifits = () => {
   ];
 
   return (
-    <div className="p-4 mx-10 my-4">
-      <div className="flex gap-20 w-full mt-10 mb-10">
-        <div className="w-2/4">
+    <div className="p-4 md:mx-10 my-4">
+      <div className="md:flex gap-20 space-y-3 md:space-y-0 w-full mt-10 mb-10">
+        <div className="md:w-2/4 w-full">
           <div className="text-[#BC312E] my-5 tracking-wider text-4xl font-semibold  text-center">
             Student Benifits
           </div>
-          <div className="tracking-wide text-lg text-gray-400 px-10 text-center">
+          <div className="tracking-wide  md:text-lg text-gray-400 md:px-10 text-center">
             " I have been working as an admin assistant to the General Manager
             for just over 3 years. I started as a Receptionist and was promoted
             after 6 months. I am passionate about learning new skills and I have
@@ -95,18 +95,18 @@ const StudentBenifits = () => {
             to make full use of this in a larger working environment."
           </div>
         </div>
-        <div className="w-2/4">
+        <div className="md:w-2/4 w-full">
           <img src={F2} alt="cdsdc" />
         </div>
       </div>
-      <div className="flex place-items-center mt-36 mb-20">
+      <div className="flex place-items-center mt-20 md:mt-36 mb-20">
         <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96 "></hr>
         <div className="text-2xl font-semibold tracking-wider text-[#BC312E] text-center w-60 mx-8">
           WHY CHOOSE US
         </div>
         <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96  "></hr>
       </div>
-      <div className="tracking-wide text-lg text-gray-400 px-10 text-center">
+      <div className="tracking-wide text-lg text-gray-400 md:px-10 text-center">
         Your compensation will be reviewed annually and may consist of salary,
         discretionary compensation, and certain local allowances, where
         applicable. Compensation is determined by a number of factors, including
@@ -117,7 +117,7 @@ const StudentBenifits = () => {
       </div>
       <hr class="h-0.5 mx-auto my-16 bg-gray-600 border-0 rounded w-96  "></hr>
 
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid md:grid-cols-2 gap-10">
         {coldata.map(data=>(
         <div key={data.ig} className="flex gap-3 w-full h-52 bg-[#211F22] rnd-shd">
           <div className="w-2/4 object-cover">
@@ -127,7 +127,7 @@ const StudentBenifits = () => {
             <div className="font-semibold text-xl text-gray-200 text-center font-sans">
               {data.tit}
             </div>
-            <div className="text-gray-400 text-center px-5">
+            <div className="text-gray-400 text-center text-sm md:text-md px-5">
               {data.des}
             </div>
           </div>

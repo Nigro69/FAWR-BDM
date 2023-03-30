@@ -309,7 +309,7 @@ export default function Learning({ mode }) {
       >
         <u>Course Offerings</u>
       </div>
-      <div className="grid grid-cols-3 gap-10 p-10 rounded-md">
+      <div className="grid md:grid-cols-3 gap-10 p-10 rounded-md">
         {learningData.map((data) => (
           <div key={data.img} className="bg-[#211F22] rnd-shd space-y-3 ">
             <div>
