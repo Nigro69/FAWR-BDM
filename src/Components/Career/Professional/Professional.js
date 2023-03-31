@@ -284,7 +284,7 @@ export default function Freshers({ mode }) {
             className="freshers-learn-more"
             style={{ color: mode === "dark" ? "#908B89" : "#5D5D5D" }}
           >
-            <u onClick={()=>navigate("/Freshers-Traning")}>Learn More</u>
+            <u onClick={()=>navigate("/Prof-Training")}>Learn More</u>
           </div>
         </div>
 
@@ -310,7 +310,7 @@ export default function Freshers({ mode }) {
             className="freshers-learn-more"
             style={{ color: mode === "dark" ? "#908B89" : "#5D5D5D" }}
           >
-            <u onClick={()=>navigate("/Freshers-Benifits")}>Learn More</u>
+            <u onClick={()=>navigate("/Prof-Benifits")}>Learn More</u>
           </div>
         </div>
 

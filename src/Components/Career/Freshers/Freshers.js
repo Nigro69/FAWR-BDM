@@ -29,6 +29,8 @@ export default function Freshers({ mode }) {
   const [isPending, setisPending] = useState(true);
   const [apiData, setapiData] = useState(null);
   const [search, setsearch] = useState("");
+  const [worktype, setworktype] = useState("");
+  const [dropworktype, setdropworktype] = useState(false);
 
   const getMyResult = async () => {
     try {
@@ -49,36 +51,70 @@ export default function Freshers({ mode }) {
   }, []);
 
   useEffect(() => {
+
+    var desiredData=[];
+
+    switch (worktype) {
+      case "":
+        desiredData=[...desiredData]
+        break;
+      case "Full-Time":
+        {
+          let cpyArray =
+          desiredData && desiredData.filter((job) => job.type === "Full-Time");
+          desiredData=[...cpyArray]
+        }
+        break;
+      case "Internship":
+        {
+          let cpyArray =
+          desiredData && desiredData.filter((job) => job.type === "InternShip");
+          desiredData=[...cpyArray]
+        }
+        break;
+      case "Part-Time":
+        {
+          let cpyArray =
+          desiredData && desiredData.filter((job) => job.type === "Part-Time");
+          desiredData=[...cpyArray]
+        }
+        break;
+      
+
+      default:
+        break;
+    }
     switch (category) {
       case "":
-        setfilteresData(apiData && apiData);
+        desiredData=[...desiredData]
         break;
       case "Technology":
         {
           let cpyArray =
-            apiData && apiData.filter((job) => job.category === "Technology");
-          setfilteresData([...cpyArray]);
+          desiredData && desiredData.filter((job) => job.category === "Technology");
+          desiredData=[...cpyArray]
         }
         break;
       case "Marketing":
         {
           let cpyArray =
-            apiData && apiData.filter((job) => job.category === "Marketing");
-          setfilteresData([...cpyArray]);
+          desiredData && desiredData.filter((job) => job.category === "Marketing");
+          desiredData=[...cpyArray]
         }
         break;
       case "HR":
         {
           let cpyArray =
-            apiData && apiData.filter((job) => job.category === "HR");
-          setfilteresData([...cpyArray]);
+          desiredData && desiredData.filter((job) => job.category === "HR");
+          desiredData=[...cpyArray]
         }
         break;
 
       default:
         break;
     }
-  }, [category, isPending]);
+    setfilteresData([...desiredData]);
+  }, [category,worktype, isPending]);
 
   useEffect(() => {
     const result =
@@ -169,11 +205,56 @@ export default function Freshers({ mode }) {
       </div>
 
       <div className="md:flex justify-between w-full space-y-3 md:space-y-0 gap-5 px-10">
-        <div className="p-4 flex justify-between w-full md:w-2/4 border rounded-md place-items-center border-gray-500">
-          <div className="font-sans text-gray-500 text-lg">
-            Choose Work Type
-          </div>{" "}
-          <BsChevronDown className="text-gray-500" />
+      <div className="relative w-2/4">
+          <div
+            onClick={() => setdropworktype(!dropworktype)}
+            className="p-4 flex justify-between w-full  border rounded-md place-items-center border-gray-500"
+          >
+            <div className="font-sans text-gray-500 text-lg">
+              {worktype ? worktype : "select the Work Type"}{" "}
+            </div>{" "}
+            <BsChevronDown className="text-gray-500" />
+          </div>
+          {dropworktype && (
+            <div className="absolute w-full grid grid-cols-1 divide-y rounded-md shadow-md">
+              <div
+                onClick={() => {
+                  setworktype("");
+                  setdropworktype(false);
+                }}
+                className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+              >
+                All
+              </div>
+              <div
+                onClick={() => {
+                  setworktype("Internship");
+                  setdropworktype(false);
+                }}
+                className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+              >
+                Internship
+              </div>
+              <div
+                onClick={() => {
+                  setworktype("Full-Time");
+                  setdropworktype(false);
+                }}
+                className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+              >
+                Full-Time
+              </div>
+              <div
+                onClick={() => {
+                  setworktype("Part-time");
+                  setdropworktype(false);
+                }}
+                className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+              >
+                Part-time
+              </div>
+            </div>
+          )}
         </div>
         <div className="relative w-2/4">
           <div
@@ -232,9 +313,9 @@ export default function Freshers({ mode }) {
         <input
           type="text"
           value={search}
-          onChange={(e) => setsearch(e.target.value)}
+          onChange={(e)=>setsearch(e.target.value)}
           placeholder="Search job by title"
-          className="p-4 w-full md:w-3/4 text-lg border text-gray-500 focus:outline-0 border-gray-500"
+          className="p-4 w-full md:w-3/4 text-lg border rounded-md bg-[#211F22] text-gray-500 focus:outline-0 border-gray-500"
         />
       </div>
 
@@ -285,7 +366,7 @@ export default function Freshers({ mode }) {
             className="freshers-learn-more"
             style={{ color: mode === "dark" ? "#908B89" : "#5D5D5D" }}
           >
-            <u onClick={() => navigate("/Freshers-Traning")}>Learn More</u>
+            <u onClick={() => navigate("/Freshers-Training")}>Learn More</u>
           </div>
         </div>
 

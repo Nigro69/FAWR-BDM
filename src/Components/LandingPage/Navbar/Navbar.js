@@ -27,6 +27,7 @@ import Aboutoption from "./NavbarOptions/Aboutoption/Aboutoption";
 import Solutionoption from "./NavbarOptions/Solutionoption/Solutionoption";
 import Exploreoption from "./NavbarOptions/Exploreoption/Exploreoption.js";
 import Careeroption from "./NavbarOptions/Careeroption/Careeroption";
+import f10 from "./bbLogo.png"
 
 import { NavLink as Link, useNavigate } from "react-router-dom";
 
@@ -168,8 +169,9 @@ export default function Navbar({ mode, handleMode }) {
               display="flex"
             >
               {/* <Avatar src='https://bit.ly/broken-link' /> */}
-              <div className="navbar-option-text">
-                <b>BDM</b>
+              <div className="navbar-option-text flex gap-2">
+                <img src={f10} alt="logo" />
+                <div className="grid place-items-center">BDM</div>
               </div>
             </Stack>
           </div>
