@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Cookie.css"
 import Cookie_img1 from "../PoliciesImages/Cookie_img1.png"
 import Cookie_img2 from "../PoliciesImages/Cookie_img2.png"
@@ -18,11 +18,13 @@ import {
 
 
 export default function Cookie({ mode }) {
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
     return (
         <div className='cookie-outer' style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>
             <div style={{ width: "100%" }}><img style={{ width: "100%" }} src={Cookie_img2} /></div>

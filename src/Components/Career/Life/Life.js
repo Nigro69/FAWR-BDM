@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Life.css"
 
 import Life_img1 from "./LifeImages/Life_img1.png"
@@ -13,11 +13,13 @@ import { useMediaQuery } from '@chakra-ui/react'
 
 
 export default function Life({ mode }) {
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
     const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
     return (
         <div className='life-outer'>

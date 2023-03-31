@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "../Research/Research.css"
 
 import Financial_img1 from "./FinancialImages/Financial_img1.png"
@@ -21,11 +21,13 @@ import Value from '../../Templates/Value/Value'
 
 export default function Financial({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
     const projectData = [
         {

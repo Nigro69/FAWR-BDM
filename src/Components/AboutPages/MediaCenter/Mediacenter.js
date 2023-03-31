@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Mediacenter.css"
 
 import MC1 from "./MediacenterImages/MC1.png"
@@ -6,11 +6,13 @@ import MC2 from "./MediacenterImages/MC2.png"
 
 export default function Mediacenter({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
     const mediaData = [
         {

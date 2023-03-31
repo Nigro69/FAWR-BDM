@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Research.css"
 
 import Research_img1 from "./ResearchImages/Research_img1.png"
@@ -26,11 +26,13 @@ import Blogs from "../../LandingPage/Blogs/Blog"
 
 export default function Research({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
 
     const projectData = [

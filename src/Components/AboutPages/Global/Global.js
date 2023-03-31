@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Global.css"
 
 import G1 from "./GlobalImages/G1.png"
@@ -6,11 +6,13 @@ import G2 from "./GlobalImages/G2.png"
 
 export default function Global({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
     return (
         <div className='global-outer' style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>

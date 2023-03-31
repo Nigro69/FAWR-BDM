@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "../Research/Research.css"
 
 import Social_img1 from "./SocialImages/Social_img1.png"
@@ -28,11 +28,13 @@ import Value from '../../Templates/Value/Value'
 
 export default function Social({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
     const projectData = [
         {

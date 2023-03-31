@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { auth } from "../../../firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import {signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import {
   getRole,
   getToken,
@@ -115,7 +115,7 @@ export default function Login() {
     }
   }, [authToken, setauthToken]);
 
-  const handlegooglelogin =()=>{
+  const handlegooglelogin = () => {
     googlelogIn();
     setisPending(true);
   }
@@ -132,11 +132,11 @@ export default function Login() {
       setAdmin(true);
       setcandidateModel(
         {
-          firstName:res.user.displayName,
-          middleName:"",
-          lastName:"",
-          email:res.user.email,
-          image:"",
+          firstName: res.user.displayName,
+          middleName: "",
+          lastName: "",
+          email: res.user.email,
+          image: "",
         }
       )
 
@@ -148,12 +148,13 @@ export default function Login() {
       setisPending(false);
     }
   };
-
-  window.scroll({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <div className="login-outer">
@@ -209,9 +210,9 @@ export default function Login() {
           </div>
 
           <div className="py-4 w-full">
-            <button className="px-7 py-2 w-full rounded-md bg-[#211F22] text-gray-400 place-items-center rnd-shd flex gap-4" onClick={handlegooglelogin}><BsGoogle/> <div className="text-sm text-gray-400 font-semibold font-sans">Continue with Google</div></button>
+            <button className="px-7 py-2 w-full rounded-md bg-[#211F22] text-gray-400 place-items-center rnd-shd flex gap-4" onClick={handlegooglelogin}><BsGoogle /> <div className="text-sm text-gray-400 font-semibold font-sans">Continue with Google</div></button>
           </div>
-          
+
 
           <div className="login-newuser" style={{ width: "100%" }}>
             <Link to="/register-candidate">

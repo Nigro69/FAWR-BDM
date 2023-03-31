@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "../Research/Research.css"
 
 import Email_img1 from "./EmailImages/Email_img1.png"
@@ -21,11 +21,13 @@ import Value from '../../Templates/Value/Value'
 
 export default function Email({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
     const projectData = [
         {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { auth } from "../../../firebase/config";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +23,7 @@ import { NavLink as Link } from "react-router-dom";
 
 import { Input, Button } from "@chakra-ui/react";
 import { BarLoader } from "react-spinners";
-import {signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { BsGoogle } from "react-icons/bs";
 
 export default function Register() {
@@ -72,13 +72,13 @@ export default function Register() {
       storeRole(res.user.displayName);
       setcandidateModel(
         {
-          firstName:firstName,
-          middleName:middleName,
-          lastName:lastName,
-          email:res.user.email,
-          image:"",
+          firstName: firstName,
+          middleName: middleName,
+          lastName: lastName,
+          email: res.user.email,
+          image: "",
         }
-        )
+      )
       seterrorMessage(false);
       const yash = getToken();
       setauthToken(yash);
@@ -115,7 +115,7 @@ export default function Register() {
     }
   };
 
-  const handlegooglelogin =()=>{
+  const handlegooglelogin = () => {
     googlelogIn();
     setisPending(true);
   }
@@ -132,11 +132,11 @@ export default function Register() {
       setAdmin(true);
       setcandidateModel(
         {
-          firstName:res.user.displayName,
-          middleName:"",
-          lastName:"",
-          email:res.user.email,
-          image:"",
+          firstName: res.user.displayName,
+          middleName: "",
+          lastName: "",
+          email: res.user.email,
+          image: "",
         }
       )
 
@@ -149,11 +149,13 @@ export default function Register() {
     }
   };
 
-  window.scroll({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <div className="register-outer">
@@ -292,9 +294,9 @@ export default function Register() {
             </div>
 
             <div className="register-right">
-            <div className="py-4 px-2 w-full">
-            <button className="px-9 py-2 w-full rounded-md bg-[#211F22] text-gray-400 place-items-center rnd-shd flex gap-4" onClick={handlegooglelogin}><BsGoogle/> <div className="text-sm text-gray-400 font-semibold font-sans">Continue with Google</div></button>
-          </div>
+              <div className="py-4 px-2 w-full">
+                <button className="px-9 py-2 w-full rounded-md bg-[#211F22] text-gray-400 place-items-center rnd-shd flex gap-4" onClick={handlegooglelogin}><BsGoogle /> <div className="text-sm text-gray-400 font-semibold font-sans">Continue with Google</div></button>
+              </div>
             </div>
           </div>
         </div>

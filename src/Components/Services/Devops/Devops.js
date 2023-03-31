@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "../Research/Research.css"
 
 import Devops_img1 from "./DevopsImages/Devops_img1.png"
@@ -113,11 +113,13 @@ export default function Research({ mode }) {
         }
     ]
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
     return (
         <div className='research-outer'>
             <Top bgimg={Devops_img1} mode={mode} />

@@ -1,16 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Vission.css"
 
 import V1 from "./VissionImages/V1.png"
 
 export default function Vission({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
-
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
     return (
         <div className='v-outer' style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>
