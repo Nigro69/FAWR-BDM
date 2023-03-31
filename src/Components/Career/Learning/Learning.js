@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Learning.css";
 
 import Learning_img1 from "./LearningImages/Learning_img1.png";
@@ -16,11 +16,13 @@ import { Button, useMediaQuery } from "@chakra-ui/react";
 import { NavLink as Link } from "react-router-dom";
 
 export default function Learning({ mode }) {
-  window.scroll({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
+  useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
 
   const learningData = [

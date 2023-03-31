@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "../../Industries/Industries.css"
 
 import Technology_img1 from "./TechnologyImages/Technology_img1.png"
@@ -88,11 +88,13 @@ export default function Technology({ mode }) {
         },
     ]
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
     return (
         <div className='industries-outer'>

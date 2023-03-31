@@ -1,13 +1,15 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Sitemap.css"
 
 export default function Sitemap({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
     return (
         <div className='s-outer' style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>

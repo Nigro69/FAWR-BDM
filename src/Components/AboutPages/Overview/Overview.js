@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Overview.css"
 
 import O1 from "./OverviewImages/O1.png"
@@ -11,11 +11,13 @@ import { Button } from '@chakra-ui/react'
 
 export default function Overview({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
 
     return (

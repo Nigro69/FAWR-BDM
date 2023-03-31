@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Accessibility.css"
 
 export default function Accessibility({ mode }) {
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
     return (
         <div className='as-outer' style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>
             <div className="as-title">

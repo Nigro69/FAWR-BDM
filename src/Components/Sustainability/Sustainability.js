@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Sustainability.css"
 
 import Sustainability_img1 from "./SustainabilityImages/Sustainability_img1.png"
@@ -15,11 +15,13 @@ import { useMediaQuery } from '@chakra-ui/react'
 
 export default function Sustainability({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
     const [isLargerThan800] = useMediaQuery('(min-width: 800px)')
 

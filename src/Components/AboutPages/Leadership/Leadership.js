@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Leadership.css"
 
 import L1 from "./LeadershipImages/L1.png"
@@ -10,11 +10,13 @@ import { Button } from '@chakra-ui/react'
 
 export default function Leadership({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
 
     const leaderData = [

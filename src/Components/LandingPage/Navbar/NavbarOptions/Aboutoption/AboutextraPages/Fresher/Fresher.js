@@ -1,5 +1,5 @@
 import { Button } from '@chakra-ui/react'
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Fresher.css"
 
 import F1 from "./FresherImages/F1.png"
@@ -8,11 +8,13 @@ import F1 from "./FresherImages/F1.png"
 
 export default function Fresher({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
 
     return (

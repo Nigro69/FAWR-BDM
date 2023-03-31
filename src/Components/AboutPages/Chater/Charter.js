@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Charter.css"
 
 import C1 from "./CharterImages/C1.png"
@@ -8,11 +8,13 @@ import { NavLink as Link } from 'react-router-dom'
 
 export default function Charter({ mode }) {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
 
     const charterData = [
         {

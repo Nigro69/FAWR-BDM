@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "../Terms/Terms.css"
 import Privacy_img1 from "../PoliciesImages/Privacy_img1.png"
 import Privacy_img2 from "../PoliciesImages/Privacy_img2.png"
@@ -17,11 +17,13 @@ import {
 import { useMediaQuery } from '@chakra-ui/react'
 
 export default function Terms({ mode }) {
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, [])
     const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
     return (
         <div className='terms-outer' style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>
