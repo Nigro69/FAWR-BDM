@@ -7,6 +7,10 @@
     width: 100%;
 }
 
+.ff-style {
+    font-family: 'Georgia', cursive;
+}
+
 .companies-names {
     margin-top: 2%;
     width: 80%;
@@ -56,6 +60,7 @@
     color: #874900;
     font-size: 4rem;
     font-weight: 500;
+    font-family: 'Yeseva One', cursive;
     margin-top: 7%;
     width: 100%;
     margin-left: 10%;

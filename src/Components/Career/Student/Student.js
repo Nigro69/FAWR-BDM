@@ -133,13 +133,13 @@ export default function Student({ mode }) {
           <div className="md:w-2/4 w-full">
             <img src={F2} alt="std-image" />
           </div>
-          <div className="md:w-2/4 w-full">
+          <div className="md:w-2/4 w-full grid place-items-center">
             <div className="md:text-4xl text-2xl font-sans text-gray-200 tracking-wider my-10 uppercase">Undergraduates Opportunities</div>
             <div className="font-sans text-sm md:text-lg text-gray-500 tracking-wide">This is a dummy text, to be replaced with how wehelps recent graduates kickstart their career by joining us.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.</div>
           </div>
         </div>
         <div className="md:flex w-full gap-10 my-10">
-          <div className="md:w-2/4 w-full">
+          <div className="md:w-2/4 w-full my-auto">
             <div className="md:text-4xl text-2xl font-sans text-gray-200 tracking-wider mb-10 uppercase">Advanced Degree Opportunities</div>
             <div className="font-sans md:text-lg text-sm text-gray-500 tracking-wide">Career advancement is the upward trajectory of a person's professional journey. Examples include progressing from an entry-level position to management and transitioning from one occupation to another.Professional development goals are objectives you can set for yourself to help further your career. These might include taking steps to learn relevant skills, expand your professional network, or find more satisfaction at work.</div>
           </div>
@@ -151,7 +151,7 @@ export default function Student({ mode }) {
           <div className="md:w-2/4 w-full">
             <img src={F4} alt="std-image" />
           </div>
-          <div className="md:w-2/4 w-full">
+          <div className="md:w-2/4 w-full my-auto">
             <div className="md:text-4xl text-2xl font-sans text-gray-200 tracking-wider mb-10 uppercase">Internships</div>
             <div className="font-sans md:text-lg text-sm text-gray-500 tracking-wide">Whether you’re graduating with an undergraduate degree, Masters degree, MBA or PhD, BDM team have positions available globally. While we have internships throughout the year, the majority of our technical internships take place in the summer and last between 12 to 16 weeks. Internships are a great way to immerse yourself in Amazon’s culture to see if we’re a good fit for you and your career goals.</div>
           </div>
@@ -307,7 +307,7 @@ export default function Student({ mode }) {
             className="freshers-learn-more"
             style={{ color: mode === "dark" ? "#908B89" : "#5D5D5D" }}
           >
-            <u onClick={()=>navigate("/Freshers-Traning")}>Learn More</u>
+            <u onClick={()=>navigate("/Students-Training")}>Learn More</u>
           </div>
         </div>
 

@@ -25,7 +25,7 @@ const StudentBenifits = () => {
     {
       ig: h2,
       tit: "Leadership Development",
-      des: "An industry leading award winning traning/development programe.",
+      des: "An industry leading award winning Training/development programe.",
     },
     {
       ig: h3,

@@ -11,6 +11,7 @@ import f6 from "./FooterImages/6.png"
 import f7 from "./FooterImages/7.png"
 import f8 from "./FooterImages/8.png"
 import f9 from "./FooterImages/9.png"
+import f10 from "./FooterImages/bbLogo.png"
 
 import { NavLink as Link } from 'react-router-dom'
 
@@ -50,11 +51,14 @@ export default function Footer() {
 
                 <div className='footer-content'>
                     {/* <div style={{ display: "flex" }}> */}
-                    <div className='footer-content-title'>
+                    <div className="flex gap-5 p-2">
+                        <img src={f10} alt="logo" />
+                    <div className='grid place-items-center footer-content-title'>
                         BDM
                     </div>
+                    </div>
                     <div className='footer-content-hidden'>
-                        <div>
+                        <div className="hidden">
                             <ul className='footer-ul'>
                                 <li className='footer-content-text'>About</li>
                                 <li className='footer-content-text'>Solutions</li>
@@ -67,7 +71,7 @@ export default function Footer() {
                         </div>
 
 
-                        <div className='footer-content-2'>
+                        <div className='footer-content-2 ml-40'>
                             <div className='footer-content-text'>
                                 Contact us
                             </div>
@@ -133,6 +137,11 @@ export default function Footer() {
 
                 <div className='footer-bottom'>
                     <div className='footer-bottom-right'>
+                        <Link to="/Contact Us">
+                            <div className='footer-content-text'>
+                                Contact Us
+                            </div>
+                        </Link>
                         <Link to="/Sustainability @ BDM">
                             <div className='footer-content-text'>
                                 Sustainability
@@ -161,6 +170,16 @@ export default function Footer() {
                         <Link to="/Sitemap">
                             <div className='footer-content-text'>
                                 Sitemap
+                            </div>
+                        </Link>
+                        <Link to="/Jobs">
+                            <div className='footer-content-text'>
+                                Careers
+                            </div>
+                        </Link>
+                        <Link to="/Sitemap">
+                            <div className='footer-content-text'>
+                                Influencer 
                             </div>
                         </Link>
                         <Link to="/Login-admin">

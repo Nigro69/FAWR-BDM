@@ -94,8 +94,11 @@ import Job from './Components/Career/Job/Job.js'
 import Freshers from './Components/Career/Freshers/Freshers.js'
 import Professional from "./Components/Career/Professional/Professional.js"
 import ProfileHome from './Components/Profile/ProfileHome.jsx'
-import Traning from './Components/Career/Freshers/Traning.jsx'
+import FTraining from './Components/Career/Freshers/FTraning.jsx'
+import PTraining from './Components/Career/Freshers/PTraning.jsx'
+import STraining from './Components/Career/Student/STraning.jsx'
 import Benifits from './Components/Career/Freshers/Benifits.jsx'
+import PBenifits from './Components/Career/Freshers/PBenifits.jsx'
 import FDiversity from './Components/Career/Freshers/FDiversity.jsx'
 import StudentBenifits from './Components/Career/Student/StudentBenifits.jsx'
 import LoginAdmin from './Components/Profile/LoginAdmin.jsx'
@@ -230,9 +233,12 @@ export default function App() {
           <Route path="/Register" element={<Register mode={mode} />} />
           <Route path="/register-candidate" element={<Register2 mode={mode} />} />
           <Route path="/Profile-Home" element={<ProfileHome mode={mode} />} />
-          <Route path="/Freshers-Traning" element={<Traning mode={mode} />} />
+          <Route path="/Freshers-Training" element={<FTraining mode={mode} />} />
+          <Route path="/Prof-Training" element={<PTraining mode={mode} />} />
+          <Route path="/Students-Training" element={<STraining mode={mode} />} />
           <Route path="/Freshers-Diversity" element={<FDiversity mode={mode} />} />
           <Route path="/Freshers-Benifits" element={<Benifits mode={mode} />} />
+          <Route path="/Prof-Benifits" element={<PBenifits mode={mode} />} />
           <Route path="/Students-Benifits" element={<StudentBenifits mode={mode} />} />
 
 

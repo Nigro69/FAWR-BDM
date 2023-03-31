@@ -9,7 +9,7 @@ import f5 from "./FreshersImages/f5.png";
 import f6 from "./FreshersImages/f6.png";
 import f7 from "./FreshersImages/f7.png";
 
-const Traning = () => {
+const Training = () => {
   const datas = [
     {
       id: 1,
@@ -60,9 +60,9 @@ const Traning = () => {
         </div>
         <div className="md:w-2/4 my-auto">
           <div className="font-sans ff-style text-4xl tracking-wider my-5 text-[#BC312E]">
-            Traning for students
+            Training for Freshers
           </div>
-          <div className="font-sans ff-style text-4xl tracking-wider text-gray-400">
+          <div className="font-sans text-3xl tracking-wider text-gray-400">
             Interships in business, engineering, technology, and more.
           </div>
         </div>
@@ -165,4 +165,4 @@ const Traning = () => {
   );
 };
 
-export default Traning;
+export default Training;

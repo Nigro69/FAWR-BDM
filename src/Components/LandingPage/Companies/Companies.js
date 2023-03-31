@@ -19,15 +19,15 @@ import { useMediaQuery } from '@chakra-ui/react'
 export default function Companies({ mode }) {
     const [selected, setSelected] = useState(0)
 
-    const Data = ["BB Celebration", "BB Creative Studio", "Wed my love", "BB Influencer", "BB Corporate Connect", "BB Salon"]
-    const imgs = [C8, C7, C6, C5, C4, C3]
-    const titles = ["Celebration Schemes", "BB Creative Studio", "Wed my love", "BB Influencer", "BB Corporate Connect", "BB Salon"]
-    const content = ["BB Celebration schemes helps you to get the best of deals and planned sets for any of your occasion be it a birthday party, anniversary, graduation party or a throw for the corporates.",
-        "BB creative studio provides one solution for all the fields of expertise giving a wide range of options to choose from. They enhance your experience everyday by offering a wide range of coupons, deals and cashbacks on the leading online brands and websites. ",
-        "India’s most trusted connecting  network. They  guide you in your journey to find inner peace and fulfillment. They find the best of people to get together.",
-        "BB Influencer helps to  get the best of influencer on a  digital platform for entertainment, lifestyle and fashion. They bring you the latest  and trending stories in glitz, glitter  everyday.",
-        "BB Corporate connect helps you to get the best of deals from planned sets of companies for any of your corporate or lifestyle choices.",
-        "BB Salon partners with brands such as VLCC to give you the best  of salon solution in a smooth and hassle free manner to add up to your effortless look."]
+    const Data = ["BB Celebration", "BB Creative Studio", "Wed my love", "BB Corporate Connect", "BB Salon", "Im Beside you"]
+    const imgs = [C8, C7, C6, C4, C3, C5]
+    const titles = ["Big Bros Celebration", "Big Bros Creative Studio", "Wed my love", "Big Bros Corporate Connect", "Beauti & Bright Salon", "Im Beside you"]
+    const content = ["Adding Magical Touch to your Celebrations on birthdays, anniversaries,product launches  get to gather, friends reunion,Logistics, Hospitality, valedictory moments",
+        "BCS connects businesses with freelancers, independent professionals and agencies around the globe offering digital services in 500+ categories",
+        "WedMylove is an India's most loved  Wedding Planning Website and app where you can find the best wedding ideas and all in one place vendors, venues, photograhers, Makeupartists, Party throwers artists, with prices and reviews.",
+        "Accelerate Business Connections at Executive Level meetings, product launch. To reach  and know your customers Get support from peers and global leaders. Plan your business at the level you expect to reach.",
+        "Salon App will allow you to find the nearest Salons, view the stylists, prices , services provided and make reservations on the app.",
+        "Whether you're feeling anxious, lonely, overwhelmed, or just burned out, Im Beside You will meet you where you're at. Best partner App for Singles. This is not just another online flirt app - Im Beside You is about true friend. We are the Distance frnd app for singles that are looking moral support."]
 
 
     const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
@@ -47,7 +47,7 @@ export default function Companies({ mode }) {
 
             <div className='companies-content'>
                 <div className='companies-left'>
-                    <div className='companies-title'>
+                    <div className='companies-title ff-style'>
                         {titles[selected]}
                     </div>
                     <div className='companies-left-content' style={{ color: mode === "dark" ? "#C6C6C6" : "#7A7A7A" }}>

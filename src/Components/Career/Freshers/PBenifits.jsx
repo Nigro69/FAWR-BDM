@@ -158,6 +158,14 @@ const Benifits = () => {
           HEALTHCARE
         </button>
         <button
+          onClick={() => setbenifitTab(3)}
+          className={`font-bold text-sm md:text-lg text-[#F7B733] p-4 ${
+            benifitTab === 3 && "border-b-2 border-b-[#F7B733]"
+          }`}
+        >
+          RETIREMENT
+        </button>
+        <button
           onClick={() => setbenifitTab(4)}
           className={`font-bold text-sm md:text-lg text-[#F7B733] p-4 ${
             benifitTab === 4 && "border-b-2 border-b-[#F7B733]"

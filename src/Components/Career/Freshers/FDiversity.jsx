@@ -15,7 +15,7 @@ const FDiversity = () => {
           <div className="ff-style text-gray-400 text-2xl md:text-4xl font-semibold tracking-wide mb-10 uppercase">
             our <div className="text-[#BC312E]">commitment to diversity</div>
           </div>
-          <div className="tracking-wide text-sm md:text-lg text-gray-600">
+          <div className="tracking-wide text-sm md:text-lg text-gray-400">
             At the crux of our efforts is a focus on cultivating and sustaining
             a diverse work environment and workforce, which is critical to
             meeting the unique needs of our diverse client base and the
