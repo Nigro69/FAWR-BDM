@@ -24,6 +24,7 @@ export const ContextProvider = ({ children }) => {
     lastName:"",
     email:"",
     phoneNumber:"",
+    experience:0,
     dob:"",
     pancard:"",
     skills:[],
@@ -71,9 +72,11 @@ export const ContextProvider = ({ children }) => {
 
   const handleClick = (clicked) => setIsClicked({ ...initialState, [clicked]: true });
 
+  const [unMatched, setunMatched] = useState(false);
+
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <StateContext.Provider value={{candidateModel, setcandidateModel, setprofilePopup,profilePopup,authToken, setauthToken, manageblog,setmanageblog,manager,setmanager,setguestWriter,guestWriter,editor,seteditor, admin, setAdmin, currentColor, currentMode, activeMenu, screenSize, setScreenSize, handleClick, isClicked, initialState, setIsClicked, setActiveMenu, setCurrentColor, setCurrentMode, setMode, setColor, themeSettings, setThemeSettings }}>
+    <StateContext.Provider value={{unMatched,setunMatched, candidateModel, setcandidateModel, setprofilePopup,profilePopup,authToken, setauthToken, manageblog,setmanageblog,manager,setmanager,setguestWriter,guestWriter,editor,seteditor, admin, setAdmin, currentColor, currentMode, activeMenu, screenSize, setScreenSize, handleClick, isClicked, initialState, setIsClicked, setActiveMenu, setCurrentColor, setCurrentMode, setMode, setColor, themeSettings, setThemeSettings }}>
       {children}
     </StateContext.Provider>
   );

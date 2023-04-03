@@ -8,7 +8,7 @@ import { useStateContext } from "../../contexts/ContextProvider";
 
 const Home = ({func}) => {
   const {
-    candidateModel
+    candidateModel,setunMatched
   } = useStateContext();
 
     const [jobsData, setjobsData] = useState([]);
@@ -27,6 +27,15 @@ const Home = ({func}) => {
       setisPending(false);
     }
   };
+
+  const checkExprienceLevel = (value) =>{
+    if(value===candidateModel.experience){
+      setunMatched(false);
+    }
+    else{
+      setunMatched(true);
+    }
+  }
 
   useEffect(() => {
     getMyResult();
@@ -89,7 +98,7 @@ const Home = ({func}) => {
                   <button className="bg-white rounded-xl text-sm text-[#BC312E] px-4 py-1 border border-[#BC312E]">
                     Save
                   </button>
-                  <button className=" rounded-xl text-sm text-white bg-[#BC312E] border border-[#BC312E] px-4 py-1 ">
+                  <button  onClick={()=>checkExprienceLevel(data.experience)} className=" rounded-xl text-sm text-white bg-[#BC312E] border border-[#BC312E] px-4 py-1 ">
                     View Job
                   </button>
                 </div>

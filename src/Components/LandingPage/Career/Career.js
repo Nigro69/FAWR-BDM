@@ -32,11 +32,13 @@ export default function Career({ mode }) {
         </div>
       </div>
       <div className="md:flex justify-center md:px-10 w-full h-full">
-        <div className="w-full grid justify-center mt-10 h-full">
-          <div className={ ` ff-style text-center text-2xl md:text-4xl px-8 py-4 tracking-wider ${mode === "dark" ?"text-[#BC312E]":"text-black"}`}>Want to elevate your brand experience? Get in touch.</div>
-          <div className={`md:text-lg tracking-wide text-center p-2 ${mode === "dark" ?"text-gray-400":"text-gray-600"}`}>Just bring your creative business idea or the Communication problem. Let’s solve them together.</div>
+        <div className="w-full grid justify-start mt-10 h-full">
+          <div className="text-gray-400 italic font-semibold px-8">Convinced? Confused? Have Ideas?</div>
+          <div className={ ` ff-style text-2xl md:text-4xl px-8 py-4 tracking-wider ${mode === "dark" ?"text-[#BC312E]":"text-black"}`}>Want to elevate your brand experience? Get in touch.</div>
+          <div className="text-gray-400 italic font-semibold py-4 px-8">Want to elevate your brand experience?</div>
+          <div className={`md:text-lg tracking-wide px-8 ${mode === "dark" ?"text-gray-400":"text-gray-600"}`}>"Just bring your creative business idea or the Communication problem. Let’s solve them together."</div>
           <div className="py-10 px-14 grid place-items-center">
-            <button onClick={()=>navigate("/Reach%20Us")} className="font-bold rounded-lg text-white bg-[#BC312E] px-6 py-2">Lets Start</button>
+            <button onClick={()=>navigate("/Reach%20Us")} className="font-bold rounded-lg text-white bg-[#BC312E] px-6 py-2">Request a demo</button>
           </div>
         </div>
         <img src={c2} className="object-cover h-64 w-3/4 md:h-96 md:w-2/4 mx-auto" alt="" />

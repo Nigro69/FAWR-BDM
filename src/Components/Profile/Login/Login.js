@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { auth } from "../../../firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+  signInWithPopup,
+  GoogleAuthProvider,
+  sendPasswordResetEmail,
+} from "firebase/auth";
 import {
   getRole,
   getToken,
@@ -34,17 +38,19 @@ export default function Login() {
     setmanager,
     seteditor,
     setguestWriter,
-    setcandidateModel
+    setcandidateModel,
   } = useStateContext();
   const navigate = useNavigate();
 
   const provider = new GoogleAuthProvider();
 
-
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [isPending, setisPending] = useState(false);
-  const [erroeMessage, seterroeMessage] = useState(false);
+  const [erroeMessage, seterroeMessage] = useState(null);
+  const [forgetPassword, setforgetPassword] = useState(false);
+  const [resetEmail, setresetEmail] = useState("");
+  const [resetMessage, setresetMessage] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -60,7 +66,7 @@ export default function Login() {
       console.log(res);
       storeToken(res.user.accessToken);
       storeRole(res.user.displayName);
-      seterroeMessage(false);
+      seterroeMessage(null);
       const yash = getToken();
       setauthToken(yash);
       const barman = getRole();
@@ -87,8 +93,9 @@ export default function Login() {
       setisPending(false);
     } catch (error) {
       console.log(error);
-      seterroeMessage(true);
       setisPending(false);
+      const message = error.message;
+      seterroeMessage(message.slice(9));
     }
   };
 
@@ -115,10 +122,20 @@ export default function Login() {
     }
   }, [authToken, setauthToken]);
 
+  const resetPassword = async () => {
+    try {
+      const res = await sendPasswordResetEmail(auth, resetEmail);
+      setresetMessage(true);
+      setresetEmail("");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   const handlegooglelogin = () => {
     googlelogIn();
     setisPending(true);
-  }
+  };
 
   const googlelogIn = async () => {
     try {
@@ -130,15 +147,13 @@ export default function Login() {
       const yash = getToken();
       setauthToken(yash);
       setAdmin(true);
-      setcandidateModel(
-        {
-          firstName: res.user.displayName,
-          middleName: "",
-          lastName: "",
-          email: res.user.email,
-          image: "",
-        }
-      )
+      setcandidateModel({
+        firstName: res.user.displayName,
+        middleName: "",
+        lastName: "",
+        email: res.user.email,
+        image: "",
+      });
 
       navigate("/");
       setisPending(false);
@@ -157,75 +172,135 @@ export default function Login() {
   }, []);
 
   return (
-    <div className="login-outer">
-      <div className="login-bgimg">
-        <div className="login-box relative">
-          {isPending && <div className="absolute top-1 rounded-t-xl left-0">
-            <BarLoader color="#BC312E" width={296} />
-          </div>}
-          <div className="login-box-title" style={{ color: "white" }}>
-            Login
-          </div>
+    <div className="login-outer ">
+      <div className="login-bgimg relative ">
+        {!forgetPassword && (
+          <div className="absolute md:right-20 top-24 px-10 md:px-4  md:w-1/4">
+            {erroeMessage && (
+              <div className="p-4 my-2 border border-red-300 rounded-md bg-[#FF3131] text-sm bg-opacity-40 text-white">
+                {erroeMessage}
+              </div>
+            )}
+            <div className="space-y-4 w-full relative rounded-lg border border-gray-400 bg-opacity-80 bg-[#211F22] py-4 px-7">
+              {isPending && (
+                <div className="absolute top-1 rounded-t-xl left-0">
+                  <BarLoader color="#BC312E" width={296} />
+                </div>
+              )}
+              <div className="login-box-title" style={{ color: "white" }}>
+                Login
+              </div>
 
-          <Input
-            placeHolder="Email"
-            value={email}
-            onChange={(e) => setemail(e.target.value)}
-            _placeholder={{ marginLeft: "5%", color: "white" }}
-            borderColor="#211F22"
-            borderBottomColor="white"
-            borderRadius="0%"
-            color="white"
-            _hover={{ borderColor: "none" }}
-            focusBorderColor="#211F22"
-            _focus={{ borderBottomColor: "white" }}
-          />
+              <Input
+                placeHolder="Email"
+                value={email}
+                onChange={(e) => setemail(e.target.value)}
+                _placeholder={{ marginLeft: "5%", color: "white" }}
+                borderColor="#211F22"
+                borderBottomColor="white"
+                borderRadius="0%"
+                color="white"
+                _hover={{ borderColor: "none" }}
+                focusBorderColor="#211F22"
+                _focus={{ borderBottomColor: "white" }}
+              />
 
-          <Input
-            placeHolder="Password"
-            value={password}
-            onChange={(e) => setpassword(e.target.value)}
-            type="password"
-            _placeholder={{ marginLeft: "5%", color: "white" }}
-            borderColor="#211F22"
-            borderBottomColor="white"
-            borderRadius="0%"
-            color="white"
-            _hover={{ borderColor: "none" }}
-            focusBorderColor="#211F22"
-            _focus={{ borderBottomColor: "white" }}
-          />
-          <div className="login-forget">Forgot Password</div>
-          <div
-            style={{ width: "100%", display: "flex", justifyContent: "center" }}
-          >
-            <Button
-              disabled={isPending}
-              onClick={handleSubmit}
-              color="white"
-              backgroundColor="#BC312E"
-            >
-              Login
-            </Button>
-          </div>
+              <Input
+                placeHolder="Password"
+                value={password}
+                onChange={(e) => setpassword(e.target.value)}
+                type="password"
+                _placeholder={{ marginLeft: "5%", color: "white" }}
+                borderColor="#211F22"
+                borderBottomColor="white"
+                borderRadius="0%"
+                color="white"
+                _hover={{ borderColor: "none" }}
+                focusBorderColor="#211F22"
+                _focus={{ borderBottomColor: "white" }}
+              />
+              <div
+                onClick={() => setforgetPassword(true)}
+                className="login-forget cursor-pointer"
+              >
+                Forgot Password
+              </div>
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <Button
+                  disabled={isPending}
+                  onClick={handleSubmit}
+                  color="white"
+                  backgroundColor="#BC312E"
+                >
+                  Login
+                </Button>
+              </div>
 
-          <div className="py-4 w-full">
+              {/* <div className="py-4 w-full">
             <button className="px-7 py-2 w-full rounded-md bg-[#211F22] text-gray-400 place-items-center rnd-shd flex gap-4" onClick={handlegooglelogin}><BsGoogle /> <div className="text-sm text-gray-400 font-semibold font-sans">Continue with Google</div></button>
-          </div>
+          </div> */}
 
-
-          <div className="login-newuser" style={{ width: "100%" }}>
-            <Link to="/register-candidate">
-              <label style={{ width: "100%", cursor: "pointer" }}>
-                New User?{" "}
-                <label style={{ color: "#BC312E", cursor: "pointer" }}>
-                  {" "}
-                  Register
-                </label>
-              </label>
-            </Link>
+              <div className="login-newuser" style={{ width: "100%" }}>
+                <Link to="/register-candidate">
+                  <label style={{ width: "100%", cursor: "pointer" }}>
+                    New User?{" "}
+                    <label style={{ color: "#BC312E", cursor: "pointer" }}>
+                      {" "}
+                      Register
+                    </label>
+                  </label>
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
+        )}
+        {forgetPassword && (
+          <div className="absolute md:right-20 top-24 px-10 md:px-4  md:w-1/4">
+            {resetMessage && (
+              <div className="p-4 my-2 border border-green-300 rounded-md bg-green-600 text-sm bg-opacity-40 text-white">
+                A password reset link has been send to your email address.
+              </div>
+            )}
+            <div className="space-y-4 w-full rounded-lg border border-gray-400 bg-opacity-80 bg-[#211F22] py-4 px-7">
+              <div className="login-box-title" style={{ color: "white" }}>
+                Reset Password
+              </div>
+              <Input
+                placeHolder="Enter your Email"
+                value={resetEmail}
+                onChange={(e) => setresetEmail(e.target.value)}
+                _placeholder={{ marginLeft: "5%", color: "white" }}
+                borderColor="#211F22"
+                borderBottomColor="white"
+                borderRadius="0%"
+                color="white"
+                _hover={{ borderColor: "none" }}
+                focusBorderColor="#211F22"
+                _focus={{ borderBottomColor: "white" }}
+              />
+              <div>
+                <button
+                  onClick={resetPassword}
+                  className="font-semibold mt-5 text-sm text-white bg-[#BC312E] rounded-md px-6 py-2 w-full text-center"
+                >
+                  Reset Password
+                </button>
+              </div>
+              <div
+                className="p-4 text-white font-bold text-sm text-right cursor-pointer"
+                onClick={() => {setforgetPassword(false); setresetMessage(false); seterroeMessage(null);}}
+              >
+                Login
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
