@@ -104,6 +104,7 @@ import StudentBenifits from './Components/Career/Student/StudentBenifits.jsx'
 import LoginAdmin from './Components/Profile/LoginAdmin.jsx'
 import Register2 from './Components/Profile/Register2.jsx'
 import { ArrowUpIcon } from '@chakra-ui/icons'
+import JobDetails from './Components/Career/Student/JobDetails.jsx'
 
 
 
@@ -222,6 +223,7 @@ export default function App() {
 
           <Route path="/Life@BDM" element={<Life mode={mode} />} />
           <Route path="/Student / Intern Program" element={<Student mode={mode} />} />
+          <Route path="/Student / Intern Program/:id" element={<JobDetails mode={mode} />} />
           <Route path="/Diversity & Inclusion" element={<Diversity mode={mode} />} />
           <Route path="/Learning & Development" element={<Learning mode={mode} />} />
           <Route path="/Jobs" element={<Job mode={mode} />} />
