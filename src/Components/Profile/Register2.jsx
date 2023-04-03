@@ -54,10 +54,11 @@ function Register2({ mode }) {
   const [emailverified, setemailverified] = useState(false);
   const [agree, setagree] = useState(false);
   const [verificationPending, setverificationPending] = useState(false);
-  const [day, setday] = useState(0);
-  const [year, setyear] = useState(0);
+  const [day, setday] = useState(null);
+  const [year, setyear] = useState(null);
   const [pancard, setpancard] = useState("");
   const [pancardValidate, setpancardValidate] = useState(true);
+  const [experience, setexperience] = useState(null);
 
   const pancardValidation = (text) => {
 
@@ -143,6 +144,7 @@ function Register2({ mode }) {
           lastName:lastName,
           email:auth.currentUser.email,
           phoneNumber:number + phoneNumber,
+          experience:experience,
           image:"",
           dob:`${day}`+ " " + month + " " + `${year}`,
           pancard:pancard,
@@ -220,12 +222,30 @@ function Register2({ mode }) {
                   </div>
                   <div
                     onClick={() => {
-                      setintrest("BPO");
+                      setintrest("Sales and Marketing");
                       setdrop(0);
                     }}
                     className="text-center p-2 text-sm bg-[#211F22] cursor-pointer text-gray-400"
                   >
-                    BPO
+                    Sales and Marketing
+                  </div>
+                  <div
+                    onClick={() => {
+                      setintrest("Engineering");
+                      setdrop(0);
+                    }}
+                    className="text-center p-2 text-sm bg-[#211F22] cursor-pointer text-gray-400"
+                  >
+                  Engineering
+                  </div>
+                  <div
+                    onClick={() => {
+                      setintrest("Design");
+                      setdrop(0);
+                    }}
+                    className="text-center p-2 text-sm bg-[#211F22] cursor-pointer text-gray-400"
+                  >
+                    Design
                   </div>
                 </div>
               )}
@@ -280,7 +300,7 @@ function Register2({ mode }) {
                 </div>
               </div>
               {drop === 2 && (
-                <div className="absolute w-full border border-gray-400 rounded-md grid grid-cols-1 divide-y divide-gray-400">
+                <div className="absolute z-10 w-full border border-gray-400 rounded-md grid grid-cols-1 divide-y divide-gray-400">
                   <div
                     onClick={() => {
                       settitle("Dr.");
@@ -307,6 +327,53 @@ function Register2({ mode }) {
                     className="text-center p-2 text-sm bg-[#211F22] cursor-pointer text-gray-400"
                   >
                     Ms.
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="space-y-2 my-5">
+            <div className="text-gray-400">
+              Experience Level<label className="text-red-600">*</label>
+            </div>
+            <div className="relative  w-1/4">
+              <div
+                onClick={() => setdrop(drop === 7 ? 0 : 7)}
+                className="flex justify-between place-items-center text-sm bg-[#211F22] px-3 py-2 rounded-md border border-gray-400 text-gray-400"
+              >
+                <div>{experience === null ? "Select" : experience===1 && "Experienced" || experience===-1 && "Undergraduate" || experience===0 && "Graduate"} </div>
+                <div>
+                  <BsChevronDown />
+                </div>
+              </div>
+              {drop === 7 && (
+                <div className="absolute w-full border border-gray-400 rounded-md grid grid-cols-1 divide-y divide-gray-400">
+                  <div
+                    onClick={() => {
+                      setexperience(-1);
+                      setdrop(0);
+                    }}
+                    className="text-center p-2 text-sm bg-[#211F22] cursor-pointer text-gray-400"
+                  >
+                    Undergraduate
+                  </div>
+                  <div
+                    onClick={() => {
+                      setexperience(0);
+                      setdrop(0);
+                    }}
+                    className="text-center p-2 text-sm bg-[#211F22] cursor-pointer text-gray-400"
+                  >
+                    Graduate
+                  </div>
+                  <div
+                    onClick={() => {
+                      setexperience(1);
+                      setdrop(0);
+                    }}
+                    className="text-center p-2 text-sm bg-[#211F22] cursor-pointer text-gray-400"
+                  >
+                    Experienced
                   </div>
                 </div>
               )}

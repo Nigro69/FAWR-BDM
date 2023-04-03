@@ -15,7 +15,7 @@ import h10 from "./StudentImages/h1.png";
 import h11 from "./StudentImages/h11.png";
 import h12 from "./StudentImages/h12.png";
 
-const StudentBenifits = () => {
+const StudentBenefits = () => {
   const coldata = [
     {
       ig: h1,
@@ -80,23 +80,13 @@ const StudentBenifits = () => {
   ];
 
   return (
-    <div className="p-4 md:mx-10 my-4">
-      <div className="md:flex gap-20 space-y-3 md:space-y-0 w-full mt-10 mb-10">
-        <div className="md:w-2/4 w-full">
-          <div className="text-[#BC312E] my-5 tracking-wider text-4xl font-semibold  text-center">
-            Student Benifits
+    <div className="">
+      <div className="w-full">
+          <img className="w-full object-cover h-[450px]" src={F2} alt="" />
+        <div className="absolute top-[430px] right-32">
+          <div className=" ff-style text-3xl md:text-6xl my-5 text-[#BC312E]">
+            Students Benefits
           </div>
-          <div className="tracking-wide  md:text-lg text-gray-400 md:px-10 text-center">
-            " I have been working as an admin assistant to the General Manager
-            for just over 3 years. I started as a Receptionist and was promoted
-            after 6 months. I am passionate about learning new skills and I have
-            completed a number of training courses. I have developed a strong
-            skill set including in-depth data management expertise. I am eager
-            to make full use of this in a larger working environment."
-          </div>
-        </div>
-        <div className="md:w-2/4 w-full">
-          <img src={F2} alt="cdsdc" />
         </div>
       </div>
       <div className="flex place-items-center mt-20 md:mt-36 mb-20">
@@ -117,7 +107,7 @@ const StudentBenifits = () => {
       </div>
       <hr class="h-0.5 mx-auto my-16 bg-gray-600 border-0 rounded w-96  "></hr>
 
-      <div className="grid md:grid-cols-2 gap-10">
+      <div className="grid md:grid-cols-2 gap-10 px-10">
         {coldata.map(data=>(
         <div key={data.ig} className="flex gap-3 w-full h-52 bg-[#211F22] rnd-shd">
           <div className="w-2/4 object-cover">
@@ -138,4 +128,4 @@ const StudentBenifits = () => {
   );
 };
 
-export default StudentBenifits;
+export default StudentBenefits;

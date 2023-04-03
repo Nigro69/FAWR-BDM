@@ -2,10 +2,16 @@ import React, { useEffect, useState } from "react";
 import { BiFilterAlt } from "react-icons/bi";
 import { BsChevronDown } from "react-icons/bs";
 import { FiLock, FiSearch } from "react-icons/fi";
-import { GrLocation } from "react-icons/gr";
+import { GrClose, GrLocation } from "react-icons/gr";
+import { useStateContext } from "../../contexts/ContextProvider";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Browse = () => {
+  const navigate = useNavigate();
+  const {
+    candidateModel,setunMatched
+  } = useStateContext();
   const [dropCategory, setdropCategory] = useState(false);
   const [dropLocation, setdropLocation] = useState(false);
   const [category, setcategory] = useState("");
@@ -30,6 +36,16 @@ const Browse = () => {
       setisPending(false);
     }
   };
+
+
+  const checkExprienceLevel = (value) =>{
+    if(value===candidateModel.experience){
+      setunMatched(false);
+    }
+    else{
+      setunMatched(true);
+    }
+  }
 
   
 
@@ -265,10 +281,10 @@ const Browse = () => {
                   Posted: {data.publishedDate} days ago
                 </div>
                 <div className="flex gap-5 place-items-center">
-                  <button className="bg-white rounded-xl text-sm text-[#BC312E] px-4 py-1 border border-[#BC312E]">
+                  <button  className="bg-white rounded-xl text-sm text-[#BC312E] px-4 py-1 border border-[#BC312E]">
                     Save
                   </button>
-                  <button className=" rounded-xl text-sm text-white bg-[#BC312E] border border-[#BC312E] px-4 py-1 ">
+                  <button onClick={()=>checkExprienceLevel(data.experience)} className=" rounded-xl text-sm text-white bg-[#BC312E] border border-[#BC312E] px-4 py-1 ">
                     View Job
                   </button>
                 </div>

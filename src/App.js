@@ -104,10 +104,15 @@ import StudentBenifits from './Components/Career/Student/StudentBenifits.jsx'
 import LoginAdmin from './Components/Profile/LoginAdmin.jsx'
 import Register2 from './Components/Profile/Register2.jsx'
 import { ArrowUpIcon } from '@chakra-ui/icons'
+import { useStateContext } from "./contexts/ContextProvider.js"
+import { GrClose } from 'react-icons/gr'
 
 
 
 export default function App() {
+  const {
+    setunMatched,unMatched
+  } = useStateContext();
   const [mode, setMode] = useState("dark")
 
   const [visible, setVisible] = useState(false)
@@ -136,6 +141,18 @@ export default function App() {
     <ChakraProvider>
       <div style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }} >
         <Navbar mode={mode} handleMode={handleMode} />
+      {unMatched && <div className="fixed top-10 z-50 grid place-items-center  w-full ">
+      <div className=" w-2/4  border-2 rounded-md py-2 px-6 bg-red-400 bg-opacity-30 border-red-500">
+            <div className="justify-between flex">
+              <div className="font-sans text-sm font-semibold tracking-wider text-red-500 ">
+                Your experience level dosen't fit for this particular job.
+              </div>
+              <div onClick={()=>setunMatched(false)} className="bg-gray-300 cursor-pointer p-1 rounded-lg">
+                <GrClose />
+              </div>
+            </div>
+      </div>
+      </div>}
         <Routes>
           <Route path="/" element={<Landing mode={mode} />} />
 

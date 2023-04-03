@@ -53,17 +53,12 @@ const Training = () => {
   const toggleClass = " transform translate-x-6";
 
   return (
-    <div className="p-4 md:mx-10 my-4">
-      <div className="md:flex gap-20 w-full">
-      <div className="md:w-2/4 w-full">
-          <img src={f1} alt="" />
-        </div>
-        <div className="md:w-2/4 my-auto">
-          <div className="font-sans ff-style text-4xl tracking-wider my-5 text-[#BC312E]">
+    <div className="">
+      <div className="w-full">
+          <img className="w-full object-cover h-[450px]" src={f1} alt="" />
+        <div className="absolute top-80 right-32">
+          <div className=" ff-style text-3xl md:text-6xl my-5 text-[#BC312E]">
             Training for students
-          </div>
-          <div className="font-sans text-3xl tracking-wider text-gray-400">
-            Interships in business, engineering, technology, and more.
           </div>
         </div>
       </div>
@@ -74,7 +69,7 @@ const Training = () => {
         </div>
         <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96  "></hr>
       </div>
-      <div className="text-gray-500 tracking-wide text-center font-sans">
+      <div className="px-10 text-gray-500 tracking-wide text-center font-sans">
         Our training prepares students to work in the real world. It aims to
         hone the practical skills of students, which will help them pursue jobs
         in the fields of their choosing unlike classroom training, where the
@@ -99,16 +94,16 @@ const Training = () => {
         </div>
         <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96  "></hr>
       </div>
-      <div className="grid md:grid-cols-3 gap-5">
+      <div className="grid md:grid-cols-3 gap-5 px-10">
         <div className="p-4 flex justify-between w-full border rounded-md place-items-center border-gray-500">
           <div className="font-sans text-gray-500 text-lg">Select Location</div>{" "}
-          <BsChevronDown className="text-gray-500"/>
+          <BsChevronDown className="text-gray-500" />
         </div>
         <div className="p-4 flex justify-between w-full border rounded-md place-items-center border-gray-500">
           <div className="font-sans text-gray-500 text-lg">
             Select Department
           </div>{" "}
-          <BsChevronDown className="text-gray-500"/>
+          <BsChevronDown className="text-gray-500" />
         </div>
         <div className="flex gap-10 px-10 place-items-center">
           <div className="flex gap-5 place-items-center">
