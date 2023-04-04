@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "../../Industries/Industries.css"
 
 import Banking_img1 from "./BankingImages/Banking_img1.png"
@@ -20,9 +20,12 @@ import I4 from "./BankingImages/4.png"
 import Igrid from '../../../Templates/IndustriesTemplates/IndustryGrid/Igrid'
 import Iservices from '../../../Templates/IndustriesTemplates/IndustryServices/Iservices.js'
 import Meeting from '../../../Templates/IndustriesTemplates/Meeting/Meeting'
+import Layout from '../../../Layout/Layout'
+import { useStateContext } from '../../../../contexts/ContextProvider'
 
 
-export default function Banking({ mode }) {
+export default function Banking() {
+    const { mode } = useStateContext()
 
     useEffect(() => {
         window.scroll({
@@ -88,56 +91,58 @@ export default function Banking({ mode }) {
 
     ]
     return (
-        <div className='industries-outer'>
-            <Industrytop bgimg={Banking_img1} mode={mode}
-                content="Major upheavals are occurring in the banking and financial services sector, whether it is conventional banks defying digital service providers or changing banking rules. In addition, the Banking and Financial Services sector's complex organisational structure makes it challenging for any salesman to identify the right decision-makers and schedule meetings with them. In order to provide lead generation services for the BFS sector, BDM collaborates with top IT / ITeS service providers as an extension of their sales staff. We assist our customers in establishing connections with the pertinent decision-makers across the C-level suite by utilising our comprehensive databases, account profiling, and research-driven approach." />
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Challenges</u>
-            </div>
-            <div className='industries-component'>
-                <Challenges challengeData={challengeData} mode={mode} />
-            </div>
+        <Layout>
+                <div className='industries-outer'>
+                    <Industrytop bgimg={Banking_img1} mode={mode}
+                        content="Major upheavals are occurring in the banking and financial services sector, whether it is conventional banks defying digital service providers or changing banking rules. In addition, the Banking and Financial Services sector's complex organisational structure makes it challenging for any salesman to identify the right decision-makers and schedule meetings with them. In order to provide lead generation services for the BFS sector, BDM collaborates with top IT / ITeS service providers as an extension of their sales staff. We assist our customers in establishing connections with the pertinent decision-makers across the C-level suite by utilising our comprehensive databases, account profiling, and research-driven approach." />
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Challenges</u>
+                    </div>
+                    <div className='industries-component'>
+                        <Challenges challengeData={challengeData} mode={mode} />
+                    </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Offerings</u>
-            </div>
-            <div className='industries-component'>
-                <Igrid gridData={gridData} mode={mode} />
-            </div>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Our Offerings</u>
+                    </div>
+                    <div className='industries-component'>
+                        <Igrid gridData={gridData} mode={mode} />
+                    </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Services</u>
-            </div>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Our Services</u>
+                    </div>
 
-            <div className='industries-component'>
-                <Iservices mode={mode} />
-            </div>
+                    <div className='industries-component'>
+                        <Iservices mode={mode} />
+                    </div>
 
-            <div className='industries-component'>
-                <Meeting mode={mode} />
-            </div>
+                    <div className='industries-component'>
+                        <Meeting mode={mode} />
+                    </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Awards & Recognition</u>
-            </div>
-            <div className='industries-component'>
-                <Award mode={mode} />
-            </div>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Awards & Recognition</u>
+                    </div>
+                    <div className='industries-component'>
+                        <Award mode={mode} />
+                    </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Recent Projects</u>
-            </div>
-            {/* <div className='industries-component'>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Our Recent Projects</u>
+                    </div>
+                    {/* <div className='industries-component'>
                 <Project mode={mode} />
             </div> */}
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Featured Blog posts</u>
-            </div>
-            <div className='industries-component'>
-                <Blogs mode={mode} />
-            </div>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Featured Blog posts</u>
+                    </div>
+                    <div className='industries-component'>
+                        <Blogs mode={mode} />
+                    </div>
 
-        </div>
+                </div>
+            </Layout>
     )
 }

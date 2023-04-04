@@ -26,8 +26,11 @@ import { useMediaQuery } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
 import { NavLink as Link } from 'react-router-dom'
+import Layout from '../../../../Layout/Layout'
+import { useStateContext } from '../../../../../contexts/ContextProvider'
 
-export default function Solutionoption({ onToggle, mode }) {
+export default function Solutionoption({ onToggle }) {
+    const { mode } = useStateContext()
     const [option, setOption] = useState(0)
 
     const [isLargerThan850] = useMediaQuery('(min-width: 850px)')

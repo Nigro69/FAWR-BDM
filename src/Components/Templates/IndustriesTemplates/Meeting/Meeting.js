@@ -7,7 +7,7 @@ import { NavLink as Link } from 'react-router-dom'
 export default function Meeting({ mode }) {
     return (
         <div className='m-outer'>
-            <div className='m-inner' style={{ backgroundColor: mode === "dark" ? "#444444" : "#E2E2E2" }}>
+            <div className={`m-inner ${mode === "dark" ? "bg-[#444444]" : "bg-[#E2E2E2]" }`} >
                 <div className='m-title' style={{ color: mode === "dark" ? "white" : "black" }}>
                     Book a meeting with our experts today.
                 </div>

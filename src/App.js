@@ -111,18 +111,10 @@ import { GrClose } from 'react-icons/gr'
 
 export default function App() {
   const {
-    setunMatched,unMatched
+    setunMatched,unMatched, mode
   } = useStateContext();
-  const [mode, setMode] = useState("dark")
 
   const [visible, setVisible] = useState(false)
-
-  const handleMode = () => {
-    if (mode === "dark")
-      setMode("light")
-    else
-      setMode("dark")
-  }
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
@@ -139,8 +131,8 @@ export default function App() {
   console.log(mode)
   return (
     <ChakraProvider>
-      <div style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }} >
-        <Navbar mode={mode} handleMode={handleMode} />
+      {/* <div style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }} >
+        <Navbar mode={mode} handleMode={handleMode} /> */}
       {unMatched && <div className="fixed top-10 z-50 grid place-items-center  w-full ">
       <div className=" w-2/4  border-2 rounded-md py-2 px-6 bg-red-400 bg-opacity-30 border-red-500">
             <div className="justify-between flex">
@@ -154,115 +146,116 @@ export default function App() {
       </div>
       </div>}
         <Routes>
-          <Route path="/" element={<Landing mode={mode} />} />
+          <Route path="/" element={<Landing />} />
 
-          <Route path="/Terms and Conditions" element={<Terms mode={mode} />} />
-          <Route path="/Privacy" element={<Privacy mode={mode} />} />
-          <Route path="/Cookie Policy" element={<Cookie mode={mode} />} />
-          <Route path="/Accessibility" element={<Accessibility mode={mode} />} />
-          <Route path="/Environmental Policy" element={<Environmental mode={mode} />} />
+          <Route path="/Terms and Conditions" element={<Terms />} />
+          <Route path="/Privacy" element={<Privacy />} />
+          <Route path="/Cookie Policy" element={<Cookie />} />
+          <Route path="/Accessibility" element={<Accessibility />} />
+          <Route path="/Environmental Policy" element={<Environmental />} />
 
-          <Route path="/About Options" element={<Aboutoption mode={mode} />} />
-          <Route path="/Solution Options" element={<Solutionoption mode={mode} />} />
-          <Route path="/Career Options" element={<Careeroption mode={mode} />} />
-          <Route path="/Explore Options" element={<Exploreoption mode={mode} />} />
+          <Route path="/About Options" element={<Aboutoption />} />
+          <Route path="/Solution Options" element={<Solutionoption />} />
+          <Route path="/Career Options" element={<Careeroption />} />
+          <Route path="/Explore Options" element={<Exploreoption />} />
 
-          <Route path="/Sitemap" element={<Sitemap mode={mode} />} />
+          <Route path="/Sitemap" element={<Sitemap />} />
 
-          <Route path="/Contact Us" element={<Contact mode={mode} />} />
-          <Route path="/Our Offices" element={<Office mode={mode} />} />
+          <Route path="/Contact Us" element={<Contact />} />
+          <Route path="/Our Offices" element={<Office />} />
 
-          <Route path="/Global Affiliation" element={<Global mode={mode} />} />
-          <Route path="/Overview" element={<Overview mode={mode} />} />
-          <Route path="/Leadership" element={<Leadership mode={mode} />} />
-          <Route path="/Vision, Mission & Values" element={<Vission mode={mode} />} />
-          <Route path="/Policy & Charters" element={<Charter mode={mode} />} />
-          <Route path="/Reach Us" element={<Reach mode={mode} />} />
-          <Route path="/Alliance" element={<Alliance mode={mode} />} />
-          <Route path="/Social Impact" element={<SocialI mode={mode} />} />
-          <Route path="/What we believe" element={<Believe mode={mode} />} />
-          <Route path="/What we do" element={<Whatwedo mode={mode} />} />
-          <Route path="/About Us" element={<Aboutus mode={mode} />} />
-          <Route path="/Success Stories" element={<Success mode={mode} />} />
-          <Route path="/Media Center" element={<Mediacenter mode={mode} />} />
-          <Route path="/Alumni Relations" element={<Alumni mode={mode} />} />
+          <Route path="/Global Affiliation" element={<Global />} />
+          <Route path="/Overview" element={<Overview />} />
+          <Route path="/Leadership" element={<Leadership />} />
+          <Route path="/Vision, Mission & Values" element={<Vission />} />
+          <Route path="/Policy & Charters" element={<Charter />} />
+          <Route path="/Reach Us" element={<Reach />} />
+          <Route path="/Alliance" element={<Alliance />} />
+          <Route path="/Social Impact" element={<SocialI />} />
+          <Route path="/What we believe" element={<Believe />} />
+          <Route path="/What we do" element={<Whatwedo />} />
+          <Route path="/About Us" element={<Aboutus />} />
+          <Route path="/Success Stories" element={<Success />} />
+          <Route path="/Media Center" element={<Mediacenter />} />
+          <Route path="/Alumni Relations" element={<Alumni />} />
 
           {/* <Route path="/Opportunities for Freshers" element={<Fresher mode={mode} />} />
           <Route path="/Experienced Professional" element={<Professional mode={mode} />} /> */}
 
-          <Route path="/Opportunities for Freshers" element={<Freshers mode={mode} />} />
-          <Route path="/Experienced Professional" element={<Professional mode={mode} />} />
+          <Route path="/Opportunities for Freshers" element={<Freshers />} />
+          <Route path="/Experienced Professional" element={<Professional />} />
 
 
 
-          <Route path="/Research Intelligence Services" element={<Research mode={mode} />} />
-          <Route path="/DevOps" element={<Devops mode={mode} />} />
-          <Route path="/Blockchain Development Services" element={<Blockchain mode={mode} />} />
-          <Route path="/Video Services" element={<Video mode={mode} />} />
-          <Route path="/Web Development Services" element={<Web mode={mode} />} />
-          <Route path="/Marketing Automation Services" element={<Market mode={mode} />} />
-          <Route path="/App Development Services" element={<Appdev mode={mode} />} />
-          <Route path="/Cloud Storage & Management Services" element={<Cloud mode={mode} />} />
-          <Route path="/UX / UI Design Services" element={<Uxui mode={mode} />} />
-          <Route path="/Graphic Design Services" element={<Graphic mode={mode} />} />
-          <Route path="/Animations Services" element={<Animation mode={mode} />} />
-          <Route path="/Email Marketing Services" element={<Email mode={mode} />} />
-          <Route path="/Mobile Marketing Services" element={<Mobile mode={mode} />} />
-          <Route path="/Search Engine Marketing Services" element={<Search mode={mode} />} />
-          <Route path="/Social Media Marketing Services" element={<Social mode={mode} />} />
-          <Route path="/Management Consultant Services" element={<Management mode={mode} />} />
-          <Route path="/Operations Consultant Services" element={<Operations mode={mode} />} />
-          <Route path="/Legal Consultant Services" element={<Legal mode={mode} />} />
-          <Route path="/Strategy Consultant Services" element={<Strategy mode={mode} />} />
-          <Route path="/Financial Advisory Services" element={<Financial mode={mode} />} />
-          <Route path="/Predictive Analysis Services" element={<Predictive mode={mode} />} />
-          <Route path="/Business Intelligence Services" element={<Business mode={mode} />} />
-          <Route path="/Speech & Text Analytics Services" element={<Speech mode={mode} />} />
-          <Route path="/Customer Segmentation Services" element={<Customer mode={mode} />} />
-          <Route path="/Distribution Strategy Services" element={<Distribution mode={mode} />} />
-          <Route path="/Reputation Consultation Services" element={<Reputation mode={mode} />} />
+          <Route path="/Research Intelligence Services" element={<Research />} />
+          <Route path="/DevOps" element={<Devops />} />
+          <Route path="/Blockchain Development Services" element={<Blockchain />} />
+          <Route path="/Video Services" element={<Video />} />
+          <Route path="/Web Development Services" element={<Web />} />
+          <Route path="/Marketing Automation Services" element={<Market />} />
+          <Route path="/App Development Services" element={<Appdev />} />
+          <Route path="/Cloud Storage & Management Services" element={<Cloud />} />
+          <Route path="/UX / UI Design Services" element={<Uxui />} />
+          <Route path="/Graphic Design Services" element={<Graphic />} />
+          <Route path="/Animations Services" element={<Animation />} />
+          <Route path="/Email Marketing Services" element={<Email />} />
+          <Route path="/Mobile Marketing Services" element={<Mobile />} />
+          <Route path="/Search Engine Marketing Services" element={<Search />} />
+          <Route path="/Social Media Marketing Services" element={<Social />} />
+          <Route path="/Management Consultant Services" element={<Management />} />
+          <Route path="/Operations Consultant Services" element={<Operations />} />
+          <Route path="/Legal Consultant Services" element={<Legal />} />
+          <Route path="/Strategy Consultant Services" element={<Strategy />} />
+          <Route path="/Financial Advisory Services" element={<Financial />} />
+          <Route path="/Predictive Analysis Services" element={<Predictive />} />
+          <Route path="/Business Intelligence Services" element={<Business />} />
+          <Route path="/Speech & Text Analytics Services" element={<Speech />} />
+          <Route path="/Customer Segmentation Services" element={<Customer />} />
+          <Route path="/Distribution Strategy Services" element={<Distribution />} />
+          <Route path="/Reputation Consultation Services" element={<Reputation />} />
 
 
-          <Route path="/Technology" element={<Technology mode={mode} />} />
-          <Route path="/Automotive" element={<Automotive mode={mode} />} />
-          <Route path="/Education" element={<Education mode={mode} />} />
-          <Route path="/Insurance" element={<Insurance mode={mode} />} />
-          <Route path="/Banking & Finance" element={<Banking mode={mode} />} />
-          <Route path="/E-Commerce" element={<Ecommerce mode={mode} />} />
-          <Route path="/Travel,Transport & Logistics" element={<Travel mode={mode} />} />
-          <Route path="/Telecom" element={<Telecom mode={mode} />} />
-          <Route path="/Energy & Utilities" element={<Energy mode={mode} />} />
-          <Route path="/Healthcare" element={<Heathcare mode={mode} />} />
-          <Route path="/Media & Entertainment" element={<Media mode={mode} />} />
-          <Route path="/Airline" element={<Airline mode={mode} />} />
+          <Route path="/Technology" element={<Technology />} />
+          <Route path="/Automotive" element={<Automotive />} />
+          <Route path="/Education" element={<Education />} />
+          <Route path="/Insurance" element={<Insurance />} />
+          <Route path="/Banking & Finance" element={<Banking />} />
+          <Route path="/E-Commerce" element={<Ecommerce />} />
+          <Route path="/Travel,Transport & Logistics" element={<Travel />} />
+          <Route path="/Telecom" element={<Telecom />} />
+          <Route path="/Energy & Utilities" element={<Energy />} />
+          <Route path="/Healthcare" element={<Heathcare />} />
+          <Route path="/Media & Entertainment" element={<Media />} />
+          <Route path="/Airline" element={<Airline />} />
 
 
-          <Route path="/Life@BDM" element={<Life mode={mode} />} />
-          <Route path="/Student / Intern Program" element={<Student mode={mode} />} />
-          <Route path="/Diversity & Inclusion" element={<Diversity mode={mode} />} />
-          <Route path="/Learning & Development" element={<Learning mode={mode} />} />
-          <Route path="/Jobs" element={<Job mode={mode} />} />
+          <Route path="/Life@BDM" element={<Life />} />
+          <Route path="/Student / Intern Program" element={<Student />} />
+          <Route path="/Diversity & Inclusion" element={<Diversity />} />
+          <Route path="/Learning & Development" element={<Learning />} />
+          <Route path="/Jobs" element={<Job />} />
 
 
 
-          <Route path="/Login" element={<Login mode={mode} />} />
-          <Route path="/Login-admin" element={<LoginAdmin mode={mode} />} />
-          <Route path="/Register" element={<Register mode={mode} />} />
-          <Route path="/register-candidate" element={<Register2 mode={mode} />} />
-          <Route path="/Profile-Home" element={<ProfileHome mode={mode} />} />
-          <Route path="/Freshers-Training" element={<FTraining mode={mode} />} />
-          <Route path="/Prof-Training" element={<PTraining mode={mode} />} />
-          <Route path="/Students-Training" element={<STraining mode={mode} />} />
-          <Route path="/Freshers-Diversity" element={<FDiversity mode={mode} />} />
-          <Route path="/Freshers-Benifits" element={<Benifits mode={mode} />} />
-          <Route path="/Prof-Benifits" element={<PBenifits mode={mode} />} />
-          <Route path="/Students-Benifits" element={<StudentBenifits mode={mode} />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Login-admin" element={<LoginAdmin />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/register-candidate" element={<Register2 />} />
+          <Route path="/Profile-Home" element={<ProfileHome />} />
+          <Route path="/Freshers-Training" element={<FTraining />} />
+          <Route path="/Prof-Training" element={<PTraining />} />
+          <Route path="/Students-Training" element={<STraining />} />
+          <Route path="/Freshers-Diversity" element={<FDiversity />} />
+          <Route path="/Freshers-Benifits" element={<Benifits />} />
+          <Route path="/Prof-Benifits" element={<PBenifits />} />
+          <Route path="/Students-Benifits" element={<StudentBenifits />} />
 
 
-          <Route path="/Sustainability @ BDM" element={<Sustainability mode={mode} />} />
+          <Route path="/Sustainability @ BDM" element={<Sustainability />} />
+          <Route path="*" element={<PageNotFound />} />
 
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
         {/* <Textanimation />
         <Ourservices /> */}
         {/* <LightDarkMode mode={mode} handleMode={handleMode} /> */}
@@ -277,8 +270,16 @@ export default function App() {
         }} id="myBtn" className={`h-10 w-10 flex items-center justify-center hover:scale-105 hover:animate-pulse fixed bottom-10 right-10 ${ mode === "dark" ? "bg-white text-[#211F22]" : "bg-[#211F22] text-white" } p-3 font-bold rounded-full`}>
           <ArrowUpIcon />
         </button>}
-      </div>
+      {/* </div> */}
     </ChakraProvider>
 
   )
+}
+
+function PageNotFound() {
+  return (
+    <div className='h-screen w-screen flex justify-center items-center'>
+      <h2>404 Page not found</h2>
+    </div>
+  );
 }

@@ -7,8 +7,11 @@ import co3 from "./CareeroptionImages/3.png"
 import co4 from "./CareeroptionImages/4.png"
 
 import { NavLink as Link, useNavigate } from 'react-router-dom'
+import Layout from '../../../../Layout/Layout'
+import { useStateContext } from '../../../../../contexts/ContextProvider'
 
-export default function Careeroption({ onClick, mode }) {
+export default function Careeroption({ onClick }) {
+    const { mode } = useStateContext()
     const navigate = useNavigate();
     return (
         <div className='co-outer'>
@@ -39,7 +42,7 @@ export default function Careeroption({ onClick, mode }) {
             </div>
 
             <div className='co-right'>
-                <div onClick={()=>navigate("/Jobs")}  className='co-right-title cursor-pointer'>
+                <div onClick={() => navigate("/Jobs")} className='co-right-title cursor-pointer'>
                     Oppourtunities
                 </div>
                 <div style={{ display: "flex", justifyContent: "center", width: "80%", marginTop: "5%", marginLeft: "10%" }}>

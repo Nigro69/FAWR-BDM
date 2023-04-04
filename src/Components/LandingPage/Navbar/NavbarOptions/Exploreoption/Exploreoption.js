@@ -5,6 +5,8 @@ import "./Exploreoption.css"
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
 import { NavLink as Link } from 'react-router-dom'
+import Layout from '../../../../Layout/Layout'
+import { useStateContext } from '../../../../../contexts/ContextProvider'
 
 export default function Exploreoption({ onClick, mode }) {
 

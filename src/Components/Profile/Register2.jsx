@@ -18,7 +18,7 @@ import {
   storeToken,
 } from "../../LocalStorage";
 
-function Register2({ mode }) {
+function Register2() {
   const navigate = useNavigate();
 
   
