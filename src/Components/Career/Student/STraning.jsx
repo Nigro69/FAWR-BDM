@@ -55,53 +55,48 @@ const Training = () => {
 
   return (
     <Layout>
-      <div className="p-4 md:mx-10 my-4">
-        <div className="md:flex gap-20 w-full">
-          <div className="md:w-2/4 w-full">
-            <img src={f1} alt="" />
-          </div>
-          <div className="md:w-2/4 my-auto">
-            <div className="font-sans ff-style text-4xl tracking-wider my-5 text-[#BC312E]">
-              Training for students
-            </div>
-            <div className="font-sans text-3xl tracking-wider text-gray-400">
-              Interships in business, engineering, technology, and more.
-            </div>
+    <div className="">
+      <div className="w-full">
+          <img className="w-full object-cover h-[450px]" src={f1} alt="" />
+        <div className="absolute top-80 right-32">
+          <div className=" ff-style text-3xl md:text-6xl my-5 text-[#BC312E]">
+            Training for students
           </div>
         </div>
-        <div className="flex place-items-center mt-36 mb-20">
-          <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96 "></hr>
-          <div className="text-2xl font-semibold tracking-wider text-[#BC312E] text-center w-60 mx-8">
-            Brief Overview
-          </div>
-          <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96  "></hr>
+      </div>
+      <div className="flex place-items-center mt-36 mb-20">
+        <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96 "></hr>
+        <div className="text-2xl font-semibold tracking-wider text-[#BC312E] text-center w-60 mx-8">
+          Brief Overview
         </div>
-        <div className="text-gray-500 tracking-wide text-center font-sans">
-          Our training prepares students to work in the real world. It aims to
-          hone the practical skills of students, which will help them pursue
-          jobs in the fields of their choosing unlike classroom training, where
-          the focus is generally on academics. However, professional education
-          has not yet evolved enough to effectively address these challenges:
-          Lack of job-ready youth with updated skills Lack of trainers who can
-          provide quality training An insufficient number of career service
-          centers that can provide career counseling, disseminate information
-          and guide job seekers. Addressing the Challenges One way to address
-          these challenges is through technology. Learning platforms not only
-          enable teachers and students to become more proactive but also expose
-          students to global challenges and enable them to get access to
-          education of international standards. They can access high-class
-          course material and connect with leading experts from across the world
-          to enhance their skills. Parents, too, can connect with teachers to
-          assess their ward's performances without physically visiting the
-          campus.
+        <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96  "></hr>
+      </div>
+      <div className="px-10 text-gray-500 tracking-wide text-center font-sans">
+        Our training prepares students to work in the real world. It aims to
+        hone the practical skills of students, which will help them pursue jobs
+        in the fields of their choosing unlike classroom training, where the
+        focus is generally on academics. However, professional education has not
+        yet evolved enough to effectively address these challenges: Lack of
+        job-ready youth with updated skills Lack of trainers who can provide
+        quality training An insufficient number of career service centers that
+        can provide career counseling, disseminate information and guide job
+        seekers. Addressing the Challenges One way to address these challenges
+        is through technology. Learning platforms not only enable teachers and
+        students to become more proactive but also expose students to global
+        challenges and enable them to get access to education of international
+        standards. They can access high-class course material and connect with
+        leading experts from across the world to enhance their skills. Parents,
+        too, can connect with teachers to assess their ward's performances
+        without physically visiting the campus.
+      </div>
+      <div className="flex place-items-center mt-36 mb-20">
+        <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96 "></hr>
+        <div className="text-2xl font-semibold tracking-wider text-[#BC312E] text-center w-60 mx-8">
+          Our Products
         </div>
-        <div className="flex place-items-center mt-36 mb-20">
-          <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96 "></hr>
-          <div className="text-2xl font-semibold tracking-wider text-[#BC312E] text-center w-60 mx-8">
-            Our Products
-          </div>
-          <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96  "></hr>
-        </div>
+        <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96  "></hr>
+      </div>
+      <div className="grid md:grid-cols-3 gap-5 px-10">
         <div className="grid md:grid-cols-3 gap-5">
           <div className="p-4 flex justify-between w-full border rounded-md place-items-center border-gray-500">
             <div className="font-sans text-gray-500 text-lg">
@@ -166,6 +161,7 @@ const Training = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </Layout>
   );

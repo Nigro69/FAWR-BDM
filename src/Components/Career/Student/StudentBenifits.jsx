@@ -16,7 +16,7 @@ import h11 from "./StudentImages/h11.png";
 import h12 from "./StudentImages/h12.png";
 import Layout from "../../Templates/Layout/Layout";
 
-const StudentBenifits = () => {
+const StudentBenefits = () => {
   const coldata = [
     {
       ig: h1,
@@ -149,4 +149,4 @@ const StudentBenifits = () => {
   );
 };
 
-export default StudentBenifits;
+export default StudentBenefits;

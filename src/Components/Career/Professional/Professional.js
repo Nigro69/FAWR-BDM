@@ -14,6 +14,7 @@ import { useMediaQuery } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import Layout from "../../Templates/Layout/Layout";
+import { useStateContext } from "../../../contexts/ContextProvider";
 
 export default function Freshers() {
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
@@ -29,13 +30,32 @@ export default function Freshers() {
   const [search, setsearch] = useState("");
   const [dropCategory, setdropCategory] = useState(false);
   const [category, setcategory] = useState("");
+  const {
+    candidateModel, setunMatched
+  } = useStateContext();
+
+  const checkExprienceLevel = (value) => {
+    if (value === candidateModel.experience) {
+      setunMatched(false);
+    }
+    else {
+      setunMatched(true);
+    }
+  }
 
   const getMyResult = async () => {
     try {
       const res = await axios.get("https://bigbros.link/api/v1/jobs/");
       console.log(res.data);
-      setfilteresData(res.data);
-      setapiData(res.data);
+      let array = res.data
+      let resArray = [];
+      {
+        array.map((itr) => (
+          (itr.experience > 0 && resArray.push(itr))
+        ))
+      }
+      setfilteresData(resArray);
+      setapiData(resArray);
       setisPending(false);
     } catch (error) {
       console.log(error.message);
@@ -100,7 +120,7 @@ export default function Freshers() {
           <div className="freshers-top-left">
             <div
               className="freshers-top-title"
-               
+
             >
               One Step Closer To Your{" "}
               <label style={{ color: "#BC312E" }}> New Job </label>
@@ -135,7 +155,7 @@ export default function Freshers() {
 
         <div
           className="freshers-title my-10"
-          
+
         >
           <u>Explore Recent Openings</u>
         </div>
@@ -240,17 +260,23 @@ export default function Freshers() {
         <div className="w-full h-full md:grid grid-cols-3 space-y-4 md:space-y-0 gap-10 px-10">
           {filteredDta &&
             filteredDta.map((data) => (
-              <div className="border border-[#FC4A1A] p-8 bg-gray-100">
-                <div className="font-semibold tracking-wide text-2xl text-[#FC4A1A] uppercase">
-                  {data.title}
-                </div>
-                <div className=" font-semibold my-5 tracking-wider text-gray-700">
-                  {data.location}
+              <div>
+                <div className="border border-[#FC4A1A] p-8 bg-gray-100">
+                  <div className="font-semibold tracking-wide text-2xl text-[#FC4A1A] uppercase">
+                    {data.title}
+                  </div>
+                  <div className=" font-semibold my-5 tracking-wider text-gray-700">
+                    {data.location}
+                  </div>
+                  <div className=" tracking-wide text-gray-600 font-sans">
+                    {data.description}
+                  </div>
+                  <button className="mt-10 text-[#FC4A1A]">Apply</button>
                 </div>
                 <div className=" tracking-wide text-gray-600 font-sans">
                   {data.description}
                 </div>
-                <button className="mt-10 text-[#FC4A1A]">Apply</button>
+                <button onClick={() => checkExprienceLevel(data.experience)} className="mt-10 text-[#FC4A1A]">Apply</button>
               </div>
             ))}
         </div>
@@ -266,12 +292,12 @@ export default function Freshers() {
         <div className="freshers-join">
           <div
             className="freshers-box"
-             
+
           >
             <div className="freshers-box-title">Training</div>
             <div
               className="freshers-box-content"
-               
+
             >
               A professional learning experience that offers meaningful, practical
               work related to a student's field of study or career interest. An
@@ -280,7 +306,7 @@ export default function Freshers() {
             </div>
             <div
               className="freshers-learn-more"
-               
+
             >
               <u onClick={() => navigate("/Prof-Training")}>Learn More</u>
             </div>
@@ -288,14 +314,14 @@ export default function Freshers() {
 
           <div
             className="freshers-box"
-             
+
           >
             <div className="freshers-box-title">
               Benefits, Wellness & Compensation
             </div>
             <div
               className="freshers-box-content"
-               
+
             >
               Research studies related to wellness indicate that Americans who
               take good care of themselves and make healthy lifestyle choices are
@@ -304,7 +330,7 @@ export default function Freshers() {
             </div>
             <div
               className="freshers-learn-more"
-               
+
             >
               <u onClick={() => navigate("/Prof-Benifits")}>Learn More</u>
             </div>
@@ -312,12 +338,12 @@ export default function Freshers() {
 
           <div
             className="freshers-box"
-             
+
           >
             <div className="freshers-box-title">Commitment to Diversity</div>
             <div
               className="freshers-box-content"
-               
+
             >
               we understand and accept that everyone is different, that we respect
               those differences, and that we're open to listen to different points
@@ -325,7 +351,7 @@ export default function Freshers() {
             </div>
             <div
               className="freshers-learn-more"
-               
+
             >
               <u onClick={() => navigate("/Freshers-Diversity")}>Learn More</u>
             </div>

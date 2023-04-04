@@ -22,7 +22,7 @@ import xr1 from "../Job/JobImages/r1.png";
 import xr2 from "../Job/JobImages/r2.png";
 import Layout from "../../Templates/Layout/Layout";
 
-const Benifits = () => {
+const Benefits = () => {
   const mode = "dark";
   const [benifitTab, setbenifitTab] = useState(1);
 
@@ -176,360 +176,403 @@ const Benifits = () => {
             DISABILITY
           </button>
         </div>
+        <hr class="h-0.5 mx-auto my-4 bg-[#FC4A1A] border-0 rounded w-96  "></hr>
+      </div>
+      <div className="tracking-wide text-lg text-gray-400 md:px-10 text-center">
+        Your compensation will be reviewed annually and may consist of salary,
+        discretionary compensation, and certain local allowances, where
+        applicable. Compensation is determined by a number of factors, including
+        the firm’s performance, divisional performance and individual
+        performance. We spend a great deal of time ensuring that people are
+        compensated appropriately and we aim to provide highly competitive pay
+        levels over the long term.
+      </div>
+      <div className="text-[#BC312E] my-10 tracking-wider text-2xl font-semibold  text-center">
+        BENEFITS AND WELLNESS
+      </div>
+      <div className="flex justify-between w-full md:px-52 my-3">
+        <button
+          onClick={() => setbenifitTab(1)}
+          className={`font-bold text-xs md:text-lg text-[#F7B733] p-2 md:p-4 ${
+            benifitTab === 1 && "border-b-2 border-b-[#F7B733]"
+          }`}
+        >
+          LIFE & FAMILY
+        </button>
+        <button
+          onClick={() => setbenifitTab(2)}
+          className={`font-bold text-xs md:text-lg text-[#F7B733] p-2 md:p-4 ${
+            benifitTab === 2 && "border-b-2 border-b-[#F7B733]"
+          }`}
+        >
+          HEALTHCARE
+        </button>
+        <button
+          onClick={() => setbenifitTab(3)}
+          className={`font-bold text-xs md:text-lg text-[#F7B733] p-2 md:p-4 ${
+            benifitTab === 3 && "border-b-2 border-b-[#F7B733]"
+          }`}
+        >
+          RETIREMENT
+        </button>
+        <button
+          onClick={() => setbenifitTab(4)}
+          className={`font-bold text-xs md:text-lg text-[#F7B733] p-2 md:p-4 ${
+            benifitTab === 4 && "border-b-2 border-b-[#F7B733]"
+          }`}
+        >
+          DISABILITY
+        </button>
+      </div>
 
-        <div className="mt-5 md:px-20 grid place-items-center h-full w-full">
-          <div className="rounded-xl h-full w-full border shadow-2xl m-5 p-6">
-            {benifitTab === 1 && (
-              <div className="space-y-3">
-                <div className="md:flex gap-8">
-                  <img
-                    src={f1}
-                    className="object-cover h-36 w-full md:w-60 my-auto"
-                    alt=""
-                  />
-                  <div>
-                    <div className="font-semibold text-center md:text-left text-xl md:text-3xl p-2 dark:text-gray-400">
-                      Family Leave
-                    </div>
-                    <div
-                      className="text-sm md:text-lg p-2 text-gray-400"
-                      style={{
-                        color: mode === "dark" ? "text-gray-400" : "black",
-                      }}
-                    >
-                      BDM offers up to{" "}
-                      <lable className="text-[#FC4A1A]">
-                        16 weeks of paid time
-                      </lable>{" "}
-                      off to eligible graduates to bond with a child as a result
-                      of birth or placement for adoption and/or to care for a
-                      spouse/domestic partner, parent, child, and/or sibling
-                      with a serious health condition.
-                    </div>
-                  </div>
-                </div>
-                <div className="md:flex gap-8">
-                  <img
-                    src={f2}
-                    className="object-cover h-36 w-full md:w-60 my-auto"
-                    alt=""
-                  />
-                  <div>
-                    <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400 text-center md:text-left">
-                      Adoption and Surrogacy
-                    </div>
-                    <div
-                      className="md:text-lg text-sm p-2 text-gray-400"
-                      style={{
-                        color: mode === "dark" ? "text-gray-400" : "black",
-                      }}
-                    >
-                      BDM reimburses eligible graduates up to{" "}
-                      <lable className="text-[#FC4A1A]">$50,000</lable> ,
-                      cumulative lifetime maximum, for eligible expenses
-                      associated with the adoption of a minor child and the
-                      birth of a child through surrogacy..
-                    </div>
-                  </div>
-                </div>
-                <div className="md:flex gap-8">
-                  <img
-                    src={f3}
-                    className="object-cover h-36 w-full md:w-60 my-auto"
-                    alt=""
-                  />
-                  <div>
-                    <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400 text-center md:text-left">
-                      Emergency back-up dependent care
-                    </div>
-                    <div
-                      className="md:text-lg text-sm p-2 text-gray-400"
-                      style={{
-                        color: mode === "dark" ? "text-gray-400" : "black",
-                      }}
-                    >
-                      BDM provides for care for infants through teenage children
-                      and adult relatives of eligible Deloitte employees, up to
-                      a maximum{" "}
-                      <lable className="text-[#FC4A1A]">30 days</lable> of per
-                      employee per fiscal year
-                    </div>
-                  </div>
-                </div>
-                <div className="md:flex gap-8">
-                  <img
-                    src={f4}
-                    className="object-cover h-36 w-full md:w-60 my-auto"
-                    alt=""
-                  />
-                  <div>
-                    <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400 text-center md:text-left">
-                      Sabbaticals
-                    </div>
-                    <div
-                      className="md:text-lg md:sm p-2 text-gray-400"
-                      style={{
-                        color: mode === "dark" ? "text-gray-400" : "black",
-                      }}
-                    >
-                      BDM offers two sabbatical programs: an unpaid one-month
-                      sabbatical that can be taken for any reason; and a three-
-                      to six-month sabbatical While on a three- to sixmonth
-                      sabbatical, professionals continue to receive{" "}
-                      <lable className="text-[#FC4A1A]">
-                        {" "}
-                        40% of their pre-sabbatical base salary.
-                      </lable>
-                    </div>
-                  </div>
-                </div>
-                <div className="md:flex gap-8">
-                  <img
-                    src={f5}
-                    className="object-cover h-36 w-full md:w-60 my-auto"
-                    alt=""
-                  />
-                  <div>
-                    <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400 text-center md:text-left">
-                      Family insurance
-                    </div>
-                    <div
-                      className="md:text-lg text-sm p-2 text-gray-400"
-                      style={{
-                        color: mode === "dark" ? "text-gray-400" : "black",
-                      }}
-                    >
-                      Life insurance includes core coverage for our
-                      professionals. Optional life and accident coverage can be
-                      purchased for professionals and/or their eligible
-                      dependents
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-            {benifitTab === 2 && (
-              <div className="space-y-3 w-full">
-                <div className="md:flex gap-8">
-                  <img
-                    src={f6}
-                    className="object-cover h-36 w-60 my-auto"
-                    alt=""
-                  />
-                  <div>
-                    <div className="font-semibold text-xl text-center md:text-left md:text-3xl p-2 dark:text-gray-400">
-                      100 % Coverage
-                    </div>
-                    <div
-                      className="text-sm md:text-lg p-2 text-gray-400"
-                      style={{
-                        color: mode === "dark" ? "text-gray-400" : "black",
-                      }}
-                    >
-                      BDM provides 100% coverage for in-network preventive
-                      services and certain cancer screenings, such as well-child
-                      (e.g., annual exams), well-woman (e.g., mammogram, Pap
-                      smear), well-man (e.g., prostate testing), and
-                      immunizations.
-                    </div>
-                  </div>
-                </div>
-                <div className="md:flex gap-8">
-                  <div className="h-36 md:w-96">
-                    <img src={t2} className=" mx-auto my-auto" alt="" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400">
-                      Quality Care, Protection & Prescription
-                    </div>
-                    <div
-                      className="md:text-lg text-sm p-2 text-gray-400"
-                      style={{
-                        color: mode === "dark" ? "text-gray-400" : "black",
-                      }}
-                    >
-                      BDM provides access to quality care through national
-                      provider networks. Also provides protection against the
-                      cost of catastrophic illness or injury. Provides
-                      prescription drug coverage.
-                    </div>
-                  </div>
-                </div>
-                <div className="md:flex gap-8">
-                  <div className="h-36 md:w-96">
-                    <img src={t3} className=" mx-auto my-auto" alt="" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400">
-                      Dental
-                    </div>
-                    <div
-                      className="md:text-lg text-sm p-2 text-gray-400"
-                      style={{
-                        color: mode === "dark" ? "text-gray-400" : "black",
-                      }}
-                    >
-                      The dental plan provides access to in-and out-of-network
-                      providers, coverage for major dental work, and three
-                      dental cleanings per year, With no deductible, paid at
-                      100% of reasonable and customary charges.
-                    </div>
-                  </div>
-                </div>
-                <div className="md:flex gap-8">
-                  <div className="h-36 md:w-96">
-                    <img src={t4} className=" mx-auto my-auto" alt="" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400">
-                      Vision
-                    </div>
-                    <div
-                      className="md:text-lg text-sm p-2 text-gray-400"
-                      style={{
-                        color: mode === "dark" ? "text-gray-400" : "black",
-                      }}
-                    >
-                      Deloitte also offers a discount vision benefit at no cost
-                      to the participant, as well as a voluntary vision plan
-                      that allows participants to elect additional coverage
-                    </div>
-                  </div>
-                </div>
-                <div className="md:flex gap-8">
-                  <div className="h-36 md:w-96">
-                    <img src={t5} className=" mx-auto my-auto" alt="" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400">
-                      CMS transparency in coverage rule
-                    </div>
-                    <div
-                      className="md:text-lg text-sm p-2 text-gray-400"
-                      style={{
-                        color: mode === "dark" ? "text-gray-400" : "black",
-                      }}
-                    >
-                      Please click the links below for pricing information from
-                      our national medical plan carriers on covered items and
-                      services.
-                      <lable className="text-[#FC4A1A]">
-                        {" "}
-                        UnitedHealthcare Aetna Anthem
-                      </lable>
-                      (after clicking the link enter EIN 13 5133500 in the
-                      search)
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-            {benifitTab === 3 && (
-              <div className="md:px-32 py-10">
-                <div className="md:flex w-full">
-                  <div>
-                    <div className="font-semibold text-xl md:text-4xl tracking-wider pb-4 text-[#FC4A1A]">
-                      Retirement
-                    </div>
-                    <div
-                      className="md:text-lg text-sm pt-8 md:pr-20 text-gray-400"
-                      style={{
-                        color: mode === "dark" ? "text-gray-400" : "black",
-                      }}
-                    >
-                      BDM s Wealth Accumulation Program includes a 401(k)
-                      savings plan and a cash balance plan. Together, these
-                      plans provide a solid foundation for eligible
-                      professionals long-term financial future
-                    </div>
-                  </div>
-                  <div className="w-full">
-                    <img src={xr1} className="w-80 h-56 object-cover " alt="" />
-                  </div>
-                </div>
-                <div className="flex w-full justify-between px-20 pt-20 place-items-center">
-                  <div className="bg-gray-900 rounded-md p-4 h-80 w-80">
-                    <div className="font-semibold text-gray-400 text-xl p-5 text-center">
-                      SAVINGS PLAN
-                    </div>
-                    <div className="py-10 text-center text-gray-400">
-                      BDM s Wealth Accumulation Program includes a 401(k)
-                      savings plan and a cash balance plan. Together, these
-                      plans provide a solid foundation for eligible
-                      professionals long-term financial future
-                    </div>
-                  </div>
-                  <div className="bg-gray-900 text-gray-400 rounded-md p-4 h-80 w-80">
-                    <div className="font-semibold text-xl p-5 text-center">
-                      CASH BALANCE PLAN
-                    </div>
-                    <div className="py-10 text-center text-gray-400">
-                      BDM s Wealth Accumulation Program includes a 401(k)
-                      savings plan and a cash balance plan. Together, these
-                      plans provide a solid foundation for eligible
-                      professionals long-term financial future
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-            {benifitTab === 4 && (
-              <div className="md:px-32 py-4 md:py-10">
-                <div className="md:flex w-full">
-                  <div>
-                    <div className="font-semibold text-xl md:text-4xl tracking-wider pb-4 dark:text-[#FC4A1A]">
-                      Disability
-                    </div>
-                    <div
-                      className="md:text-lg pb-4 text-sm md:pt-8 md:pr-20 text-gray-400"
-                      style={{
-                        color: mode === "dark" ? "text-gray-400" : "black",
-                      }}
-                    >
-                      BDM provides Short-Term Disability and core Long-Term
-                      Disability (STD and LTD) coverage at no cost to the
-                      participant. Additional LTD coverage is available for
-                      purchase as well
-                    </div>
-                  </div>
-                  <div className="w-full">
-                    <img src={xr2} className="w-80 h-80 object-cover " alt="" />
-                  </div>
-                </div>
+      <div className="mt-5 md:px-20 grid place-items-center h-full w-full">
+        <div className="rounded-xl h-full w-full border shadow-2xl m-5 p-6">
+          {benifitTab === 1 && (
+            <div className="space-y-3">
+              <div className="md:flex gap-8">
+                <img
+                  src={f1}
+                  className="object-cover h-36 w-full md:w-60 my-auto"
+                  alt=""
+                />
                 <div>
-                  <div className="font-semibold tracking-wider text-xl md:text-2xl py-5 dark:text-[#FC4A1A]">
-                    We believe in you
+                  <div className="font-semibold text-center md:text-left text-xl md:text-3xl p-2 dark:text-gray-400">
+                    Family Leave
                   </div>
                   <div
-                    className="md:text-lg text-sm text-gray-400"
+                    className="text-sm md:text-lg p-2 text-gray-400"
                     style={{
                       color: mode === "dark" ? "text-gray-400" : "black",
                     }}
                   >
-                    This is a dummy text, to be replaced with how BDM encourages
-                    and empowers disabled power and focuses on their ability
-                    rather disabilty. Mention some events and programs too that
-                    are held for them. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Etiam eu turpis molestie, dictum est a,
-                    mattis tellus. Sed dignissim, metus nec fringilla accumsan,
-                    risus sem sollicitudin lacus, ut interdum tellus elit sed
-                    risus. Maecenas eget condimentum velit, sit amet feugiat
-                    lectus. Class aptent taciti sociosqu ad litora torquent per
-                    conubia nostra, per inceptos himenaeos. Praesent auctor
-                    purus luctus enim egestas, ac scelerisque ante pulvinar.
-                    Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor
-                    urna. Curabitur vel bibendum lorem. Morbi convallis
-                    convallis diam sit amet lacinia. Aliquam in elementum
-                    tellus.
+                    BDM offers up to{" "}
+                    <lable className="text-[#FC4A1A]">
+                      16 weeks of paid time
+                    </lable>{" "}
+                    off to eligible graduates to bond with a child as a result
+                    of birth or placement for adoption and/or to care for a
+                    spouse/domestic partner, parent, child, and/or sibling with
+                    a serious health condition.
                   </div>
                 </div>
               </div>
-            )}
-          </div>
+              <div className="md:flex gap-8">
+                <img
+                  src={f2}
+                  className="object-cover h-36 w-full md:w-60 my-auto"
+                  alt=""
+                />
+                <div>
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400 text-center md:text-left">
+                    Adoption and Surrogacy
+                  </div>
+                  <div
+                    className="md:text-lg text-sm p-2 text-gray-400"
+                    style={{
+                      color: mode === "dark" ? "text-gray-400" : "black",
+                    }}
+                  >
+                    BDM reimburses eligible graduates up to{" "}
+                    <lable className="text-[#FC4A1A]">$50,000</lable> ,
+                    cumulative lifetime maximum, for eligible expenses
+                    associated with the adoption of a minor child and the birth
+                    of a child through surrogacy..
+                  </div>
+                </div>
+              </div>
+              <div className="md:flex gap-8">
+                <img
+                  src={f3}
+                  className="object-cover h-36 w-full md:w-60 my-auto"
+                  alt=""
+                />
+                <div>
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400 text-center md:text-left">
+                    Emergency back-up dependent care
+                  </div>
+                  <div
+                    className="md:text-lg text-sm p-2 text-gray-400"
+                    style={{
+                      color: mode === "dark" ? "text-gray-400" : "black",
+                    }}
+                  >
+                    BDM provides for care for infants through teenage children
+                    and adult relatives of eligible Deloitte employees, up to a
+                    maximum <lable className="text-[#FC4A1A]">30 days</lable> of
+                    per employee per fiscal year
+                  </div>
+                </div>
+              </div>
+              <div className="md:flex gap-8">
+                <img
+                  src={f4}
+                  className="object-cover h-36 w-full md:w-60 my-auto"
+                  alt=""
+                />
+                <div>
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400 text-center md:text-left">
+                    Sabbaticals
+                  </div>
+                  <div
+                    className="md:text-lg md:sm p-2 text-gray-400"
+                    style={{
+                      color: mode === "dark" ? "text-gray-400" : "black",
+                    }}
+                  >
+                    BDM offers two sabbatical programs: an unpaid one-month
+                    sabbatical that can be taken for any reason; and a three- to
+                    six-month sabbatical While on a three- to sixmonth
+                    sabbatical, professionals continue to receive{" "}
+                    <lable className="text-[#FC4A1A]">
+                      {" "}
+                      40% of their pre-sabbatical base salary.
+                    </lable>
+                  </div>
+                </div>
+              </div>
+              <div className="md:flex gap-8">
+                <img
+                  src={f5}
+                  className="object-cover h-36 w-full md:w-60 my-auto"
+                  alt=""
+                />
+                <div>
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400 text-center md:text-left">
+                    Family insurance
+                  </div>
+                  <div
+                    className="md:text-lg text-sm p-2 text-gray-400"
+                    style={{
+                      color: mode === "dark" ? "text-gray-400" : "black",
+                    }}
+                  >
+                    Life insurance includes core coverage for our professionals.
+                    Optional life and accident coverage can be purchased for
+                    professionals and/or their eligible dependents
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          {benifitTab === 2 && (
+            <div className="space-y-3 w-full">
+              <div className="md:flex gap-8">
+                <img
+                  src={f6}
+                  className="object-cover h-36 w-60 my-auto"
+                  alt=""
+                />
+                <div>
+                  <div className="font-semibold text-xl text-center md:text-left md:text-3xl p-2 dark:text-gray-400">
+                    100 % Coverage
+                  </div>
+                  <div
+                    className="text-sm md:text-lg p-2 text-gray-400"
+                    style={{
+                      color: mode === "dark" ? "text-gray-400" : "black",
+                    }}
+                  >
+                    BDM provides 100% coverage for in-network preventive
+                    services and certain cancer screenings, such as well-child
+                    (e.g., annual exams), well-woman (e.g., mammogram, Pap
+                    smear), well-man (e.g., prostate testing), and
+                    immunizations.
+                  </div>
+                </div>
+              </div>
+              <div className="md:flex gap-8">
+                <div className="h-36 md:w-96">
+                  <img src={t2} className=" mx-auto my-auto" alt="" />
+                </div>
+                <div>
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400">
+                    Quality Care, Protection & Prescription
+                  </div>
+                  <div
+                    className="md:text-lg text-sm p-2 text-gray-400"
+                    style={{
+                      color: mode === "dark" ? "text-gray-400" : "black",
+                    }}
+                  >
+                    BDM provides access to quality care through national
+                    provider networks. Also provides protection against the cost
+                    of catastrophic illness or injury. Provides prescription
+                    drug coverage.
+                  </div>
+                </div>
+              </div>
+              <div className="md:flex gap-8">
+                <div className="h-36 md:w-96">
+                  <img src={t3} className=" mx-auto my-auto" alt="" />
+                </div>
+                <div>
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400">
+                    Dental
+                  </div>
+                  <div
+                    className="md:text-lg text-sm p-2 text-gray-400"
+                    style={{
+                      color: mode === "dark" ? "text-gray-400" : "black",
+                    }}
+                  >
+                    The dental plan provides access to in-and out-of-network
+                    providers, coverage for major dental work, and three dental
+                    cleanings per year, With no deductible, paid at 100% of
+                    reasonable and customary charges.
+                  </div>
+                </div>
+              </div>
+              <div className="md:flex gap-8">
+                <div className="h-36 md:w-96">
+                  <img src={t4} className=" mx-auto my-auto" alt="" />
+                </div>
+                <div>
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400">
+                    Vision
+                  </div>
+                  <div
+                    className="md:text-lg text-sm p-2 text-gray-400"
+                    style={{
+                      color: mode === "dark" ? "text-gray-400" : "black",
+                    }}
+                  >
+                    Deloitte also offers a discount vision benefit at no cost to
+                    the participant, as well as a voluntary vision plan that
+                    allows participants to elect additional coverage
+                  </div>
+                </div>
+              </div>
+              <div className="md:flex gap-8">
+                <div className="h-36 md:w-96">
+                  <img src={t5} className=" mx-auto my-auto" alt="" />
+                </div>
+                <div>
+                  <div className="font-semibold text-xl md:text-3xl p-2 dark:text-gray-400">
+                    CMS transparency in coverage rule
+                  </div>
+                  <div
+                    className="md:text-lg text-sm p-2 text-gray-400"
+                    style={{
+                      color: mode === "dark" ? "text-gray-400" : "black",
+                    }}
+                  >
+                    Please click the links below for pricing information from
+                    our national medical plan carriers on covered items and
+                    services.
+                    <lable className="text-[#FC4A1A]">
+                      {" "}
+                      UnitedHealthcare Aetna Anthem
+                    </lable>
+                    (after clicking the link enter EIN 13 5133500 in the search)
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          {benifitTab === 3 && (
+            <div className="md:px-32 py-10">
+              <div className="md:flex w-full">
+                <div>
+                  <div className="font-semibold text-xl md:text-4xl tracking-wider pb-4 text-[#FC4A1A]">
+                    Retirement
+                  </div>
+                  <div
+                    className="md:text-lg text-sm pt-8 md:pr-20 text-gray-400"
+                    style={{
+                      color: mode === "dark" ? "text-gray-400" : "black",
+                    }}
+                  >
+                    BDM s Wealth Accumulation Program includes a 401(k) savings
+                    plan and a cash balance plan. Together, these plans provide
+                    a solid foundation for eligible professionals long-term
+                    financial future
+                  </div>
+                </div>
+                <div className="w-full">
+                  <img src={xr1} className="w-80 h-56 object-cover " alt="" />
+                </div>
+              </div>
+              <div className="flex w-full justify-between px-20 pt-20 place-items-center">
+                <div className="bg-gray-900 rounded-md p-4 h-80 w-80">
+                  <div className="font-semibold text-gray-400 text-xl p-5 text-center">
+                    SAVINGS PLAN
+                  </div>
+                  <div className="py-10 text-center text-gray-400">
+                    BDM s Wealth Accumulation Program includes a 401(k) savings
+                    plan and a cash balance plan. Together, these plans provide
+                    a solid foundation for eligible professionals long-term
+                    financial future
+                  </div>
+                </div>
+                <div className="bg-gray-900 text-gray-400 rounded-md p-4 h-80 w-80">
+                  <div className="font-semibold text-xl p-5 text-center">
+                    CASH BALANCE PLAN
+                  </div>
+                  <div className="py-10 text-center text-gray-400">
+                    BDM s Wealth Accumulation Program includes a 401(k) savings
+                    plan and a cash balance plan. Together, these plans provide
+                    a solid foundation for eligible professionals long-term
+                    financial future
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          {benifitTab === 4 && (
+            <div className="md:px-32 py-4 md:py-10">
+              <div className="md:flex w-full">
+                <div>
+                  <div className="font-semibold text-xl md:text-4xl tracking-wider pb-4 dark:text-[#FC4A1A]">
+                    Disability
+                  </div>
+                  <div
+                    className="md:text-lg pb-4 text-sm md:pt-8 md:pr-20 text-gray-400"
+                    style={{
+                      color: mode === "dark" ? "text-gray-400" : "black",
+                    }}
+                  >
+                    BDM provides Short-Term Disability and core Long-Term
+                    Disability (STD and LTD) coverage at no cost to the
+                    participant. Additional LTD coverage is available for
+                    purchase as well
+                  </div>
+                </div>
+                <div className="w-full">
+                  <img src={xr2} className="w-80 h-80 object-cover " alt="" />
+                </div>
+              </div>
+              <div>
+                <div className="font-semibold tracking-wider text-xl md:text-2xl py-5 dark:text-[#FC4A1A]">
+                  We believe in you
+                </div>
+                <div
+                  className="md:text-lg text-sm text-gray-400"
+                  style={{
+                    color: mode === "dark" ? "text-gray-400" : "black",
+                  }}
+                >
+                  This is a dummy text, to be replaced with how BDM encourages
+                  and empowers disabled power and focuses on their ability
+                  rather disabilty. Mention some events and programs too that
+                  are held for them. Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Etiam eu turpis molestie, dictum est a,
+                  mattis tellus. Sed dignissim, metus nec fringilla accumsan,
+                  risus sem sollicitudin lacus, ut interdum tellus elit sed
+                  risus. Maecenas eget condimentum velit, sit amet feugiat
+                  lectus. Class aptent taciti sociosqu ad litora torquent per
+                  conubia nostra, per inceptos himenaeos. Praesent auctor purus
+                  luctus enim egestas, ac scelerisque ante pulvinar. Donec ut
+                  rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna.
+                  Curabitur vel bibendum lorem. Morbi convallis convallis diam
+                  sit amet lacinia. Aliquam in elementum tellus.
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </Layout>
   );
 };
 
-export default Benifits;
+export default Benefits;

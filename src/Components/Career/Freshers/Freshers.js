@@ -14,6 +14,7 @@ import { useMediaQuery } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Layout from "../../Templates/Layout/Layout";
+import { useStateContext } from "../../../contexts/ContextProvider";
 
 export default function Freshers() {
   const [toggle2, setToggle2] = useState(true);
@@ -32,13 +33,30 @@ export default function Freshers() {
   const [search, setsearch] = useState("");
   const [worktype, setworktype] = useState("");
   const [dropworktype, setdropworktype] = useState(false);
+  const {
+    candidateModel,setunMatched
+  } = useStateContext();
+
+  const checkExprienceLevel = (value) =>{
+    if(value===candidateModel.experience){
+      setunMatched(false);
+    }
+    else{
+      setunMatched(true);
+    }
+  }
 
   const getMyResult = async () => {
     try {
       const res = await axios.get("https://bigbros.link/api/v1/jobs/");
       console.log(res.data);
-      setfilteresData(res.data);
-      setapiData(res.data);
+      let array= res.data
+      let resArray=[];
+      { array.map((itr)=>(
+        (itr.experience == 0  &&  resArray.push(itr))
+      ))}
+      setfilteresData(resArray);
+      setapiData(resArray);
       setisPending(false);
     } catch (error) {
       console.log(error.message);
@@ -326,6 +344,7 @@ export default function Freshers() {
         <div className="w-full h-full md:grid grid-cols-3 space-y-4 md:space-y-0 gap-10 px-10">
           {filteredDta &&
             filteredDta.map((data) => (
+              <div>
               <div className="border border-[#FC4A1A] p-8 bg-gray-100">
                 <div className="font-semibold tracking-wide text-2xl text-[#FC4A1A] uppercase">
                   {data.title}
@@ -338,8 +357,13 @@ export default function Freshers() {
                 </div>
                 <button className="mt-10 text-[#FC4A1A]">Apply</button>
               </div>
-            ))}
-        </div>
+              <div className=" tracking-wide text-gray-600 font-sans">
+                {data.description}
+              </div>
+              <button onClick={()=>checkExprienceLevel(data.experience)} className="mt-10 text-[#FC4A1A]">Apply</button>
+            </div>
+          ))}
+      </div>
 
         <div className="freshers-title" style={{ color: "#BC312E" }}>
           WHY JOIN US

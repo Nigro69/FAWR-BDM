@@ -7,12 +7,10 @@
 }
 
 .login-bgimg {
-    display: flex;
     width: 100%;
     background-image: url("./LoginImages/Login_img1.png");
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
     justify-content: right;
     padding-right: 10%;
 }

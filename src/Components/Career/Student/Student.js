@@ -14,6 +14,7 @@ import { useMediaQuery } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Layout from "../../Templates/Layout/Layout";
+import { useStateContext } from "../../../contexts/ContextProvider";
 
 export default function Student() {
   const [toggle2, setToggle2] = useState(true);
@@ -32,13 +33,31 @@ export default function Student() {
   const [search, setsearch] = useState("");
   const [dropCategory, setdropCategory] = useState(false);
   const [category, setcategory] = useState("");
+  
+  const {
+    candidateModel,setunMatched
+  } = useStateContext();
+
+  const checkExprienceLevel = (value) =>{
+    if(value===candidateModel.experience){
+      setunMatched(false);
+    }
+    else{
+      setunMatched(true);
+    }
+  }
 
   const getMyResult = async () => {
     try {
       const res = await axios.get("https://bigbros.link/api/v1/jobs/");
       console.log(res.data);
-      setfilteresData(res.data);
-      setapiData(res.data);
+      let array= res.data
+      let resArray=[];
+      { array.map((itr)=>(
+        (itr.experience < 0  &&  resArray.push(itr))
+      ))}
+      setfilteresData(resArray);
+      setapiData(resArray);
       setisPending(false);
     } catch (error) {
       console.log(error.message);

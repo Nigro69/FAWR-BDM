@@ -23,7 +23,9 @@ import xr2 from "../Job/JobImages/r2.png";
 import Layout from "../../Templates/Layout/Layout";
 
 const Benifits = () => {
-  const mode = "dark";
+
+  
+  const mode="dark";
   const [benifitTab, setbenifitTab] = useState(1);
 
   return (
@@ -524,4 +526,4 @@ const Benifits = () => {
   );
 };
 
-export default Benifits;
+export default Benefits;

@@ -55,8 +55,8 @@ function Register2() {
   const [emailverified, setemailverified] = useState(false);
   const [agree, setagree] = useState(false);
   const [verificationPending, setverificationPending] = useState(false);
-  const [day, setday] = useState(0); //
-  const [year, setyear] = useState(0); //
+  const [day, setday] = useState(null);
+  const [year, setyear] = useState(null);
   const [pancard, setpancard] = useState("");
   const [pancardValidate, setpancardValidate] = useState(true);
   const [experience, setexperience] = useState(null);
@@ -229,13 +229,31 @@ function Register2() {
                 </div>
                 <div className="relative  w-1/4">
                   <div
-                    onClick={() => setdrop(drop === 1 ? 0 : 1)}
-                    className="flex justify-between place-items-center text-sm bg-[#211F22] px-3 py-2 rounded-md border border-gray-400 text-gray-400"
+                    onClick={() => {
+                      setintrest("Sales and Marketing");
+                      setdrop(0);
+                    }}
+                    className="text-center p-2 text-sm bg-[#211F22] cursor-pointer text-gray-400"
                   >
-                    <div>{intrest === null ? "Select" : intrest} </div>
-                    <div>
-                      <BsChevronDown />
-                    </div>
+                    Sales and Marketing
+                  </div>
+                  <div
+                    onClick={() => {
+                      setintrest("Engineering");
+                      setdrop(0);
+                    }}
+                    className="text-center p-2 text-sm bg-[#211F22] cursor-pointer text-gray-400"
+                  >
+                  Engineering
+                  </div>
+                  <div
+                    onClick={() => {
+                      setintrest("Design");
+                      setdrop(0);
+                    }}
+                    className="text-center p-2 text-sm bg-[#211F22] cursor-pointer text-gray-400"
+                  >
+                    Design
                   </div>
                   {drop === 1 && (
                     <div className="absolute w-full border border-gray-400 rounded-md grid grid-cols-1 divide-y divide-gray-400">
