@@ -1,8 +1,17 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import './Prof.css'
+import { auth } from "../../firebase/config";
+import axios from "axios";
 
 const Profile = ({func}) => {
+  const [profileData, setProfileData] = useState(null);
+
+  useEffect(() => {
+    const res = axios.get(`https://bigbros.link/api/v1/profile/${auth.currentUser.uid}`);
+    console.log(res.data);
+    setProfileData(res.data);
+  }, [])
   return (
     <div className="p-4 mx-10 my-4">
       <div className="font-semibold text-2xl mb-4 tracking-wider text-gray-200">
@@ -20,7 +29,7 @@ const Profile = ({func}) => {
             </div>
             <div className="space-y-3">
               <div className="font-semibold text-gray-100 text-2xl tracking-wider">
-                Darlene Robertson
+                {profileData?.name}
               </div>
               <div className="font-semibold text-gray-400 ">
                 Senior Developer
@@ -34,11 +43,11 @@ const Profile = ({func}) => {
         <div className="flex justify-between py-2">
           <div className="flex gap-5">
             <div className="font-semibold text-sm text-gray-400 flex gap-2 place-items-center">
-              <AiOutlineMail /> yashbarman3010@gmail.com
+              <AiOutlineMail /> {profileData?.email}
             </div>
             <div className="font-semibold text-sm text-gray-400 flex gap-2 place-items-center">
               <AiOutlinePhone />
-              +91 6261630049
+              +91 {profileData?.phonenumber}
             </div>
           </div>
           <div className="flex place-items-center gap-2">

@@ -5,7 +5,7 @@ import "./Career.css"
 import c1 from "./CareerImages/c1.png";
 import c2 from "./CareerImages/c2.png";
 
-export default function Career({ mode }) {
+export default function Career() {
     const navigate = useNavigate();
   return (
     <div className="space-y-10">

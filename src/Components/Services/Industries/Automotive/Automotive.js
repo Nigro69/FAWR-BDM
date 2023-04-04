@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "../../Industries/Industries.css"
 
 import Automotive_img1 from "./AutomotiveImages/Automotive_img1.png"
@@ -20,9 +20,10 @@ import I4 from "./AutomotiveImages/4.png"
 import Igrid from '../../../Templates/IndustriesTemplates/IndustryGrid/Igrid'
 import Iservices from '../../../Templates/IndustriesTemplates/IndustryServices/Iservices.js'
 import Meeting from '../../../Templates/IndustriesTemplates/Meeting/Meeting'
+import Layout from '../../../Templates/Layout/Layout'
 
 
-export default function Automotive({ mode }) {
+export default function Automotive() {
 
     useEffect(() => {
         window.scroll({
@@ -84,56 +85,58 @@ export default function Automotive({ mode }) {
 
     ]
     return (
-        <div className='industries-outer'>
-            <Industrytop bgimg={Automotive_img1} mode={mode}
-                content="One may reasonably argue that the automotive industry has undergone a paradigm change in recent years. This is especially true when other contemporary needs are taken into account, such as autonomous driving, shared mobility, diminishing fuel reserves, and restrictive laws. In our opinion at BDM, the upheaval in the car sector is only a chance to embrace digitalization and change how our customers view their supply chains, manufacturing capabilities, and data analytics. With our distinctive knowledge of cutting-edge technology, we offered a wide range of services. Veterans of the car industry have moved into new areas and enhanced their operational performance with our assistance; now, you can too! The automotive sector, which comprises businesses engaged in the designing, marketing, producing, and reselling of automobiles among other things, is one of the most significant revenue-generating industries in the whole globe. The car business is profitable, but it also confronts a number of challenges, including shifting customer tastes, the rise of new developing economies, technology improvements, more digitalization, automation, and new environmentally friendly options." />
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Challenges</u>
-            </div>
-            <div className='industries-component'>
-                <Challenges challengeData={challengeData} mode={mode} />
-            </div>
+        <Layout>
+            <div className='industries-outer'>
+                <Industrytop bgimg={Automotive_img1} 
+                    content="One may reasonably argue that the automotive industry has undergone a paradigm change in recent years. This is especially true when other contemporary needs are taken into account, such as autonomous driving, shared mobility, diminishing fuel reserves, and restrictive laws. In our opinion at BDM, the upheaval in the car sector is only a chance to embrace digitalization and change how our customers view their supply chains, manufacturing capabilities, and data analytics. With our distinctive knowledge of cutting-edge technology, we offered a wide range of services. Veterans of the car industry have moved into new areas and enhanced their operational performance with our assistance; now, you can too! The automotive sector, which comprises businesses engaged in the designing, marketing, producing, and reselling of automobiles among other things, is one of the most significant revenue-generating industries in the whole globe. The car business is profitable, but it also confronts a number of challenges, including shifting customer tastes, the rise of new developing economies, technology improvements, more digitalization, automation, and new environmentally friendly options." />
+                <div className='industries-title' >
+                    <u>Challenges</u>
+                </div>
+                <div className='industries-component'>
+                    <Challenges challengeData={challengeData}  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Offerings</u>
-            </div>
-            <div className='industries-component'>
-                <Igrid gridData={gridData} mode={mode} />
-            </div>
+                <div className='industries-title' >
+                    <u>Our Offerings</u>
+                </div>
+                <div className='industries-component'>
+                    <Igrid gridData={gridData}  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Services</u>
-            </div>
+                <div className='industries-title' >
+                    <u>Our Services</u>
+                </div>
 
-            <div className='industries-component'>
-                <Iservices mode={mode} />
-            </div>
+                <div className='industries-component'>
+                    <Iservices  />
+                </div>
 
-            <div className='industries-component'>
-                <Meeting mode={mode} />
-            </div>
+                <div className='industries-component'>
+                    <Meeting  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Awards & Recognition</u>
-            </div>
-            <div className='industries-component'>
-                <Award mode={mode} />
-            </div>
+                <div className='industries-title' >
+                    <u>Awards & Recognition</u>
+                </div>
+                <div className='industries-component'>
+                    <Award  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Recent Projects</u>
-            </div>
-            {/* <div className='industries-component'>
-                <Project mode={mode} />
+                <div className='industries-title' >
+                    <u>Our Recent Projects</u>
+                </div>
+                {/* <div className='industries-component'>
+                <Project  />
             </div> */}
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Featured Blog posts</u>
-            </div>
-            <div className='industries-component'>
-                <Blogs mode={mode} />
-            </div>
+                <div className='industries-title' >
+                    <u>Featured Blog posts</u>
+                </div>
+                <div className='industries-component'>
+                    <Blogs  />
+                </div>
 
-        </div>
+            </div>
+        </Layout>
     )
 }

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "../Research/Research.css"
 
 import Blockchain_img1 from "./BlockchainImages/Blockchain_img1.png"
@@ -30,8 +30,9 @@ import Award from "../../LandingPage/Awards/Award"
 import Project from "../../LandingPage/Projects/Project"
 import Blogs from "../../LandingPage/Blogs/Blog"
 import Value from '../../Templates/Value/Value'
+import Layout from '../../Templates/Layout/Layout'
 
-export default function Research({ mode }) {
+export default function Research() {
 
 
     const projectData = [
@@ -124,48 +125,50 @@ export default function Research({ mode }) {
         });
     }, [])
     return (
-        <div className='research-outer'>
-            <Top bgimg={Blockchain_img1} />
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Blockchain Development Services</u>
-            </div>
-            <div className='research-component'>
-                <Details detailData={detailData} />
-            </div>
+        <Layout>
+            <div className='research-outer'>
+                <Top bgimg={Blockchain_img1} />
+                <div className='reserach-title' >
+                    <u>Blockchain Development Services</u>
+                </div>
+                <div className='research-component'>
+                    <Details detailData={detailData} />
+                </div>
 
-            <div className='research-component'>
-                <Grid gridData={gridData} />
-            </div>
+                <div className='research-component'>
+                    <Grid gridData={gridData} />
+                </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Benefits of Blockchain</u>
-            </div>
-            <div style={{ width: "90%", display: "flex", justifyContent: "center", marginTop: "5%", marginBottom: "5%" }}>
-                <img src={mode === "dark" ? Blockchain_img2 : Blockchain_img3} />
-            </div>
+                <div className='reserach-title' >
+                    <u>Benefits of Blockchain</u>
+                </div>
+                <div style={{ width: "90%", display: "flex", justifyContent: "center", marginTop: "5%", marginBottom: "5%" }}>
+                    <img src={mode === "dark" ? Blockchain_img2 : Blockchain_img3} />
+                </div>
 
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Awards & Recognition</u>
-            </div>
-            <div className='research-component'>
-                <Award img={A1} i={"1"} />
-            </div>
+                <div className='reserach-title' >
+                    <u>Awards & Recognition</u>
+                </div>
+                <div className='research-component'>
+                    <Award img={A1} i={"1"} />
+                </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Recent Projects</u>
-            </div>
-            <div className='research-component'>
-                <Project mode={mode} projectData={projectData} />
-            </div>
+                <div className='reserach-title' >
+                    <u>Our Recent Projects</u>
+                </div>
+                <div className='research-component'>
+                    <Project  projectData={projectData} />
+                </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Featured Blog posts</u>
-            </div>
-            <div className='research-component'>
-                <Blogs />
-            </div>
+                <div className='reserach-title' >
+                    <u>Featured Blog posts</u>
+                </div>
+                <div className='research-component'>
+                    <Blogs />
+                </div>
 
-        </div>
+            </div>
+        </Layout>
     )
 }

@@ -7,14 +7,17 @@ import AL3 from "./AlumniImages/AL3.png"
 import AL4 from "./AlumniImages/AL4.png"
 import AL5 from "./AlumniImages/AL5.png"
 import AL6 from "./AlumniImages/AL6.png"
+import Layout from '../../Templates/Layout/Layout'
 
 
 export default function Alumni() {
     return (
-        <div className='al-outer'>
-            <div className='mc-bgimg-outer' style={{ width: "100%" }} >
-                <img src={AL1} className="mc-bgimg" style={{ width: "100%" }} />
+        <Layout>
+            <div className='al-outer'>
+                <div className='mc-bgimg-outer' style={{ width: "100%" }} >
+                    <img src={AL1} className="mc-bgimg" style={{ width: "100%" }} />
+                </div>
             </div>
-        </div>
+        </Layout>
     )
 }

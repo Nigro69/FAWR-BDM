@@ -6,7 +6,7 @@ import F1 from "./FresherImages/F1.png"
 
 
 
-export default function Fresher({ mode }) {
+export default function Fresher() {
 
     useEffect(() => {
         window.scroll({
@@ -24,11 +24,11 @@ export default function Fresher({ mode }) {
             </div>
 
 
-            <div className='fresher-text' style={{ marginTop: "5%", color: mode === "dark" ? "white" : "black" }}>
+            <div className='fresher-text' style={{ marginTop: "5%"  }}>
                 You can realise your full potential with the help of BDM. We develop our talent and give it the tools it needs to contribute to the development of a better future. We encourage you to start the journey toward a rewarding career with us because we have exciting opportunities across a variety of industries and domains.
             </div>
 
-            <div className='pro-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+            <div className='pro-title' >
                 <u>Why BDM</u>
             </div>
 
@@ -37,7 +37,7 @@ export default function Fresher({ mode }) {
                     <div className='fresher-element-title'>
                         Impact
                     </div>
-                    <div className='fresher-element-text' style={{ color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>
+                    <div className='fresher-element-text' >
                         We provide employees the chance to produce revolutionary results that benefit society as a whole and demonstrate the impossibility of nothing via the application of innovation and our contextual knowledge.
                     </div>
                 </div>
@@ -46,7 +46,7 @@ export default function Fresher({ mode }) {
                     <div className='fresher-element-title'>
                         Development
                     </div>
-                    <div className='fresher-element-text' style={{ color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>
+                    <div className='fresher-element-text' >
                         By giving them chances to access and learn from the huge collective experience that exists inside TCS, we empower our colleagues to offer creative solutions. We make sure they continue to be at the forefront of innovation.
                     </div>
                 </div>
@@ -55,7 +55,7 @@ export default function Fresher({ mode }) {
                     <div className='fresher-element-title'>
                         Support
                     </div>
-                    <div className='fresher-element-text' style={{ color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>
+                    <div className='fresher-element-text' >
                         Regardless of age or stage of their career, our employees are encouraged in discovering and becoming the professionals they were intended to be through upskilling and reskilling as well as chances to move throughout the business.
                     </div>
                 </div>
@@ -64,7 +64,7 @@ export default function Fresher({ mode }) {
                     <div className='fresher-element-title'>
                         Progress
                     </div>
-                    <div className='fresher-element-text' style={{ color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>
+                    <div className='fresher-element-text' >
                         We see our people as long-term relationships that we build together and from which we all grow. We invest in them across the duration of their career and encourage them to strive for perpetual progress.
                     </div>
                 </div>

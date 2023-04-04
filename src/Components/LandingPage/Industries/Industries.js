@@ -21,7 +21,7 @@ import I8 from "./IndustriesImages/8.png"
 
 import { NavLink as Link } from 'react-router-dom'
 
-export default function Industries({ mode }) {
+export default function Industries() {
     return (
         <div className='industries-outer'>
             <div className='industries-grid'>

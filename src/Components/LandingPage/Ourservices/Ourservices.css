@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: #211F22;
     padding-top: 2%;
     padding-bottom: 2%;
     /* margin-bottom: 10%; */
@@ -74,7 +73,6 @@
 .ourservices-inner-right-link-text {
     font-weight: 400;
     font-size: 1.25rem;
-    color: #FFFFFF;
 }
 
 .ourservices-inner-left {

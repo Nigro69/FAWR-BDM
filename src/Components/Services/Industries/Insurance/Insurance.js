@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "../../Industries/Industries.css"
 
 import Insurance_img1 from "./InsuranceImages/Insurance_img1.png"
@@ -21,9 +21,10 @@ import I5 from "./InsuranceImages/5.png"
 import Igrid from '../../../Templates/IndustriesTemplates/IndustryGrid/Igrid'
 import Iservices from '../../../Templates/IndustriesTemplates/IndustryServices/Iservices.js'
 import Meeting from '../../../Templates/IndustriesTemplates/Meeting/Meeting'
+import Layout from '../../../Templates/Layout/Layout'
 
 
-export default function Insurance({ mode }) {
+export default function Insurance() {
 
     useEffect(() => {
         window.scroll({
@@ -88,56 +89,58 @@ export default function Insurance({ mode }) {
 
     ]
     return (
-        <div className='industries-outer'>
-            <Industrytop bgimg={Insurance_img1} mode={mode}
-                content="The insurance sector is dealing with quickening technology development and more stringent governmental regulatory compliance. Insurance firms are utilising Internet of Things, Advanced Analytics, and Machine Learning to generate precise individual risk profiles in order to meet the rising demand for individualised rates and usage-based coverage. This offers a special chance for IT & ITeS service providers to support the insurance sector's transformation and adaptation. The difficulty for IT / ITeS providers is to get their message through as the insurance sector increases its spending with IT and ITeS businesses to accomplish their transformational and digital aspirations. Our comprehensive databases, account mapping, and research-driven strategy, which aids our clients in the IT & ITeS business in connecting with the appropriate decision-makers and influencers, are the results of our competence in lead generation for insurance." />
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Challenges</u>
-            </div>
-            <div className='industries-component'>
-                <Challenges challengeData={challengeData} mode={mode} />
-            </div>
+        <Layout>
+            <div className='industries-outer'>
+                <Industrytop bgimg={Insurance_img1} 
+                    content="The insurance sector is dealing with quickening technology development and more stringent governmental regulatory compliance. Insurance firms are utilising Internet of Things, Advanced Analytics, and Machine Learning to generate precise individual risk profiles in order to meet the rising demand for individualised rates and usage-based coverage. This offers a special chance for IT & ITeS service providers to support the insurance sector's transformation and adaptation. The difficulty for IT / ITeS providers is to get their message through as the insurance sector increases its spending with IT and ITeS businesses to accomplish their transformational and digital aspirations. Our comprehensive databases, account mapping, and research-driven strategy, which aids our clients in the IT & ITeS business in connecting with the appropriate decision-makers and influencers, are the results of our competence in lead generation for insurance." />
+                <div className='industries-title' >
+                    <u>Challenges</u>
+                </div>
+                <div className='industries-component'>
+                    <Challenges challengeData={challengeData}  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Offerings</u>
-            </div>
-            <div className='industries-component'>
-                <Igrid gridData={gridData} mode={mode} />
-            </div>
+                <div className='industries-title' >
+                    <u>Our Offerings</u>
+                </div>
+                <div className='industries-component'>
+                    <Igrid gridData={gridData}  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Services</u>
-            </div>
+                <div className='industries-title' >
+                    <u>Our Services</u>
+                </div>
 
-            <div className='industries-component'>
-                <Iservices mode={mode} />
-            </div>
+                <div className='industries-component'>
+                    <Iservices  />
+                </div>
 
-            <div className='industries-component'>
-                <Meeting mode={mode} />
-            </div>
+                <div className='industries-component'>
+                    <Meeting  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Awards & Recognition</u>
-            </div>
-            <div className='industries-component'>
-                <Award mode={mode} />
-            </div>
+                <div className='industries-title' >
+                    <u>Awards & Recognition</u>
+                </div>
+                <div className='industries-component'>
+                    <Award  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Recent Projects</u>
-            </div>
-            {/* <div className='industries-component'>
-                <Project mode={mode} />
+                <div className='industries-title' >
+                    <u>Our Recent Projects</u>
+                </div>
+                {/* <div className='industries-component'>
+                <Project  />
             </div> */}
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Featured Blog posts</u>
-            </div>
-            <div className='industries-component'>
-                <Blogs mode={mode} />
-            </div>
+                <div className='industries-title' >
+                    <u>Featured Blog posts</u>
+                </div>
+                <div className='industries-component'>
+                    <Blogs  />
+                </div>
 
-        </div>
+            </div>
+        </Layout>
     )
 }

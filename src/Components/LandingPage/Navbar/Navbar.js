@@ -127,7 +127,7 @@ export default function Navbar({ mode, handleMode }) {
   return (
     <div
       className="navbar-outer"
-      style={{ color: mode === "dark" ? "white" : "black" }}
+      
     >
       <Slide direction="top" in={isOpen} style={{ zIndex: 10 }} transition="5s">
         <Box
@@ -144,17 +144,17 @@ export default function Navbar({ mode, handleMode }) {
           <CloseButton
             onClick={onToggle}
             fontSize="20"
-            color={mode === "dark" ? "white" : "black"}
+            
           />
           {selectedOption === 0 ? (
-            <Aboutoption onClick={onToggle} mode={mode} />
+            <Aboutoption onClick={onToggle}  />
           ) : selectedOption === 1 ? (
-            <Solutionoption onToggle={onToggle} mode={mode} />
+            <Solutionoption onToggle={onToggle}  />
           ) : selectedOption === 2 ? (
-            <Exploreoption onClick={onToggle} mode={mode} />
+            <Exploreoption onClick={onToggle}  />
           ) : (
             selectedOption === 5 && (
-              <Careeroption onClick={onToggle} mode={mode} />
+              <Careeroption onClick={onToggle}  />
             )
           )}
         </Box>

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "../Research/Research.css"
 
 import Devops_img1 from "./DevopsImages/Devops_img1.png"
@@ -29,8 +29,9 @@ import Award from "../../LandingPage/Awards/Award"
 import Project from "../../LandingPage/Projects/Project"
 import Blogs from "../../LandingPage/Blogs/Blog"
 import Value from '../../Templates/Value/Value'
+import Layout from '../../Templates/Layout/Layout'
 
-export default function Research({ mode }) {
+export default function Research() {
 
 
     const projectData = [
@@ -121,54 +122,56 @@ export default function Research({ mode }) {
         });
     }, [])
     return (
-        <div className='research-outer'>
-            <Top bgimg={Devops_img1} mode={mode} />
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>DevOps Services</u>
-            </div>
-            <div className='research-component'>
-                <Details detailData={detailData} mode={mode} />
-            </div>
+        <Layout>
+            <div className='research-outer'>
+                <Top bgimg={Devops_img1}  />
+                <div className='reserach-title' >
+                    <u>DevOps Services</u>
+                </div>
+                <div className='research-component'>
+                    <Details detailData={detailData}  />
+                </div>
 
-            <div className='research-component'>
-                <Grid gridData={gridData} mode={mode} />
-            </div>
+                <div className='research-component'>
+                    <Grid gridData={gridData}  />
+                </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Benefits of DevOps</u>
-            </div>
-            <div style={{ width: "90%", display: "flex", justifyContent: "center", marginTop: "5%", marginBottom: "5%" }}>
-                <img src={mode === "dark" ? Devops_img2 : Devops_img3} />
-            </div>
+                <div className='reserach-title' >
+                    <u>Benefits of DevOps</u>
+                </div>
+                <div style={{ width: "90%", display: "flex", justifyContent: "center", marginTop: "5%", marginBottom: "5%" }}>
+                    <img src={mode === "dark" ? Devops_img2 : Devops_img3} />
+                </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>The value we Add</u>
-            </div>
-            <div className='research-component'>
-                <Value valueData={valueData} mode={mode} />
-            </div>
+                <div className='reserach-title' >
+                    <u>The value we Add</u>
+                </div>
+                <div className='research-component'>
+                    <Value valueData={valueData}  />
+                </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u> Awards & Recognition</u>
-            </div>
-            <div className='research-component'>
-                <Award img={A1} i={"0"} mode={mode} />
-            </div>
+                <div className='reserach-title' >
+                    <u> Awards & Recognition</u>
+                </div>
+                <div className='research-component'>
+                    <Award img={A1} i={"0"}  />
+                </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Recent Projects</u>
-            </div>
-            <div className='research-component'>
-                <Project mode={mode} projectData={projectData} />
-            </div>
+                <div className='reserach-title' >
+                    <u>Our Recent Projects</u>
+                </div>
+                <div className='research-component'>
+                    <Project  projectData={projectData} />
+                </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Featured Blog posts</u>
-            </div>
-            <div className='research-component'>
-                <Blogs mode={mode} />
-            </div>
+                <div className='reserach-title' >
+                    <u>Featured Blog posts</u>
+                </div>
+                <div className='research-component'>
+                    <Blogs  />
+                </div>
 
-        </div>
+            </div>
+        </Layout>
     )
 }

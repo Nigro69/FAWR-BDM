@@ -16,7 +16,7 @@ import C8 from "./CompaniesImages/8.png"
 
 import { useMediaQuery } from '@chakra-ui/react'
 
-export default function Companies({ mode }) {
+export default function Companies() {
     const [selected, setSelected] = useState(0)
 
     const Data = ["BB Celebration", "BB Creative Studio", "Wed my love", "BB Corporate Connect", "BB Salon", "Im Beside you"]

@@ -11,9 +11,10 @@ import S5 from "./SustainabilityImages/5.png"
 import { NavLink as Link } from 'react-router-dom'
 
 import { useMediaQuery } from '@chakra-ui/react'
+import Layout from '../Templates/Layout/Layout'
 
 
-export default function Sustainability({ mode }) {
+export default function Sustainability() {
 
     useEffect(() => {
         window.scroll({
@@ -79,123 +80,125 @@ export default function Sustainability({ mode }) {
 
     ]
     return (
-        <div className='sus-outer'>
-            <div style={{ width: "100%" }}>
-                <img src={Sustainability_img1} style={{ width: "100%" }} />
-            </div>
-
-            <div className='sus-title' style={{ color: mode === "dark" ? "white" : "black" }}><u>Materiality Assessment</u></div>
-
-            <div className='sus-section1'>
-                <div className='sus-section1-left'>
-                    <div className='sus-content' style={{ color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>
-                        We go through a detailed process to determine the subjects that are most relevant to BDM's ESG disclosures, and we do this every year. We narrowed down the areas that are pertinent to BDM as a professional services company using feedback from our stakeholders and benchmarking against other businesses in our industry.
-                    </div>
-                    <div className='sus-content' style={{ color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>
-                        Off that shortlist, topics were prioritized by senior leadership and ESG experts within the company based on impact on our business and impact on our stakeholders.
-                    </div>
+        <Layout>
+            <div className='sus-outer'>
+                <div style={{ width: "100%" }}>
+                    <img src={Sustainability_img1} style={{ width: "100%" }} />
                 </div>
 
-                <div className='sus-section1-right'>
-                    <img src={S1} style={{ width: "100%" }} />
-                </div>
-            </div>
+                <div className='sus-title' ><u>Materiality Assessment</u></div>
 
-            <div className='sus-title' style={{ color: mode === "dark" ? "white" : "black" }}><u>Our Stakeholder</u></div>
-            <div className='sus-content' style={{ textAlign: "center", color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>
-                Since we think that even the most difficult sustainability problems cannot be resolved by one party acting alone, we work closely with all of our stakeholders. We communicate often with the following internal and external stakeholder groups, all of which were chosen based on how much influence our firm has over them as well as how much influence they have over us.
-            </div>
-
-            <div className='sus-section2'>
-                {
-                    <>
-                        <div className='sus-section2-left'>
-                            {
-                                selected === 0 ? <div className='sus-section2-left-title'>{susData[0].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(0)}>{susData[0].name}</div>
-                            }
-                            {
-                                selected === 1 ? <div className='sus-section2-left-title'>{susData[1].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(1)}>{susData[1].name}</div>
-                            }
-                            {
-                                selected === 2 ? <div className='sus-section2-left-title'>{susData[2].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(2)}>{susData[2].name}</div>
-                            }
-                            {
-                                selected === 3 ? <div className='sus-section2-left-title'>{susData[3].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(3)}>{susData[3].name}</div>
-                            }
-                            {
-                                selected === 4 ? <div className='sus-section2-left-title'>{susData[4].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(4)}>{susData[4].name}</div>
-                            }
-                            {
-                                selected === 5 ? <div className='sus-section2-left-title'>{susData[5].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(5)}>{susData[5].name}</div>
-                            }
-                            {
-                                selected === 6 ? <div className='sus-section2-left-title'>{susData[6].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(6)}>{susData[6].name}</div>
-                            }
-                            {
-                                selected === 7 ? <div className='sus-section2-left-title'>{susData[7].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(7)}>{susData[7].name}</div>
-                            }
-
-
+                <div className='sus-section1'>
+                    <div className='sus-section1-left'>
+                        <div className='sus-content' >
+                            We go through a detailed process to determine the subjects that are most relevant to BDM's ESG disclosures, and we do this every year. We narrowed down the areas that are pertinent to BDM as a professional services company using feedback from our stakeholders and benchmarking against other businesses in our industry.
                         </div>
-                        <div className='sus-section2-right'>
-                            <div className='sus-content'>
-                                {susData[selected].text1}
+                        <div className='sus-content' >
+                            Off that shortlist, topics were prioritized by senior leadership and ESG experts within the company based on impact on our business and impact on our stakeholders.
+                        </div>
+                    </div>
+
+                    <div className='sus-section1-right'>
+                        <img src={S1} style={{ width: "100%" }} />
+                    </div>
+                </div>
+
+                <div className='sus-title' ><u>Our Stakeholder</u></div>
+                <div className='sus-content' style={{ textAlign: "center"  }}>
+                    Since we think that even the most difficult sustainability problems cannot be resolved by one party acting alone, we work closely with all of our stakeholders. We communicate often with the following internal and external stakeholder groups, all of which were chosen based on how much influence our firm has over them as well as how much influence they have over us.
+                </div>
+
+                <div className='sus-section2'>
+                    {
+                        <>
+                            <div className='sus-section2-left'>
+                                {
+                                    selected === 0 ? <div className='sus-section2-left-title'>{susData[0].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(0)}>{susData[0].name}</div>
+                                }
+                                {
+                                    selected === 1 ? <div className='sus-section2-left-title'>{susData[1].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(1)}>{susData[1].name}</div>
+                                }
+                                {
+                                    selected === 2 ? <div className='sus-section2-left-title'>{susData[2].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(2)}>{susData[2].name}</div>
+                                }
+                                {
+                                    selected === 3 ? <div className='sus-section2-left-title'>{susData[3].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(3)}>{susData[3].name}</div>
+                                }
+                                {
+                                    selected === 4 ? <div className='sus-section2-left-title'>{susData[4].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(4)}>{susData[4].name}</div>
+                                }
+                                {
+                                    selected === 5 ? <div className='sus-section2-left-title'>{susData[5].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(5)}>{susData[5].name}</div>
+                                }
+                                {
+                                    selected === 6 ? <div className='sus-section2-left-title'>{susData[6].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(6)}>{susData[6].name}</div>
+                                }
+                                {
+                                    selected === 7 ? <div className='sus-section2-left-title'>{susData[7].name}</div> : <div className='sus-section2-left-title' style={{ color: "#C0C0C0" }} onClick={(e) => setSelected(7)}>{susData[7].name}</div>
+                                }
+
+
                             </div>
-                            <div className='sus-content' style={{ color: "#8E8E8E" }}>
-                                {susData[selected].text2}
+                            <div className='sus-section2-right'>
+                                <div className='sus-content'>
+                                    {susData[selected].text1}
+                                </div>
+                                <div className='sus-content' style={{ color: "#8E8E8E" }}>
+                                    {susData[selected].text2}
+                                </div>
                             </div>
-                        </div>
-                    </>
+                        </>
 
-                }
-            </div>
-
-            <div className='sus-title' style={{ marginTop: "5%", color: mode === "dark" ? "white" : "black" }}><u>Sustainability at BDM</u></div>
-            <div className='sus-grid'>
-                <div className='sus-grid-element'>
-                    <div className='sus-element-left'>
-                        <div className='sus-element-title'>
-                            <u>Our Planet</u>
-                        </div>
-
-                        <div className='sus-content' style={{ color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>BDM is net-negative carbon beginning with our 2021 carbon footprint, offsetting more than 100% of Scope 1, 2, and 3 emissions with programmes that remove carbon from the atmosphere. The company intends to maintain net-negative status moving ahead.</div>
-                        <div className='sus-content' style={{ color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>We signed the Business Ambition for 1.5⁰C commitment letter in 2020, committing to achieve 100% net-zero carbon across all of our operations by 2030.</div>
-                        <div className='sus-content' style={{ color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>Our local office green teams are made up of employees who are passionate about reducing our environmental impact and who champion local sustainability initiatives. They help us to further minimize waste and conserve energy around the globe.</div>
-                    </div>
-                    <div className='sus-element-right'><img src={S2} /></div>
+                    }
                 </div>
 
-                <div className='sus-grid-element' style={{ flexDirection: isLargerThan800 ? "row-reverse" : "column" }}>
-                    <div className='sus-element-left'>
-                        <div className='sus-element-title'>
-                            <u>Our People</u>
-                        </div>
+                <div className='sus-title' style={{ marginTop: "5%"  }}><u>Sustainability at BDM</u></div>
+                <div className='sus-grid'>
+                    <div className='sus-grid-element'>
+                        <div className='sus-element-left'>
+                            <div className='sus-element-title'>
+                                <u>Our Planet</u>
+                            </div>
 
-                        <div className='sus-content' style={{ color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>In order to build the amazing teams necessary to provide ground-breaking results for our customers, diversity of experience, background, strengths, and viewpoint is crucial. We're still learning more about these problems, particularly how important it is to deal with unconscious prejudice.</div>
-                        <div className='sus-content' style={{ color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>We actively contribute to the larger conversation on diversity and inclusion in addition to our internal initiatives; we have written extensively on the subject, including a number of pieces on gender parity.</div>
+                            <div className='sus-content' >BDM is net-negative carbon beginning with our 2021 carbon footprint, offsetting more than 100% of Scope 1, 2, and 3 emissions with programmes that remove carbon from the atmosphere. The company intends to maintain net-negative status moving ahead.</div>
+                            <div className='sus-content' >We signed the Business Ambition for 1.5⁰C commitment letter in 2020, committing to achieve 100% net-zero carbon across all of our operations by 2030.</div>
+                            <div className='sus-content' >Our local office green teams are made up of employees who are passionate about reducing our environmental impact and who champion local sustainability initiatives. They help us to further minimize waste and conserve energy around the globe.</div>
+                        </div>
+                        <div className='sus-element-right'><img src={S2} /></div>
                     </div>
-                    <div className='sus-element-right'><img src={S3} /></div>
+
+                    <div className='sus-grid-element' style={{ flexDirection: isLargerThan800 ? "row-reverse" : "column" }}>
+                        <div className='sus-element-left'>
+                            <div className='sus-element-title'>
+                                <u>Our People</u>
+                            </div>
+
+                            <div className='sus-content' >In order to build the amazing teams necessary to provide ground-breaking results for our customers, diversity of experience, background, strengths, and viewpoint is crucial. We're still learning more about these problems, particularly how important it is to deal with unconscious prejudice.</div>
+                            <div className='sus-content' >We actively contribute to the larger conversation on diversity and inclusion in addition to our internal initiatives; we have written extensively on the subject, including a number of pieces on gender parity.</div>
+                        </div>
+                        <div className='sus-element-right'><img src={S3} /></div>
+                    </div>
+
+                    <div className='sus-grid-element'>
+                        <div className='sus-element-left'>
+                            <div className='sus-element-title'>
+                                <u>Business Impact</u>
+                            </div>
+
+                            <div className='sus-content' >By improving our governance and risk management policies and processes, increasing our professional development and ethical standards training programmes, and sourcing and procurement in a sustainable way, BDM consistently aspires to do business in a sustainable and responsible manner.</div>
+                        </div>
+                        <div className='sus-element-right'><img src={S4} /></div>
+                    </div>
                 </div>
 
-                <div className='sus-grid-element'>
-                    <div className='sus-element-left'>
-                        <div className='sus-element-title'>
-                            <u>Business Impact</u>
-                        </div>
 
-                        <div className='sus-content' style={{ color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>By improving our governance and risk management policies and processes, increasing our professional development and ethical standards training programmes, and sourcing and procurement in a sustainable way, BDM consistently aspires to do business in a sustainable and responsible manner.</div>
-                    </div>
-                    <div className='sus-element-right'><img src={S4} /></div>
+                <div className='sus-title' style={{ marginTop: "5%"  }}><u>Additional Material</u></div>
+                <div style={{ width: "90%" }}>
+                    <Link to="/Environmental Policy">
+                        <img src={S5} style={{ width: "100%", marginTop: "5%", marginBottom: "10%" }} />
+                    </Link>
                 </div>
             </div>
-
-
-            <div className='sus-title' style={{ marginTop: "5%", color: mode === "dark" ? "white" : "black" }}><u>Additional Material</u></div>
-            <div style={{ width: "90%" }}>
-                <Link to="/Environmental Policy">
-                    <img src={S5} style={{ width: "100%", marginTop: "5%", marginBottom: "10%" }} />
-                </Link>
-            </div>
-        </div>
+        </Layout>
     )
 }

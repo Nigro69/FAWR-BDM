@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "../../Industries/Industries.css"
 
 import Media_img1 from "./MediaImages/Media_img1.png"
@@ -21,9 +21,10 @@ import I5 from "./MediaImages/5.png"
 import Igrid from '../../../Templates/IndustriesTemplates/IndustryGrid/Igrid'
 import Iservices from '../../../Templates/IndustriesTemplates/IndustryServices/Iservices.js'
 import Meeting from '../../../Templates/IndustriesTemplates/Meeting/Meeting'
+import Layout from '../../../Templates/Layout/Layout'
 
 
-export default function Media({ mode }) {
+export default function Media() {
 
     useEffect(() => {
         window.scroll({
@@ -101,56 +102,58 @@ export default function Media({ mode }) {
 
     ]
     return (
-        <div className='industries-outer'>
-            <Industrytop bgimg={Media_img1} mode={mode}
-                content="The media and entertainment sector is going through a revolution. Over the past several years, the media and entertainment sector has seen significant change due to factors including interactivity, digitalization, many platforms and devices, and globalisation of the services-based environment. The new technologies that will propel the next wave of change in the sector include social media, mobility, analytics, and cloud computing. Numerous external influences and technological advancements, including wireless, mobile, digitalization, internet access rates, cloud storage, consumer analytics, and social media, are dependent on the Media & Entertainment industries. Therefore, in order to provide customers with appropriate material, these businesses must alter their pricing strategies, modernise their infrastructure, and heavily rely on analytics. Large prospects exist for IT & ITeS businesses in this sector as it continues to expand. In the Media & Entertainment sector, BDM collaborates with top IT / ITeS service providers as an extension of their sales team to assist them in connecting with the appropriate decision-makers utilising our huge databases, account profiling, and research-driven lead generating services." />
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Challenges</u>
-            </div>
-            <div className='industries-component'>
-                <Challenges challengeData={challengeData} mode={mode} />
-            </div>
+        <Layout>
+            <div className='industries-outer'>
+                <Industrytop bgimg={Media_img1} 
+                    content="The media and entertainment sector is going through a revolution. Over the past several years, the media and entertainment sector has seen significant change due to factors including interactivity, digitalization, many platforms and devices, and globalisation of the services-based environment. The new technologies that will propel the next wave of change in the sector include social media, mobility, analytics, and cloud computing. Numerous external influences and technological advancements, including wireless, mobile, digitalization, internet access rates, cloud storage, consumer analytics, and social media, are dependent on the Media & Entertainment industries. Therefore, in order to provide customers with appropriate material, these businesses must alter their pricing strategies, modernise their infrastructure, and heavily rely on analytics. Large prospects exist for IT & ITeS businesses in this sector as it continues to expand. In the Media & Entertainment sector, BDM collaborates with top IT / ITeS service providers as an extension of their sales team to assist them in connecting with the appropriate decision-makers utilising our huge databases, account profiling, and research-driven lead generating services." />
+                <div className='industries-title' >
+                    <u>Challenges</u>
+                </div>
+                <div className='industries-component'>
+                    <Challenges challengeData={challengeData}  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Offerings</u>
-            </div>
-            <div className='industries-component'>
-                <Igrid gridData={gridData} mode={mode} />
-            </div>
+                <div className='industries-title' >
+                    <u>Our Offerings</u>
+                </div>
+                <div className='industries-component'>
+                    <Igrid gridData={gridData}  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Services</u>
-            </div>
+                <div className='industries-title' >
+                    <u>Our Services</u>
+                </div>
 
-            <div className='industries-component'>
-                <Iservices mode={mode} />
-            </div>
+                <div className='industries-component'>
+                    <Iservices  />
+                </div>
 
-            <div className='industries-component'>
-                <Meeting mode={mode} />
-            </div>
+                <div className='industries-component'>
+                    <Meeting  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Awards & Recognition</u>
-            </div>
-            <div className='industries-component'>
-                <Award mode={mode} />
-            </div>
+                <div className='industries-title' >
+                    <u>Awards & Recognition</u>
+                </div>
+                <div className='industries-component'>
+                    <Award  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Recent Projects</u>
-            </div>
-            {/* <div className='industries-component'>
-                <Project mode={mode} />
+                <div className='industries-title' >
+                    <u>Our Recent Projects</u>
+                </div>
+                {/* <div className='industries-component'>
+                <Project  />
             </div> */}
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Featured Blog posts</u>
-            </div>
-            <div className='industries-component'>
-                <Blogs mode={mode} />
-            </div>
+                <div className='industries-title' >
+                    <u>Featured Blog posts</u>
+                </div>
+                <div className='industries-component'>
+                    <Blogs  />
+                </div>
 
-        </div>
+            </div>
+        </Layout>
     )
 }

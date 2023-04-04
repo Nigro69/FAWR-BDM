@@ -25,7 +25,7 @@ import x18 from "./PartnerImages/18.png"
 import x19 from "./PartnerImages/19.png"
 import x20 from "./PartnerImages/20.png"
 
-export default function Partner({ mode }) {
+export default function Partner() {
     return (
         <div className='partner-outer'>
             <div className='partner-grid' >

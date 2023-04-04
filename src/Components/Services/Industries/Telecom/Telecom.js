@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "../../Industries/Industries.css"
 
 import Telecom_img1 from "./TelecomImages/Telecom_img1.png"
@@ -21,9 +21,10 @@ import I4 from "./TelecomImages/4.png"
 import Igrid from '../../../Templates/IndustriesTemplates/IndustryGrid/Igrid'
 import Iservices from '../../../Templates/IndustriesTemplates/IndustryServices/Iservices.js'
 import Meeting from '../../../Templates/IndustriesTemplates/Meeting/Meeting'
+import Layout from '../../../Templates/Layout/Layout'
 
 
-export default function Telecom({ mode }) {
+export default function Telecom() {
 
     useEffect(() => {
         window.scroll({
@@ -89,56 +90,58 @@ export default function Telecom({ mode }) {
 
     ]
     return (
-        <div className='industries-outer'>
-            <Industrytop bgimg={Telecom_img1} mode={mode}
-                content="The telecom sector is essential to the overall expansion of other industries. The needs of customers and the changing nature of technology provide special difficulties for the telecom industry. Telecom providers are always making investments in network improvements and capacity expansion to stay up with the ever changing industry. Through the monetization of data, providing and creating content, and investigating verticals, they are investigating new business sources. These businesses must thrive in the areas of IoT, connected devices, and security in order to compete. The Telecom firms will have to make large investments in backend technology, though, to compete in these sectors. The BPO/ITeS and IT service providers would benefit greatly from this. Using our huge databases, account profiling, and research-driven lead generation services in the telecom business, BDM works with top IT/ITeS service providers to link them with the appropriate decision-makers." />
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Challenges</u>
-            </div>
-            <div className='industries-component'>
-                <Challenges challengeData={challengeData} mode={mode} />
-            </div>
+        <Layout>
+            <div className='industries-outer'>
+                <Industrytop bgimg={Telecom_img1} 
+                    content="The telecom sector is essential to the overall expansion of other industries. The needs of customers and the changing nature of technology provide special difficulties for the telecom industry. Telecom providers are always making investments in network improvements and capacity expansion to stay up with the ever changing industry. Through the monetization of data, providing and creating content, and investigating verticals, they are investigating new business sources. These businesses must thrive in the areas of IoT, connected devices, and security in order to compete. The Telecom firms will have to make large investments in backend technology, though, to compete in these sectors. The BPO/ITeS and IT service providers would benefit greatly from this. Using our huge databases, account profiling, and research-driven lead generation services in the telecom business, BDM works with top IT/ITeS service providers to link them with the appropriate decision-makers." />
+                <div className='industries-title' >
+                    <u>Challenges</u>
+                </div>
+                <div className='industries-component'>
+                    <Challenges challengeData={challengeData}  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u> Our Offerings</u>
-            </div>
-            <div className='industries-component'>
-                <Igrid gridData={gridData} mode={mode} />
-            </div>
+                <div className='industries-title' >
+                    <u> Our Offerings</u>
+                </div>
+                <div className='industries-component'>
+                    <Igrid gridData={gridData}  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u> Our Services</u>
-            </div>
+                <div className='industries-title' >
+                    <u> Our Services</u>
+                </div>
 
-            <div className='industries-component'>
-                <Iservices mode={mode} />
-            </div>
+                <div className='industries-component'>
+                    <Iservices  />
+                </div>
 
-            <div className='industries-component'>
-                <Meeting mode={mode} />
-            </div>
+                <div className='industries-component'>
+                    <Meeting  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Awards & Recognition</u>
-            </div>
-            <div className='industries-component'>
-                <Award mode={mode} />
-            </div>
+                <div className='industries-title' >
+                    <u>Awards & Recognition</u>
+                </div>
+                <div className='industries-component'>
+                    <Award  />
+                </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u> Our Recent Projects</u>
-            </div>
-            {/* <div className='industries-component'>
-                <Project mode={mode} />
+                <div className='industries-title' >
+                    <u> Our Recent Projects</u>
+                </div>
+                {/* <div className='industries-component'>
+                <Project  />
             </div> */}
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Featured Blog posts</u>
-            </div>
-            <div className='industries-component'>
-                <Blogs mode={mode} />
-            </div>
+                <div className='industries-title' >
+                    <u>Featured Blog posts</u>
+                </div>
+                <div className='industries-component'>
+                    <Blogs  />
+                </div>
 
-        </div>
+            </div>
+        </Layout>
     )
 }

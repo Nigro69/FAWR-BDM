@@ -25,6 +25,7 @@ import { NavLink as Link } from "react-router-dom";
 import { Input, Button } from "@chakra-ui/react";
 import { BarLoader } from "react-spinners";
 import { BsGoogle } from "react-icons/bs";
+import Layout from "../../Templates/Layout/Layout";
 
 export default function Login() {
   const {
@@ -157,76 +158,78 @@ export default function Login() {
   }, []);
 
   return (
-    <div className="login-outer">
-      <div className="login-bgimg">
-        <div className="login-box relative">
-          {isPending && <div className="absolute top-1 rounded-t-xl left-0">
-            <BarLoader color="#BC312E" width={296} />
-          </div>}
-          <div className="login-box-title" style={{ color: "white" }}>
-            Login
-          </div>
-
-          <Input
-            placeHolder="Email"
-            value={email}
-            onChange={(e) => setemail(e.target.value)}
-            _placeholder={{ marginLeft: "5%", color: "white" }}
-            borderColor="#211F22"
-            borderBottomColor="white"
-            borderRadius="0%"
-            color="white"
-            _hover={{ borderColor: "none" }}
-            focusBorderColor="#211F22"
-            _focus={{ borderBottomColor: "white" }}
-          />
-
-          <Input
-            placeHolder="Password"
-            value={password}
-            onChange={(e) => setpassword(e.target.value)}
-            type="password"
-            _placeholder={{ marginLeft: "5%", color: "white" }}
-            borderColor="#211F22"
-            borderBottomColor="white"
-            borderRadius="0%"
-            color="white"
-            _hover={{ borderColor: "none" }}
-            focusBorderColor="#211F22"
-            _focus={{ borderBottomColor: "white" }}
-          />
-          <div className="login-forget">Forgot Password</div>
-          <div
-            style={{ width: "100%", display: "flex", justifyContent: "center" }}
-          >
-            <Button
-              disabled={isPending}
-              onClick={handleSubmit}
-              color="white"
-              backgroundColor="#BC312E"
-            >
+    <Layout>
+      <div className="login-outer">
+        <div className="login-bgimg">
+          <div className="login-box relative">
+            {isPending && <div className="absolute top-1 rounded-t-xl left-0">
+              <BarLoader color="#BC312E" width={296} />
+            </div>}
+            <div className="login-box-title" style={{ color: "white" }}>
               Login
-            </Button>
-          </div>
+            </div>
 
-          <div className="py-4 w-full">
-            <button className="px-7 py-2 w-full rounded-md bg-[#211F22] text-gray-400 place-items-center rnd-shd flex gap-4" onClick={handlegooglelogin}><BsGoogle /> <div className="text-sm text-gray-400 font-semibold font-sans">Continue with Google</div></button>
-          </div>
+            <Input
+              placeHolder="Email"
+              value={email}
+              onChange={(e) => setemail(e.target.value)}
+              _placeholder={{ marginLeft: "5%", color: "white" }}
+              borderColor="#211F22"
+              borderBottomColor="white"
+              borderRadius="0%"
+              color="white"
+              _hover={{ borderColor: "none" }}
+              focusBorderColor="#211F22"
+              _focus={{ borderBottomColor: "white" }}
+            />
+
+            <Input
+              placeHolder="Password"
+              value={password}
+              onChange={(e) => setpassword(e.target.value)}
+              type="password"
+              _placeholder={{ marginLeft: "5%", color: "white" }}
+              borderColor="#211F22"
+              borderBottomColor="white"
+              borderRadius="0%"
+              color="white"
+              _hover={{ borderColor: "none" }}
+              focusBorderColor="#211F22"
+              _focus={{ borderBottomColor: "white" }}
+            />
+            <div className="login-forget">Forgot Password</div>
+            <div
+              style={{ width: "100%", display: "flex", justifyContent: "center" }}
+            >
+              <Button
+                disabled={isPending}
+                onClick={handleSubmit}
+                color="white"
+                backgroundColor="#BC312E"
+              >
+                Login
+              </Button>
+            </div>
+
+            <div className="py-4 w-full">
+              <button className="px-7 py-2 w-full rounded-md bg-[#211F22] text-gray-400 place-items-center rnd-shd flex gap-4" onClick={handlegooglelogin}><BsGoogle /> <div className="text-sm text-gray-400 font-semibold font-sans">Continue with Google</div></button>
+            </div>
 
 
-          <div className="login-newuser" style={{ width: "100%" }}>
-            <Link to="/register-candidate">
-              <label style={{ width: "100%", cursor: "pointer" }}>
-                New User?{" "}
-                <label style={{ color: "#BC312E", cursor: "pointer" }}>
-                  {" "}
-                  Register
+            <div className="login-newuser" style={{ width: "100%" }}>
+              <Link to="/register-candidate">
+                <label style={{ width: "100%", cursor: "pointer" }}>
+                  New User?{" "}
+                  <label style={{ color: "#BC312E", cursor: "pointer" }}>
+                    {" "}
+                    Register
+                  </label>
                 </label>
-              </label>
-            </Link>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }

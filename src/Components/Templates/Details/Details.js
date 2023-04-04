@@ -6,7 +6,7 @@ import Details_img1 from "./DetailsImages/Details_img1.png"
 import { NavLink as Link } from 'react-router-dom'
 import { Stack } from '@chakra-ui/react'
 
-export default function Details({ detailData, mode }) {
+export default function Details({ detailData }) {
     return (
         <div>
             {
@@ -18,9 +18,9 @@ export default function Details({ detailData, mode }) {
                             </div>
 
                             <div className="details-left-text" style={{ display: "flex", flexDirection: "column" }}>
-                                <div style={{ marginTop: "2%", marginBottom: "2%", color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>{element.content1}</div>
-                                <div style={{ marginTop: "2%", marginBottom: "2%", color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>{element.content2}</div>
-                                <div style={{ marginTop: "2%", marginBottom: "2%", color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>{element.content3}</div>
+                                <div style={{ marginTop: "2%", marginBottom: "2%"  }}>{element.content1}</div>
+                                <div style={{ marginTop: "2%", marginBottom: "2%"  }}>{element.content2}</div>
+                                <div style={{ marginTop: "2%", marginBottom: "2%"  }}>{element.content3}</div>
                             </div>
 
                         </div>

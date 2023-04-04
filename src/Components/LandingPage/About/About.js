@@ -10,14 +10,14 @@ import { Button, Stack } from '@chakra-ui/react'
 
 import { NavLink as Link } from 'react-router-dom'
 
-export default function About({ mode }) {
+export default function About() {
     return (
         <div className='about-outer'>
             <div className='about-left'>
-                <div className='about-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                <div className='about-title' >
                     Delivering Digital Innovation From Startups to Enterprises
                 </div>
-                <div className='about-text' style={{ color: mode === "dark" ? "white" : "black" }}>
+                <div className='about-text' >
                     We are a business solution provider that has aided non-IT businesses and software product firms in enhancing operational efficiency and rapidly gaining new clients.
                 </div>
 

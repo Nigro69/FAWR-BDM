@@ -25,6 +25,7 @@ import { Input, Button } from "@chakra-ui/react";
 import { BarLoader } from "react-spinners";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { BsGoogle } from "react-icons/bs";
+import Layout from "../../Templates/Layout/Layout";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -158,149 +159,151 @@ export default function Register() {
   }, []);
 
   return (
-    <div className="register-outer">
-      <div className="register-bgimg">
-        <div className="register-box relative">
-          {isPending && (
-            <div className="absolute top-1 rounded-t-xl left-0">
-              <BarLoader color="#BC312E" width={600} />
+    <Layout>
+      <div className="register-outer">
+        <div className="register-bgimg">
+          <div className="register-box relative">
+            {isPending && (
+              <div className="absolute top-1 rounded-t-xl left-0">
+                <BarLoader color="#BC312E" width={600} />
+              </div>
+            )}
+            <div className="register-box-title" style={{ color: "white" }}>
+              Register
             </div>
-          )}
-          <div className="register-box-title" style={{ color: "white" }}>
-            Register
-          </div>
 
-          <div className="register-row">
-            <Input
-              value={firstName}
-              onChange={(e) => setfirstName(e.target.value)}
-              placeHolder="First name"
-              _placeholder={{ marginLeft: "5%", color: "white" }}
-              borderColor="#211F22"
-              borderBottomColor="white"
-              borderRadius="0%"
-              color="white"
-              _hover={{ borderColor: "none" }}
-              focusBorderColor="#211F22"
-              _focus={{ borderBottomColor: "white" }}
-              marginRight="2%"
-            />
+            <div className="register-row">
+              <Input
+                value={firstName}
+                onChange={(e) => setfirstName(e.target.value)}
+                placeHolder="First name"
+                _placeholder={{ marginLeft: "5%", color: "white" }}
+                borderColor="#211F22"
+                borderBottomColor="white"
+                borderRadius="0%"
+                color="white"
+                _hover={{ borderColor: "none" }}
+                focusBorderColor="#211F22"
+                _focus={{ borderBottomColor: "white" }}
+                marginRight="2%"
+              />
 
-            <Input
-              value={middleName}
-              onChange={(e) => setmiddleName(e.target.value)}
-              placeHolder="Middle name (Optional)"
-              _placeholder={{ marginLeft: "5%", color: "white" }}
-              borderColor="#211F22"
-              borderBottomColor="white"
-              borderRadius="0%"
-              color="white"
-              _hover={{ borderColor: "none" }}
-              focusBorderColor="#211F22"
-              _focus={{ borderBottomColor: "white" }}
-              marginLeft="2%"
-            />
-          </div>
+              <Input
+                value={middleName}
+                onChange={(e) => setmiddleName(e.target.value)}
+                placeHolder="Middle name (Optional)"
+                _placeholder={{ marginLeft: "5%", color: "white" }}
+                borderColor="#211F22"
+                borderBottomColor="white"
+                borderRadius="0%"
+                color="white"
+                _hover={{ borderColor: "none" }}
+                focusBorderColor="#211F22"
+                _focus={{ borderBottomColor: "white" }}
+                marginLeft="2%"
+              />
+            </div>
 
-          <div className="register-row">
-            <Input
-              value={lastName}
-              onChange={(e) => setlastName(e.target.value)}
-              placeHolder="Last name"
-              _placeholder={{ marginLeft: "5%", color: "white" }}
-              borderColor="#211F22"
-              borderBottomColor="white"
-              borderRadius="0%"
-              color="white"
-              _hover={{ borderColor: "none" }}
-              focusBorderColor="#211F22"
-              _focus={{ borderBottomColor: "white" }}
-              marginRight="2%"
-            />
+            <div className="register-row">
+              <Input
+                value={lastName}
+                onChange={(e) => setlastName(e.target.value)}
+                placeHolder="Last name"
+                _placeholder={{ marginLeft: "5%", color: "white" }}
+                borderColor="#211F22"
+                borderBottomColor="white"
+                borderRadius="0%"
+                color="white"
+                _hover={{ borderColor: "none" }}
+                focusBorderColor="#211F22"
+                _focus={{ borderBottomColor: "white" }}
+                marginRight="2%"
+              />
 
-            <Input
-              placeHolder="Email"
-              value={email}
-              onChange={(e) => setemail(e.target.value)}
-              _placeholder={{ marginLeft: "5%", color: "white" }}
-              borderColor="#211F22"
-              borderBottomColor="white"
-              borderRadius="0%"
-              color="white"
-              _hover={{ borderColor: "none" }}
-              focusBorderColor="#211F22"
-              _focus={{ borderBottomColor: "white" }}
-              marginLeft="2%"
-            />
-          </div>
+              <Input
+                placeHolder="Email"
+                value={email}
+                onChange={(e) => setemail(e.target.value)}
+                _placeholder={{ marginLeft: "5%", color: "white" }}
+                borderColor="#211F22"
+                borderBottomColor="white"
+                borderRadius="0%"
+                color="white"
+                _hover={{ borderColor: "none" }}
+                focusBorderColor="#211F22"
+                _focus={{ borderBottomColor: "white" }}
+                marginLeft="2%"
+              />
+            </div>
 
-          <div className="register-row">
-            <Input
-              placeHolder="Password"
-              value={password}
-              onChange={(e) => setpassword(e.target.value)}
-              type="password"
-              _placeholder={{ marginLeft: "5%", color: "white" }}
-              borderColor="#211F22"
-              borderBottomColor="white"
-              borderRadius="0%"
-              color="white"
-              _hover={{ borderColor: "none" }}
-              focusBorderColor="#211F22"
-              _focus={{ borderBottomColor: "white" }}
-              marginRight="2%"
-            />
+            <div className="register-row">
+              <Input
+                placeHolder="Password"
+                value={password}
+                onChange={(e) => setpassword(e.target.value)}
+                type="password"
+                _placeholder={{ marginLeft: "5%", color: "white" }}
+                borderColor="#211F22"
+                borderBottomColor="white"
+                borderRadius="0%"
+                color="white"
+                _hover={{ borderColor: "none" }}
+                focusBorderColor="#211F22"
+                _focus={{ borderBottomColor: "white" }}
+                marginRight="2%"
+              />
 
-            <Input
-              placeHolder="Confirm Password"
-              type="password"
-              _placeholder={{ marginLeft: "5%", color: "white" }}
-              borderColor="#211F22"
-              borderBottomColor="white"
-              borderRadius="0%"
-              color="white"
-              _hover={{ borderColor: "none" }}
-              focusBorderColor="#211F22"
-              _focus={{ borderBottomColor: "white" }}
-              marginLeft="2%"
-            />
-          </div>
+              <Input
+                placeHolder="Confirm Password"
+                type="password"
+                _placeholder={{ marginLeft: "5%", color: "white" }}
+                borderColor="#211F22"
+                borderBottomColor="white"
+                borderRadius="0%"
+                color="white"
+                _hover={{ borderColor: "none" }}
+                focusBorderColor="#211F22"
+                _focus={{ borderBottomColor: "white" }}
+                marginLeft="2%"
+              />
+            </div>
 
-          <div className="register-bottom">
-            <div className="register-left">
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <Button
-                  onClick={handleSubmit}
-                  disabled={isPending}
-                  color="white"
-                  backgroundColor="#BC312E"
+            <div className="register-bottom">
+              <div className="register-left">
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
                 >
-                  Register
-                </Button>
+                  <Button
+                    onClick={handleSubmit}
+                    disabled={isPending}
+                    color="white"
+                    backgroundColor="#BC312E"
+                  >
+                    Register
+                  </Button>
+                </div>
+
+                <Link to="/Login">
+                  <div className="register-newuser">
+                    Already registered?
+                    <label style={{ color: "#BC312E" }}> Login</label>
+                  </div>
+                </Link>
               </div>
 
-              <Link to="/Login">
-                <div className="register-newuser">
-                  Already registered?
-                  <label style={{ color: "#BC312E" }}> Login</label>
+              <div className="register-right">
+                <div className="py-4 px-2 w-full">
+                  <button className="px-9 py-2 w-full rounded-md bg-[#211F22] text-gray-400 place-items-center rnd-shd flex gap-4" onClick={handlegooglelogin}><BsGoogle /> <div className="text-sm text-gray-400 font-semibold font-sans">Continue with Google</div></button>
                 </div>
-              </Link>
-            </div>
-
-            <div className="register-right">
-              <div className="py-4 px-2 w-full">
-                <button className="px-9 py-2 w-full rounded-md bg-[#211F22] text-gray-400 place-items-center rnd-shd flex gap-4" onClick={handlegooglelogin}><BsGoogle /> <div className="text-sm text-gray-400 font-semibold font-sans">Continue with Google</div></button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "./Research.css"
 
 import Research_img1 from "./ResearchImages/Research_img1.png"
@@ -23,8 +23,9 @@ import Grid from '../../Templates/Grid/Grid'
 import Award from "../../LandingPage/Awards/Award"
 import Project from "../../LandingPage/Projects/Project"
 import Blogs from "../../LandingPage/Blogs/Blog"
+import Layout from '../../Templates/Layout/Layout'
 
-export default function Research({ mode }) {
+export default function Research() {
 
     useEffect(() => {
         window.scroll({
@@ -109,40 +110,42 @@ export default function Research({ mode }) {
 
     ]
     return (
-        <div className='research-outer'>
-            <Top bgimg={Research_img1} />
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Research Intelligence Services</u>
-            </div>
-            <div className='research-component'>
-                <Details detailData={detailData} />
-            </div>
+        <Layout>
+            <div className='research-outer'>
+                <Top bgimg={Research_img1} />
+                <div className='reserach-title' >
+                    <u>Research Intelligence Services</u>
+                </div>
+                <div className='research-component'>
+                    <Details detailData={detailData} />
+                </div>
 
-            <div className='research-component'>
-                <Grid gridData={gridData} />
-            </div>
+                <div className='research-component'>
+                    <Grid gridData={gridData} />
+                </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Awards & Recognition</u>
-            </div>
-            <div className='research-component'>
-                <Award img={A1} i={"0"} />
-            </div>
+                <div className='reserach-title' >
+                    <u>Awards & Recognition</u>
+                </div>
+                <div className='research-component'>
+                    <Award img={A1} i={"0"} />
+                </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u> Our Recent Projects</u>
-            </div>
-            <div className='research-component'>
-                <Project projectData={projectData} />
-            </div>
+                <div className='reserach-title' >
+                    <u> Our Recent Projects</u>
+                </div>
+                <div className='research-component'>
+                    <Project projectData={projectData} />
+                </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Featured Blog posts</u>
-            </div>
-            <div className='research-component'>
-                <Blogs />
-            </div>
+                <div className='reserach-title' >
+                    <u>Featured Blog posts</u>
+                </div>
+                <div className='research-component'>
+                    <Blogs />
+                </div>
 
-        </div>
+            </div>
+        </Layout>
     )
 }

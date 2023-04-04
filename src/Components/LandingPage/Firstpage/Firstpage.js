@@ -7,7 +7,7 @@ import Firstpage_img3 from "./FirstpageImages/Firstpage_img3.png"
 import Textanimation from '../../TextAnimation/Textanimation'
 import { Button } from '@chakra-ui/react'
 
-export default function Firstpage({ mode }) {
+export default function Firstpage() {
     return (
         <div className='firstpage-outer'>
             <div className='firstpage-top' style={{ display: "flex", justifyContent: "left", width: "100%" }}>
@@ -15,7 +15,7 @@ export default function Firstpage({ mode }) {
             </div>
             <div className='firstpage-middle'>
                 <div className='firstpage-left'>
-                    <div className='firstpage-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    <div className='firstpage-title' >
                         Adding Values by
                     </div>
                     <Textanimation />
