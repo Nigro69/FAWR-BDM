@@ -10,8 +10,10 @@ import Settings from "./Settings";
 import EditProfile from "./EditProfile";
 import EditCandidateProfile from "./EditCandidateProfile";
 import Layout from "../Layout/Layout";
+import { useStateContext } from "../../contexts/ContextProvider";
 
 const ProfileHome = () => {
+  const {mode} = useStateContext()
   const [tab, settab] = useState(1);
   const [sidebartoggle, setsidebartoggle] = useState(false);
 
@@ -21,7 +23,6 @@ const ProfileHome = () => {
 
   return (
     <Layout>
-      {(mode) => (
         <div className="flex">
           <div className={` fixed h-full ${sidebartoggle ? "w-10" : "w-52"}`}>
             <Sidebar
@@ -78,7 +79,6 @@ const ProfileHome = () => {
             </div>
           </div>
         </div>
-      )}
     </Layout>
   );
 };

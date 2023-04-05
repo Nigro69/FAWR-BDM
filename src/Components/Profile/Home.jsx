@@ -43,7 +43,7 @@ const Home = ({func}) => {
 
   return (
     <div className='p-4 mx-10 my-4'>
-        <div className='bg-gray-200 dark:bg-[#211F22] rnd-shd p-6 rounded-lg'>
+        <div className='rnd-shd p-6 rounded-lg'>
             <div className='flex justify-between'>
                 <div className='flex place-items-center gap-5'>
                     <div><img className='object-cover rounded-full h-20 w-20' src="https://thumbs.dreamstime.com/b/profile-picture-caucasian-male-employee-posing-office-happy-young-worker-look-camera-workplace-headshot-portrait-smiling-190186649.jpg" alt="prof_pic" /></div>
@@ -67,13 +67,13 @@ const Home = ({func}) => {
             </div>
         </div>
         <div className='flex justify-between place-items-center mt-10 mb-3'>
-            <div className='font-semibold text-xl tracking-wider dark:text-gray-100'>Recommended Jobs</div>
-            <div className='font-semibold dark:text-gray-100'>see all jobs</div>
+            <div className='font-semibold text-xl tracking-wider '>Recommended Jobs</div>
+            <div className='font-semibold '>see all jobs</div>
         </div>
         <div className='space-y-3'>
         {!isPending &&
           jobsData.map((data) => (
-            <div key={data.id} className="px-20 py-6 bg-gray-200 rounded-xl ">
+            <div key={data.id} className="px-20 py-6 rnd-shd rounded-xl ">
               <div className="flex justify-between place-items-center">
                 <div className="font-semibold text-lg tracking-wider">
                   {data.title}
