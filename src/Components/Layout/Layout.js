@@ -14,7 +14,7 @@ function Layout({ children }) {
     }
 
     return (
-        <div className={`h-screen flex flex-col ${mode === "dark" ? "bg-[#211F22] text-white " : "bg-white text-black"}`} >
+        <div className={`h-full flex flex-col ${mode === "dark" ? "bg-[#211F22] text-white " : "bg-white text-black"}`} >
             <Navbar mode={mode} handleMode={handleMode} />
             <div  >
                 {children}
