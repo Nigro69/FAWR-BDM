@@ -110,6 +110,7 @@ import { useStateContext } from "./contexts/ContextProvider.js"
 import { GrClose } from 'react-icons/gr'
 import AdminSettings from './Components/AdminSettings.jsx'
 import Blogs from './Components/Blogs/Blogs.jsx'
+import InviteAdmin from './Components/Profile/InviteAdmin.jsx'
 
 
 
@@ -253,6 +254,7 @@ export default function App() {
 
           <Route path="/Login" element={<Login mode={mode} />} />
           <Route path="/Login-admin" element={<LoginAdmin mode={mode} />} />
+          <Route path="/admin-invite" element={<InviteAdmin mode={mode} />} />
           <Route path="/Register" element={<Register mode={mode} />} />
           <Route path="/register-candidate" element={<Register2 mode={mode} />} />
           <Route path="/Profile-Home" element={(!admin  && authToken) ? <ProfileHome mode={mode} /> :<Login mode={mode} />} />

@@ -32,7 +32,6 @@ import { useStateContext } from '../../../contexts/ContextProvider'
 
 export default function Landing() {
     const { mode } = useStateContext();
-    console.log("this is mode", mode)
     const projectData = [
         {
             title: "Gradle",
