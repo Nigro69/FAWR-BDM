@@ -105,6 +105,7 @@ import LoginAdmin from './Components/Profile/LoginAdmin.jsx'
 import Register2 from './Components/Profile/Register2.jsx'
 import { ArrowUpIcon } from '@chakra-ui/icons'
 import JobDetails from './Components/Career/Student/JobDetails.jsx'
+import Influencer from './Components/Influencer/Influencer.jsx'
 
 
 
@@ -245,7 +246,7 @@ export default function App() {
 
 
           <Route path="/Sustainability @ BDM" element={<Sustainability mode={mode} />} />
-
+          <Route path='/Influencer Program' element={<Influencer mode={mode}/>}/>
         </Routes>
         <Footer />
         {/* <Textanimation />
