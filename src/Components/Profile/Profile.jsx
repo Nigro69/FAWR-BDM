@@ -4,7 +4,7 @@ import './Prof.css'
 
 const Profile = ({func}) => {
   return (
-    <div className="p-4 mx-10 my-4">
+    <div className="p-4 md:mx-10 my-4">
       <div className="font-semibold text-2xl mb-4 tracking-wider text-gray-200">
         Profile
       </div>
@@ -19,7 +19,7 @@ const Profile = ({func}) => {
               />
             </div>
             <div className="space-y-3">
-              <div className="font-semibold text-gray-100 text-2xl tracking-wider">
+              <div className="font-semibold text-gray-100 text-lg md:text-2xl tracking-wider">
                 Darlene Robertson
               </div>
               <div className="font-semibold text-gray-400 ">
@@ -27,12 +27,12 @@ const Profile = ({func}) => {
               </div>
             </div>
           </div>
-          <div onClick={()=>func(8)} className="font-semibold text-[#BC312E] cursor-pointer">
+          <div onClick={()=>func(8)} className="font-semibold text-sm md:text-md text-[#BC312E] cursor-pointer">
             Edit profile
           </div>
         </div>
-        <div className="flex justify-between py-2">
-          <div className="flex gap-5">
+        <div className="md:flex space-y-3 justify-between py-2">
+          <div className="md:flex gap-5">
             <div className="font-semibold text-sm text-gray-400 flex gap-2 place-items-center">
               <AiOutlineMail /> yashbarman3010@gmail.com
             </div>
@@ -55,7 +55,7 @@ const Profile = ({func}) => {
             </div>
           </div>
         </div>
-        <div className="w-4/5">
+        <div className="md:w-4/5">
             <div className="font-semibold text-lg text-gray-200">Experience</div>
             <div className="flex justify-between my-3">
                 <div className="flex gap-3 place-items-center">
@@ -92,7 +92,7 @@ const Profile = ({func}) => {
                 </div>
             </div>
             <div className="font-semibold text-lg">Skills</div>
-            <div className="grid grid-cols-10 gap-4">
+            <div className="grid md:grid-cols-10 gap-4">
                 <div className="bg-gray-300 text-gray-600 px-3 py-1 text-sm font-semibold rounded-md">
                     React
                 </div>

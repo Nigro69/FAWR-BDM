@@ -80,7 +80,7 @@ const Sidebar = ({mode,func,tg,tgprop}) => {
   }
 
   const activeLink =
-    `flex place-items-center  bg-[#BC312E]  ${!tgprop ? "w-44 px-3 py-2 my-1" : "w-6 text-xl p-1"} text-white hover:text-white rounded-md gap-5 mx-3 text-md font-semibold `;
+    `flex place-items-center  bg-[#BC312E]  ${!tgprop ? "w-44 px-3 py-2 my-1" : " text-xl p-1"} text-white hover:text-white rounded-md gap-5 mx-3 text-md font-semibold `;
   const normalLink =
     `flex place-items-center rounded-md ${!tgprop ? "w-44  px-3 py-2 my-1" : "w-6 text-xl p-1"} gap-5 mx-3 text-md font-semibold hover:bg-gray-200 hover:text-gray-800 text-gray-500 `;
 
@@ -105,10 +105,10 @@ const Sidebar = ({mode,func,tg,tgprop}) => {
                 }
               >
                 {link.icon}
-                {!tgprop && <span className="capitalize ">{link.name}</span>}
+                {!tgprop && <span className="capitalize">{link.name}</span>}
               </button>
             ))}
-            <button onClick={handleLogOut} className={`flex capitalize place-items-center rounded-md ${!tgprop ? "w-44  px-3 py-2 my-1" : "w-6 text-xl p-1"} gap-5 mx-3 text-md font-semibold hover:bg-gray-200 hover:text-gray-800 text-gray-500 `}><FiLogOut/> Log Out</button>
+            <button onClick={handleLogOut} className={`flex capitalize place-items-center rounded-md ${!tgprop ? "w-44  px-3 py-2 my-1" : "w-6 text-xl p-1"} gap-5 mx-3 text-md font-semibold hover:bg-gray-200 hover:text-gray-800 text-gray-500 `}><FiLogOut/> {!tgprop && "Log Out"}</button>
         </div>
         {/* <div className="">
           {links.map((item) => (

@@ -189,7 +189,7 @@ export default function Freshers({ mode }) {
         Filter results accordingly to your preference and start applying now!
       </div>
 
-      <div className="relative w-2/4 px-10">
+      <div className="relative md:w-2/4 mx-10">
           <div
             onClick={() => setdropCategory(!dropCategory)}
             className="p-4 flex justify-between w-full  border rounded-md place-items-center border-gray-500"
@@ -206,7 +206,7 @@ export default function Freshers({ mode }) {
                   setcategory("");
                   setdropCategory(false);
                 }}
-                className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                className="font-semibold bg-white text-sm rounded-t-md hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
               >
                 All
               </div>
@@ -215,7 +215,7 @@ export default function Freshers({ mode }) {
                   setcategory("Technology");
                   setdropCategory(false);
                 }}
-                className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
               >
                 Technology
               </div>
@@ -224,7 +224,7 @@ export default function Freshers({ mode }) {
                   setcategory("Marketing");
                   setdropCategory(false);
                 }}
-                className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
               >
                 Marketing
               </div>
@@ -233,7 +233,7 @@ export default function Freshers({ mode }) {
                   setcategory("HR");
                   setdropCategory(false);
                 }}
-                className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                className="font-semibold rounded-b-md bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
               >
                 HR
               </div>

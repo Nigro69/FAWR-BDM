@@ -7,13 +7,13 @@ const Settings = () => {
   const toggleClass = " transform translate-x-6";
 
   return (
-    <div className="p-4 mx-10 my-4">
-      <div className="font-semibold text-2xl my-2 tracking-wider text-gray-700">
+    <div className="p-4 md:mx-10 my-4">
+      <div className="font-semibold text-2xl my-2 tracking-wider text-gray-400">
         Settings
       </div>
       <div className="text-sm font-semibold text-gray-500 m-1">General</div>
-      <div className="bg-gray-200 rounded-xl py-10 px-20 space-y-10">
-        <div className="grid grid-cols-2">
+      <div className="bg-gray-200 rounded-xl py-10 px-10 md:px-20 space-y-10">
+        <div className="grid space-y-2 md:grid-cols-2">
           <div className="flex gap-3 place-items-center">
             <div className="text-gray-600">Name:</div>
             <div>
@@ -37,7 +37,7 @@ const Settings = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2">
+        <div className="grid md:grid-cols-2">
           <div className="flex gap-3 place-items-center">
             <div className="text-gray-600">Mobile No:</div>
             <div>
@@ -62,9 +62,9 @@ const Settings = () => {
       <div className="text-sm font-semibold text-gray-500 mt-5 mb-1">
         Password
       </div>
-      <div className="bg-gray-200 rounded-xl py-10 px-20 space-y-10">
-        <div className="grid grid-cols-2">
-          <div className="flex gap-3 place-items-center">
+      <div className="bg-gray-200 rounded-xl py-10 px-10 md:px-20 space-y-10">
+        <div className="grid md:grid-cols-2">
+          <div className="md:flex gap-3 place-items-center">
             <div className="text-gray-600">Current Password:</div>
             <div>
               <input
@@ -74,7 +74,7 @@ const Settings = () => {
               />
             </div>
           </div>
-          <div className="flex gap-3 place-items-center">
+          <div className="md:flex gap-3 place-items-center">
             <div className="text-gray-600">New Password:</div>
             <div>
               <input
@@ -85,8 +85,8 @@ const Settings = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2">
-          <div className="flex gap-3 place-items-center">
+        <div className="grid md:grid-cols-2">
+          <div className="md:flex gap-3 place-items-center">
             <div className="text-gray-600">Confirm new password:</div>
             <div>
               <input
@@ -96,7 +96,7 @@ const Settings = () => {
               />
             </div>
           </div>
-          <div className="flex gap-5 place-items-center justify-end">
+          <div className="flex gap-5 my-3 place-items-center justify-end">
             <button className="bg-white rounded-xl text-sm text-[#BC312E] px-4 py-1 border border-[#BC312E]">
               Cancel
             </button>
@@ -109,7 +109,7 @@ const Settings = () => {
       <div className="text-sm font-semibold text-gray-500 mt-5 mb-1">
         Notification
       </div>
-      <div className="bg-gray-200 rounded-xl py-10 px-20 space-y-10">
+      <div className="bg-gray-200 rounded-xl py-10 md:px-20 px-10 space-y-10">
         <div className="w-3/4 space-y-1">
           <div className="flex justify-between">
             <div>Job alerts and Reminders</div>

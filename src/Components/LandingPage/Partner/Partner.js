@@ -24,6 +24,12 @@ import x17 from "./PartnerImages/17.png"
 import x18 from "./PartnerImages/18.png"
 import x19 from "./PartnerImages/19.png"
 import x20 from "./PartnerImages/20.png"
+import x21 from "./PartnerImages/SAP_logo.png"
+import x22 from "./PartnerImages/fig.png"
+import x25 from "./PartnerImages/fig2.png"
+import x26 from "./PartnerImages/fig3.png"
+import x23 from "./PartnerImages/inv.png"
+import x24 from "./PartnerImages/mar.png"
 
 export default function Partner({ mode }) {
     return (
@@ -64,7 +70,7 @@ export default function Partner({ mode }) {
                 </div>
 
                 <div className='partner-grid-element' >
-                    <img src={x9} />
+                    <img className="grayscale" src={x24} />
                 </div>
 
                 <div className='partner-grid-element' >
@@ -78,7 +84,7 @@ export default function Partner({ mode }) {
                 </div>
 
                 <div className='partner-grid-element' >
-                    <img src={x12} />
+                    <img className='grayscale' src={x21} />
                 </div>
 
                 <div className='partner-grid-element' >
@@ -100,7 +106,7 @@ export default function Partner({ mode }) {
                 </div>
 
                 <div className='partner-grid-element' >
-                    <img src={x17} />
+                    <img className="grayscale" src={x23} />
                 </div>
 
                 <div className='partner-grid-element' >
@@ -112,7 +118,7 @@ export default function Partner({ mode }) {
                 </div>
 
                 <div className='partner-grid-element' >
-                    <img src={x20} />
+                    <img className="grayscale" src={x26} />
                 </div>
             </div>
         </div>

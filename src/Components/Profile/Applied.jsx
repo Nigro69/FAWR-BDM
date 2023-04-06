@@ -7,8 +7,8 @@ const Applied = () => {
   const [tab, settab] = useState(1);
 
   return (
-    <div className="p-4 mx-10 my-4">
-      <div className="font-semibold text-2xl tracking-wider text-gray-700">
+    <div className="p-4 md:mx-10 my-4">
+      <div className="font-semibold text-2xl tracking-wider text-gray-400">
         Applications
       </div>
       <div className="flex gap-3 my-5">
@@ -16,7 +16,7 @@ const Applied = () => {
           onClick={() => settab(1)}
           className={`font-bold text-sm p-2 ${
             tab === 1
-              ? "border-b-2 border-b-[#BC312E] text-black"
+              ? "border-b-2 border-b-[#BC312E] text-[#BC312E]"
               : "text-gray-400"
           }`}
         >
@@ -25,7 +25,7 @@ const Applied = () => {
         <button
           onClick={() => settab(2)}
           className={`font-bold text-sm p-2 ${
-            tab === 2 ? "border-b-2 border-b-[#BC312E]" : "text-gray-400"
+            tab === 2 ? "border-b-2 border-b-[#BC312E] text-[#BC312E]" : "text-gray-400"
           }`}
         >
           Archived
@@ -33,8 +33,8 @@ const Applied = () => {
       </div>
       {tab === 1 && (
         <div>
-          <div className="my-3 px-16 py-6 bg-gray-200 rounded-xl">
-            <div className="flex justify-between place-items-center">
+          <div className="my-3 px-6 md:px-16 py-6 bg-gray-200 rounded-xl">
+            <div className="md:flex justify-between place-items-center">
               <div className="font-semibold text-lg tracking-wider flex gap-3 place-items-center">
                 Full Stack Developer{" "}
                 <div className="text-xs text-gray-500">(CID: 123456)</div>
@@ -57,12 +57,12 @@ const Applied = () => {
                 View Info
               </button>
             </div>
-            <div className="max-w-xl mx-auto my-8 border-b-2 pb-4">
+            <div className="md:max-w-xl md:mx-auto my-8 md:border-b-2 pb-4">
               <div className="flex pb-3">
                 <div className="flex-1"></div>
 
                 <div className="flex-1">
-                  <div className="w-10 h-10 bg-[#BC312E] mx-auto rounded-full text-lg text-white flex items-center">
+                  <div className="w-5 h-5 md:w-10 md:h-10 bg-[#BC312E] mx-auto rounded-full text-lg text-white flex items-center">
                     <span className="text-white text-center w-full">
                       <i className="w-full grid place-items-center fill-current white">
                         <FaCheck />
@@ -78,7 +78,7 @@ const Applied = () => {
                 </div>
 
                 <div className="flex-1">
-                  <div className="w-10 h-10 bg-[#BC312E] mx-auto rounded-full text-lg text-white flex items-center">
+                  <div className="w-5 h-5 md:w-10 md:h-10 bg-[#BC312E] mx-auto rounded-full text-lg text-white flex items-center">
                     <span className="text-white text-center w-full">
                       <i className="w-full grid place-items-center fill-current white">
                         <FaCheck />
@@ -94,8 +94,8 @@ const Applied = () => {
                 </div>
 
                 <div className="flex-1">
-                  <div className="w-10 h-10 bg-white border-2 border-gray-400 mx-auto rounded-full text-lg text-white flex items-center">
-                    <span className="text-gray-600 text-center w-full">3</span>
+                  <div className="w-5 h-5 md:w-10 md:h-10 bg-white border-2 border-gray-400 mx-auto rounded-full text-lg text-white flex items-center">
+                    <span className="text-gray-600 text-center w-full p-1">3</span>
                   </div>
                 </div>
 
@@ -106,8 +106,8 @@ const Applied = () => {
                 </div>
 
                 <div className="flex-1">
-                  <div className="w-10 h-10 bg-white border-2 border-gray-400 mx-auto rounded-full text-lg text-white flex items-center">
-                    <span className="text-gray-600 text-center w-full">4</span>
+                  <div className="w-5 h-5 md:w-10 md:h-10 bg-white border-2 border-gray-400 mx-auto rounded-full text-lg text-white flex items-center">
+                    <span className="text-gray-600 text-center w-full p-1">4</span>
                   </div>
                 </div>
                 <div className="w-1/6 align-center items-center align-middle content-center flex">
@@ -116,8 +116,8 @@ const Applied = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <div className="w-10 h-10 bg-white border-2 border-gray-400 mx-auto rounded-full text-lg text-white flex items-center">
-                    <span className="text-gray-600 text-center w-full">5</span>
+                  <div className="w-5 h-5 md:w-10 md:h-10 bg-white border-2 border-gray-400 mx-auto rounded-full text-lg text-white flex items-center">
+                    <span className="text-gray-600 text-center w-full p-1">5</span>
                   </div>
                 </div>
                 <div className="w-1/6 align-center items-center align-middle content-center flex">
@@ -126,8 +126,8 @@ const Applied = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <div className="w-10 h-10 bg-white border-2 border-gray-400 mx-auto rounded-full text-lg text-white flex items-center">
-                    <span className="text-gray-600 text-center w-full">6</span>
+                  <div className="w-5 h-5 md:w-10 md:h-10 bg-white border-2 border-gray-400 mx-auto rounded-full text-lg text-white flex items-center">
+                    <span className="text-gray-600 text-center w-full p-1">6</span>
                   </div>
                 </div>
 

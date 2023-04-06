@@ -106,12 +106,21 @@ import Register2 from './Components/Profile/Register2.jsx'
 import { ArrowUpIcon } from '@chakra-ui/icons'
 import { useStateContext } from "./contexts/ContextProvider.js"
 import { GrClose } from 'react-icons/gr'
+import AdminSettings from './Components/AdminSettings.jsx'
 
 
 
 export default function App() {
   const {
-    setunMatched,unMatched
+    setunMatched,unMatched,authToken,
+    setauthToken,
+    setAdmin,
+    admin,
+    manager,
+    setmanager,
+    seteditor,
+    setguestWriter,
+    setcandidateModel,
   } = useStateContext();
   const [mode, setMode] = useState("dark")
 
@@ -249,7 +258,7 @@ export default function App() {
           <Route path="/Login-admin" element={<LoginAdmin mode={mode} />} />
           <Route path="/Register" element={<Register mode={mode} />} />
           <Route path="/register-candidate" element={<Register2 mode={mode} />} />
-          <Route path="/Profile-Home" element={<ProfileHome mode={mode} />} />
+          <Route path="/Profile-Home" element={(!admin  && authToken) ? <ProfileHome mode={mode} /> :<Login mode={mode} />} />
           <Route path="/Freshers-Training" element={<FTraining mode={mode} />} />
           <Route path="/Prof-Training" element={<PTraining mode={mode} />} />
           <Route path="/Students-Training" element={<STraining mode={mode} />} />
@@ -257,6 +266,7 @@ export default function App() {
           <Route path="/Freshers-Benifits" element={<Benifits mode={mode} />} />
           <Route path="/Prof-Benifits" element={<PBenifits mode={mode} />} />
           <Route path="/Students-Benifits" element={<StudentBenifits mode={mode} />} />
+          <Route path="/admin-settings" element={(admin && authToken) ? <AdminSettings mode={mode} /> :<Login mode={mode} />} />
 
 
           <Route path="/Sustainability @ BDM" element={<Sustainability mode={mode} />} />

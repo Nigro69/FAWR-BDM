@@ -187,7 +187,26 @@ export default function Contact({ mode }) {
 
                         </div>
                     </div>
+                    <div className='contact-grid-element'>
+                        <div className='contact-grid-element-inner' style={{ backgroundColor: mode === "dark" ? "#29262B" : "#EFEFEF" }}>
+                            <div className='contatct-grid-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                                Talk with Us
+                            </div>
+                            <div className='contact-grid-content' style={{ color: mode === "dark" ? "#C6C6C6" : "#7E7E7E" }}>
+                                Get personalised access to solutions for your Business. Raise a query at Support@bigbrosdigitalmedia.com
+                            </div>
 
+                            <Link to="">
+                                <div className='contact-link'>
+                                    <Stack direction="row" spacing={1} width="100%" display="flex" alignItems="center">
+                                        <div style={{ color: "#BC312E", width: "fit-content" }}> Email us</div>
+                                        <BsArrowRight />
+                                    </Stack>
+                                </div>
+                            </Link>
+
+                        </div>
+                    </div>
 
                 </div >
             </div >

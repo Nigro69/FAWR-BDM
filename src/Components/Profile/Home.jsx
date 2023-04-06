@@ -42,7 +42,7 @@ const Home = ({func}) => {
   }, []);
 
   return (
-    <div className='p-4 mx-10 my-4'>
+    <div className='p-4 md:mx-10 my-4'>
         <div className='bg-gray-200 dark:bg-[#211F22] rnd-shd p-6 rounded-lg'>
             <div className='flex justify-between'>
                 <div className='flex place-items-center gap-5'>
@@ -52,33 +52,33 @@ const Home = ({func}) => {
                         <div className='font-semibold text-gray-400 '>Senior Developer</div>
                     </div>
                 </div>
-                <div onClick={()=>func(8)} className='font-semibold text-[#BC312E] cursor-pointer'>
+                <div onClick={()=>func(8)} className='font-semibold text-[#BC312E] grid place-items-center cursor-pointer'>
                     Edit profile
                 </div>
             </div>
-            <div className='flex justify-between py-2'>
+            <div className='md:flex justify-between py-2'>
                 <div className='flex gap-5'>
                     <div className='font-semibold text-sm text-gray-400 flex gap-2 place-items-center'><AiOutlineMail/>{candidateModel.email}</div>
                     <div className='font-semibold text-sm text-gray-400 flex gap-2 place-items-center'><AiOutlinePhone/>{candidateModel.phoneNumber}</div>
                 </div>
-                <div className='flex place-items-center gap-2'>
+                <div className='flex place-items-center justify-between md:gap-2'>
                     <div className='font-semibold text-sm cursor-pointer text-blue-500'>Resume</div> | <div className='font-semibold text-sm cursor-pointer text-blue-500'>Cover Letter</div> | <div className='font-semibold text-sm cursor-pointer text-blue-500'>Preference</div> 
                 </div>
             </div>
         </div>
         <div className='flex justify-between place-items-center mt-10 mb-3'>
-            <div className='font-semibold text-xl tracking-wider dark:text-gray-100'>Recommended Jobs</div>
-            <div className='font-semibold dark:text-gray-100'>see all jobs</div>
+            <div className='font-semibold md:text-xl tracking-wider dark:text-gray-100'>Recommended Jobs</div>
+            <div className='font-semibold text-sm md:text-md dark:text-gray-100'>see all jobs</div>
         </div>
         <div className='space-y-3'>
         {!isPending &&
           jobsData.map((data) => (
-            <div key={data.id} className="px-20 py-6 bg-gray-200 rounded-xl ">
-              <div className="flex justify-between place-items-center">
-                <div className="font-semibold text-lg tracking-wider">
+            <div key={data.id} className="md:px-20 space-y-2 px-6 py-6 bg-gray-200 rounded-xl ">
+              <div className="md:flex justify-between place-items-center">
+                <div className="md:font-semibold font-bold text-lg tracking-wider">
                   {data.title}
                 </div>
-                <div className="flex gap-5 text-sm">
+                <div className="flex md:gap-5 justify-between text-sm">
                   <div className="flex gap-2 place-items-center">
                     <FiLock /> {data.type}
                   </div>
@@ -87,11 +87,11 @@ const Home = ({func}) => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-3 place-items-center text-sm">
+              <div className="flex md:gap-3 justify-between place-items-center text-sm">
                 <div>{data.category}</div> | <div>Experience: {data.experience} Years</div>
               </div>
-              <div className="flex justify-between place-items-center mt-3">
-                <div className="text-sm grid place-items-center">
+              <div className="md:flex space-y-2 justify-between place-items-center mt-3">
+                <div className="text-sm grid md:place-items-center">
                   Posted: {data.publishedDate} days ago
                 </div>
                 <div className="flex gap-5 place-items-center">

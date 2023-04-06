@@ -12,7 +12,7 @@ import EditCandidateProfile from "./EditCandidateProfile";
 
 const ProfileHome = ({ mode }) => {
     const [tab, settab] = useState(1);
-    const [sidebartoggle, setsidebartoggle] = useState(false);
+    const [sidebartoggle, setsidebartoggle] = useState(true);
 
     const getId=(id)=>{
         settab(id);
@@ -20,7 +20,7 @@ const ProfileHome = ({ mode }) => {
 
   return (
     <div className="flex">
-        <div className={` fixed h-full ${sidebartoggle ? "w-10" : "w-52"}`}>
+        <div className={` fixed h-full  ${sidebartoggle ? "w-10" : "w-52"}`}>
           <Sidebar tg={setsidebartoggle} tgprop={sidebartoggle} mode={mode} func={getId}/>
         </div>
         <div className={`min-h-full  w-full ${sidebartoggle ? "ml-10" : "ml-52"} `}>

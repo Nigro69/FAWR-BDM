@@ -702,7 +702,7 @@ function Register2({ mode }) {
             </div>
             <div className="text-gray-400 flex gap-1">
               I agree to BDM{" "}
-              <div className="text-[#BC312E]">
+              <div onClick={()=>navigate("/Privacy")} className="text-[#BC312E] cursor-pointer">
                 Privacy Notice & Terms and Conditions
               </div>{" "}
             </div>

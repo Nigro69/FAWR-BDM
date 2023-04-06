@@ -35,6 +35,7 @@ export default function Login() {
     authToken,
     setauthToken,
     setAdmin,
+    admin,
     setmanager,
     seteditor,
     setguestWriter,
@@ -64,6 +65,7 @@ export default function Login() {
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
       console.log(res);
+      console.log(admin);
       storeToken(res.user.accessToken);
       storeRole(res.user.displayName);
       seterroeMessage(null);
