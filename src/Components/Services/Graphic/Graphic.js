@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "../Research/Research.css"
 
 import Graphic_img1 from "./GraphicImages/Graphic_img1.png"
@@ -27,8 +27,11 @@ import Award from "../../LandingPage/Awards/Award"
 import Project from "../../LandingPage/Projects/Project"
 import Blogs from "../../LandingPage/Blogs/Blog"
 import Value from '../../Templates/Value/Value'
+import Layout from '../../Layout/Layout'
+import { useStateContext } from '../../../contexts/ContextProvider'
 
-export default function Graphic({ mode }) {
+export default function Graphic() {
+    const { mode } = useStateContext()
 
     useEffect(() => {
         window.scroll({
@@ -38,21 +41,21 @@ export default function Graphic({ mode }) {
         });
     }, [])
 
-    
-const projectData = [
-    {
-        title: "Kameo Book cover",
-        content: "Curates specially for the brand keeping in mind the traditional design as they preffered",
-    },
-    {
-        title: "Business Branding",
-        content: "helped a company create its brand identity, starting with its color palette and logo design.Creating a unique way for them to get recognized",
-    },
-    {
-        title: "Product Packaging Design",
-        content: "Packaging, which is the outerwear of a product, should also be consistent with the brand. A great product packaging design can go a long way. In fact, having this project in your portfolio could lead to more prospects",
-    },
-]
+
+    const projectData = [
+        {
+            title: "Kameo Book cover",
+            content: "Curates specially for the brand keeping in mind the traditional design as they preffered",
+        },
+        {
+            title: "Business Branding",
+            content: "helped a company create its brand identity, starting with its color palette and logo design.Creating a unique way for them to get recognized",
+        },
+        {
+            title: "Product Packaging Design",
+            content: "Packaging, which is the outerwear of a product, should also be consistent with the brand. A great product packaging design can go a long way. In fact, having this project in your portfolio could lead to more prospects",
+        },
+    ]
 
     const detailData = [
         {
@@ -114,40 +117,42 @@ const projectData = [
     ]
 
     return (
-        <div className='research-outer'>
-            <Top bgimg={Graphic_img1} />
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Graphic Design Services</u>
-            </div>
-            <div className='research-component'>
-                <Details detailData={detailData} />
-            </div>
+        <Layout>
+                <div className='research-outer'>
+                    <Top bgimg={Graphic_img1} />
+                    <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Graphic Design Services</u>
+                    </div>
+                    <div className='research-component'>
+                        <Details detailData={detailData} />
+                    </div>
 
-            <div className='research-component'>
-                <Grid gridData={gridData} />
-            </div>
+                    <div className='research-component'>
+                        <Grid gridData={gridData} />
+                    </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Awards & Recognition</u>
-            </div>
-            <div className='research-component'>
-                <Award img={A1} i={"0"} />
-            </div>
+                    <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Awards & Recognition</u>
+                    </div>
+                    <div className='research-component'>
+                        <Award img={A1} i={"0"} />
+                    </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Recent Projects</u>
-            </div>
-            <div className='research-component'>
-                <Project projectData={projectData}/>
-            </div>
+                    <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Our Recent Projects</u>
+                    </div>
+                    <div className='research-component'>
+                        <Project projectData={projectData} />
+                    </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Featured Blog posts</u>
-            </div>
-            <div className='research-component'>
-                <Blogs />
-            </div>
+                    <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Featured Blog posts</u>
+                    </div>
+                    <div className='research-component'>
+                        <Blogs />
+                    </div>
 
-        </div>
+                </div>
+            </Layout>
     )
 }

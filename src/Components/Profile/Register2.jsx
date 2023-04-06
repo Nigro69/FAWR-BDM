@@ -18,7 +18,7 @@ import {
   storeToken,
 } from "../../LocalStorage";
 
-function Register2({ mode }) {
+function Register2() {
   const navigate = useNavigate();
 
   
@@ -30,6 +30,7 @@ function Register2({ mode }) {
     setguestWriter,
     setprofilePopup,
     setcandidateModel,
+    mode
   } = useStateContext();
 
   const [drop, setdrop] = useState(0);
@@ -174,7 +175,7 @@ function Register2({ mode }) {
   };
 
   return (
-    <div className="grid place-items-center py-16">
+    <div className={`grid place-items-center py-16 ${mode === "dark" ? "bg-[#211F22] text-white " : "bg-white text-black"}`}>
       {!emailverified && <div
         className={`dark:bg-[#211F22] flex gap-8 rnd-shd rounded-lg w-5/6 p-7`}
       >

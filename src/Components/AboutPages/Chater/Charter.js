@@ -1,12 +1,15 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "./Charter.css"
 
 import C1 from "./CharterImages/C1.png"
 import C2 from "./CharterImages/C2.png"
 
 import { NavLink as Link } from 'react-router-dom'
+import Layout from '../../Layout/Layout'
+import { useStateContext } from '../../../contexts/ContextProvider'
 
-export default function Charter({ mode }) {
+export default function Charter() {
+    const { mode } = useStateContext()
 
     useEffect(() => {
         window.scroll({
@@ -84,31 +87,33 @@ export default function Charter({ mode }) {
     ]
 
     return (
-        <div className='charter-outer' style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>
-            <div style={{ width: "100%" }}>
-                <img src={C1} style={{ width: "100%" }} />
-            </div>
+        <Layout>
+                <div className='charter-outer' style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>
+                    <div style={{ width: "100%" }}>
+                        <img src={C1} style={{ width: "100%" }} />
+                    </div>
 
-            <div className='charter-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Corporate Policies</u>
-            </div>
+                    <div className='charter-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Corporate Policies</u>
+                    </div>
 
-            <div style={{ marginTop: "5%", width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                {
-                    charterData.map((item, index) => {
-                        return <div className='charter-element' style={{ backgroundColor: mode === "dark" ? "#444444" : "#E0E0E0" }} >
-                            <div className='charter-element-text' style={{ color: mode === "dark" ? "white" : "black" }}>
-                                {item.name}
-                            </div>
-                            <Link to={item.link}>
-                                <div style={{ width: "100%" }}>
-                                    <img src={C2} style={{ width: "70%" }} />
+                    <div style={{ marginTop: "5%", width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                        {
+                            charterData.map((item, index) => {
+                                return <div className='charter-element' style={{ backgroundColor: mode === "dark" ? "#444444" : "#E0E0E0" }} >
+                                    <div className='charter-element-text' style={{ color: mode === "dark" ? "white" : "black" }}>
+                                        {item.name}
+                                    </div>
+                                    <Link to={item.link}>
+                                        <div style={{ width: "100%" }}>
+                                            <img src={C2} style={{ width: "70%" }} />
+                                        </div>
+                                    </Link>
                                 </div>
-                            </Link>
-                        </div>
-                    })
-                }
-            </div>
-        </div>
+                            })
+                        }
+                    </div>
+                </div>
+            </Layout>
     )
 }

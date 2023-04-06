@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "../../Industries/Industries.css"
 
 import Airline_img1 from "./AirlineImages/Airline_img1.png"
@@ -21,9 +21,12 @@ import I5 from "./AirlineImages/5.png"
 import Igrid from '../../../Templates/IndustriesTemplates/IndustryGrid/Igrid'
 import Iservices from '../../../Templates/IndustriesTemplates/IndustryServices/Iservices.js'
 import Meeting from '../../../Templates/IndustriesTemplates/Meeting/Meeting'
+import Layout from '../../../Layout/Layout'
+import { useStateContext } from '../../../../contexts/ContextProvider'
 
 
-export default function Airline({ mode }) {
+export default function Airline() {
+    const { mode } = useStateContext()
 
     useEffect(() => {
         window.scroll({
@@ -99,56 +102,58 @@ export default function Airline({ mode }) {
 
     ]
     return (
-        <div className='industries-outer'>
-            <Industrytop bgimg={Airline_img1} mode={mode}
-                content="Customer experience is crucial to the airline industry. Although airlines strive to offer a seamless travel experience while maximising business efficiency, estimates indicate that airline spending on security has increased by 25% over the past year, primarily as a result of data collection and transmission, capital expenditure, security delays, and security diversions. It's a good opportunity for airlines to increase operational efficiency, carry out large-scale change, and provide a very distinctive consumer travel experience because of the unstable economy, rising operating costs, and rising passenger numbers. These may be accomplished by depending on useful data, enhanced e-commerce tactics, reliable back-end operational systems, and social media interactions. For the airline industry, BDM Technologies has created a distinctive combination of services and solutions. Our services are built around the fundamental technological pillars of cloud computing, social computing, mobility, and analytics, which are ideal for the travel sector." />
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Challenges</u>
-            </div>
-            <div className='industries-component'>
-                <Challenges challengeData={challengeData} mode={mode} />
-            </div>
+        <Layout>
+                <div className='industries-outer'>
+                    <Industrytop bgimg={Airline_img1} mode={mode}
+                        content="Customer experience is crucial to the airline industry. Although airlines strive to offer a seamless travel experience while maximising business efficiency, estimates indicate that airline spending on security has increased by 25% over the past year, primarily as a result of data collection and transmission, capital expenditure, security delays, and security diversions. It's a good opportunity for airlines to increase operational efficiency, carry out large-scale change, and provide a very distinctive consumer travel experience because of the unstable economy, rising operating costs, and rising passenger numbers. These may be accomplished by depending on useful data, enhanced e-commerce tactics, reliable back-end operational systems, and social media interactions. For the airline industry, BDM Technologies has created a distinctive combination of services and solutions. Our services are built around the fundamental technological pillars of cloud computing, social computing, mobility, and analytics, which are ideal for the travel sector." />
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Challenges</u>
+                    </div>
+                    <div className='industries-component'>
+                        <Challenges challengeData={challengeData} mode={mode} />
+                    </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Offerings</u>
-            </div>
-            <div className='industries-component'>
-                <Igrid gridData={gridData} mode={mode} />
-            </div>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Our Offerings</u>
+                    </div>
+                    <div className='industries-component'>
+                        <Igrid gridData={gridData} mode={mode} />
+                    </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Services</u>
-            </div>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Our Services</u>
+                    </div>
 
-            <div className='industries-component'>
-                <Iservices mode={mode} />
-            </div>
+                    <div className='industries-component'>
+                        <Iservices mode={mode} />
+                    </div>
 
-            <div className='industries-component'>
-                <Meeting mode={mode} />
-            </div>
+                    <div className='industries-component'>
+                        <Meeting mode={mode} />
+                    </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Awards & Recognition</u>
-            </div>
-            <div className='industries-component'>
-                <Award mode={mode} />
-            </div>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Awards & Recognition</u>
+                    </div>
+                    <div className='industries-component'>
+                        <Award mode={mode} />
+                    </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Recent Projects</u>
-            </div>
-            {/* <div className='industries-component'>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Our Recent Projects</u>
+                    </div>
+                    {/* <div className='industries-component'>
                 <Project mode={mode} />
             </div> */}
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Featured Blog posts</u>
-            </div>
-            <div className='industries-component'>
-                <Blogs mode={mode} />
-            </div>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Featured Blog posts</u>
+                    </div>
+                    <div className='industries-component'>
+                        <Blogs mode={mode} />
+                    </div>
 
-        </div>
+                </div>
+            </Layout>
     )
 }

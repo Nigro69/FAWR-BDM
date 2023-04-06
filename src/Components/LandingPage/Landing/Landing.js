@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Landing.css"
 
 import Firstpage from '../Firstpage/Firstpage'
@@ -24,11 +24,15 @@ import Cookie from '../../Policies/Cookie/Cookie'
 import T1 from "../Testimonials/TestimonialsImages/1.png"
 import Testimonial from '../Testimonials/Testimonial'
 import Pricing from '../Pricing/Pricing'
+import Layout, { useLayoutContext } from '../../Layout/Layout'
+import { useStateContext } from '../../../contexts/ContextProvider'
 
 
 // import Contact from "../../Contact/Contact"
 
-export default function Landing({ mode }) {
+export default function Landing() {
+    const { mode } = useStateContext();
+    console.log("this is mode", mode)
     const projectData = [
         {
             title: "Gradle",
@@ -43,88 +47,89 @@ export default function Landing({ mode }) {
             content: "Another important aspect of DevOps is built automation. To streamline the software build process, it is often necessary to automate various tasks, such as code compilation and testing.",
         },
     ]
-    
+
 
     return (
-        <div style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }} className="landing-outer">
-            {/* <Navbar /> */}
-            {/* <Contact /> */}
-            <div className='landing-element'>
-                <Firstpage mode={mode} />
-            </div>
-            <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Services</u>
-            </div>
-            <div className='landing-element'>
-                <Ourservices mode={mode} />
-            </div>
+        <Layout >
+            <div style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }} className="landing-outer">
+                {/* <Navbar /> */}
+                {/* <Contact /> */}
+                <div className='landing-element'>
+                    <Firstpage mode={mode} />
+                </div>
+                <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    <u>Our Services</u>
+                </div>
+                <div className='landing-element'>
+                    <Ourservices mode={mode} />
+                </div>
 
-            <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Industries we serve</u>
-            </div>
+                <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    <u>Industries we serve</u>
+                </div>
 
-            <div className='landing-element'>
-                <Industries mode={mode} />
-            </div>
+                <div className='landing-element'>
+                    <Industries mode={mode} />
+                </div>
 
-            <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>About Us</u>
-            </div>
+                <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    <u>About Us</u>
+                </div>
 
-            <div className='landing-element'>
-                <About mode={mode} />
-            </div>
+                <div className='landing-element'>
+                    <About mode={mode} />
+                </div>
 
-            <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u> Awards &
-                    Recognitions</u>
-            </div>
+                <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    <u> Awards &
+                        Recognitions</u>
+                </div>
 
-            <div className='landing-element'>
-                <Award mode={mode} />
-            </div>
+                <div className='landing-element'>
+                    <Award mode={mode} />
+                </div>
 
-            <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Career</u>
-            </div>
+                <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    <u>Career</u>
+                </div>
 
-            <div className='landing-element'>
-                <Career mode={mode} />
-            </div>
-            <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u> Our Other Products</u>
-            </div>
+                <div className='landing-element'>
+                    <Career mode={mode} />
+                </div>
+                <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    <u> Our Other Products</u>
+                </div>
 
-            <div className='landing-element'>
-                <Other mode={mode} />
-            </div>
+                <div className='landing-element'>
+                    <Other mode={mode} />
+                </div>
 
-            <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u> Our Partners</u>
-            </div>
+                <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    <u> Our Partners</u>
+                </div>
 
-            <div className='landing-element'>
-                <Partner mode={mode} />
-            </div>
+                <div className='landing-element'>
+                    <Partner mode={mode} />
+                </div>
 
-            <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Other Companies</u>
-            </div>
+                <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    <u>Our Other Companies</u>
+                </div>
 
-            <div className='landing-element'>
-                <Companies mode={mode} />
-            </div>
+                <div className='landing-element'>
+                    <Companies mode={mode} />
+                </div>
 
 
-            <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Testimonials</u>
-            </div>
+                <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    <u>Testimonials</u>
+                </div>
 
-            <div className='landing-element' style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-                <Testimonial mode={mode} />
-            </div>
+                <div className='landing-element' style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+                    <Testimonial mode={mode} />
+                </div>
 
-            {/* <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                {/* <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
                 <u>Pricing</u>
             </div>
 
@@ -134,25 +139,26 @@ export default function Landing({ mode }) {
 
 
 
-            <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Recent Projects</u>
+                <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    <u>Our Recent Projects</u>
+                </div>
+
+                <div className='landing-element'>
+                    <Project mode={mode} projectData={projectData} />
+                </div>
+
+                <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    <u> Our Featured Blogs</u>
+                </div>
+
+                <div className='landing-element'>
+                    <Blog mode={mode} />
+                </div>
+
+
+                {/* <Footer /> */}
+
             </div>
-
-            <div className='landing-element'>
-                <Project mode={mode} projectData={projectData} />
-            </div>
-
-            <div className='landing-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u> Our Featured Blogs</u>
-            </div>
-
-            <div className='landing-element'>
-                <Blog mode={mode} />
-            </div>
-
-
-            {/* <Footer /> */}
-
-        </div>
+        </Layout>
     )
 }

@@ -167,7 +167,6 @@ export default function Navbar({ mode, handleMode }) {
               alignItems="center"
               display="flex"
             >
-              {/* <Avatar src='https://bit.ly/broken-link' /> */}
               <div className="navbar-option-text flex gap-2">
                 <img src={f10} alt="logo" />
                 <div className="grid place-items-center">BDM</div>
@@ -210,7 +209,6 @@ export default function Navbar({ mode, handleMode }) {
             <Link to="">
               <div className="navbar-option-text">Case study</div>
             </Link>
-            {/* <ChevronDownIcon fontSize="1.5rem" height="100%" /> */}
           </Stack>
         </div>
 
@@ -245,15 +243,11 @@ export default function Navbar({ mode, handleMode }) {
             <Link to="/Contact Us">
               <div className="navbar-option-text">Contact us</div>
             </Link>
-            {/* <ChevronDownIcon fontSize="1.5rem" height="100%" /> */}
           </Stack>
         </div>
 
         <div className="navbar-option1">
           <Stack direction="row" alignItems="center" display="flex">
-            {/* <div className='navbar-option-text'>
-                            About
-                        </div> */}
             {mode === "dark" ? (
               <SunIcon fontSize="2rem" height="100%" onClick={handleMode} />
             ) : (
@@ -269,13 +263,6 @@ export default function Navbar({ mode, handleMode }) {
                 <div className="navbar-option-text ">
                   {lang === "" ? "En" : lang}
                 </div>
-                {/* <div className="relative">
-                  {dropland && <div className="absolute grid grid-cols-1 divide-y rounded-md shadow-md">
-                    <div onClick={()=>{setlang("En"); setdropland(false);}} className="px-4 py-1 text-sm hover:bg-gray100">English</div>
-                    <div  onClick={()=>{setlang("En"); setdropland(false);}} className="px-4 py-1 text-sm hover:bg-gray100">English</div>
-                    <div  onClick={()=>{setlang("En"); setdropland(false);}} className="px-4 py-1 text-sm hover:bg-gray100">English</div>
-                  </div>}
-                </div> */}
                 <ChevronDownIcon fontSize="1.5rem" height="100%" />
               </Stack>
             </PopoverTrigger>
