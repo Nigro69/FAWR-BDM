@@ -6,7 +6,10 @@ import { auth } from "../firebase/config";
 import { FiLogOut } from "react-icons/fi";
 import { FiAlertTriangle } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-
+import Layout from "./Layout/Layout"
+import axios from "axios";
+import { Alert, AlertIcon, Select } from "@chakra-ui/react";
+import { CloseIcon } from "@chakra-ui/icons";
 function AdminSettings() {
   const { setauthToken, setAdmin, setmanager, seteditor, setguestWriter } =
     useStateContext();
@@ -14,10 +17,11 @@ function AdminSettings() {
   const navigate = useNavigate();
 
   const [tab, settab] = useState(1);
-  const [role, setrole] = useState(0);
+  const [role, setrole] = useState("");
   const [confirmation, setconfirmation] = useState(false);
   const [email, setemail] = useState(null);
-  const [department, setdepartment] = useState(0);
+  const [department, setdepartment] = useState("");
+  const [alert, setAlert] = useState(false);
 
   const logOut = async () => {
     try {
@@ -40,8 +44,50 @@ function AdminSettings() {
   const handleLogOut = () => {
     logOut();
   };
+
+  const handleConfirm = ()=> {
+    handleInvite();
+    setconfirmation(false);
+  }
+
+  function reset() {
+    setemail("");
+    setrole("");
+    setdepartment("");
+  }
+
+  async function handleInvite() {
+    try {
+      const res = await axios.post(
+        "http://44.204.133.124/api/v1/team/inviteteam",
+        {
+          email,
+          role,
+          platform:department,
+        }
+      );
+      console.log(res.data);
+      setAlert(true);
+      console.log(alert);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
   return (
+    <Layout>
     <div className="px-14 py-6">
+    {alert && (
+          <Alert className="absolute top-0 text-black flex items-center justify-between" status="success">
+            <div className="flex items-center">
+              <AlertIcon />
+              Invite sent succesfully to {email}
+            </div>
+            <button onClick={() => {setAlert(false); reset();}}>
+              <CloseIcon />
+            </button>
+          </Alert>
+        )}
       <div className="flex justify-between bg-[#2B292C] py-6 px-14 place-items-center rounded-md">
         <div className="flex gap-5">
           <button
@@ -118,10 +164,10 @@ function AdminSettings() {
           <div className="flex rounded-t-md gap-6 place-items-center py-3 px-6 hover:bg-[#211F22]">
             <input
               type="checkbox"
-              checked={role === 1}
+              checked={role === "senior hr manager"}
               onChange={() => {
-                setrole(1);
-                setdepartment(1);
+                setrole("senior hr manager");
+                setdepartment("hrm");
               }}
               className="rounded-md accent-[#BC312E]"
             />
@@ -138,10 +184,10 @@ function AdminSettings() {
           <div className="flex gap-6 place-items-center py-3 px-6 hover:bg-[#211F22]">
             <input
               type="checkbox"
-              checked={role === 2}
+              checked={role === "hr manager"}
               onChange={() => {
-                setrole(2);
-                setdepartment(1);
+                setrole("hr manager");
+                setdepartment("hrm");
               }}
               className="rounded-md accent-[#BC312E]"
             />
@@ -158,10 +204,10 @@ function AdminSettings() {
           <div className="flex gap-6 place-items-center py-3 px-6 hover:bg-[#211F22] rounded-b-md">
             <input
               type="checkbox"
-              checked={role === 3}
+              checked={role === "assistant hr manager"}
               onChange={() => {
-                setrole(3);
-                setdepartment(1);
+                setrole("assistant hr manager");
+                setdepartment("hrm");
               }}
               className="rounded-md accent-[#BC312E]"
             />
@@ -182,10 +228,10 @@ function AdminSettings() {
           <div className="flex rounded-t-md gap-6 place-items-center py-3 px-6 hover:bg-[#211F22]">
             <input
               type="checkbox"
-              checked={role === 4}
+              checked={role === "manager"}
               onChange={() => {
-                setrole(4);
-                setdepartment(2);
+                setrole("manager");
+                setdepartment("cms");
               }}
               className="rounded-md accent-[#BC312E]"
             />
@@ -200,10 +246,10 @@ function AdminSettings() {
           <div className="flex gap-6 place-items-center py-3 px-6 hover:bg-[#211F22]">
             <input
               type="checkbox"
-              checked={role === 5}
+              checked={role === "editor"}
               onChange={() => {
-                setrole(5);
-                setdepartment(2);
+                setrole("editor");
+                setdepartment("cms");
               }}
               className="rounded-md accent-[#BC312E]"
             />
@@ -218,10 +264,10 @@ function AdminSettings() {
           <div className="flex gap-6 place-items-center py-3 px-6 hover:bg-[#211F22] rounded-b-md">
             <input
               type="checkbox"
-              checked={role === 6}
+              checked={role === "writer"}
               onChange={() => {
-                setrole(6);
-                setdepartment(2);
+                setrole("writer");
+                setdepartment("cms");
               }}
               className="rounded-md accent-[#BC312E]"
             />
@@ -236,10 +282,10 @@ function AdminSettings() {
           <div className="flex gap-6 place-items-center py-3 px-6 hover:bg-[#211F22] rounded-b-md">
             <input
               type="checkbox"
-              checked={role === 7}
+              checked={role === "guest writer"}
               onChange={() => {
-                setrole(7);
-                setdepartment(2);
+                setrole("guest writer");
+                setdepartment("cms");
               }}
               className="rounded-md accent-[#BC312E]"
             />
@@ -270,7 +316,7 @@ function AdminSettings() {
               <div className="grid place-items-center my-4">
                 <div className="flex place-items-center gap-6">
                 <button onClick={()=>setconfirmation(false)} className="text-sm font-semibold px-4 py-2 bg-[#2B292C] rounded-md text-gray-400">Cancel</button>
-                <button className="text-sm font-semibold px-4 py-2 rounded-md bg-[#BC312E] text-gray-200">Confirm</button>
+                <button onClick={handleConfirm} className="text-sm font-semibold px-4 py-2 rounded-md bg-[#BC312E] text-gray-200">Confirm</button>
                 </div>
               </div>
             </div>
@@ -278,6 +324,7 @@ function AdminSettings() {
         </div>
       )}
     </div>
+    </Layout>
   );
 }
 
