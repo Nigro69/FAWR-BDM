@@ -27,7 +27,7 @@ import Aboutoption from "./NavbarOptions/Aboutoption/Aboutoption";
 import Solutionoption from "./NavbarOptions/Solutionoption/Solutionoption";
 import Exploreoption from "./NavbarOptions/Exploreoption/Exploreoption.js";
 import Careeroption from "./NavbarOptions/Careeroption/Careeroption";
-import f10 from "./bbLogo.png"
+import f10 from "./bbLogo.png";
 
 import { NavLink as Link, useNavigate } from "react-router-dom";
 
@@ -121,7 +121,6 @@ export default function Navbar({ mode, handleMode }) {
   useEffect(() => {
     const yash = getToken();
     setauthToken(yash);
-    {yash && setAdmin(true)}
   }, [authToken, setauthToken]);
 
   return (
@@ -168,7 +167,6 @@ export default function Navbar({ mode, handleMode }) {
               alignItems="center"
               display="flex"
             >
-              {/* <Avatar src='https://bit.ly/broken-link' /> */}
               <div className="navbar-option-text flex gap-2">
                 <img src={f10} alt="logo" />
                 <div className="grid place-items-center">BDM</div>
@@ -211,7 +209,6 @@ export default function Navbar({ mode, handleMode }) {
             <Link to="">
               <div className="navbar-option-text">Case study</div>
             </Link>
-            {/* <ChevronDownIcon fontSize="1.5rem" height="100%" /> */}
           </Stack>
         </div>
 
@@ -246,15 +243,11 @@ export default function Navbar({ mode, handleMode }) {
             <Link to="/Contact Us">
               <div className="navbar-option-text">Contact us</div>
             </Link>
-            {/* <ChevronDownIcon fontSize="1.5rem" height="100%" /> */}
           </Stack>
         </div>
 
         <div className="navbar-option1">
           <Stack direction="row" alignItems="center" display="flex">
-            {/* <div className='navbar-option-text'>
-                            About
-                        </div> */}
             {mode === "dark" ? (
               <SunIcon fontSize="2rem" height="100%" onClick={handleMode} />
             ) : (
@@ -270,13 +263,6 @@ export default function Navbar({ mode, handleMode }) {
                 <div className="navbar-option-text ">
                   {lang === "" ? "En" : lang}
                 </div>
-                {/* <div className="relative">
-                  {dropland && <div className="absolute grid grid-cols-1 divide-y rounded-md shadow-md">
-                    <div onClick={()=>{setlang("En"); setdropland(false);}} className="px-4 py-1 text-sm hover:bg-gray100">English</div>
-                    <div  onClick={()=>{setlang("En"); setdropland(false);}} className="px-4 py-1 text-sm hover:bg-gray100">English</div>
-                    <div  onClick={()=>{setlang("En"); setdropland(false);}} className="px-4 py-1 text-sm hover:bg-gray100">English</div>
-                  </div>}
-                </div> */}
                 <ChevronDownIcon fontSize="1.5rem" height="100%" />
               </Stack>
             </PopoverTrigger>
@@ -307,7 +293,7 @@ export default function Navbar({ mode, handleMode }) {
           </Popover>
         </div>
 
-        {authToken && admin && (
+        {authToken && !admin && (
           <div className="grid place-items-center">
             <div>
               <button
@@ -320,34 +306,14 @@ export default function Navbar({ mode, handleMode }) {
           </div>
         )}
 
-        {authToken && manager && (
-          <div className="grid place-items-center">
-            <a href="https://hr-management-system-3010.firebaseapp.com/">
-              <button className="px-6  py-2 h-8 w-36 font-semibold text-sm text-white rounded-md bg-[#BC312E] ">
-                Goto Console
-              </button>
-            </a>
-          </div>
-        )}
-
-        {authToken && editor && (
-          <div className="grid place-items-center">
-            <a href="https://content-management-system-3010.firebaseapp.com/">
-              <button className="px-6 py-2 h-8 w-36 font-semibold  text-sm text-white rounded-md bg-[#BC312E] ">
-                Goto Console
-              </button>
-            </a>
-          </div>
-        )}
-
-        {authToken && (editor || manager) && (
-          <div className="grid place-items-center my-3">
-            <button
-              className="p-1 text-white font-semibold text-lg"
-              onClick={handleLogOut}
-            >
-              <FiLogOut />
-            </button>
+        {authToken && admin && (
+          <div className="navbar-option">
+            <Stack direction="row" alignItems="center" display="flex">
+              <Link to="/admin-settings">
+                <div className="navbar-option-text">Settings</div>
+              </Link>
+              {/* <ChevronDownIcon fontSize="1.5rem" height="100%" /> */}
+            </Stack>
           </div>
         )}
 
@@ -365,161 +331,182 @@ export default function Navbar({ mode, handleMode }) {
           </Link>
         )}
       </div>
-      <div className='navbar-hidden' style={{ display: isLargerThan850 ? "none" : "flex", justifyContent: isLargerThan850 ? "space-between" : "space-between" }}>
+      <div
+        className="navbar-hidden"
+        style={{
+          display: isLargerThan850 ? "none" : "flex",
+          justifyContent: isLargerThan850 ? "space-between" : "space-between",
+        }}
+      >
+        <div className="navbar-left-hidden">
+          <Menu>
+            <MenuButton width="fit-content">
+              <Stack direction="row" alignItems="center" display="flex">
+                <HamburgerIcon fontSize="2rem" height="100%" />
+              </Stack>
+            </MenuButton>
+            <MenuList
+              backgroundColor={mode === "dark" ? "#211F22" : "white"}
+              border={mode === "dark" ? "none" : "1px solid black"}
+              width="100%"
+            >
+              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                <Stack
+                  direction="row"
+                  spacing={5}
+                  alignItems="center"
+                  display="flex"
+                >
+                  {/* <Avatar src='https://bit.ly/broken-link' /> */}
+                  <Link to="/">
+                    <div className="navbar-option-text">
+                      <b>BDM</b>
+                    </div>
+                  </Link>
+                </Stack>
+              </MenuItem>
 
-                <div className='navbar-left-hidden'>
-                    <Menu>
-                        <MenuButton
-                            width="fit-content">
-                            <Stack direction="row" alignItems="center" display="flex" >
+              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                <Stack direction="row" alignItems="center" display="flex">
+                  <Link to="/About Options">
+                    <div className="navbar-option-text">About</div>
+                  </Link>
+                  <ChevronRightIcon fontSize="1.5rem" height="100%" />
+                </Stack>
+              </MenuItem>
 
-                                <HamburgerIcon fontSize="2rem" height="100%" />
-                            </Stack>
-                        </MenuButton>
-                        <MenuList backgroundColor={mode === "dark" ? "#211F22" : "white"} border={mode === "dark" ? "none" : "1px solid black"} width="100%">
-                            <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                                <Stack direction="row" spacing={5} alignItems="center" display="flex">
-                                    {/* <Avatar src='https://bit.ly/broken-link' /> */}
-                                    <Link to="/">
-                                        <div className='navbar-option-text'>
-                                            <b>BDM</b>
-                                        </div>
-                                    </Link>
-                                </Stack></MenuItem>
+              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                <Stack direction="row" alignItems="center" display="flex">
+                  <Link to="/Solution Options">
+                    <div className="navbar-option-text">Solutions</div>
+                  </Link>
+                  <ChevronRightIcon fontSize="1.5rem" height="100%" />
+                </Stack>
+              </MenuItem>
 
-                            <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"} >
-                                <Stack direction="row" alignItems="center" display="flex" >
-                                    <Link to="/About Options">
-                                        <div className='navbar-option-text'>
-                                            About
-                                        </div>
-                                    </Link>
-                                    <ChevronRightIcon fontSize="1.5rem" height="100%" />
-                                </Stack>
-                            </MenuItem>
+              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                <Stack direction="row" alignItems="center" display="flex">
+                  <Link to="">
+                    <div className="navbar-option-text">Case Study</div>
+                  </Link>
+                  <ChevronRightIcon fontSize="1.5rem" height="100%" />
+                </Stack>
+              </MenuItem>
 
-                            <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"} >
-                                <Stack direction="row" alignItems="center" display="flex" >
-                                    <Link to="/Solution Options">
-                                        <div className='navbar-option-text'>
-                                            Solutions
-                                        </div>
-                                    </Link>
-                                    <ChevronRightIcon fontSize="1.5rem" height="100%" />
-                                </Stack>
-                            </MenuItem>
+              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                <Stack direction="row" alignItems="center" display="flex">
+                  <Link to="/Explore Options">
+                    <div className="navbar-option-text">Explore</div>
+                  </Link>
+                  <ChevronRightIcon fontSize="1.5rem" height="100%" />
+                </Stack>
+              </MenuItem>
 
-                            <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                                <Stack direction="row" alignItems="center" display="flex" >
-                                    <Link to="">
-                                        <div className='navbar-option-text'>
-                                            Case Study
-                                        </div>
-                                    </Link>
-                                    <ChevronRightIcon fontSize="1.5rem" height="100%" />
-                                </Stack>
-                            </MenuItem>
+              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                <Stack direction="row" alignItems="center" display="flex">
+                  <Link to="/Career Options">
+                    <div className="navbar-option-text">Career</div>
+                  </Link>
+                  <ChevronRightIcon fontSize="1.5rem" height="100%" />
+                </Stack>
+              </MenuItem>
+              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                <Stack direction="row" alignItems="center" display="flex">
+                  <Link to="/Contact Us">
+                    <div className="navbar-option-text">Contact us</div>
+                  </Link>
+                  <ChevronRightIcon fontSize="1.5rem" height="100%" />
+                </Stack>
+              </MenuItem>
 
-                            <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"} >
-                                <Stack direction="row" alignItems="center" display="flex" >
-                                    <Link to="/Explore Options">
-                                        <div className='navbar-option-text'>
-                                            Explore
-                                        </div>
-                                    </Link>
-                                    <ChevronRightIcon fontSize="1.5rem" height="100%" />
-                                </Stack>
-                            </MenuItem>
+              <MenuItem
+                backgroundColor={mode === "dark" ? "#211F22" : "white"}
+                width="100%"
+              >
+                {/* <div className='navbar-option'> */}
+                {!authToken && (
+                  <Link to="/Login">
+                    <Button
+                      backgroundColor="#BC312E"
+                      color="white"
+                      borderRadius="1rem"
+                    >
+                      Sign In
+                    </Button>
+                  </Link>
+                )}
+                {/* </div> */}
+                {authToken && manager && (
+                  <div className="grid place-items-center">
+                    <div>
+                      <button
+                        onClick={() => navigate("/Profile-Home")}
+                        className="p-2 bg-[#BC312E] rounded-md grid place-items-center h-8 w-full text-white  font-bold text-sm"
+                      >
+                        Profile
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </div>
 
-                            <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"} >
-                                <Stack direction="row" alignItems="center" display="flex" >
-                                    <Link to="/Career Options">
-                                        <div className='navbar-option-text'>
-                                            Career
-                                        </div>
-                                    </Link>
-                                    <ChevronRightIcon fontSize="1.5rem" height="100%" />
-                                </Stack>
-                            </MenuItem>
-                            <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                                <Stack direction="row" alignItems="center" display="flex" >
-                                    <Link to="/Contact Us">
-                                        <div className='navbar-option-text'>
-                                            Contact us
-                                        </div>
-                                    </Link>
-                                    <ChevronRightIcon fontSize="1.5rem" height="100%" />
-                                </Stack>
-                            </MenuItem>
+        <div className="navbar-middle-hidden">
+          <Stack direction="row" spacing={2} alignItems="center" display="flex">
+            {/* <Avatar src='https://bit.ly/broken-link' /> */}
+            <Link to="/">
+              <div className="navbar-option-text">
+                <b>BDM</b>
+              </div>
+            </Link>
+          </Stack>
+        </div>
 
-                            <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"} width="100%">
-                                {/* <div className='navbar-option'> */}
-                                <Link to="/Login">
-                                    <Button backgroundColor="#BC312E" color="white" borderRadius="1rem">Sign In</Button>
-                                </Link>
-                                {/* </div> */}
-                            </MenuItem>
-                        </MenuList>
-                    </Menu>
-                </div>
-
-                <div className='navbar-middle-hidden'>
-                    <Stack direction="row" spacing={2} alignItems="center" display="flex">
-                        {/* <Avatar src='https://bit.ly/broken-link' /> */}
-                        <Link to="/">
-                            <div className='navbar-option-text'>
-                                <b>BDM</b>
-                            </div>
-                        </Link>
-                    </Stack>
-                </div>
-
-                <div className='navbar-right-hidden'>
-                    {/* <div className='navbar-option1'> */}
-                    <Stack direction="row" alignItems="center" display="flex" >
-                        {/* <div className='navbar-option-text'>
+        <div className="navbar-right-hidden">
+          {/* <div className='navbar-option1'> */}
+          <Stack direction="row" alignItems="center" display="flex">
+            {/* <div className='navbar-option-text'>
                             About
                         </div> */}
-                        {
-                            mode === "dark" ? <SunIcon fontSize="2rem" height="100%" onClick={handleMode} /> : <MoonIcon fontSize="2rem" height="100%" onClick={handleMode} />
-                        }
+            {mode === "dark" ? (
+              <SunIcon fontSize="2rem" height="100%" onClick={handleMode} />
+            ) : (
+              <MoonIcon fontSize="2rem" height="100%" onClick={handleMode} />
+            )}
+          </Stack>
+          {/* </div> */}
 
-                    </Stack>
-                    {/* </div> */}
-
-
-
-
-                    {/* <div className='navbar-option1'> */}
-                    <Stack direction="row" alignItems="center" display="flex" >
-                        {/* <div className='navbar-option-text'>
+          {/* <div className='navbar-option1'> */}
+          <Stack direction="row" alignItems="center" display="flex">
+            {/* <div className='navbar-option-text'>
                             EN
                         </div> */}
 
-                        <Popover placement='bottom-end'>
-                            <PopoverTrigger>
-                                <Stack direction="row" alignItems="center" display="flex" >
-                                    <div className='navbar-option-text'>
-                                        EN
-                                    </div>
-                                    <ChevronDownIcon fontSize="1.5rem" height="100%" />
-                                </Stack>
-                            </PopoverTrigger>
-                            <PopoverContent>
-                                <PopoverHeader fontWeight='semibold'>Popover placement</PopoverHeader>
-                                <PopoverArrow />
-                                <PopoverCloseButton />
-                                <PopoverBody>
-                                    <div style={{ color: "black" }}>English</div>
-                                </PopoverBody>
-                            </PopoverContent>
-                        </Popover>
-                        {/* <ChevronDownIcon fontSize="1.5rem" height="100%" /> */}
-                    </Stack>
-                    {/* </div> */}
-                </div>
-
-            </div>
+            <Popover placement="bottom-end">
+              <PopoverTrigger>
+                <Stack direction="row" alignItems="center" display="flex">
+                  <div className="navbar-option-text">EN</div>
+                  <ChevronDownIcon fontSize="1.5rem" height="100%" />
+                </Stack>
+              </PopoverTrigger>
+              <PopoverContent>
+                <PopoverHeader fontWeight="semibold">
+                  Popover placement
+                </PopoverHeader>
+                <PopoverArrow />
+                <PopoverCloseButton />
+                <PopoverBody>
+                  <div style={{ color: "black" }}>English</div>
+                </PopoverBody>
+              </PopoverContent>
+            </Popover>
+            {/* <ChevronDownIcon fontSize="1.5rem" height="100%" /> */}
+          </Stack>
+          {/* </div> */}
+        </div>
+      </div>
     </div>
   );
 }

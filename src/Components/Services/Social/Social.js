@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "../Research/Research.css"
 
 import Social_img1 from "./SocialImages/Social_img1.png"
@@ -25,8 +25,11 @@ import Award from "../../LandingPage/Awards/Award"
 import Project from "../../LandingPage/Projects/Project"
 import Blogs from "../../LandingPage/Blogs/Blog"
 import Value from '../../Templates/Value/Value'
+import Layout from '../../Layout/Layout'
+import { useStateContext } from '../../../contexts/ContextProvider'
 
-export default function Social({ mode }) {
+export default function Social() {
+    const { mode } = useStateContext()
 
     useEffect(() => {
         window.scroll({
@@ -110,47 +113,49 @@ export default function Social({ mode }) {
     ]
 
     return (
-        <div className='research-outer'>
-            <Top bgimg={Social_img1} />
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Social Media Marketing Services</u>
-            </div>
-            <div className='research-component'>
-                <Details detailData={detailData} />
-            </div>
+        <Layout>
+                <div className='research-outer'>
+                    <Top bgimg={Social_img1} />
+                    <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Social Media Marketing Services</u>
+                    </div>
+                    <div className='research-component'>
+                        <Details detailData={detailData} />
+                    </div>
 
-            <div className='research-component'>
-                <Grid gridData={gridData} />
-            </div>
+                    <div className='research-component'>
+                        <Grid gridData={gridData} />
+                    </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Platforms we use</u>
-            </div>
-            <div style={{ width: "90%", display: "flex", justifyContent: "center", marginTop: "5%", marginBottom: "5%" }}>
-                <img src={Social_img2} />
-            </div>
+                    <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Platforms we use</u>
+                    </div>
+                    <div style={{ width: "90%", display: "flex", justifyContent: "center", marginTop: "5%", marginBottom: "5%" }}>
+                        <img src={Social_img2} />
+                    </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Awards & Recognition</u>
-            </div>
-            <div className='research-component'>
-                <Award i={"0"} />
-            </div>
+                    <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Awards & Recognition</u>
+                    </div>
+                    <div className='research-component'>
+                        <Award i={"0"} />
+                    </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Recent Projects</u>
-            </div>
-            <div className='research-component'>
-                <Project projectData={projectData} />
-            </div>
+                    <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Our Recent Projects</u>
+                    </div>
+                    <div className='research-component'>
+                        <Project projectData={projectData} />
+                    </div>
 
-            <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Featured Blog posts</u>
-            </div>
-            <div className='research-component'>
-                <Blogs />
-            </div>
+                    <div className='reserach-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Featured Blog posts</u>
+                    </div>
+                    <div className='research-component'>
+                        <Blogs />
+                    </div>
 
-        </div>
+                </div>
+            </Layout>
     )
 }

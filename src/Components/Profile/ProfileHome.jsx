@@ -9,35 +9,77 @@ import Profile from "./Profile";
 import Settings from "./Settings";
 import EditProfile from "./EditProfile";
 import EditCandidateProfile from "./EditCandidateProfile";
+import Layout from "../Layout/Layout";
+import { useStateContext } from "../../contexts/ContextProvider";
 
-const ProfileHome = ({ mode }) => {
-    const [tab, settab] = useState(1);
-    const [sidebartoggle, setsidebartoggle] = useState(false);
+const ProfileHome = () => {
+  const {mode} = useStateContext()
+  const [tab, settab] = useState(1);
+  const [sidebartoggle, setsidebartoggle] = useState(true);
 
-    const getId=(id)=>{
-        settab(id);
-    }
+  const getId = (id) => {
+    settab(id);
+  };
 
   return (
-    <div className="flex">
-        <div className={` fixed h-full ${sidebartoggle ? "w-10" : "w-52"}`}>
-          <Sidebar tg={setsidebartoggle} tgprop={sidebartoggle} mode={mode} func={getId}/>
-        </div>
-        <div className={`min-h-full  w-full ${sidebartoggle ? "ml-10" : "ml-52"} `}>
-          <div className="sticky bg-white z-30  top-0 w-full ">
-            <Navbar mode={mode} />
+    <Layout>
+        <div className="flex">
+          <div className={` fixed h-full  ${sidebartoggle ? "w-10" : "w-52"}`}>
+            <Sidebar
+              tg={setsidebartoggle}
+              tgprop={sidebartoggle}
+              mode={mode}
+              func={getId}
+            />
           </div>
-          <div>
-            {tab===1 && <div><Home func={getId}/></div>}
-            {tab===2 && <div><Profile func={getId}/></div>}
-            {tab===3 && <div><Browse/></div>}
-            {tab===4 && <div><Saved/></div>}
-            {tab===5 && <div><Applied/></div>}
-            {tab===7 && <div><Settings/></div>}
-            {tab===8 && <div><EditCandidateProfile/></div>}
+          <div
+            className={`min-h-full  w-full ${
+              sidebartoggle ? "ml-10" : "ml-52"
+            } `}
+          >
+            <div className="sticky bg-white z-30  top-0 w-full ">
+              <Navbar mode={mode} />
+            </div>
+            <div>
+              {tab === 1 && (
+                <div>
+                  <Home func={getId} />
+                </div>
+              )}
+              {tab === 2 && (
+                <div>
+                  <Profile func={getId} />
+                </div>
+              )}
+              {tab === 3 && (
+                <div>
+                  <Browse />
+                </div>
+              )}
+              {tab === 4 && (
+                <div>
+                  <Saved />
+                </div>
+              )}
+              {tab === 5 && (
+                <div>
+                  <Applied />
+                </div>
+              )}
+              {tab === 7 && (
+                <div>
+                  <Settings />
+                </div>
+              )}
+              {tab === 8 && (
+                <div>
+                  <EditCandidateProfile />
+                </div>
+              )}
+            </div>
           </div>
         </div>
-    </div>
+    </Layout>
   );
 };
 

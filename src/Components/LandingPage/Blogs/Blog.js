@@ -29,7 +29,7 @@ export default function Blog() {
 
   const getMyResult = async () => {
     try {
-      const res = await axios.get("http://100.25.136.211/blogs/");
+      const res = await axios.get("https://cms.bigbros.link/api/v2/blogs/");
       console.log(res.data);
       setblogsData(res.data);
       setisPending(false);
@@ -54,9 +54,9 @@ export default function Blog() {
                 <div className="blog-grid-img">
                   <img className="blog-img" src={data.image} />
                 </div>
-                <div className="blog-grid-date">{data.created}</div>
+                <div className="blog-grid-date">Date: { data.created && data.created.slice(0,10)}</div>
                 <div className="blog-grid-title">{data.title}</div>
-                <div className="blog-grid-text">{data.description}</div>
+                <div className="text-gray-400 text-center text-sm tracking-wider">{data.description && data.description.slice(0,300)}... <label className="text-blue-500 cursor-pointer">Read more.</label></div>
               </div>
             ))}
         </div>

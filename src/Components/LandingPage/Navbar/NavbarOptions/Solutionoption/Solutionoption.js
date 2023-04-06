@@ -26,8 +26,11 @@ import { useMediaQuery } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
 import { NavLink as Link } from 'react-router-dom'
+import Layout from '../../../../Layout/Layout'
+import { useStateContext } from '../../../../../contexts/ContextProvider'
 
-export default function Solutionoption({ onToggle, mode }) {
+export default function Solutionoption({ onToggle }) {
+    const { mode } = useStateContext()
     const [option, setOption] = useState(0)
 
     const [isLargerThan850] = useMediaQuery('(min-width: 850px)')
@@ -277,17 +280,6 @@ export default function Solutionoption({ onToggle, mode }) {
                                     </div>
                                 </div>
                             </Link>
-                            <Link to="/Banking & Finance">
-                                <div className="so-right-box1 flex justify-between p-3" onClick={onToggle} style={{ backgroundColor: mode === "dark" ? "#2A2A2A" : "white", border: mode === "dark" ? "none" : "1px solid black" }}>
-                                    <div>
-                                        <img className='h-10 w-10' src={so10} />
-                                    </div>
-                                    <div className='so-right1-box-title  text-center' style={{ color: mode === "dark" ? "white" : "black" }}>
-                                        Banking and
-                                        Finance
-                                    </div>
-                                </div>
-                            </Link>
                             <Link to="/E-Commerce">
                                 <div className="so-right-box1 flex justify-between p-3" onClick={onToggle} style={{ backgroundColor: mode === "dark" ? "#2A2A2A" : "white", border: mode === "dark" ? "none" : "1px solid black" }}>
                                     <div>
@@ -298,17 +290,6 @@ export default function Solutionoption({ onToggle, mode }) {
                                     </div>
                                 </div>
                             </Link>
-                            <Link to="/Travel,Transport & Logistics">
-                                <div className="so-right-box1 flex justify-between p-3" onClick={onToggle} style={{ backgroundColor: mode === "dark" ? "#2A2A2A" : "white", border: mode === "dark" ? "none" : "1px solid black" }}>
-                                    <div>
-                                        <img className='h-10 w-10' src={so12} />
-                                    </div>
-                                    <div className='so-right1-box-title min-w-32  text-center' style={{ color: mode === "dark" ? "white" : "black" }}>
-                                        Travel, Transport
-                                        & Logistics
-                                    </div>
-                                </div>
-                            </Link>
                             <Link to="/Telecom">
                                 <div className="so-right-box1 flex justify-between p-3" onClick={onToggle} style={{ backgroundColor: mode === "dark" ? "#2A2A2A" : "white", border: mode === "dark" ? "none" : "1px solid black" }}>
                                     <div>
@@ -316,6 +297,37 @@ export default function Solutionoption({ onToggle, mode }) {
                                     </div>
                                     <div className='so-right1-box-title  text-center' style={{ color: mode === "dark" ? "white" : "black" }}>
                                         Telecom
+                                    </div>
+                                </div>
+                            </Link>
+                            <Link to="/Healthcare">
+                                <div className="so-right-box1 flex justify-between p-3" onClick={onToggle} style={{ backgroundColor: mode === "dark" ? "#2A2A2A" : "white", border: mode === "dark" ? "none" : "1px solid black" }}>
+                                    <div>
+                                        <img className='h-10 w-10' src={so15} />
+                                    </div>
+                                    <div className='so-right1-box-title  text-center' style={{ color: mode === "dark" ? "white" : "black" }}>
+                                        Healthcare
+                                    </div>
+                                </div>
+                            </Link>
+                            <Link to="/Airline">
+                                <div className="so-right-box1 flex justify-between p-3" onClick={onToggle} style={{ backgroundColor: mode === "dark" ? "#2A2A2A" : "white", border: mode === "dark" ? "none" : "1px solid black" }}>
+                                    <div>
+                                        <img className='h-10 w-10' src={so17} />
+                                    </div>
+                                    <div className='so-right1-box-title  text-center' style={{ color: mode === "dark" ? "white" : "black" }}>
+                                        Airline
+                                    </div>
+                                </div>
+                            </Link>
+                            <Link to="/Banking & Finance">
+                                <div className="so-right-box1 flex justify-between p-3" onClick={onToggle} style={{ backgroundColor: mode === "dark" ? "#2A2A2A" : "white", border: mode === "dark" ? "none" : "1px solid black" }}>
+                                    <div>
+                                        <img className='h-10 w-10' src={so10} />
+                                    </div>
+                                    <div className='so-right1-box-title  text-center' style={{ color: mode === "dark" ? "white" : "black" }}>
+                                        Banking and
+                                        Finance
                                     </div>
                                 </div>
                             </Link>
@@ -330,13 +342,14 @@ export default function Solutionoption({ onToggle, mode }) {
                                     </div>
                                 </div>
                             </Link>
-                            <Link to="/Healthcare">
+                            <Link to="/Travel,Transport & Logistics">
                                 <div className="so-right-box1 flex justify-between p-3" onClick={onToggle} style={{ backgroundColor: mode === "dark" ? "#2A2A2A" : "white", border: mode === "dark" ? "none" : "1px solid black" }}>
                                     <div>
-                                        <img className='h-10 w-10' src={so15} />
+                                        <img className='h-10 w-10' src={so12} />
                                     </div>
-                                    <div className='so-right1-box-title  text-center' style={{ color: mode === "dark" ? "white" : "black" }}>
-                                        Healthcare
+                                    <div className='so-right1-box-title min-w-32  text-center' style={{ color: mode === "dark" ? "white" : "black" }}>
+                                        Travel, Transport
+                                        & Logistics
                                     </div>
                                 </div>
                             </Link>
@@ -348,16 +361,6 @@ export default function Solutionoption({ onToggle, mode }) {
                                     <div className='so-right1-box-title  text-center' style={{ color: mode === "dark" ? "white" : "black" }}>
                                         Media and
                                         Entertainment
-                                    </div>
-                                </div>
-                            </Link>
-                            <Link to="/Airline">
-                                <div className="so-right-box1 flex justify-between p-3" onClick={onToggle} style={{ backgroundColor: mode === "dark" ? "#2A2A2A" : "white", border: mode === "dark" ? "none" : "1px solid black" }}>
-                                    <div>
-                                        <img className='h-10 w-10' src={so17} />
-                                    </div>
-                                    <div className='so-right1-box-title  text-center' style={{ color: mode === "dark" ? "white" : "black" }}>
-                                        Airline
                                     </div>
                                 </div>
                             </Link>

@@ -21,7 +21,7 @@ import t5 from "../Job/JobImages/t5.png";
 import xr1 from "../Job/JobImages/r1.png";
 import xr2 from "../Job/JobImages/r2.png";
 
-const Benifits = () => {
+const Benefits = () => {
 
   
   const mode="dark";
@@ -143,7 +143,7 @@ const Benifits = () => {
       <div className="flex justify-between w-full md:px-52 my-3">
         <button
           onClick={() => setbenifitTab(1)}
-          className={`font-bold text-sm md:text-lg text-[#F7B733] p-4 ${
+          className={`font-bold text-xs md:text-lg text-[#F7B733] p-2 md:p-4 ${
             benifitTab === 1 && "border-b-2 border-b-[#F7B733]"
           }`}
         >
@@ -151,7 +151,7 @@ const Benifits = () => {
         </button>
         <button
           onClick={() => setbenifitTab(2)}
-          className={`font-bold text-sm md:text-lg text-[#F7B733] p-4 ${
+          className={`font-bold text-xs md:text-lg text-[#F7B733] p-2 md:p-4 ${
             benifitTab === 2 && "border-b-2 border-b-[#F7B733]"
           }`}
         >
@@ -159,7 +159,7 @@ const Benifits = () => {
         </button>
         <button
           onClick={() => setbenifitTab(3)}
-          className={`font-bold text-sm md:text-lg text-[#F7B733] p-4 ${
+          className={`font-bold text-xs md:text-lg text-[#F7B733] p-2 md:p-4 ${
             benifitTab === 3 && "border-b-2 border-b-[#F7B733]"
           }`}
         >
@@ -167,7 +167,7 @@ const Benifits = () => {
         </button>
         <button
           onClick={() => setbenifitTab(4)}
-          className={`font-bold text-sm md:text-lg text-[#F7B733] p-4 ${
+          className={`font-bold text-xs md:text-lg text-[#F7B733] p-2 md:p-4 ${
             benifitTab === 4 && "border-b-2 border-b-[#F7B733]"
           }`}
         >
@@ -364,8 +364,8 @@ const Benifits = () => {
             </div>
           )}
           {benifitTab === 3 && (
-            <div className="md:px-32 py-10">
-              <div className="md:flex w-full">
+            <div className="md:px-32 w-full space-y-3">
+              <div className="md:flex">
                 <div>
                   <div className="font-semibold text-xl md:text-4xl tracking-wider pb-4 text-[#FC4A1A]">
                     Retirement
@@ -374,15 +374,15 @@ const Benifits = () => {
                     BDM s Wealth Accumulation Program includes a 401(k) savings
                     plan and a cash balance plan. Together, these plans provide
                     a solid foundation for eligible professionals long-term
-                    financial future
+                    financial future.
                   </div>
                 </div>
-                <div className="w-full">
-                  <img src={xr1} className="w-80 h-56 object-cover " alt="" />
+                <div className="w-full my-3">
+                  <img src={xr1} className="md:w-80 md:h-56  object-cover " alt="" />
                 </div>
               </div>
-              <div className="flex w-full justify-between px-20 pt-20 place-items-center">
-                <div className="bg-gray-900 rounded-md p-4 h-80 w-80">
+              <div className="space-y-3 md:flex justify-between">
+                <div className="bg-gray-900 rounded-md p-4 h-80 md:w-80 w-full">
                   <div className="font-semibold text-gray-400 text-xl p-5 text-center">
                     SAVINGS PLAN
                   </div>
@@ -393,7 +393,7 @@ const Benifits = () => {
                     financial future
                   </div>
                 </div>
-                <div className="bg-gray-900 text-gray-400 rounded-md p-4 h-80 w-80">
+                <div className="bg-gray-900 text-gray-400 rounded-md p-4 h-80 md:w-80 w-full">
                   <div className="font-semibold text-xl p-5 text-center">
                     CASH BALANCE PLAN
                   </div>
@@ -404,6 +404,13 @@ const Benifits = () => {
                     financial future
                   </div>
                 </div>
+                {/* <div className="bg-gray-900 p-4 text-gray-400 rounded-md w-full h-80 md:w-80">
+                  <div className="font-semibold text-xl p-5 text-center">CASH BALANCE PLAN</div>
+                  <div className="py-10 text-center ">BDM s Wealth Accumulation Program includes a 401(k) savings
+                    plan and a cash balance plan. Together, these plans provide
+                    a solid foundation for eligible professionals long-term
+                    financial future.</div>
+                </div> */}
               </div>
             </div>
           )}
@@ -452,4 +459,4 @@ const Benifits = () => {
   );
 };
 
-export default Benifits;
+export default Benefits;

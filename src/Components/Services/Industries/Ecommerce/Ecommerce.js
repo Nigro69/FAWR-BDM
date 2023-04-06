@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "../../Industries/Industries.css"
 
 import Ecommerce_img1 from "./EcommerceImages/Ecommerce_img1.png"
@@ -21,9 +21,12 @@ import I5 from "./EcommerceImages/5.png"
 import Igrid from '../../../Templates/IndustriesTemplates/IndustryGrid/Igrid'
 import Iservices from '../../../Templates/IndustriesTemplates/IndustryServices/Iservices.js'
 import Meeting from '../../../Templates/IndustriesTemplates/Meeting/Meeting'
+import Layout from '../../../Layout/Layout'
+import { useStateContext } from '../../../../contexts/ContextProvider'
 
 
-export default function Ecommerce({ mode }) {
+export default function Ecommerce() {
+    const { mode } = useStateContext()
 
     useEffect(() => {
         window.scroll({
@@ -99,56 +102,58 @@ export default function Ecommerce({ mode }) {
 
     ]
     return (
-        <div className='industries-outer'>
-            <Industrytop bgimg={Ecommerce_img1} mode={mode}
-                content="For retailers, brands, and cataloguers today, the development of e-commerce has created a number of opportunities across a variety of platforms. We are at a turning point when changes in consumer behaviour and points of engagement are altering how businesses must deal with customers and run their operations. There are several possibilities and hazards for stakeholders as a result of the disruption in the economics and value chains of the established industries. Businesses must better understand their customers in order to offer seamless, customised experiences. To do this, they must leverage emerging technology. A perfect e-commerce platform enables a service that continuously adjusts its operations to the always changing, tech-savvy, and cross-channel consumers, making items accessible at the appropriate location, at the right time, and at the right price." />
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Challenges</u>
-            </div>
-            <div className='industries-component'>
-                <Challenges challengeData={challengeData} mode={mode} />
-            </div>
+        <Layout>
+                <div className='industries-outer'>
+                    <Industrytop bgimg={Ecommerce_img1} mode={mode}
+                        content="For retailers, brands, and cataloguers today, the development of e-commerce has created a number of opportunities across a variety of platforms. We are at a turning point when changes in consumer behaviour and points of engagement are altering how businesses must deal with customers and run their operations. There are several possibilities and hazards for stakeholders as a result of the disruption in the economics and value chains of the established industries. Businesses must better understand their customers in order to offer seamless, customised experiences. To do this, they must leverage emerging technology. A perfect e-commerce platform enables a service that continuously adjusts its operations to the always changing, tech-savvy, and cross-channel consumers, making items accessible at the appropriate location, at the right time, and at the right price." />
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Challenges</u>
+                    </div>
+                    <div className='industries-component'>
+                        <Challenges challengeData={challengeData} mode={mode} />
+                    </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Offerings</u>
-            </div>
-            <div className='industries-component'>
-                <Igrid gridData={gridData} mode={mode} />
-            </div>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Our Offerings</u>
+                    </div>
+                    <div className='industries-component'>
+                        <Igrid gridData={gridData} mode={mode} />
+                    </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Services</u>
-            </div>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Our Services</u>
+                    </div>
 
-            <div className='industries-component'>
-                <Iservices mode={mode} />
-            </div>
+                    <div className='industries-component'>
+                        <Iservices mode={mode} />
+                    </div>
 
-            <div className='industries-component'>
-                <Meeting mode={mode} />
-            </div>
+                    <div className='industries-component'>
+                        <Meeting mode={mode} />
+                    </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Awards & Recognition</u>
-            </div>
-            <div className='industries-component'>
-                <Award mode={mode} />
-            </div>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Awards & Recognition</u>
+                    </div>
+                    <div className='industries-component'>
+                        <Award mode={mode} />
+                    </div>
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Our Recent Projects</u>
-            </div>
-            {/* <div className='industries-component'>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Our Recent Projects</u>
+                    </div>
+                    {/* <div className='industries-component'>
                 <Project mode={mode} />
             </div> */}
 
-            <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Featured Blog posts</u>
-            </div>
-            <div className='industries-component'>
-                <Blogs mode={mode} />
-            </div>
+                    <div className='industries-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Featured Blog posts</u>
+                    </div>
+                    <div className='industries-component'>
+                        <Blogs mode={mode} />
+                    </div>
 
-        </div>
+                </div>
+            </Layout>
     )
 }

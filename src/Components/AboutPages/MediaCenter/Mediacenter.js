@@ -1,10 +1,13 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "./Mediacenter.css"
 
 import MC1 from "./MediacenterImages/MC1.png"
 import MC2 from "./MediacenterImages/MC2.png"
+import Layout from '../../Layout/Layout'
+import { useStateContext } from '../../../contexts/ContextProvider'
 
-export default function Mediacenter({ mode }) {
+export default function Mediacenter() {
+    const { mode } = useStateContext()
 
     useEffect(() => {
         window.scroll({
@@ -37,75 +40,76 @@ export default function Mediacenter({ mode }) {
         },
     ]
     return (
-        <div className='mc-outer'>
-            <div className='mc-bgimg-outer' style={{ width: "100%" }} >
-                <img src={MC1} className="mc-bgimg" style={{ width: "100%" }} />
-            </div>
-            <div className='mc-text1' style={{ width: "80%", textAlign: "center", marginTop: "5%", color: mode === "dark" ? "white" : "black" }}>
-                Our subject matter expertise, top-notch research, and business viewpoints have been highlighted in prestigious news outlets all around the world.
-            </div>
-            <div className='mc-title' style={{ color: mode === "dark" ? "white" : "black" }}>
-                <u>Media Contacts</u>
-            </div>
+        <Layout>
+                <div className='mc-outer'>
+                    <div className='mc-bgimg-outer' style={{ width: "100%" }} >
+                        <img src={MC1} className="mc-bgimg" style={{ width: "100%" }} />
+                    </div>
+                    <div className='mc-text1' style={{ width: "80%", textAlign: "center", marginTop: "5%", color: mode === "dark" ? "white" : "black" }}>
+                        Our subject matter expertise, top-notch research, and business viewpoints have been highlighted in prestigious news outlets all around the world.
+                    </div>
+                    <div className='mc-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                        <u>Media Contacts</u>
+                    </div>
 
-            <div className='mc-grid1'>
-                <div className='mc-element1' style={{ backgroundColor: mode === "dark" ? "#29262B" : "#EFEFEF" }}>
-                    <div className='mc-element1-top'>
-                        <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%", fontSize: "500" }}>
-                            Thilak,
+                    <div className='mc-grid1'>
+                        <div className='mc-element1' style={{ backgroundColor: mode === "dark" ? "#29262B" : "#EFEFEF" }}>
+                            <div className='mc-element1-top'>
+                                <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%", fontSize: "500" }}>
+                                    Thilak,
+                                </div>
+                                <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%" }}>
+                                    India,
+                                </div>
+                            </div>
+
+                            <div className='mc-element1-bottom'>
+                                <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%" }}>
+                                    pro@bigbrosdigitalmedia.com
+                                </div>
+                            </div>
                         </div>
-                        <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%" }}>
-                            India,
+
+                        <div className='mc-element1' style={{ backgroundColor: mode === "dark" ? "#29262B" : "#EFEFEF" }}>
+                            <div className='mc-element1-top'>
+                                <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%", fontSize: "500" }}>
+                                    Charulatha,
+                                </div>
+                                <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%" }}>
+                                    Canada,
+                                </div>
+                            </div>
+
+                            <div className='mc-element1-bottom'>
+                                <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%" }}>
+                                    pro.ca@bigbrosdigitalmedia.com
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='mc-element1' style={{ backgroundColor: mode === "dark" ? "#29262B" : "#EFEFEF" }}>
+                            <div className='mc-element1-top'>
+                                <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%", fontSize: "500" }}>
+                                    Sneha,
+                                </div>
+                                <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%" }}>
+                                    Malaysia,
+                                </div>
+                            </div>
+
+                            <div className='mc-element1-bottom'>
+                                <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%" }}>
+                                    pro.ma@bigbrosdigitalmedia.com
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div className='mc-element1-bottom'>
-                        <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%" }}>
-                            pro@bigbrosdigitalmedia.com
-                        </div>
-                    </div>
-                </div>
-
-                <div className='mc-element1' style={{ backgroundColor: mode === "dark" ? "#29262B" : "#EFEFEF" }}>
-                    <div className='mc-element1-top'>
-                        <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%", fontSize: "500" }}>
-                            Charulatha,
-                        </div>
-                        <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%" }}>
-                            Canada,
-                        </div>
-                    </div>
-
-                    <div className='mc-element1-bottom'>
-                        <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%" }}>
-                            pro.ca@bigbrosdigitalmedia.com
-                        </div>
-                    </div>
-                </div>
-
-                <div className='mc-element1' style={{ backgroundColor: mode === "dark" ? "#29262B" : "#EFEFEF" }}>
-                    <div className='mc-element1-top'>
-                        <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%", fontSize: "500" }}>
-                            Sneha,
-                        </div>
-                        <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%" }}>
-                            Malaysia,
-                        </div>
-                    </div>
-
-                    <div className='mc-element1-bottom'>
-                        <div className='mc-text1' style={{ color: mode === "dark" ? "white" : "black", width: "80%", textAlign: "center", marginTop: "5%" }}>
-                            pro.ma@bigbrosdigitalmedia.com
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* <div className='mc-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    {/* <div className='mc-title' style={{ color: mode === "dark" ? "white" : "black" }}>
                 <u>Media Mentions</u>
             </div> */}
 
-            {/* <div className='mc-grid2'>
+                    {/* <div className='mc-grid2'>
                 {
                     mediaData.map((item, index) => {
                         return <div className='mc-element2' style={{ backgroundColor: mode === "dark" ? "#211F22" : "#EFEFEF" }}>
@@ -133,7 +137,7 @@ export default function Mediacenter({ mode }) {
 
             </div> */}
 
-            {/* <div className='mc-title' style={{ color: mode === "dark" ? "white" : "black" }}>
+                    {/* <div className='mc-title' style={{ color: mode === "dark" ? "white" : "black" }}>
                 <u>Press Release</u>
             </div>
 
@@ -164,6 +168,7 @@ export default function Mediacenter({ mode }) {
                 }
 
             </div> */}
-        </div >
+                </div >
+            </Layout>
     )
 }

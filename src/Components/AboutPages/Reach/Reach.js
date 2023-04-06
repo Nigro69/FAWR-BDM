@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect,useState} from 'react'
 import "./Reach.css"
 import Reach_img1 from "./ReachImages/Reach_img1.png"
 
@@ -30,6 +30,8 @@ export default function Reach({ mode }) {
         });
     }, [])
 
+    const [dropReasons, setdropReasons] = useState(false);
+  const [reasons, setReasons] = useState("");
 
     const [isLargerThan900] = useMediaQuery('(min-width: 900px)')
     return (
@@ -84,7 +86,7 @@ export default function Reach({ mode }) {
                             placeholder='Company Name' />
 
 
-                        <Menu>
+                        {/* <Menu>
                             <MenuButton as={Button} borderColor="#211F22" backgroundColor={mode === "dark" ? "#2B292C" : "#E0E0E0"}
                                 _hover={{ borderColor: "#211F22", backgroundColor: "#2B292C" }}
                                 padding="1%"
@@ -95,7 +97,32 @@ export default function Reach({ mode }) {
                             <MenuList borderColor="#211F22" backgroundColor={mode === "dark" ? "#2B292C" : "#E0E0E0"} width="fit-content">
                                 <MenuItem borderColor="#211F22" backgroundColor={mode === "dark" ? "#2B292C" : "#E0E0E0"} width="fit-content">India</MenuItem>
                             </MenuList>
-                        </Menu>
+                        </Menu> */}
+
+                        
+                <div className="relative">
+            <div
+              onClick={() => setdropReasons(!dropReasons)}
+              className="flex px-6 py-2 cursor-pointer text-white bg-[#2B292C] rounded-md place-items-center justify-between"
+            >
+              <div>{reasons==="" ? "Reason for contacting BDM" : reasons} </div>
+              <div>
+                <ChevronDownIcon />
+              </div>
+            </div>
+            {dropReasons && <div className="absolute z-10 top-12 border-[#211F22] bg-[#2B292C] divide-[#211F22] w-full rounded-md grid grid-cols-1 divide-y">
+              <div className="text-sm text-gray-400 py-2  px-4 border-[#211F22] rounded-t-md font-semibold">Client</div>
+              <div onClick={()=>{setdropReasons(false); setReasons("Request for services")}} className="text-gray-200 text-sm p-2 border-[#211F22] cursor-pointer  hover:bg-opacity-90 text-center">Request for services</div>
+              <div className="text-sm text-gray-400 py-2 px-4 border-[#211F22] rounded-t-md font-semibold">Other queries</div>
+              <div onClick={()=>{setdropReasons(false); setReasons("Analyst ( Industry & Financial)")}} className="text-gray-200 text-sm p-2 border-[#211F22] cursor-pointer  hover:bg-opacity-90 text-center">Analyst ( Industry & Financial)</div>
+              <div onClick={()=>{setdropReasons(false); setReasons("Global Procurement Services")}} className="text-gray-200 text-sm p-2 border-[#211F22] cursor-pointer  hover:bg-opacity-90 text-center">Global Procurement Services</div>
+              <div onClick={()=>{setdropReasons(false); setReasons("Investors")}} className="text-gray-200 text-sm p-2 border-[#211F22] cursor-pointer  hover:bg-opacity-90 text-center">Investors</div>
+              <div onClick={()=>{setdropReasons(false); setReasons("Job Seekers")}} className="text-gray-200 text-sm p-2 border-[#211F22] cursor-pointer  hover:bg-opacity-90 text-center">Job Seekers</div>
+              <div onClick={()=>{setdropReasons(false); setReasons("Media & Journalist")}} className="text-gray-200 text-sm p-2 border-[#211F22] cursor-pointer  hover:bg-opacity-90 text-center">Media & Journalist</div>
+              <div onClick={()=>{setdropReasons(false); setReasons("Partnership & Alliances")}} className="text-gray-200 text-sm p-2 border-[#211F22] cursor-pointer  hover:bg-opacity-90 text-center">Partnership & Alliances</div>
+              <div onClick={()=>{setdropReasons(false); setReasons("Report a Security incident")}} className="text-gray-200 text-sm p-2 border-[#211F22] cursor-pointer  hover:bg-opacity-90 text-center">Report a Security incident</div>
+            </div>}
+            </div>
 
                         <Textarea placeholder="Message"
                             borderColor="#211F22" backgroundColor={mode === "dark" ? "#2B292C" : "#E0E0E0"}

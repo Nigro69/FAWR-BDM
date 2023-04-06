@@ -21,7 +21,7 @@ import t5 from "../Job/JobImages/t5.png";
 import xr1 from "../Job/JobImages/r1.png";
 import xr2 from "../Job/JobImages/r2.png";
 
-const Benifits = () => {
+const Benefits = () => {
 
   
   const mode="dark";
@@ -444,4 +444,4 @@ const Benifits = () => {
   );
 };
 
-export default Benifits;
+export default Benefits;
