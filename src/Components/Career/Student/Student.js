@@ -298,7 +298,8 @@ export default function Student() {
               <div className=" tracking-wide text-gray-400 font-sans">
                 {data.description}
               </div>
-              <button onClick={() => checkExprienceLevel(data.experience)} className="mt-10 text-[#FC4A1A]">Apply</button>
+              
+              <Link to={`/Student / Intern Program/${data.id}`} onClick={() => checkExprienceLevel(data.experience) } className="mt-10 text-[#FC4A1A]">View and Apply</Link>
             </div>
           ))}
         </div>

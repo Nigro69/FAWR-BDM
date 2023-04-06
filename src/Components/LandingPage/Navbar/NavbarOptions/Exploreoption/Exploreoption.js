@@ -16,12 +16,14 @@ export default function Exploreoption({ onClick, mode }) {
         <div className='eo-outer' style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>
             <div className='eo-left'>
                 <div className='eo-option' style={{ borderBottom: mode === "dark" ? "1px solid white" : "1px solid black", borderTop: mode === "dark" ? "1px solid white" : "1px solid black" }} onClick={(e) => setSelectedOption(0)}>
+                <Link to='/Blogs'>
                     <Stack direction="row" display="flex" justifyContent="space-between" alignItems='center'>
                         <div classname="eo-option-text" style={{ color: mode === "dark" ? "white" : "black" }}>
                             Blogs
                         </div>
                         <ChevronRightIcon fontSize="20" color={mode === "dark" ? "white" : "black"} />
                     </Stack>
+                </Link>
                 </div>
                 <div className='eo-option' style={{ borderBottom: mode === "dark" ? "1px solid white" : "1px solid black" }} onClick={onClick} >
                     <Stack direction="row" display="flex" justifyContent="space-between" alignItems='center'>

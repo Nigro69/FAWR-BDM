@@ -109,6 +109,7 @@ import Influencer from './Components/Influencer/Influencer.jsx'
 import { useStateContext } from "./contexts/ContextProvider.js"
 import { GrClose } from 'react-icons/gr'
 import AdminSettings from './Components/AdminSettings.jsx'
+import Blogs from './Components/Blogs/Blogs.jsx'
 
 
 
@@ -243,6 +244,7 @@ export default function App() {
 
           <Route path="/Life@BDM" element={<Life />} />
           <Route path="/Student / Intern Program" element={<Student />} />
+          <Route path="/Student / Intern Program/:id" element={<JobDetails />} />
           <Route path="/Diversity & Inclusion" element={<Diversity />} />
           <Route path="/Learning & Development" element={<Learning />} />
           <Route path="/Jobs" element={<Job />} />
@@ -266,6 +268,13 @@ export default function App() {
 
           <Route path="/Sustainability @ BDM" element={<Sustainability />} />
           <Route path="*" element={<PageNotFound />} />
+
+          <Route path='/Blogs' element={<Blogs mode={mode} page={'All'}/>}/>
+          <Route path='/Blogs/Digital Research' element={<Blogs mode={mode} page={'Digital Research'}/>}/>
+          <Route path='/Blogs/DevOps' element={<Blogs mode={mode} page={'DevOps'}/>}/>
+          <Route path='/Blogs/Sales Intelligence' element={<Blogs mode={mode} page={'Sales Intelligence'}/>}/>
+          <Route path='/Blogs/Legal Consultant' element={<Blogs mode={mode} page={'Legal Consultant'}/>}/>
+          <Route path='/Blogs/Marketing Automation' element={<Blogs mode={mode} page={'Marketing Automation'}/>}/>
 
         </Routes>
         {/* <Footer /> */}
