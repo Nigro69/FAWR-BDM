@@ -177,7 +177,7 @@ export default function Footer() {
             <Link to="/Jobs">
               <div className="footer-content-text">Careers</div>
             </Link>
-            <Link to="/Sitemap">
+            <Link to="/Influencer Program">
               <div className="footer-content-text">Influencer</div>
             </Link>
             <Link to="/Login-admin">

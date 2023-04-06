@@ -104,6 +104,8 @@ import StudentBenifits from './Components/Career/Student/StudentBenifits.jsx'
 import LoginAdmin from './Components/Profile/LoginAdmin.jsx'
 import Register2 from './Components/Profile/Register2.jsx'
 import { ArrowUpIcon } from '@chakra-ui/icons'
+import JobDetails from './Components/Career/Student/JobDetails.jsx'
+import Influencer from './Components/Influencer/Influencer.jsx'
 import { useStateContext } from "./contexts/ContextProvider.js"
 import { GrClose } from 'react-icons/gr'
 import AdminSettings from './Components/AdminSettings.jsx'

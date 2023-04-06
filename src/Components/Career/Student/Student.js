@@ -7,7 +7,7 @@ import F2 from "./StudentImages/2.png";
 import F3 from "./StudentImages/3.png";
 import F4 from "./StudentImages/4.png";
 import F5 from "./StudentImages/5.png";
-
+import { Link } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
 
 import { useMediaQuery } from "@chakra-ui/react";

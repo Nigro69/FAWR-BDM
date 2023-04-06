@@ -1,0 +1,45 @@
+.influencer-heading {
+    margin-top: 18%;
+    margin-left: 5%;
+    position: absolute;
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 180%;
+    color: #BC312E;
+}
+.influencer-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.red-arrow-btn{
+    background: #BC312E;
+    /* font-family: 'Open Sans'; */
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 100%;
+text-align: center;
+
+color: #FFFFFF;
+padding: 13px 25px;
+}
+@media only screen and (max-width:1500px){
+    .influencer-heading{
+        font-size: 3rem;
+    }
+}
+@media only screen and (max-width:500px){
+    .influencer-heading{
+        font-size: 2.5rem;
+    }
+}
+@media only screen and (max-width:500px){
+    .influencer-heading{
+        font-size: 2rem;
+    }
+}
+
