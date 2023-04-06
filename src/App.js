@@ -262,7 +262,7 @@ export default function App() {
           <Route path="/Prof-Benifits" element={<PBenifits mode={mode} />} />
           <Route path="/Students-Benifits" element={<StudentBenifits mode={mode} />} />
           <Route path="/admin-settings" element={(admin && authToken) ? <AdminSettings mode={mode} /> :<Login mode={mode} />} />
-
+          <Route path='/Influencer Program' element={<Influencer mode={mode}/>} />
 
           <Route path="/Sustainability @ BDM" element={<Sustainability />} />
           <Route path="*" element={<PageNotFound />} />

@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react'
+import { React, useEffect, useState } from 'react'
 import landing from './InfluencerImages/landing.png'
 import i1 from './InfluencerImages/i1.png'
 import i2 from './InfluencerImages/i2.png'
@@ -14,9 +14,12 @@ import {
   AccordionIcon,
   Box, Stack
 } from "@chakra-ui/react";
+import Layout from '../Layout/Layout'
+import { useStateContext } from '../../contexts/ContextProvider'
 
-const Influencer = ({ mode }) => {
+const Influencer = () => {
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
+  const {mode}=useStateContext()
   useEffect(() => {
     window.scroll({
       top: 0,
@@ -25,8 +28,11 @@ const Influencer = ({ mode }) => {
     });
   }, [])
   return (
+    <Layout>
+
     <div className='influencer-container'>
       <div className="learning-bgimg" style={{ width: "100%" }}>
+   
         <div className="influencer-heading text-[#FC4A1A]">Influencer Program</div>
         <img src={landing} style={{ width: "100%" }} />
       </div>
@@ -345,6 +351,7 @@ const Influencer = ({ mode }) => {
           </Accordion>
         </Stack>}
     </div>
+    </Layout>
   )
 }
 
