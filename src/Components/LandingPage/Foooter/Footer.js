@@ -183,6 +183,9 @@ export default function Footer() {
             <Link to="/Login-admin">
               <div className="footer-content-text">Login</div>
             </Link>
+            <Link to="/admin-invite">
+              <div className="footer-content-text">Invite</div>
+            </Link>
           </div>
 
           <div
