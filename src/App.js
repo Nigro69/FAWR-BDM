@@ -116,6 +116,7 @@ export default function App() {
     setauthToken,
     setAdmin,
     admin,
+    mode,
     manager,
     setmanager,
     seteditor,
