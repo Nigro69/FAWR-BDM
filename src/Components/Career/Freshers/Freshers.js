@@ -346,17 +346,16 @@ export default function Freshers() {
         <div className="w-full h-full md:grid grid-cols-3 space-y-4 md:space-y-0 gap-10 px-10">
           {filteredDta &&
             filteredDta.map((data) => (
-              <div className="border border-[#FC4A1A] p-8 bg-gray-100">
+              <div className="border border-[#FC4A1A] p-8 ">
                 <div className="font-semibold tracking-wide text-2xl text-[#FC4A1A] uppercase">
                   {data.title}
                 </div>
-                <div className=" font-semibold my-5 tracking-wider text-gray-700">
+                <div className=" font-semibold my-5 tracking-wider" style={{color:mode === "dark" ? "white" : "#5D5D5D"}}>
                   {data.location}
                 </div>
-                <div className=" tracking-wide text-gray-600 font-sans">
-                  {data.description}
-                </div>
-                <button onClick={() => checkExprienceLevel(data.experience)} className="mt-10 text-[#FC4A1A]">Apply</button>
+                <div dangerouslySetInnerHTML={{__html: data.description.replace('color: rgb(0, 0, 0);', `color: ${mode === "dark" ? "white" : "#5D5D5D"};`)}} className=" tracking-wide text-gray-600 font-sans"/>
+                  
+                <button onClick={() => checkExprienceLevel(data.experience)} className="mt-10 text-[#FC4A1A]">View and Apply</button>
               </div>
             ))}
         </div>

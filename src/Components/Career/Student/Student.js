@@ -295,9 +295,10 @@ export default function Student() {
               <div className=" font-semibold my-5 tracking-wider text-gray-300">
                 {data.location}
               </div>
-              <div className=" tracking-wide text-gray-400 font-sans">
-                {data.description}
-              </div>
+              {/* {data.description.replace('color: rgb(0, 0, 0);', 'color: rgb(156 163 175 / 1);')} */}
+              <div dangerouslySetInnerHTML={{__html: data.description.replace('color: rgb(0, 0, 0);', 'color: rgb(156 163 175 / 1);')}} className=" tracking-wide text-gray-400 font-sans " />
+                {/* {data.description} */}
+             
               
               <Link to={`/Student / Intern Program/${data.id}`} onClick={() => checkExprienceLevel(data.experience) } className="mt-10 text-[#FC4A1A]">View and Apply</Link>
             </div>
