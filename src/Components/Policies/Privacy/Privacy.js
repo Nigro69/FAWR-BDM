@@ -50,7 +50,7 @@ export default function Terms() {
                             <Accordion borderRadius="0.5rem" allowMultiple>
                                 <AccordionItem borderRadius="0.5rem" >
                                     <h2>
-                                        <AccordionButton width="100%" backgroundColor="#E0E0E0" borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
+                                        <AccordionButton width="100%" backgroundColor= {mode==='dark'?"#444444":"#E0E0E0"} borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
                                             <Box as="span" flex='1' textAlign='left' fontWeight="500" padding="1%">
                                                 Information we collect & how we use
                                             </Box>
@@ -58,7 +58,7 @@ export default function Terms() {
                                             />
                                         </AccordionButton>
                                     </h2>
-                                    <AccordionPanel pb={4} backgroundColor="#e0e0e0">
+                                    <AccordionPanel pb={4} backgroundColor={mode==='dark'?"#444444":"#E0E0E0"}>
 
                                         Your name, contact information, occupation, firm or academic affiliation, industry, location, and country, as well as your relationship to Big Bros Digital Media, purpose for contacting Big Bros Digital Media, areas of interest, and any other information you want to submit, may all be collected by Big Bros Digital Media. You expressly consent to Big Bros Digital Media handling your personal data in line with this Privacy Policy by using our Sites or providing us information. Your personal information may be used by Big Bros Digital Media to complete your request, send you marketing materials, handle your job application, or administer your Beyond Big Bros Digital Media membership.
                                         <br /><br />
@@ -89,7 +89,7 @@ export default function Terms() {
                             <Accordion borderRadius="0.5rem" allowMultiple>
                                 <AccordionItem borderRadius="0.5rem">
                                     <h2>
-                                        <AccordionButton width="100%" backgroundColor="#E0E0E0" borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
+                                        <AccordionButton width="100%" backgroundColor= {mode==='dark'?"#444444":"#E0E0E0"} borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
                                             <Box as="span" flex='1' textAlign='left' fontWeight="500" padding="1%">
                                                 Use of cookies on the Sites
                                             </Box>
@@ -97,7 +97,7 @@ export default function Terms() {
                                             />
                                         </AccordionButton>
                                     </h2>
-                                    <AccordionPanel pb={4} backgroundColor="#e0e0e0">
+                                    <AccordionPanel pb={4} backgroundColor={mode==='dark'?"#444444":"#E0E0E0"}>
 
                                         When you explore our sites, we could gather specific types of information using cookies or other technologies ("cookies"). Our Cookie Policy contains details on the data that is gathered and how it is used.
                                         <br /><br />
@@ -109,7 +109,7 @@ export default function Terms() {
                             <Accordion borderRadius="0.5rem" allowMultiple>
                                 <AccordionItem borderRadius="0.5rem">
                                     <h2>
-                                        <AccordionButton width="100%" backgroundColor="#E0E0E0" borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
+                                        <AccordionButton width="100%" backgroundColor= {mode==='dark'?"#444444":"#E0E0E0"} borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
                                             <Box as="span" flex='1' textAlign='left' fontWeight="500" padding="1%">
                                                 Who we share your personal data with
                                             </Box>
@@ -117,7 +117,7 @@ export default function Terms() {
                                             />
                                         </AccordionButton>
                                     </h2>
-                                    <AccordionPanel pb={4} backgroundColor="#e0e0e0">
+                                    <AccordionPanel pb={4} backgroundColor={mode==='dark'?"#444444":"#E0E0E0"}>
                                         We may share your personal information with other Big Bros Digital Media group companies as well as with other parties that may reside in a different country than your home country. Your data won't be shared or sold by Big Bros Digital Media to a third party for that company's own purpose.
                                         <br /><br />
                                         We may share your personal data with others, such as:
@@ -139,7 +139,7 @@ export default function Terms() {
                             <Accordion borderRadius="0.5rem" allowMultiple>
                                 <AccordionItem borderRadius="0.5rem">
                                     <h2>
-                                        <AccordionButton width="100%" backgroundColor="#E0E0E0" borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
+                                        <AccordionButton width="100%" backgroundColor= {mode==='dark'?"#444444":"#E0E0E0"} borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
                                             <Box as="span" flex='1' textAlign='left' fontWeight="500" padding="1%">
                                                 Links to othr websites
                                             </Box>
@@ -147,7 +147,7 @@ export default function Terms() {
                                             />
                                         </AccordionButton>
                                     </h2>
-                                    <AccordionPanel pb={4} backgroundColor="#e0e0e0">
+                                    <AccordionPanel pb={4} backgroundColor={mode==='dark'?"#444444":"#E0E0E0"}>
                                         Links to third-party websites that are subject to their own terms and privacy policies may be found on our sites. Big Bros Digital Media disclaims all liability and responsibility for the information on these websites or your use of them.
                                         <br /><br />
                                         Links to external websites, such as social networking sites, may be found on the Sites. You should read the terms of use and privacy policies of such websites before using them or providing them with any personal information. Big Bros Digital Media disclaims all liability for these websites' privacy policies. A link to a third-party website does not imply that Big Bros Digital Media approves of its content or assumes any liability related to its usage. Big Bros Digital Media disclaims all liability and responsibility for the use of these websites by you or for the material thereon.                            </AccordionPanel>
@@ -159,7 +159,7 @@ export default function Terms() {
                             <Accordion borderRadius="0.5rem" allowMultiple>
                                 <AccordionItem borderRadius="0.5rem">
                                     <h2>
-                                        <AccordionButton width="100%" backgroundColor="#E0E0E0" borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
+                                        <AccordionButton width="100%" backgroundColor= {mode==='dark'?"#444444":"#E0E0E0"} borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
                                             <Box as="span" flex='1' textAlign='left' fontWeight="500" padding="1%">
                                                 Security of your personal data
                                             </Box>
@@ -167,7 +167,7 @@ export default function Terms() {
                                             />
                                         </AccordionButton>
                                     </h2>
-                                    <AccordionPanel pb={4} backgroundColor="#e0e0e0">
+                                    <AccordionPanel pb={4} backgroundColor={mode==='dark'?"#444444":"#E0E0E0"}>
                                         Big Bros Digital Media has put in place the necessary organisational and technological security measures to safeguard your personal information from theft, misuse, modification, or destruction.
                                         <br /><br />
                                         Big Bros Digital Media has put in place the necessary organisational and technological security measures to safeguard your personal information from theft, misuse, modification, or destruction. When possible, these procedures include anonymizing or pseudonymizing data. Your personal information will only be accessible to authorised Big Bros Digital Media employees and the aforementioned third parties to the degree necessary for them to carry out their duties or render their services. Big Bros Digital Media cannot, however, provide an assurance that unauthorised parties won't access your information in spite of these security measures.                            </AccordionPanel>
@@ -179,14 +179,14 @@ export default function Terms() {
                             <Accordion borderRadius="0.5rem" allowMultiple>
                                 <AccordionItem borderRadius="0.5rem">
                                     <h2>
-                                        <AccordionButton width="100%" backgroundColor="#E0E0E0" borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
+                                        <AccordionButton width="100%" backgroundColor= {mode==='dark'?"#444444":"#E0E0E0"} borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
                                             <Box as="span" flex='1' textAlign='left' fontWeight="500" padding="1%">
                                                 Your Rights                                    </Box>
                                             <AccordionIcon backgroundColor="#FF928E" borderRadius="100%" color="white" _hover={{ backgroundColor: "#BC312E" }}
                                             />
                                         </AccordionButton>
                                     </h2>
-                                    <AccordionPanel pb={4} backgroundColor="#e0e0e0">
+                                    <AccordionPanel pb={4} backgroundColor={mode==='dark'?"#444444":"#E0E0E0"}>
 
                                         Depending on where you live, you may be able to request your personal data be accessed, corrected, or erased, as well as object to the processing of your data or ask that it be limited. You may also be able to ask us to cease processing your personal data or to have it deleted if you give us your consent but later change your mind.
                                         <br /><br />
@@ -210,7 +210,7 @@ export default function Terms() {
                             <Accordion borderRadius="0.5rem" allowMultiple>
                                 <AccordionItem borderRadius="0.5rem">
                                     <h2>
-                                        <AccordionButton width="100%" backgroundColor="#E0E0E0" borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
+                                        <AccordionButton width="100%" backgroundColor= {mode==='dark'?"#444444":"#E0E0E0"} borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
                                             <Box as="span" flex='1' textAlign='left' fontWeight="500" padding="1%">
                                                 Jobs Applicants
                                             </Box>
@@ -218,7 +218,7 @@ export default function Terms() {
                                             />
                                         </AccordionButton>
                                     </h2>
-                                    <AccordionPanel pb={4} backgroundColor="#e0e0e0">
+                                    <AccordionPanel pb={4} backgroundColor={mode==='dark'?"#444444":"#E0E0E0"}>
                                         When you apply for a position at Big Bros Digital Media, you will be required to provide information about yourself, including your name, contact information, educational background, employment history, and any other background information you choose to disclose with Big Bros Digital Media or that may be relevant to your application. We might not be able to complete your application if you do not provide us these information.
                                         <br /><br />
                                         This data will be used by Big Bros Digital Media to evaluate your qualifications for the post for which you have applied. This may involve, without limiting the generality of the aforementioned, (i) comparing your skills and experience to the qualifications needed for the position to which you have applied; and (ii) monitoring feedback and interactions we have with you during the hiring process. Your information may also be used when we examine our internal hiring procedures to decide I which sources of candidates to concentrate on, (ii) how to better integrate and train new hires with various educational and professional backgrounds, and (iii) how to improve our interview model to increase hiring quality. Your information may also be used to send you publications we believe you would find interesting and to contact with you about Big Bros Digital Media events.
@@ -235,7 +235,7 @@ export default function Terms() {
                             <Accordion borderRadius="0.5rem" allowMultiple>
                                 <AccordionItem borderRadius="0.5rem">
                                     <h2>
-                                        <AccordionButton width="100%" backgroundColor="#E0E0E0" borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
+                                        <AccordionButton width="100%" backgroundColor= {mode==='dark'?"#444444":"#E0E0E0"} borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
                                             <Box as="span" flex='1' textAlign='left' fontWeight="500" padding="1%">
                                                 Alumni (Beyond Big Bros Digital Media)
                                             </Box>
@@ -243,7 +243,7 @@ export default function Terms() {
                                             />
                                         </AccordionButton>
                                     </h2>
-                                    <AccordionPanel pb={4} backgroundColor="#e0e0e0">
+                                    <AccordionPanel pb={4} backgroundColor={mode==='dark'?"#444444":"#E0E0E0"}>
                                         Big Bros Digital Media will gather information about you if you use the Beyond Big Bros Digital Media platform, the online alumni community, including your name, email, home address, past employment details, job title, employer, business address, and any other details you want to provide. Your alumni profile may automatically include any information that Big Bros Digital Media already possesses about you that is pertinent to its construction. However, until you confirm your membership, this information won't be made available to other Beyond Big Bros Digital Media users. If you were a member of the alumni community before Beyond Big Bros Digital Media launched, your information will be shared in line with the privacy preferences you had then.
                                         <br /><br />
                                         By signing into Beyond Big Bros Digital Media and selecting your profile, you may at any moment edit and update the information that is displayed. Please make sure that your information is current and accurate.
@@ -269,7 +269,7 @@ export default function Terms() {
                             <Accordion borderRadius="0.5rem" allowMultiple>
                                 <AccordionItem borderRadius="0.5rem">
                                     <h2>
-                                        <AccordionButton width="100%" backgroundColor="#E0E0E0" borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
+                                        <AccordionButton width="100%" backgroundColor= {mode==='dark'?"#444444":"#E0E0E0"} borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
                                             <Box as="span" flex='1' textAlign='left' fontWeight="500" padding="1%">
                                                 Children
                                             </Box>
@@ -277,7 +277,7 @@ export default function Terms() {
                                             />
                                         </AccordionButton>
                                     </h2>
-                                    <AccordionPanel pb={4} backgroundColor="#e0e0e0">
+                                    <AccordionPanel pb={4} backgroundColor={mode==='dark'?"#444444":"#E0E0E0"}>
                                         Children under the age of 16 are not intended for our sites. As a result, Big Bros Digital Media asks that no information pertaining to anybody under the age of 16 be given to us and will not knowingly collect such information.        </AccordionPanel>
                                 </AccordionItem>
                             </Accordion>
@@ -287,7 +287,7 @@ export default function Terms() {
                             <Accordion borderRadius="0.5rem" allowMultiple>
                                 <AccordionItem borderRadius="0.5rem">
                                     <h2>
-                                        <AccordionButton width="100%" backgroundColor="#E0E0E0" borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
+                                        <AccordionButton width="100%" backgroundColor= {mode==='dark'?"#444444":"#E0E0E0"} borderRadius="0.5rem" borderBottomRadius="0%" _hover={{ color: "#BC312E" }}>
                                             <Box as="span" flex='1' textAlign='left' fontWeight="500" padding="1%">
                                                 Contact
                                             </Box>
@@ -295,7 +295,7 @@ export default function Terms() {
                                             />
                                         </AccordionButton>
                                     </h2>
-                                    <AccordionPanel pb={4} backgroundColor="#e0e0e0">
+                                    <AccordionPanel pb={4} backgroundColor={mode==='dark'?"#444444":"#E0E0E0"}>
                                         Please fill out the data subject request form if you have any queries regarding this privacy statement or how Big Bros Digital Media handles your personal information.
                                         <br /><br />
                                         The Global Data Protection Officer at Big Bros Digital Media can also be contacted at:

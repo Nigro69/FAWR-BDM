@@ -11,6 +11,7 @@ import { useStateContext } from '../../../../../contexts/ContextProvider'
 export default function Aboutoption({ onClick }) {
     const { mode } = useStateContext()
     return (
+        
         <div className='ao-outer' style={{ backgroundColor: mode === "dark" ? "#211F22" : "white" }}>
             <div className='ao-left'>
                 <div className='ao-option' style={{ borderTop: mode === "dark" ? "1px solid white" : "1px solid black", borderBottom: mode === "dark" ? "1px solid white" : "1px solid black" }}>
@@ -86,5 +87,6 @@ export default function Aboutoption({ onClick }) {
                 </div>
             </div>
         </div>
+        
     )
 }

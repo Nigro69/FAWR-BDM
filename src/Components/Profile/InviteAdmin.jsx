@@ -43,12 +43,12 @@ function InviteAdmin({ mode }) {
   return (
     <Layout>
       <div className="h-screen relative">
-        <div className="absolute top-[20%] left-[30%] flex flex-col space-y-4 bg-gray-200 dark:bg-[#211F22] rnd-shd p-6 rounded-lg w-[500px]">
+        <div className={`absolute top-[20%] left-[30%] flex flex-col space-y-4 ${mode==='dark'?'bg-[#211F22]':'bg-white'}  rnd-shd p-6 rounded-lg w-[500px]`}>
           <div className="flex w-full gap-3 place-items-center">
             <div className="text-gray-400 w-1/4">Email ID:</div>
             <div className=" w-3/4">
               <input
-                className="px-4 py-2 rounded-md w-full border bg-[#171717] border-black text-sm text-gray-300"
+                className={`px-4 py-2 rounded-md w-full border ${ mode==='dark'?'bg-[#171717]':'!bg-white'} border-black text-sm text-gray-300`}
                 type="text"
                 value={email}
                 placeholder="example@mail.com"

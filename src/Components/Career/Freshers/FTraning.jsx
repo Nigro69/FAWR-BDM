@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import "./Freshers.css";
+import Layout from "../../Layout/Layout";
 import f1 from "./FreshersImages/f1.png";
 import f2 from "./FreshersImages/f2.png";
 import f3 from "./FreshersImages/f3.png";
@@ -53,6 +54,9 @@ const Training = () => {
   const toggleClass = " transform translate-x-6";
 
   return (
+    <Layout>
+
+    
     <div className="">
       <div className="w-full">
           <img className="w-full object-cover h-[450px]" src={f1} alt="" />
@@ -157,6 +161,7 @@ const Training = () => {
         ))}
       </div>
     </div>
+    </Layout>
   );
 };
 

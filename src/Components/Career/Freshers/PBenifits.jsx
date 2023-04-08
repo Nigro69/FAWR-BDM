@@ -20,6 +20,7 @@ import t4 from "../Job/JobImages/t4.png";
 import t5 from "../Job/JobImages/t5.png";
 import xr1 from "../Job/JobImages/r1.png";
 import xr2 from "../Job/JobImages/r2.png";
+import Layout from "../../Layout/Layout";
 
 const Benefits = () => {
 
@@ -28,6 +29,9 @@ const Benefits = () => {
   const [benifitTab, setbenifitTab] = useState(1);
 
   return (
+    <Layout>
+
+    
     <div className="p-4 md:mx-10 my-4">
       <div className="text-[#BC312E] mt-10 mb-5 tracking-wider ff-style text-4xl font-semibold text-center">
         Everyone is a Leader
@@ -456,6 +460,7 @@ const Benefits = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 
