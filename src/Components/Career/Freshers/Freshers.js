@@ -242,7 +242,7 @@ export default function Freshers() {
                     setworktype("");
                     setdropworktype(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   All
                 </div>
@@ -251,7 +251,7 @@ export default function Freshers() {
                     setworktype("Internship");
                     setdropworktype(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   Internship
                 </div>
@@ -260,7 +260,7 @@ export default function Freshers() {
                     setworktype("Full-Time");
                     setdropworktype(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   Full-Time
                 </div>
@@ -269,7 +269,7 @@ export default function Freshers() {
                     setworktype("Part-time");
                     setdropworktype(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   Part-time
                 </div>
@@ -293,7 +293,7 @@ export default function Freshers() {
                     setcategory("");
                     setdropCategory(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   All
                 </div>
@@ -302,7 +302,7 @@ export default function Freshers() {
                     setcategory("Technology");
                     setdropCategory(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   Technology
                 </div>
@@ -311,7 +311,7 @@ export default function Freshers() {
                     setcategory("Marketing");
                     setdropCategory(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   Marketing
                 </div>
@@ -320,7 +320,7 @@ export default function Freshers() {
                     setcategory("HR");
                     setdropCategory(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   HR
                 </div>
