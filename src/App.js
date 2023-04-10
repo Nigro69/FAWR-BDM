@@ -197,7 +197,9 @@ export default function App() {
           <Route path="/Experienced Professional" element={<Professional mode={mode} />} /> */}
 
           <Route path="/Opportunities for Freshers" element={<Freshers />} />
+          <Route path="/Opportunities for Freshers/:id" element={authToken ? <JobDetails /> : <Login mode={mode} />} />
           <Route path="/Experienced Professional" element={<Professional />} />
+          <Route path="/Experienced Professional/:id" element={authToken ? <JobDetails /> : <Login mode={mode} />} />
 
 
 
@@ -245,7 +247,7 @@ export default function App() {
 
           <Route path="/Life@BDM" element={<Life />} />
           <Route path="/Student / Intern Program" element={<Student />} />
-          <Route path="/Student / Intern Program/:id" element={<JobDetails />} />
+          <Route path="/Student / Intern Program/:id" element={authToken ? <JobDetails /> : <Login mode={mode} />} />
           <Route path="/Diversity & Inclusion" element={<Diversity />} />
           <Route path="/Learning & Development" element={<Learning />} />
           <Route path="/Jobs" element={<Job />} />

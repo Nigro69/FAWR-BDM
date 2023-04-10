@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useStateContext } from "../../../contexts/ContextProvider";
 import Layout from "../../Layout/Layout";
+import { auth } from "../../../firebase/config";
 
 export default function Student() {
   const [toggle2, setToggle2] = useState(true);
@@ -300,7 +301,7 @@ export default function Student() {
                 {/* {data.description} */}
              
               
-              <Link to={`/Student / Intern Program/${data.id}`} onClick={() => checkExprienceLevel(data.experience) } className="mt-10 text-[#FC4A1A]">View and Apply</Link>
+              <Link className={`${auth.currentUser && "pointer-events-none cursor-default"} mt-10 text-[#FC4A1A]`} to={`/Student / Intern Program/${data.id}`} onClick={() => checkExprienceLevel(data.experience) }>View and Apply</Link>
             </div>
           ))}
         </div>

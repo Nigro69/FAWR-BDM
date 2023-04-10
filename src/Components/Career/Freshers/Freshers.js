@@ -355,7 +355,7 @@ export default function Freshers() {
                 </div>
                 <div dangerouslySetInnerHTML={{__html: data.description.replace('color: rgb(0, 0, 0);', `color: ${mode === "dark" ? "white" : "#5D5D5D"};`)}} className=" tracking-wide text-gray-600 font-sans"/>
                   
-                <button onClick={() => checkExprienceLevel(data.experience)} className="mt-10 text-[#FC4A1A]">View and Apply</button>
+                <Link className={`${auth.currentUser && "pointer-events-none cursor-default"} mt-10 text-[#FC4A1A]`} to={`/Opportunities for Freshers/${data.id}`} onClick={() => checkExprienceLevel(data.experience)}>View and Apply</Link>
               </div>
             ))}
         </div>
