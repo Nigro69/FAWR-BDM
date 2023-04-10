@@ -11,10 +11,11 @@ import F5 from "./FreshersImages/5.png";
 import { Button } from "@chakra-ui/react";
 
 import { useMediaQuery } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useStateContext } from "../../../contexts/ContextProvider";
 import Layout from "../../Layout/Layout";
+import { auth } from "../../../firebase/config";
 
 export default function Freshers() {
   const [toggle2, setToggle2] = useState(true);

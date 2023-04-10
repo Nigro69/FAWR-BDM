@@ -12,9 +12,10 @@ import { Button } from "@chakra-ui/react";
 
 import { useMediaQuery } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useStateContext } from "../../../contexts/ContextProvider";
 import Layout from "../../Layout/Layout";
+import { auth } from "../../../firebase/config";
 
 export default function Freshers() {
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
