@@ -1,12 +1,22 @@
 import { CloseButton, Stack } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from '@chakra-ui/react'
 
 import {
   ChevronDownIcon,
   MoonIcon,
   SunIcon,
   HamburgerIcon,
+  
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
@@ -42,7 +52,13 @@ import {
   MenuDivider,
   IconButton,
 } from "@chakra-ui/react";
-
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+} from '@chakra-ui/react'
 import {
   Popover,
   PopoverTrigger,
@@ -69,11 +85,13 @@ export default function Navbar({ mode, handleMode }) {
   const [isLargerThan850] = useMediaQuery("(min-width: 850px)");
   const { isOpen, onToggle } = useDisclosure();
   const [zindex, setZindex] = useState(10);
+const [menu,setMenu]=useState(false)
 
   const [dropland, setdropland] = useState(false);
   const [lang, setlang] = useState("");
 
   const navigate = useNavigate();
+
 
   const {
     authToken,
@@ -340,15 +358,17 @@ export default function Navbar({ mode, handleMode }) {
       >
         <div className="navbar-left-hidden">
           <Menu>
-            <MenuButton width="fit-content">
+            <MenuButton width="fit-content" onClick={()=>{menu?setMenu(false):setMenu(true)}}>
               <Stack direction="row" alignItems="center" display="flex">
+                {menu===true?<CloseButton fontSize="1rem" height="100%" />:
                 <HamburgerIcon fontSize="2rem" height="100%" />
+              }
               </Stack>
             </MenuButton>
             <MenuList
               backgroundColor={mode === "dark" ? "#211F22" : "white"}
               border={mode === "dark" ? "none" : "1px solid black"}
-              width="100%"
+              width="100vw" height='100vmax'
             >
               <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
                 <Stack
@@ -365,60 +385,98 @@ export default function Navbar({ mode, handleMode }) {
                   </Link>
                 </Stack>
               </MenuItem>
+              <Accordion allowToggle>
+                <AccordionItem border='none'>
 
-              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                <Stack direction="row" alignItems="center" display="flex">
-                  <Link to="/About Options">
+
+
+                  {/* <Stack direction="row" alignItems="center" display="flex"> */}
+                  <AccordionButton backgroundColor={mode === "dark" ? "#211F22" : "white"} >
+                    <div className="navbar-option-text">About</div>
+                    <AccordionIcon />
+                  </AccordionButton>
+                  <AccordionPanel pb={4} backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+
+                    <Aboutoption />
+                  </AccordionPanel>
+                  {/* <Link to="/About Options">
                     <div className="navbar-option-text">About</div>
                   </Link>
-                  <ChevronRightIcon fontSize="1.5rem" height="100%" />
-                </Stack>
-              </MenuItem>
+                  <ChevronRightIcon fontSize="1.5rem" height="100%" /> */}
+                  {/* </Stack> */}
 
-              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                <Stack direction="row" alignItems="center" display="flex">
-                  <Link to="/Solution Options">
+
+
+                </AccordionItem>
+                <AccordionItem border='none'>
+
+                  <AccordionButton backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+
                     <div className="navbar-option-text">Solutions</div>
-                  </Link>
-                  <ChevronRightIcon fontSize="1.5rem" height="100%" />
-                </Stack>
-              </MenuItem>
+                    <AccordionIcon />
 
-              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                <Stack direction="row" alignItems="center" display="flex">
+                    {/* <Link to="/Solution Options">
+                  </Link>
+                  <ChevronRightIcon fontSize="1.5rem" height="100%" /> */}
+
+                  </AccordionButton>
+                  <AccordionPanel pb={4} backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                    <Solutionoption />
+                  </AccordionPanel>
+                </AccordionItem>
+
+                <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+
                   <Link to="">
                     <div className="navbar-option-text">Case Study</div>
                   </Link>
-                  <ChevronRightIcon fontSize="1.5rem" height="100%" />
-                </Stack>
-              </MenuItem>
+                  {/* <ChevronRightIcon fontSize="1.5rem" height="100%" /> */}
 
-              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                <Stack direction="row" alignItems="center" display="flex">
-                  <Link to="/Explore Options">
+                </MenuItem>
+
+                <AccordionItem border='none'>
+
+                  <AccordionButton backgroundColor={mode === "dark" ? "#211F22" : "white"}>
                     <div className="navbar-option-text">Explore</div>
-                  </Link>
-                  <ChevronRightIcon fontSize="1.5rem" height="100%" />
-                </Stack>
-              </MenuItem>
+                    <AccordionIcon />
 
-              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                <Stack direction="row" alignItems="center" display="flex">
-                  <Link to="/Career Options">
+                    {/* <Stack direction="row" alignItems="center" display="flex"> */}
+                    {/* <Link to="/Explore Options">
+                    </Link> */}
+                    {/* <ChevronRightIcon fontSize="1.5rem" height="100%" /> */}
+                    {/* </Stack> */}
+                  </AccordionButton>
+                  <AccordionPanel pb={4} backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+
+                    <Exploreoption />
+                  </AccordionPanel>
+                </AccordionItem>
+                <AccordionItem border='none'>
+
+                  <AccordionButton backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+
                     <div className="navbar-option-text">Career</div>
-                  </Link>
-                  <ChevronRightIcon fontSize="1.5rem" height="100%" />
-                </Stack>
-              </MenuItem>
-              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                <Stack direction="row" alignItems="center" display="flex">
-                  <Link to="/Contact Us">
-                    <div className="navbar-option-text">Contact us</div>
-                  </Link>
-                  <ChevronRightIcon fontSize="1.5rem" height="100%" />
-                </Stack>
-              </MenuItem>
+                    <AccordionIcon />
+                    {/* <Link to="/Career Options">
+                    </Link>
+                     */}
+                  </AccordionButton>
+                  <AccordionPanel pb={4} backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                    <Careeroption />
+                  </AccordionPanel>
+                </AccordionItem>
+                
 
+                <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                
+                    <Link to="/Contact Us">
+                      <div className="navbar-option-text">Contact us</div>
+                    </Link>
+                    
+                  
+                </MenuItem>
+                
+              </Accordion>
               <MenuItem
                 backgroundColor={mode === "dark" ? "#211F22" : "white"}
                 width="100%"
@@ -507,6 +565,6 @@ export default function Navbar({ mode, handleMode }) {
           {/* </div> */}
         </div>
       </div>
-    </div>
+    </div >
   );
 }

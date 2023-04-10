@@ -168,10 +168,10 @@ export default function App() {
           <Route path="/Accessibility" element={<Accessibility />} />
           <Route path="/Environmental Policy" element={<Environmental />} />
 
-          <Route path="/About Options" element={<Aboutoption />} />
+          {/* <Route path="/About Options" element={<Aboutoption />} />
           <Route path="/Solution Options" element={<Solutionoption />} />
           <Route path="/Career Options" element={<Careeroption />} />
-          <Route path="/Explore Options" element={<Exploreoption />} />
+          <Route path="/Explore Options" element={<Exploreoption />} /> */}
 
           <Route path="/Sitemap" element={<Sitemap />} />
 

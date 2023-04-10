@@ -8,7 +8,8 @@ import { NavLink as Link } from 'react-router-dom'
 import Layout from '../../../../Layout/Layout'
 import { useStateContext } from '../../../../../contexts/ContextProvider'
 
-export default function Exploreoption({ onClick, mode }) {
+export default function Exploreoption({ onClick }) {
+    const { mode } = useStateContext()
 
     const [selectedOption, setSelectedOption] = useState(0)
 
