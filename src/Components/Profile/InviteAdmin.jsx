@@ -21,7 +21,7 @@ function InviteAdmin({ mode }) {
   async function handleInvite() {
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/v1/team/inviteteam",
+        "https://bdmhrmnode.bigbros.link/api/v1/team/inviteteam",
         {
           email,
           role,
