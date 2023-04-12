@@ -16,7 +16,7 @@ import {
   MoonIcon,
   SunIcon,
   HamburgerIcon,
-  
+
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
@@ -83,9 +83,9 @@ import { FiLogOut } from "react-icons/fi";
 
 export default function Navbar({ mode, handleMode }) {
   const [isLargerThan850] = useMediaQuery("(min-width: 850px)");
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen, onToggle, onClose, onOpen } = useDisclosure();
   const [zindex, setZindex] = useState(10);
-const [menu,setMenu]=useState(false)
+  const [menu, setMenu] = useState(false)
 
   const [dropland, setdropland] = useState(false);
   const [lang, setlang] = useState("");
@@ -354,161 +354,179 @@ const [menu,setMenu]=useState(false)
         style={{
           display: isLargerThan850 ? "none" : "flex",
           justifyContent: isLargerThan850 ? "space-between" : "space-between",
+
         }}
       >
         <div className="navbar-left-hidden">
-          <Menu>
-            <MenuButton width="fit-content" onClick={()=>{menu?setMenu(false):setMenu(true)}}>
-              <Stack direction="row" alignItems="center" display="flex">
-                {menu===true?<CloseButton fontSize="1rem" height="100%" />:
+
+
+          <Button width="fit-content" onClick={() => { isOpen == true ? onClose() : onOpen() }} style={{ background: 'transparent' }}>
+            <Stack direction="row" alignItems="center" display="flex">
+              {isOpen === true ? <CloseButton fontSize="1rem" height="100%" /> :
                 <HamburgerIcon fontSize="2rem" height="100%" />
               }
-              </Stack>
-            </MenuButton>
-            <MenuList
-              backgroundColor={mode === "dark" ? "#211F22" : "white"}
-              border={mode === "dark" ? "none" : "1px solid black"}
-              width="100vw" height='100vmax'
-            >
-              <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                <Stack
-                  direction="row"
-                  spacing={5}
-                  alignItems="center"
-                  display="flex"
+            </Stack>
+          </Button>
+          <Drawer placement="left" isOpen={isOpen} onClose={onClose} size='full' >
+            <DrawerOverlay />
+
+            <DrawerContent backgroundColor={mode === "dark" ? "#211F22" : "white"}
+              border={mode === "dark" ? "none" : "1px solid black"} overflow='scroll'
+              color={mode === 'dark' ? 'white' : 'black'}>
+              {/* <DrawerCloseButton color={mode === 'dark' ? 'white' : 'black'} marginBottom={"5%"} /> */}
+
+              <Menu isOpen={isOpen}>
+                <MenuList
+                  backgroundColor={mode === "dark" ? "#211F22" : "white"}
+                  border={mode === "dark" ? "none" : "1px solid black"}
+                  width="100vw" height='100vmax'
+
                 >
-                  {/* <Avatar src='https://bit.ly/broken-link' /> */}
-                  <Link to="/">
-                    <div className="navbar-option-text">
-                      <b>BDM</b>
-                    </div>
-                  </Link>
-                </Stack>
-              </MenuItem>
-              <Accordion allowToggle>
-                <AccordionItem border='none'>
+                  <CloseButton display='flex' justifyContent='end' color={mode === 'dark' ? 'white' : 'black'} fontSize="1rem" float='left' onClick={onClose}  width='95%'/>
+                  <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                    <Stack
+                      direction="row"
+                      spacing={5}
+                      alignItems="center"
+                      display="flex"
+                    >
+                      {/* <Avatar src='https://bit.ly/broken-link' /> */}
+                      <Link to="/" onClick={onClose}>
+                        <div className="navbar-option-text">
+                          <b>BDM</b>
+                        </div>
+                      </Link>
+                    </Stack>
+                  </MenuItem>
+                  <Accordion allowToggle>
+                    <AccordionItem border='none'>
 
 
 
-                  {/* <Stack direction="row" alignItems="center" display="flex"> */}
-                  <AccordionButton backgroundColor={mode === "dark" ? "#211F22" : "white"} >
-                    <div className="navbar-option-text">About</div>
-                    <AccordionIcon />
-                  </AccordionButton>
-                  <AccordionPanel pb={4} backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                      {/* <Stack direction="row" alignItems="center" display="flex"> */}
+                      <AccordionButton backgroundColor={mode === "dark" ? "#211F22" : "white"} >
+                        <div className="navbar-option-text">About</div>
+                        <AccordionIcon />
+                      </AccordionButton>
+                      <AccordionPanel pb={4} backgroundColor={mode === "dark" ? "#211F22" : "white"}>
 
-                    <Aboutoption />
-                  </AccordionPanel>
-                  {/* <Link to="/About Options">
+                        <Aboutoption />
+                      </AccordionPanel>
+                      {/* <Link to="/About Options">
                     <div className="navbar-option-text">About</div>
                   </Link>
                   <ChevronRightIcon fontSize="1.5rem" height="100%" /> */}
-                  {/* </Stack> */}
+                      {/* </Stack> */}
 
 
 
-                </AccordionItem>
-                <AccordionItem border='none'>
+                    </AccordionItem>
+                    <AccordionItem border='none'>
 
-                  <AccordionButton backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                      <AccordionButton backgroundColor={mode === "dark" ? "#211F22" : "white"}>
 
-                    <div className="navbar-option-text">Solutions</div>
-                    <AccordionIcon />
+                        <div className="navbar-option-text">Solutions</div>
+                        <AccordionIcon />
 
-                    {/* <Link to="/Solution Options">
+                        {/* <Link to="/Solution Options">
                   </Link>
                   <ChevronRightIcon fontSize="1.5rem" height="100%" /> */}
 
-                  </AccordionButton>
-                  <AccordionPanel pb={4} backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                    <Solutionoption />
-                  </AccordionPanel>
-                </AccordionItem>
+                      </AccordionButton>
+                      <AccordionPanel pb={4} backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                        <Solutionoption />
+                      </AccordionPanel>
+                    </AccordionItem>
 
-                <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                    <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
 
-                  <Link to="">
-                    <div className="navbar-option-text">Case Study</div>
-                  </Link>
-                  {/* <ChevronRightIcon fontSize="1.5rem" height="100%" /> */}
+                      <Link to="">
+                        <div className="navbar-option-text">Case Study</div>
+                      </Link>
+                      {/* <ChevronRightIcon fontSize="1.5rem" height="100%" /> */}
 
-                </MenuItem>
+                    </MenuItem>
 
-                <AccordionItem border='none'>
+                    <AccordionItem border='none'>
 
-                  <AccordionButton backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                    <div className="navbar-option-text">Explore</div>
-                    <AccordionIcon />
+                      <AccordionButton backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                        <div className="navbar-option-text">Explore</div>
+                        <AccordionIcon />
 
-                    {/* <Stack direction="row" alignItems="center" display="flex"> */}
-                    {/* <Link to="/Explore Options">
+                        {/* <Stack direction="row" alignItems="center" display="flex"> */}
+                        {/* <Link to="/Explore Options">
                     </Link> */}
-                    {/* <ChevronRightIcon fontSize="1.5rem" height="100%" /> */}
-                    {/* </Stack> */}
-                  </AccordionButton>
-                  <AccordionPanel pb={4} backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                        {/* <ChevronRightIcon fontSize="1.5rem" height="100%" /> */}
+                        {/* </Stack> */}
+                      </AccordionButton>
+                      <AccordionPanel pb={4} backgroundColor={mode === "dark" ? "#211F22" : "white"}>
 
-                    <Exploreoption />
-                  </AccordionPanel>
-                </AccordionItem>
-                <AccordionItem border='none'>
+                        <Exploreoption />
+                      </AccordionPanel>
+                    </AccordionItem>
+                    <AccordionItem border='none'>
 
-                  <AccordionButton backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                      <AccordionButton backgroundColor={mode === "dark" ? "#211F22" : "white"}>
 
-                    <div className="navbar-option-text">Career</div>
-                    <AccordionIcon />
-                    {/* <Link to="/Career Options">
+                        <div className="navbar-option-text">Career</div>
+                        <AccordionIcon />
+                        {/* <Link to="/Career Options">
                     </Link>
                      */}
-                  </AccordionButton>
-                  <AccordionPanel pb={4} backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                    <Careeroption />
-                  </AccordionPanel>
-                </AccordionItem>
-                
+                      </AccordionButton>
+                      <AccordionPanel pb={4} backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+                        <Careeroption />
+                      </AccordionPanel>
+                    </AccordionItem>
 
-                <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
-                
-                    <Link to="/Contact Us">
-                      <div className="navbar-option-text">Contact us</div>
-                    </Link>
-                    
-                  
-                </MenuItem>
-                
-              </Accordion>
-              <MenuItem
-                backgroundColor={mode === "dark" ? "#211F22" : "white"}
-                width="100%"
-              >
-                {/* <div className='navbar-option'> */}
-                {!authToken && (
-                  <Link to="/Login">
-                    <Button
-                      backgroundColor="#BC312E"
-                      color="white"
-                      borderRadius="1rem"
-                    >
-                      Sign In
-                    </Button>
-                  </Link>
-                )}
-                {/* </div> */}
-                {authToken && manager && (
-                  <div className="grid place-items-center">
-                    <div>
-                      <button
-                        onClick={() => navigate("/Profile-Home")}
-                        className="p-2 bg-[#BC312E] rounded-md grid place-items-center h-8 w-full text-white  font-bold text-sm"
-                      >
-                        Profile
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </MenuItem>
-            </MenuList>
-          </Menu>
+
+                    <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
+
+                      <Link to="/Contact Us">
+                        <div className="navbar-option-text">Contact us</div>
+                      </Link>
+
+
+                    </MenuItem>
+
+                  </Accordion>
+                  <MenuItem
+                    backgroundColor={mode === "dark" ? "#211F22" : "white"}
+                    width="100%"
+                  >
+                    {/* <div className='navbar-option'> */}
+                    {!authToken && (
+                      <Link to="/Login">
+                        <Button
+                          backgroundColor="#BC312E"
+                          color="white"
+                          borderRadius="1rem"
+                        >
+                          Sign In
+                        </Button>
+                      </Link>
+                    )}
+                    {/* </div> */}
+                    {authToken && manager && (
+                      <div className="grid place-items-center">
+                        <div>
+                          <button
+                            onClick={() => navigate("/Profile-Home")}
+                            className="p-2 bg-[#BC312E] rounded-md grid place-items-center h-8 w-full text-white  font-bold text-sm"
+                          >
+                            Profile
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </MenuItem>
+
+                </MenuList>
+              </Menu>
+            </DrawerContent>
+          </Drawer>
+
+
         </div>
 
         <div className="navbar-middle-hidden">

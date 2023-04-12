@@ -88,23 +88,23 @@ export default function Ourservices({ mode }) {
                                 <SliderThumb boxSize="6" />
                             </Slider>
                             <div style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                                <div onClick={()=>setOptionvalue(0)} className="cursor-pointer" style={{ fontSize: "1rem", fontWeight: "500", color: "#7E7E7E", textAlign: "center", width: "100%", display: "flex", justifyContent: "center" }}>
+                                <div onClick={() => setOptionvalue(0)} className="cursor-pointer" style={{ fontSize: "1rem", fontWeight: "500", color: "#7E7E7E", textAlign: "center", width: "100%", display: "flex", justifyContent: "center" }}>
                                     {title[0]}
                                 </div>
 
-                                <div onClick={()=>setOptionvalue(1)} className="cursor-pointer" style={{ fontSize: "1rem", fontWeight: "500", color: "#7E7E7E", textAlign: "center", width: "100%", display: "flex", justifyContent: "center" }}>
+                                <div onClick={() => setOptionvalue(1)} className="cursor-pointer" style={{ fontSize: "1rem", fontWeight: "500", color: "#7E7E7E", textAlign: "center", width: "100%", display: "flex", justifyContent: "center" }}>
                                     {title[1]}
                                 </div>
 
-                                <div onClick={()=>setOptionvalue(2)} className="cursor-pointer" style={{ fontSize: "1rem", fontWeight: "500", color: "#7E7E7E", textAlign: "center", width: "100%", display: "flex", justifyContent: "center" }}>
+                                <div onClick={() => setOptionvalue(2)} className="cursor-pointer" style={{ fontSize: "1rem", fontWeight: "500", color: "#7E7E7E", textAlign: "center", width: "100%", display: "flex", justifyContent: "center" }}>
                                     {title[2]}
                                 </div>
 
-                                <div onClick={()=>setOptionvalue(3)} className="cursor-pointer" style={{ fontSize: "1rem", fontWeight: "500", color: "#7E7E7E", textAlign: "center", width: "100%", display: "flex", justifyContent: "center" }}>
+                                <div onClick={() => setOptionvalue(3)} className="cursor-pointer" style={{ fontSize: "1rem", fontWeight: "500", color: "#7E7E7E", textAlign: "center", width: "100%", display: "flex", justifyContent: "center" }}>
                                     {title[3]}
                                 </div>
 
-                                <div onClick={()=>setOptionvalue(4)} className="cursor-pointer" style={{ fontSize: "1rem", fontWeight: "500", color: "#7E7E7E", textAlign: "center", width: "100%", display: "flex", justifyContent: "center" }}>
+                                <div onClick={() => setOptionvalue(4)} className="cursor-pointer" style={{ fontSize: "1rem", fontWeight: "500", color: "#7E7E7E", textAlign: "center", width: "100%", display: "flex", justifyContent: "center" }}>
                                     {title[4]}
                                 </div>
                             </div>
@@ -144,15 +144,22 @@ export default function Ourservices({ mode }) {
                                 <div className='ourservices-title' >
                                     {title[index]}
                                 </div>
-                                <div className='ourservices-inner-left-top-right'>
-                                    <img className='ourservices-inner-left-top-img' src={img[index]} />
+                                <div className="ourservices-inner-content">
+
+                                    <div className='ourservices-inner-left-top-right'>
+                                        <img className='ourservices-inner-left-top-img' src={img[index]} />
+                                    </div>
+                                    <div className="ourservices-inner-right-text-container">
+
+                                        <div className='ourservices-inner-right-text1' style={{ color: mode === "dark" ? "white" : "black" }}>
+                                            {item}
+                                        </div>
+                                        <div className='ourservices-inner-right-text2' style={{ color: mode === "dark" ? "white" : "black" }}>
+                                            {data[index]}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className='ourservices-inner-right-text1' style={{ color: mode === "dark" ? "white" : "black" }}>
-                                    {item}
-                                </div>
-                                <div className='ourservices-inner-right-text2' style={{ color: mode === "dark" ? "white" : "black" }}>
-                                    {data[index]}
-                                </div>
+
                                 <Stack direction="column" spacing={3} marginTop={isLargerThan700 ? "5%" : "10%"} width="100%">
 
                                     <div className='ourservices-inner-right-line' />
