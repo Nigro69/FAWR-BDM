@@ -3,7 +3,7 @@ import "../Othertemplate.css"
 
 export default function Othertemplate2({ title, bgimg, content,subTitle }) {
     return (
-        <div className='o-outer' style={{ backgroundImage: `url(${bgimg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover',overflow:'scroll' }}>
+        <div className='o-outer' style={{ backgroundImage: `url(${bgimg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
             <div className='o-title1'>
                 {title}
             </div>

@@ -86,7 +86,9 @@ export default function Navbar({ mode, handleMode }) {
   const { isOpen, onToggle, onClose, onOpen } = useDisclosure();
   const [zindex, setZindex] = useState(10);
   const [menu, setMenu] = useState(false)
-
+function closeMenu(){
+  setMenu(false)
+}
   const [dropland, setdropland] = useState(false);
   const [lang, setlang] = useState("");
 
@@ -360,14 +362,14 @@ export default function Navbar({ mode, handleMode }) {
         <div className="navbar-left-hidden">
 
 
-          <Button width="fit-content" onClick={() => { isOpen == true ? onClose() : onOpen() }} style={{ background: 'transparent' }}>
+          <Button width="fit-content" onClick={() => { menu == true ? setMenu(false) : setMenu(true) }} style={{ background: 'transparent' }}>
             <Stack direction="row" alignItems="center" display="flex">
-              {isOpen === true ? <CloseButton fontSize="1rem" height="100%" /> :
+              
                 <HamburgerIcon fontSize="2rem" height="100%" />
-              }
+              
             </Stack>
           </Button>
-          <Drawer placement="left" isOpen={isOpen} onClose={onClose} size='full' >
+          <Drawer placement="left" isOpen={menu} onClose={closeMenu} size='full' >
             <DrawerOverlay />
 
             <DrawerContent backgroundColor={mode === "dark" ? "#211F22" : "white"}
@@ -375,14 +377,14 @@ export default function Navbar({ mode, handleMode }) {
               color={mode === 'dark' ? 'white' : 'black'}>
               {/* <DrawerCloseButton color={mode === 'dark' ? 'white' : 'black'} marginBottom={"5%"} /> */}
 
-              <Menu isOpen={isOpen}>
+              <Menu isOpen={menu}>
                 <MenuList
                   backgroundColor={mode === "dark" ? "#211F22" : "white"}
                   border={mode === "dark" ? "none" : "1px solid black"}
                   width="100vw" height='100vmax'
 
                 >
-                  <CloseButton display='flex' justifyContent='end' color={mode === 'dark' ? 'white' : 'black'} fontSize="1rem" float='left' onClick={onClose}  width='95%'/>
+                  <CloseButton display='flex' justifyContent='end' color={mode === 'dark' ? 'white' : 'black'} fontSize="1rem" float='left' onClick={closeMenu}  width='95%'/>
                   <MenuItem backgroundColor={mode === "dark" ? "#211F22" : "white"}>
                     <Stack
                       direction="row"
