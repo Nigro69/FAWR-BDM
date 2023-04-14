@@ -111,6 +111,7 @@ import { GrClose } from 'react-icons/gr'
 import AdminSettings from './Components/AdminSettings.jsx'
 import Blogs from './Components/Blogs/Blogs.jsx'
 import InviteAdmin from './Components/Profile/InviteAdmin.jsx'
+import BlogPosts from './Components/LandingPage/Blogs/BlogPosts/BlogPosts.js'
 
 
 
@@ -275,10 +276,15 @@ export default function App() {
 
           <Route path='/Blogs' element={<Blogs mode={mode} page={'All'}/>}/>
           <Route path='/Blogs/Digital Research' element={<Blogs mode={mode} page={'Digital Research'}/>}/>
+          <Route path='/Blogs/Digital Research/posts/:title/:id' element={<BlogPosts/>}/>
           <Route path='/Blogs/DevOps' element={<Blogs mode={mode} page={'DevOps'}/>}/>
+          <Route path='/Blogs/DevOps/posts/:title/:id' element={<BlogPosts/>}/>
           <Route path='/Blogs/Sales Intelligence' element={<Blogs mode={mode} page={'Sales Intelligence'}/>}/>
+          <Route path='/Blogs/Sales Intelligence/posts/:title/:id' element={<BlogPosts/>}/>
           <Route path='/Blogs/Legal Consultant' element={<Blogs mode={mode} page={'Legal Consultant'}/>}/>
+          <Route path='/Blogs/Legal Consultant/posts/:title/:id' element={<BlogPosts/>}/>
           <Route path='/Blogs/Marketing Automation' element={<Blogs mode={mode} page={'Marketing Automation'}/>}/>
+          <Route path='/Blogs/Marketing Automation/posts/:title/:id' element={<BlogPosts/>}/>
 
         </Routes>
         {/* <Footer /> */}

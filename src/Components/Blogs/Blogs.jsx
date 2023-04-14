@@ -13,6 +13,80 @@ import {
 } from '@chakra-ui/react'
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+
+export const blogs = [
+    {
+        id: 1,
+        title: "Blog Title",
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        category: 'Digital Research',
+        image: blogimage
+    },
+    {
+        id: 2,
+        title: "Blog Title",
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        category: 'DevOps',
+        image: blogimage
+    },
+    {
+        id: 3,
+        title: "Blog Title",
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        category: 'Sales Intelligence',
+        image: blogimage
+    },
+    {
+        id: 4,
+        title: "Blog Title",
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        category: 'Legal Consultant',
+        image: blogimage
+    },
+    {
+        id: 5,
+        title: "Blog Title",
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        category: 'Digital Research',
+        image: blogimage
+    },
+    {
+        id: 6,
+        title: "Blog Title",
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        category: 'Marketing Automation',
+        image: blogimage
+    },
+    {
+        id: 7,
+        title: "Blog Title",
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        category: 'DevOps',
+        image: blogimage
+    },
+    {
+        id: 8,
+        title: "Blog Title",
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        category: 'Sales Intelligence',
+        image: blogimage
+    },
+    {
+        id: 9,
+        title: "Blog Title",
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        category: 'Legal Consultant',
+        image: blogimage
+    },
+    {
+        id: 10,
+        title: "Blog Title",
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        category: 'Marketing Automation',
+        image: blogimage
+    },
+]
+
 const Blogs = (props) => {
     const { mode } = useStateContext()
     const [category, setCategory] = useState(props.page)
@@ -25,68 +99,6 @@ const Blogs = (props) => {
         });
     }, [])
 
-    const blogs = [
-        {
-            title: "Blog Title",
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            category: 'Digital Research',
-            image: blogimage
-        },
-        {
-            title: "Blog Title",
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            category: 'DevOps',
-            image: blogimage
-        },
-        {
-            title: "Blog Title",
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            category: 'Sales Intelligence',
-            image: blogimage
-        },
-        {
-            title: "Blog Title",
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            category: 'Legal Consultant',
-            image: blogimage
-        },
-        {
-            title: "Blog Title",
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            category: 'Digital Research',
-            image: blogimage
-        },
-        {
-            title: "Blog Title",
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            category: 'Marketing Automation',
-            image: blogimage
-        },
-        {
-            title: "Blog Title",
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            category: 'DevOps',
-            image: blogimage
-        },
-        {
-            title: "Blog Title",
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            category: 'Sales Intelligence',
-            image: blogimage
-        },
-        {
-            title: "Blog Title",
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            category: 'Legal Consultant',
-            image: blogimage
-        },
-        {
-            title: "Blog Title",
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            category: 'Marketing Automation',
-            image: blogimage
-        },
-    ]
     
     return (
         <Layout>
@@ -132,7 +144,7 @@ const Blogs = (props) => {
 
                     {category==='All'?
                     blogs.map((ele) => {
-                        const { title, description, category, image } = ele
+                        const { id, title, description, category, image } = ele
                         return (
                             <div className='blogs-grid-item'>
                                 <Card maxW='sm' boxShadow='0px 0px 10px 3px rgba(0, 0, 0, 0.75)'>
@@ -155,9 +167,9 @@ const Blogs = (props) => {
 
                                     <CardFooter>
 
-                                        <Button variant='solid' colorScheme='red'>
+                                        <Link to={`/Blogs/${category}/posts/${title}/${id}`} className='text-red-500'>
                                             Read More
-                                        </Button>
+                                        </Link>
 
 
                                     </CardFooter>
@@ -169,7 +181,7 @@ const Blogs = (props) => {
                     })
                 :
                 blogs.filter(Element=> Element.category===category).map((ele) => {
-                    const { title, description, category, image } = ele
+                    const { id, title, description, category, image } = ele
                     return (
                         <div className='blogs-grid-item'>
                             <Card maxW='sm' boxShadow='0px 0px 10px 3px rgba(0, 0, 0, 0.75)'>
@@ -192,9 +204,9 @@ const Blogs = (props) => {
 
                                 <CardFooter>
 
-                                    <Button variant='solid' colorScheme='red'>
+                                    <Link to={`/Blogs/${category}/posts/${title}/${id}`} className='text-red-500'>
                                         Read More
-                                    </Button>
+                                    </Link>
 
 
                                 </CardFooter>
