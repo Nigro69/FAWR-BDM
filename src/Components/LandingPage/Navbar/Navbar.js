@@ -287,11 +287,9 @@ function closeMenu(){
               </Stack>
             </PopoverTrigger>
             <PopoverContent>
-              <PopoverHeader fontWeight="semibold">
-                Popover placement
-              </PopoverHeader>
+              
               <PopoverArrow />
-              <PopoverCloseButton />
+              <PopoverCloseButton color='black'/>
               <PopoverBody>
                 <div onClick={() => setlang("En")} style={{ color: "black" }}>
                   English
@@ -565,18 +563,31 @@ function closeMenu(){
             <Popover placement="bottom-end">
               <PopoverTrigger>
                 <Stack direction="row" alignItems="center" display="flex">
-                  <div className="navbar-option-text">EN</div>
+                  <div className="navbar-option-text">{lang === "" ? "En" : lang}</div>
                   <ChevronDownIcon fontSize="1.5rem" height="100%" />
                 </Stack>
               </PopoverTrigger>
               <PopoverContent>
-                <PopoverHeader fontWeight="semibold">
-                  Popover placement
-                </PopoverHeader>
+                
                 <PopoverArrow />
-                <PopoverCloseButton />
+                <PopoverCloseButton color='black'/>
                 <PopoverBody>
-                  <div style={{ color: "black" }}>English</div>
+                  
+                  <div onClick={() => setlang("En")} style={{ color: "black" }}>
+                  English
+                </div>
+                <div onClick={() => setlang("Hi")} style={{ color: "black" }}>
+                  Hindi
+                </div>
+                <div onClick={() => setlang("Kr")} style={{ color: "black" }}>
+                  Korean
+                </div>
+                <div onClick={() => setlang("Ar")} style={{ color: "black" }}>
+                  Arabic
+                </div>
+                <div onClick={() => setlang("De")} style={{ color: "black" }}>
+                  German
+                </div>
                 </PopoverBody>
               </PopoverContent>
             </Popover>

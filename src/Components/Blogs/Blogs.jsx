@@ -159,7 +159,7 @@ const Blogs = (props) => {
                                             <Text border='1px solid red' width='fit-content
                                             ' borderRadius='13px' color='red' padding='0px 5px' size='xs'> {category} </Text>
                                             <Text color={mode === 'dark' ? 'white' : 'black'}>
-                                                {description}
+                                                <p style={{display:'-webkit-box',WebkitLineClamp:'2',WebkitBoxOrient:'vertical',overflow:'hidden'}}>{description}</p>
                                             </Text>
 
                                         </Stack>

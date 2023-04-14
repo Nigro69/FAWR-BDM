@@ -192,7 +192,7 @@ export default function Freshers() {
           Filter results accordingly to your preference and start applying now!
         </div>
 
-        <div className="relative md:w-2/4 px-10">
+        <div className="relative md:w-2/4 mr-10 ml-10">
           <div
             onClick={() => setdropCategory(!dropCategory)}
             className="p-4 flex justify-between w-full  border rounded-md place-items-center border-gray-500"
@@ -203,7 +203,7 @@ export default function Freshers() {
             <BsChevronDown className="text-gray-500" />
           </div>
           {dropCategory && (
-            <div className="absolute w-full grid grid-cols-1 divide-y rounded-md shadow-md">
+            <div className="absolute w-full divide-y rounded-md shadow-md">
               <div
                 onClick={() => {
                   setcategory("");
@@ -250,7 +250,7 @@ export default function Freshers() {
             value={search}
             onChange={(e) => setsearch(e.target.value)}
             placeholder="Search job by title"
-            className="p-4 w-full md:w-3/4 text-lg border text-gray-500 focus:outline-0 border-gray-500"
+            className="p-4 w-full md:w-3/4 text-lg border bg-transparent text-gray-500 focus:outline-0 border-gray-500"
           />
         </div>
 
