@@ -17,6 +17,7 @@ import {
   storeRole,
   storeToken,
 } from "../../LocalStorage";
+import Layout from "../Layout/Layout"
 
 function Register2() {
   const navigate = useNavigate();
@@ -175,6 +176,7 @@ function Register2() {
   };
 
   return (
+    <Layout>
     <div className={`grid place-items-center py-16 ${mode === "dark" ? "bg-[#211F22] text-white " : "bg-white text-black"}`}>
       {!emailverified && <div
         className={`dark:bg-[#211F22] flex gap-8 rnd-shd rounded-lg w-5/6 p-7`}
@@ -757,6 +759,7 @@ function Register2() {
         </div>
       </div>}
     </div>
+    </Layout>
   );
 }
 
