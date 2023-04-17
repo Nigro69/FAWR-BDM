@@ -53,6 +53,7 @@ export default function Companies({ mode }) {
                     <div className='companies-left-content' style={{ color: mode === "dark" ? "#C6C6C6" : "#7A7A7A" }}>
                         {content[selected]}
                     </div>
+                    <button className='font-bold rounded-lg text-white bg-[#BC312E] px-6 py-2 companies-left-btn'>Visit</button>
                 </div>
                 <div className='companies-right'  >
                     <img src={imgs[selected]} />

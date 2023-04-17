@@ -55,19 +55,19 @@ export default function Other() {
     return (
         <div className='other-outer'>
             <div className='other-grid'>
-                <div className='other-grid-element' onMouseOver={handleMouseOver1} onMouseOut={handleMouseOut1}>
+                <div className='other-grid-element' onMouseOver={handleMouseOver1} onMouseOut={handleMouseOut1} onClick={isHovering1?handleMouseOut1:handleMouseOver1}>
                     {isHovering1 ? <Othertemplate2 title={"Engage And Retain"} bgimg={o2} subTitle="Personalize your Retention Campaigns at Scale!" content="Empowering Businesses to Acquire Drive brand loyalty and increase customer engagement with well-timed, relevant, personal, and contextual messages" /> : <Othertemplate1 title={"Engage And Retain"} bgimg={o1} />}
                 </div>
-                <div className='other-grid-element' onMouseOver={handleMouseOver2} onMouseOut={handleMouseOut2}>
+                <div className='other-grid-element' onMouseOver={handleMouseOver2} onMouseOut={handleMouseOut2} onClick={isHovering2?handleMouseOut2:handleMouseOver2}>
                     {isHovering2 ? <Othertemplate2 title={"Talent Management"} subTitle="Affordable Management Solutions For Businesses Of All Sizes" bgimg={o4} content="Manage Employee Database, Payroll, Time & Attendance, Talent Management, Onboarding & More. Engage Employees Remotely, Touch-Free Attendance (Facial Recognition), Digital Onboarding. Explore Various freemium Pricing Options, So You'll Never Pay For More Than You Need." /> : <Othertemplate1 title={"Talent Management"} bgimg={o3} />}
                 </div>
             </div>
             <div className='other-grid'>
-                <div className='other-grid-element' onMouseOver={handleMouseOver3} onMouseOut={handleMouseOut3}>
+                <div className='other-grid-element' onMouseOver={handleMouseOver3} onMouseOut={handleMouseOut3} onClick={isHovering3?handleMouseOut3:handleMouseOver3}>
                     {isHovering3 ? <Othertemplate2 title={"Artist Management"} subTitle="Comprehensive tool for Artist Management & Self-Managed Artists" bgimg={o6} content="Discover Stagent's booking and management platform and solutions for professional agencies, artists, and managers in the music and entertainment industry. Bookings, contracts, invoicing, show advancing, itineraries, team collaboration, mobile artist app" /> : <Othertemplate1 title={"Artist Management"} bgimg={o5} />}
                 </div>
 
-                <div className='other-grid-element' onMouseOver={handleMouseOver4} onMouseOut={handleMouseOut4}>
+                <div className='other-grid-element' onMouseOver={handleMouseOver4} onMouseOut={handleMouseOut4} onClick={isHovering4?handleMouseOut4:handleMouseOver4}>
                     {isHovering4 ? <Othertemplate2 title={"Venue Booking"} bgimg={o8} subTitle="Free and elegant online booking, reservation and scheduling system" content="EventPro has been built from the ground up to be a single system where the Venue Booking, Event Management and Catering Management components are all seamlessly integrated so they can easily stand alone or be used all-in-one and anything in between" /> : <Othertemplate1 title={"Venue Booking"} bgimg={o7} />}
                 </div>
             </div>

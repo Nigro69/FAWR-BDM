@@ -185,6 +185,14 @@
         font-weight: 400;
         font-size: 1rem;
     }
+    .ourservices-inner-left-top-img {
+        height: 18rem;
+    }
+    .ourservices-inner-content{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -195,7 +203,10 @@
         font-size: 2rem;
 
     }
-
+    .ourservices-inner-left-top-img {
+        height: 13rem;
+        
+    }
     .ourservices-inner-right-text1 {
         font-weight: 400;
         font-size: 1.25rem;
@@ -209,6 +220,37 @@
         font-size: 1rem;
         color: #C6C6C6;
         height: 6rem;
+        display: flex;
+        align-items: flex-start;
+        /* margin-top: 7%; */
+    }
+}
+@media only screen and (max-width: 450px){
+    .ourservices-title {
+        font-family: 'Yeseva One';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.75rem;
+        height: 4rem;
+
+    }
+    .ourservices-inner-left-top-img {
+        height: 8rem;
+        
+    }
+    .ourservices-inner-right-text1 {
+        font-weight: 400;
+        font-size: 0.75rem;
+        color: #7E7E7E;
+        height: 4rem;
+    }
+
+
+    .ourservices-inner-right-text2 {
+        font-weight: 400;
+        font-size: 0.5rem;
+        color: #C6C6C6;
+        height: 4rem;
         display: flex;
         align-items: flex-start;
         /* margin-top: 7%; */

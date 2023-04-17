@@ -8,6 +8,7 @@ import f4 from "../Freshers/FreshersImages/f4.png";
 import f5 from "../Freshers/FreshersImages/f5.png";
 import f6 from "../Freshers/FreshersImages/f6.png";
 import f7 from "../Freshers/FreshersImages/f7.png";
+import Layout from "../../Layout/Layout";
 
 const Training = () => {
   const datas = [
@@ -53,6 +54,9 @@ const Training = () => {
   const toggleClass = " transform translate-x-6";
 
   return (
+    <Layout>
+
+   
     <div className="">
       <div className="w-full">
           <img className="w-full object-cover h-[450px]" src={f1} alt="" />
@@ -157,6 +161,7 @@ const Training = () => {
         ))}
       </div>
     </div>
+    </Layout>
   );
 };
 

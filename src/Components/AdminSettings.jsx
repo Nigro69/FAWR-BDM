@@ -67,7 +67,7 @@ function AdminSettings() {
   async function handleInvite() {
     try {
       const res = await axios.post(
-        "http://44.204.133.124/api/v1/team/inviteteam",
+        "https://bdmhrmnode.bigbros.link/api/v1/team/inviteteam",
         {
           email,
           role,

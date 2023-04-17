@@ -42,7 +42,7 @@ export default function Careeroption({ onClick }) {
             </div>
 
             <div className='co-right'>
-                <div onClick={() => navigate("/Jobs")} className='co-right-title cursor-pointer'>
+                <div onClick={() => navigate("/Jobs")} style={{ color: mode === "dark" ? "white" : "black", borderBottom: mode==='dark'?"2px solid white":"2px solid black" }} className='co-right-title cursor-pointer'>
                     Oppourtunities
                 </div>
                 <div style={{ display: "flex", justifyContent: "center", width: "80%", marginTop: "5%", marginLeft: "10%" }}>

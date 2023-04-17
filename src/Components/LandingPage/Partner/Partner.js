@@ -30,6 +30,14 @@ import x25 from "./PartnerImages/fig2.png"
 import x26 from "./PartnerImages/fig3.png"
 import x23 from "./PartnerImages/inv.png"
 import x24 from "./PartnerImages/mar.png"
+import x27 from './PartnerImages/wix.png'
+import x28 from './PartnerImages/woo.png'
+import x29 from './PartnerImages/wordpress.png'
+import x30 from './PartnerImages/Hostinger.png'
+import x31 from './PartnerImages/bluehost.png'
+import x32 from './PartnerImages/godaddy.png'
+import x33 from './PartnerImages/MailChimp.png'
+import x34 from './PartnerImages/sendgrid.png'
 
 export default function Partner({ mode }) {
     return (
@@ -74,7 +82,7 @@ export default function Partner({ mode }) {
                 </div>
 
                 <div className='partner-grid-element' >
-                    <img src={x10} />
+                    <img className="grayscale" src={x30} />
                 </div>
             </div>
 
@@ -84,7 +92,7 @@ export default function Partner({ mode }) {
                 </div>
 
                 <div className='partner-grid-element' >
-                    <img className='grayscale' src={x21} />
+                    <img className='grayscale' src={x28} />
                 </div>
 
                 <div className='partner-grid-element' >
@@ -102,7 +110,7 @@ export default function Partner({ mode }) {
 
             <div className='partner-grid'>
                 <div className='partner-grid-element' >
-                    <img src={x16} />
+                    <img src={x29} />
                 </div>
 
                 <div className='partner-grid-element' >
@@ -119,6 +127,27 @@ export default function Partner({ mode }) {
 
                 <div className='partner-grid-element' >
                     <img className="grayscale" src={x26} />
+                </div>
+            </div>
+            <div className='partner-grid'>
+                <div className='partner-grid-element' >
+                    <img src={x27} />
+                </div>
+
+                <div className='partner-grid-element' >
+                    <img className="grayscale" src={x31} />
+                </div>
+
+                <div className='partner-grid-element' >
+                    <img className="grayscale" src={x32} />
+                </div>
+
+                <div className='partner-grid-element' >
+                    <img className="grayscale" src={x33} />
+                </div>
+
+                <div className='partner-grid-element' >
+                    <img className="grayscale" src={x34} />
                 </div>
             </div>
         </div>

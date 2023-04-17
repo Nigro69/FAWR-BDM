@@ -11,10 +11,11 @@ import F5 from "./FreshersImages/5.png";
 import { Button } from "@chakra-ui/react";
 
 import { useMediaQuery } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useStateContext } from "../../../contexts/ContextProvider";
 import Layout from "../../Layout/Layout";
+import { auth } from "../../../firebase/config";
 
 export default function Freshers() {
   const [toggle2, setToggle2] = useState(true);
@@ -225,7 +226,7 @@ export default function Freshers() {
         </div>
 
         <div className="md:flex justify-between w-full space-y-3 md:space-y-0 gap-5 px-10">
-          <div className="relative w-2/4">
+          <div className="relative md:w-1/2">
             <div
               onClick={() => setdropworktype(!dropworktype)}
               className="p-4 flex justify-between w-full  border rounded-md place-items-center border-gray-500"
@@ -236,13 +237,13 @@ export default function Freshers() {
               <BsChevronDown className="text-gray-500" />
             </div>
             {dropworktype && (
-              <div className="absolute w-full grid grid-cols-1 divide-y rounded-md shadow-md">
+              <div className="absolute w-full divide-y rounded-md shadow-md z-50">
                 <div
                   onClick={() => {
                     setworktype("");
                     setdropworktype(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   All
                 </div>
@@ -251,7 +252,7 @@ export default function Freshers() {
                     setworktype("Internship");
                     setdropworktype(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   Internship
                 </div>
@@ -260,7 +261,7 @@ export default function Freshers() {
                     setworktype("Full-Time");
                     setdropworktype(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   Full-Time
                 </div>
@@ -269,14 +270,14 @@ export default function Freshers() {
                     setworktype("Part-time");
                     setdropworktype(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   Part-time
                 </div>
               </div>
             )}
           </div>
-          <div className="relative w-2/4">
+          <div className="relative md:w-2/4">
             <div
               onClick={() => setdropCategory(!dropCategory)}
               className="p-4 flex justify-between w-full  border rounded-md place-items-center border-gray-500"
@@ -287,13 +288,13 @@ export default function Freshers() {
               <BsChevronDown className="text-gray-500" />
             </div>
             {dropCategory && (
-              <div className="absolute w-full grid grid-cols-1 divide-y rounded-md shadow-md">
+              <div className="absolute w-full divide-y rounded-md shadow-md">
                 <div
                   onClick={() => {
                     setcategory("");
                     setdropCategory(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   All
                 </div>
@@ -302,7 +303,7 @@ export default function Freshers() {
                     setcategory("Technology");
                     setdropCategory(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   Technology
                 </div>
@@ -311,7 +312,7 @@ export default function Freshers() {
                     setcategory("Marketing");
                     setdropCategory(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   Marketing
                 </div>
@@ -320,7 +321,7 @@ export default function Freshers() {
                     setcategory("HR");
                     setdropCategory(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   HR
                 </div>
@@ -335,7 +336,7 @@ export default function Freshers() {
             value={search}
             onChange={(e) => setsearch(e.target.value)}
             placeholder="Search job by title"
-            className="p-4 w-full md:w-3/4 text-lg border rounded-md bg-[#211F22] text-gray-500 focus:outline-0 border-gray-500"
+            className="p-4 w-full md:w-3/4 text-lg border rounded-md bg-transparent text-gray-500 focus:outline-0 border-gray-500"
           />
         </div>
 
@@ -346,17 +347,16 @@ export default function Freshers() {
         <div className="w-full h-full md:grid grid-cols-3 space-y-4 md:space-y-0 gap-10 px-10">
           {filteredDta &&
             filteredDta.map((data) => (
-              <div className="border border-[#FC4A1A] p-8 bg-gray-100">
+              <div className="border border-[#FC4A1A] p-8 ">
                 <div className="font-semibold tracking-wide text-2xl text-[#FC4A1A] uppercase">
                   {data.title}
                 </div>
-                <div className=" font-semibold my-5 tracking-wider text-gray-700">
+                <div className=" font-semibold my-5 tracking-wider" style={{color:mode === "dark" ? "white" : "#5D5D5D"}}>
                   {data.location}
                 </div>
-                <div className=" tracking-wide text-gray-600 font-sans">
-                  {data.description}
-                </div>
-                <button onClick={() => checkExprienceLevel(data.experience)} className="mt-10 text-[#FC4A1A]">Apply</button>
+                <div dangerouslySetInnerHTML={{__html: data.description.replace('color: rgb(0, 0, 0);', `color: ${mode === "dark" ? "white" : "#5D5D5D"};`)}} className=" tracking-wide text-gray-600 font-sans"/>
+                  
+                <Link className={`${auth.currentUser && "pointer-events-none cursor-default"} mt-10 text-[#FC4A1A]`} to={`/Opportunities for Freshers/${data.id}`} onClick={() => checkExprienceLevel(data.experience)}>View and Apply</Link>
               </div>
             ))}
         </div>

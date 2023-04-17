@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useStateContext } from "../../../contexts/ContextProvider";
 import Layout from "../../Layout/Layout";
+import { auth } from "../../../firebase/config";
 
 export default function Student() {
   const [toggle2, setToggle2] = useState(true);
@@ -219,7 +220,7 @@ export default function Student() {
         </div>
 
         <div className="md:flex justify-between space-y-3 md:space-y-0 w-full gap-5 px-10">
-          <div className="relative w-2/4">
+          <div className="relative md:w-1/2">
             <div
               onClick={() => setdropCategory(!dropCategory)}
               className="p-4 flex justify-between w-full  border rounded-md place-items-center border-gray-500"
@@ -230,13 +231,13 @@ export default function Student() {
               <BsChevronDown className="text-gray-500" />
             </div>
             {dropCategory && (
-              <div className="absolute w-full grid grid-cols-1 divide-y rounded-md shadow-md">
+              <div className="absolute w-full divide-y rounded-md shadow-md">
                 <div
                   onClick={() => {
                     setcategory("");
                     setdropCategory(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   All
                 </div>
@@ -245,7 +246,7 @@ export default function Student() {
                     setcategory("Technology");
                     setdropCategory(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   Technology
                 </div>
@@ -254,7 +255,7 @@ export default function Student() {
                     setcategory("Marketing");
                     setdropCategory(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   Marketing
                 </div>
@@ -263,7 +264,7 @@ export default function Student() {
                     setcategory("HR");
                     setdropCategory(false);
                   }}
-                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2"
+                  className="font-semibold bg-white text-sm hover:bg-gray-100 cursor-pointer px-4 py-2 text-black"
                 >
                   HR
                 </div>
@@ -278,7 +279,7 @@ export default function Student() {
             value={search}
             onChange={(e) => setsearch(e.target.value)}
             placeholder="Search job by title"
-            className="p-4 w-full md:w-3/4 text-lg border rounded-md bg-[#211F22] text-gray-500 focus:outline-0 border-gray-500"
+            className="p-4 w-full md:w-3/4 text-lg border rounded-md text-gray-500 focus:outline-0 border-gray-500 bg-transparent"
           />
         </div>
 
@@ -295,10 +296,12 @@ export default function Student() {
               <div className=" font-semibold my-5 tracking-wider text-gray-300">
                 {data.location}
               </div>
-              <div className=" tracking-wide text-gray-400 font-sans">
-                {data.description}
-              </div>
-              <button onClick={() => checkExprienceLevel(data.experience)} className="mt-10 text-[#FC4A1A]">Apply</button>
+              {/* {data.description.replace('color: rgb(0, 0, 0);', 'color: rgb(156 163 175 / 1);')} */}
+              <div dangerouslySetInnerHTML={{__html: data.description.replace('color: rgb(0, 0, 0);', 'color: rgb(156 163 175 / 1);')}} className=" tracking-wide text-gray-400 font-sans " />
+                {/* {data.description} */}
+             
+              
+              <Link className={`${auth.currentUser && "pointer-events-none cursor-default"} mt-10 text-[#FC4A1A]`} to={`/Student / Intern Program/${data.id}`} onClick={() => checkExprienceLevel(data.experience) }>View and Apply</Link>
             </div>
           ))}
         </div>

@@ -6,9 +6,11 @@ import f9 from "./FreshersImages/f9.png";
 import f10 from "./FreshersImages/f10.png";
 import f11 from "./FreshersImages/f11.png";
 import f12 from "./FreshersImages/f12.png";
+import Layout from "../../Layout/Layout";
 
 const FDiversity = () => {
   return (
+    <Layout>
     <div className="p-4 md:mx-10 md:my-4">
       <div className="md:flex gap-20 w-full my-10">
         <div className="md:w-2/4 w-full my-auto">
@@ -48,6 +50,7 @@ const FDiversity = () => {
         <div className="relative"><img src={f12} alt="ic-img" /><div className="absolute bottom-10 w-3/4 h-20  rounded-lg bg-black grid place-items-center text-center left-10 bg-opacity-80 text-xl font-sans text-[#BC312E]">Board Diversity Initiative</div></div>
       </div>
     </div>
+    </Layout>
   );
 };
 

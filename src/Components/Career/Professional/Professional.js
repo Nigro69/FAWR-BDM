@@ -12,9 +12,10 @@ import { Button } from "@chakra-ui/react";
 
 import { useMediaQuery } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useStateContext } from "../../../contexts/ContextProvider";
 import Layout from "../../Layout/Layout";
+import { auth } from "../../../firebase/config";
 
 export default function Freshers() {
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
@@ -191,7 +192,7 @@ export default function Freshers() {
           Filter results accordingly to your preference and start applying now!
         </div>
 
-        <div className="relative md:w-2/4 px-10">
+        <div className="relative md:w-2/4 mr-10 ml-10">
           <div
             onClick={() => setdropCategory(!dropCategory)}
             className="p-4 flex justify-between w-full  border rounded-md place-items-center border-gray-500"
@@ -202,7 +203,7 @@ export default function Freshers() {
             <BsChevronDown className="text-gray-500" />
           </div>
           {dropCategory && (
-            <div className="absolute w-full grid grid-cols-1 divide-y rounded-md shadow-md">
+            <div className="absolute w-full divide-y rounded-md shadow-md">
               <div
                 onClick={() => {
                   setcategory("");
@@ -249,7 +250,7 @@ export default function Freshers() {
             value={search}
             onChange={(e) => setsearch(e.target.value)}
             placeholder="Search job by title"
-            className="p-4 w-full md:w-3/4 text-lg border text-gray-500 focus:outline-0 border-gray-500"
+            className="p-4 w-full md:w-3/4 text-lg border bg-transparent text-gray-500 focus:outline-0 border-gray-500"
           />
         </div>
 
@@ -260,17 +261,16 @@ export default function Freshers() {
         <div className="w-full h-full md:grid grid-cols-3 space-y-4 md:space-y-0 gap-10 px-10">
           {filteredDta &&
             filteredDta.map((data) => (
-              <div className="border border-[#FC4A1A] p-8 bg-gray-100">
+              <div className="border border-[#FC4A1A] p-8">
                 <div className="font-semibold tracking-wide text-2xl text-[#FC4A1A] uppercase">
                   {data.title}
                 </div>
-                <div className=" font-semibold my-5 tracking-wider text-gray-700">
+                <div className=" font-semibold my-5 tracking-wider" style={{color:mode === "dark" ? "white" : "#5D5D5D"}}>
                   {data.location}
                 </div>
-                <div className=" tracking-wide text-gray-600 font-sans">
-                  {data.description}
-                </div>
-                <button onClick={() => checkExprienceLevel(data.experience)} className="mt-10 text-[#FC4A1A]">Apply</button>
+                <div dangerouslySetInnerHTML={{__html: data.description.replace('color: rgb(0, 0, 0);', `color: ${mode === "dark" ? "white" : "#5D5D5D"};`)}} className=" tracking-wide font-sans" />
+                  
+                <Link className={`${auth.currentUser && "pointer-events-none cursor-default"} mt-10 text-[#FC4A1A]`} to={`/Experienced Professional/${data.id}`} onClick={() => checkExprienceLevel(data.experience)}>View and Apply</Link>
               </div>
             ))}
         </div>

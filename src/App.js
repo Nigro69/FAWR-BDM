@@ -109,7 +109,9 @@ import Influencer from './Components/Influencer/Influencer.jsx'
 import { useStateContext } from "./contexts/ContextProvider.js"
 import { GrClose } from 'react-icons/gr'
 import AdminSettings from './Components/AdminSettings.jsx'
+import Blogs from './Components/Blogs/Blogs.jsx'
 import InviteAdmin from './Components/Profile/InviteAdmin.jsx'
+import BlogPosts from './Components/LandingPage/Blogs/BlogPosts/BlogPosts.js'
 
 
 
@@ -167,10 +169,10 @@ export default function App() {
           <Route path="/Accessibility" element={<Accessibility />} />
           <Route path="/Environmental Policy" element={<Environmental />} />
 
-          <Route path="/About Options" element={<Aboutoption />} />
+          {/* <Route path="/About Options" element={<Aboutoption />} />
           <Route path="/Solution Options" element={<Solutionoption />} />
           <Route path="/Career Options" element={<Careeroption />} />
-          <Route path="/Explore Options" element={<Exploreoption />} />
+          <Route path="/Explore Options" element={<Exploreoption />} /> */}
 
           <Route path="/Sitemap" element={<Sitemap />} />
 
@@ -196,7 +198,9 @@ export default function App() {
           <Route path="/Experienced Professional" element={<Professional mode={mode} />} /> */}
 
           <Route path="/Opportunities for Freshers" element={<Freshers />} />
+          <Route path="/Opportunities for Freshers/:id" element={authToken ? <JobDetails /> : <Login mode={mode} />} />
           <Route path="/Experienced Professional" element={<Professional />} />
+          <Route path="/Experienced Professional/:id" element={authToken ? <JobDetails /> : <Login mode={mode} />} />
 
 
 
@@ -244,6 +248,7 @@ export default function App() {
 
           <Route path="/Life@BDM" element={<Life />} />
           <Route path="/Student / Intern Program" element={<Student />} />
+          <Route path="/Student / Intern Program/:id" element={authToken ? <JobDetails /> : <Login mode={mode} />} />
           <Route path="/Diversity & Inclusion" element={<Diversity />} />
           <Route path="/Learning & Development" element={<Learning />} />
           <Route path="/Jobs" element={<Job />} />
@@ -268,6 +273,18 @@ export default function App() {
 
           <Route path="/Sustainability @ BDM" element={<Sustainability />} />
           <Route path="*" element={<PageNotFound />} />
+
+          <Route path='/Blogs' element={<Blogs mode={mode} page={'All'}/>}/>
+          <Route path='/Blogs/Digital Research' element={<Blogs mode={mode} page={'Digital Research'}/>}/>
+          <Route path='/Blogs/Digital Research/posts/:title/:id' element={<BlogPosts/>}/>
+          <Route path='/Blogs/DevOps' element={<Blogs mode={mode} page={'DevOps'}/>}/>
+          <Route path='/Blogs/DevOps/posts/:title/:id' element={<BlogPosts/>}/>
+          <Route path='/Blogs/Sales Intelligence' element={<Blogs mode={mode} page={'Sales Intelligence'}/>}/>
+          <Route path='/Blogs/Sales Intelligence/posts/:title/:id' element={<BlogPosts/>}/>
+          <Route path='/Blogs/Legal Consultant' element={<Blogs mode={mode} page={'Legal Consultant'}/>}/>
+          <Route path='/Blogs/Legal Consultant/posts/:title/:id' element={<BlogPosts/>}/>
+          <Route path='/Blogs/Marketing Automation' element={<Blogs mode={mode} page={'Marketing Automation'}/>}/>
+          <Route path='/Blogs/Marketing Automation/posts/:title/:id' element={<BlogPosts/>}/>
 
         </Routes>
         {/* <Footer /> */}

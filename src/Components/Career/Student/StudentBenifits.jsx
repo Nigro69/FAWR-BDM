@@ -14,6 +14,7 @@ import h9 from "./StudentImages/h9.png";
 import h10 from "./StudentImages/h1.png";
 import h11 from "./StudentImages/h11.png";
 import h12 from "./StudentImages/h12.png";
+import Layout from "../../Layout/Layout";
 
 const StudentBenefits = () => {
   const coldata = [
@@ -80,6 +81,9 @@ const StudentBenefits = () => {
   ];
 
   return (
+    <Layout>
+
+   
     <div className="">
       <div className="w-full">
           <img className="w-full object-cover h-[450px]" src={F2} alt="" />
@@ -125,6 +129,7 @@ const StudentBenefits = () => {
         ))}
       </div>
     </div>
+    </Layout>
   );
 };
 

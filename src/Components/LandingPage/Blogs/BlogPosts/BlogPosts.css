@@ -1,0 +1,39 @@
+.blogpost-container{
+    padding: 5%;
+}
+.blogpost-content-container{
+  
+    border-radius: 14px;
+    box-shadow:0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+    padding:3% 5%;
+}
+.blogpost-title{
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2%;
+}
+.blogpost-category{
+    border: 1px solid red;
+    color: red;
+    border-radius: 13px;
+    padding: 0 7px;
+    margin-bottom: 10%;
+
+}
+.blogpost-description{
+    font-size: 1.2rem;
+    color: rgb(148, 148, 148);
+    font-style: italic;
+    line-height: 100%;
+    margin:2% 0;
+}
+.blogpost-content{
+    
+    font-weight: 100;
+
+}
+@media screen and (max-width:500px) {
+    .blogpost-description{
+        font-size: 0.9rem;
+    }
+}

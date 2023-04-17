@@ -9,7 +9,7 @@ export default function Challenges({ challengeData, mode }) {
     const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
     return (
         <div className='c-outer'>
-            <div className='c-inner' style={{ display: isLargerThan600 ? "flex" : "none" }}>
+            <div className='c-inner' style={{ display:  "flex"  }}>
                 <div className='c-left'>
                     <div className={`c-left-box ${mode === "dark" ? "bg-[#444444]" : "bg-[#E2E2E2]" }`} style={{ marginLeft: "20%" }}>
                         <div className='c-box-text' style={{ color: mode === "dark" ? "white" : "black" }}>
@@ -49,7 +49,7 @@ export default function Challenges({ challengeData, mode }) {
                 </div>
             </div>
 
-            <div className='c-inner-hidden' style={{ display: isLargerThan600 ? "none" : "flex", flexDirection: "column-reverse" }}>
+            {/* <div className='c-inner-hidden' style={{ display: isLargerThan600 ? "none" : "flex", flexDirection: "column-reverse" }}>
                 <div className='c-inner-top'>
                     <div className='c-left'>
                         <div className={`c-left-box ${mode === "dark" ? "bg-[#444444]" : "bg-[#E2E2E2]" }`} style={{ marginLeft: "15%" }}>
@@ -93,7 +93,7 @@ export default function Challenges({ challengeData, mode }) {
                         <img className="c-img" src={Challenge_img1} />
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
