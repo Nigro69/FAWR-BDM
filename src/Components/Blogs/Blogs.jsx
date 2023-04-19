@@ -4,6 +4,7 @@ import './Blogs.css'
 import { useStateContext } from '../../contexts/ContextProvider'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import blogimage from './blog image.png'
+import axios from "axios";
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -87,9 +88,34 @@ export const blogs = [
     },
 ]
 
+
+
 const Blogs = (props) => {
     const { mode } = useStateContext()
     const [category, setCategory] = useState(props.page)
+
+    
+  const [blogsData, setblogsData] = useState([]);
+  const [errorMessage, seterrorMessage] = useState("");
+  const [isPending, setisPending] = useState(true);
+
+  const getMyResult = async () => {
+    try {
+      const res = await axios.get("https://cms.bigbros.link/api/v2/blogs/");
+      console.log(res.data);
+      setblogsData(res.data);
+      setisPending(false);
+    } catch (error) {
+      console.log(error.message);
+      seterrorMessage(error.message);
+      setisPending(false);
+    }
+  };
+
+  useEffect(() => {
+    getMyResult();
+  }, []);
+
     
     useEffect(() => {
         window.scroll({
@@ -143,7 +169,8 @@ const Blogs = (props) => {
                 <div className="blogs-grid">
 
                     {category==='All'?
-                    blogs.map((ele) => {
+                    !isPending &&
+                    blogsData.map((ele) => {
                         const { id, title, description, category, image } = ele
                         return (
                             <div className='blogs-grid-item'>
@@ -157,7 +184,7 @@ const Blogs = (props) => {
                                         <Stack mt='6' spacing='3'>
                                             <Heading size='md' color={mode === 'dark' ? 'white' : 'black'}>{title}</Heading>
                                             <Text border='1px solid red' width='fit-content
-                                            ' borderRadius='13px' color='red' padding='0px 5px' size='xs'> {category} </Text>
+                                            ' borderRadius='13px' color='red' padding='0px 5px' size='xs'> {category && category} </Text>
                                             <Text color={mode === 'dark' ? 'white' : 'black'}>
                                                 <p style={{display:'-webkit-box',WebkitLineClamp:'2',WebkitBoxOrient:'vertical',overflow:'hidden'}}>{description}</p>
                                             </Text>
@@ -167,7 +194,7 @@ const Blogs = (props) => {
 
                                     <CardFooter>
 
-                                        <Link to={`/Blogs/${category}/posts/${title}/${id}`} className='text-red-500'>
+                                        <Link to={`/Blogs/${category && category}/posts/${title}/${id}`} className='text-red-500'>
                                             Read More
                                         </Link>
 

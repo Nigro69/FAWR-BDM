@@ -82,10 +82,8 @@ function AdminSettings() {
     }
   }
 
-  useEffect(() => {
-    
-  }, [options])
-  
+  useEffect(() => {}, [options]);
+
   const getData = () => {
     const data = [
       {
@@ -94,8 +92,28 @@ function AdminSettings() {
         title: "Regional Paradigm Technician",
         department: "Optimization",
         role: "HR Manager",
-        joinDate:"23 march 2023",
-        options:<div  onClick={()=>setoptions(1)} className="relative"><BsThreeDots className="cursor-pionter h-5 w-5 p-1 rounded-full hover:bg-gray-300 "/> {options===1 && <div className="absolute z-30 left-0 rounded-md grid grid-cols-1 divide-y bg-gray-100 shadow-md"><div className="p-2 cursor-pointer text-sm font-semibold rounded-t-md hover:bg-gray-300" onClick={()=>setoptions(0)}>Change role</div><div className="p-2 cursor-pointer rounded-b-md text-sm font-semibold hover:bg-gray-300" onClick={()=>setoptions(0)}>Remove</div></div>}</div>,
+        joinDate: "23 march 2023",
+        options: (
+          <div onClick={() => setoptions(1)} className="relative">
+            <BsThreeDots className="cursor-pionter h-5 w-5 p-1 rounded-full hover:bg-gray-300 " />{" "}
+            {options === 1 && (
+              <div className="absolute z-30 left-0 rounded-md grid grid-cols-1 divide-y bg-gray-100 shadow-md">
+                <div
+                  className="p-2 cursor-pointer text-sm font-semibold rounded-t-md hover:bg-gray-300"
+                  onClick={() => setoptions(0)}
+                >
+                  Change role
+                </div>
+                <div
+                  className="p-2 cursor-pointer rounded-b-md text-sm font-semibold hover:bg-gray-300"
+                  onClick={() => setoptions(0)}
+                >
+                  Remove
+                </div>
+              </div>
+            )}
+          </div>
+        ),
         imgUrl:
           "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
       },
@@ -105,8 +123,10 @@ function AdminSettings() {
         title: "Product Directives Officer",
         department: "Intranet",
         role: "HR Manager",
-        joinDate:"20 march 2023",
-        options:<BsThreeDots className="cursor-pionter h-5 w-5 p-1 rounded-full hover:bg-gray-300 "/>,
+        joinDate: "20 march 2023",
+        options: (
+          <BsThreeDots className="cursor-pionter h-5 w-5 p-1 rounded-full hover:bg-gray-300 " />
+        ),
         imgUrl:
           "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
       },
@@ -116,8 +136,10 @@ function AdminSettings() {
         title: "Forward Response Developer",
         department: "Directives",
         role: "Senior HR Manager",
-        joinDate:"3 march 2023",
-        options:<BsThreeDots className="cursor-pionter h-5 w-5 p-1 rounded-full hover:bg-gray-300 "/>,
+        joinDate: "3 march 2023",
+        options: (
+          <BsThreeDots className="cursor-pionter h-5 w-5 p-1 rounded-full hover:bg-gray-300 " />
+        ),
         imgUrl:
           "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
       },
@@ -127,8 +149,10 @@ function AdminSettings() {
         title: "Central Security Manager",
         department: "Program",
         role: "Assistant HR Manager",
-        joinDate:"23 march 2022",
-        options:<BsThreeDots className="cursor-pionter h-5 w-5 p-1 rounded-full hover:bg-gray-300 "/>,
+        joinDate: "23 march 2022",
+        options: (
+          <BsThreeDots className="cursor-pionter h-5 w-5 p-1 rounded-full hover:bg-gray-300 " />
+        ),
         imgUrl:
           "https://images.unsplash.com/photo-1498551172505-8ee7ad69f235?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
       },
@@ -138,8 +162,10 @@ function AdminSettings() {
         title: "Lean Implementation Liaison",
         department: "Mobility",
         role: "HR Manager",
-        joinDate:"5 march 2023",
-        options:<BsThreeDots className="cursor-pionter h-5 w-5 p-1 rounded-full hover:bg-gray-300 "/>,
+        joinDate: "5 march 2023",
+        options: (
+          <BsThreeDots className="cursor-pionter h-5 w-5 p-1 rounded-full hover:bg-gray-300 " />
+        ),
         imgUrl:
           "https://images.unsplash.com/photo-1532417344469-368f9ae6d187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
       },
@@ -149,15 +175,16 @@ function AdminSettings() {
         title: "Internal Applications Engineer",
         department: "Security",
         role: "Senior HR Manager",
-        joinDate:"17 march 2023",
-        options:<BsThreeDots className="cursor-pionter h-5 w-5 p-1 rounded-full hover:bg-gray-300 "/>,
+        joinDate: "17 march 2023",
+        options: (
+          <BsThreeDots className="cursor-pionter h-5 w-5 p-1 rounded-full hover:bg-gray-300 " />
+        ),
         imgUrl:
           "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
       },
     ];
     return [...data, ...data, ...data];
   };
-  
 
   const openRoles = () => {
     navigate("roles");
@@ -272,7 +299,8 @@ function AdminSettings() {
                       Roles & Permissions
                     </h1>
                     <p className="text-gray-400 p-2">
-                      Change the role of people working on this site or remove them.
+                      Change the role of people working on this site or remove
+                      them.
                     </p>
                   </div>
                 </div>
@@ -469,6 +497,111 @@ function AdminSettings() {
                     <div className="text-sm text-gray-400 py-1">
                       Has access to release offer letter, schedule the
                       interview, finalize and onboard the candidate{" "}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="text-gray-400 font-sans tracking-wide font-semibold mt-10">
+                Marketing and Customer Management Roles
+              </div>
+              <div className="my-4  border rounded-md space-y-1 border-gray-400">
+                <div className="flex rounded-t-md gap-6 place-items-center py-3 px-6 hover:bg-[#211F22]">
+                  <input
+                    type="checkbox"
+                    checked={role === "national head"}
+                    onChange={() => {
+                      setrole("national head");
+                      setdepartment("crm");
+                    }}
+                    className="rounded-md accent-[#BC312E]"
+                  />
+                  <div>
+                    <div className="text-lg font-semibold text-gray-100">
+                      National Head
+                    </div>
+                    <div className="text-sm text-gray-400 py-1">
+                      Supervises and stirrs all company's operations, people and
+                      ventures in order to maintain and grow business.{" "}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex gap-6 place-items-center py-3 px-6 hover:bg-[#211F22]">
+                  <input
+                    type="checkbox"
+                    checked={role === "regional level head"}
+                    onChange={() => {
+                      setrole("regional level head");
+                      setdepartment("crm");
+                    }}
+                    className="rounded-md accent-[#BC312E]"
+                  />
+                  <div>
+                    <div className="text-lg font-semibold text-gray-100">
+                      Regional Level Head
+                    </div>
+                    <div className="text-sm text-gray-400 py-1">
+                      Responsible for overseeing operations for several
+                      locations, branches or sales teams.{" "}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex gap-6 place-items-center py-3 px-6 hover:bg-[#211F22] rounded-b-md">
+                  <input
+                    type="checkbox"
+                    checked={role === "area level manager"}
+                    onChange={() => {
+                      setrole("area level manager");
+                      setdepartment("crm");
+                    }}
+                    className="rounded-md accent-[#BC312E]"
+                  />
+                  <div>
+                    <div className="text-lg font-semibold text-gray-100">
+                      Area Level Manager
+                    </div>
+                    <div className="text-sm text-gray-400 py-1">
+                      Responsible for overseeing operations for several
+                      locations, branches or sales teams.{" "}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex gap-6 place-items-center py-3 px-6 hover:bg-[#211F22] rounded-b-md">
+                  <input
+                    type="checkbox"
+                    checked={role === "executive"}
+                    onChange={() => {
+                      setrole("executive");
+                      setdepartment("crm");
+                    }}
+                    className="rounded-md accent-[#BC312E]"
+                  />
+                  <div>
+                    <div className="text-lg font-semibold text-gray-100">
+                      Executive
+                    </div>
+                    <div className="text-sm text-gray-400 py-1">
+                      Responsible for overseeing operations for several
+                      locations, branches or sales teams.{" "}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex gap-6 place-items-center py-3 px-6 hover:bg-[#211F22] rounded-b-md">
+                  <input
+                    type="checkbox"
+                    checked={role === "consultant"}
+                    onChange={() => {
+                      setrole("consultant");
+                      setdepartment("crm");
+                    }}
+                    className="rounded-md accent-[#BC312E]"
+                  />
+                  <div>
+                    <div className="text-lg font-semibold text-gray-100">
+                      Consultant
+                    </div>
+                    <div className="text-sm text-gray-400 py-1">
+                      Sists in creating and implementing the best possible
+                      strategies to reach their target audience.{" "}
                     </div>
                   </div>
                 </div>
